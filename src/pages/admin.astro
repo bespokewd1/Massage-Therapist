@@ -1,4 +1,35 @@
-<!-- This page is the entry point to the the Decap CMS admin dashboard.--><!-- It should not be modified. --><!doctype html>
+<!-- This page is the entry point to the the Decap CMS admin dashboard.--><!-- It should not be modified. -->
+---
+---
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const observer = new MutationObserver((mutationsList, observer) => {
+    const adminEl = document.getElementById("nc-root");
+
+    if (adminEl) {
+      const img = adminEl.querySelector("img");
+      const decapLogo = adminEl.querySelector("span.exus10f2");
+
+      if (img && decapLogo) {
+        // Check if both elements are now found
+        img.setAttribute("src", "/assets/images/bespokeog.png");
+        decapLogo.setAttribute("style", "display:none");
+        observer.disconnect(); // Stop observing once changes are made
+      }
+    }
+  });
+
+  const ncRootElement = document.getElementById("nc-root");
+  if (ncRootElement) {
+    observer.observe(ncRootElement, { childList: true, subtree: true }); // Observe child elements and their descendants
+  } else {
+    console.log("nc-root element not found initially!"); // Optional log
+  }
+});
+</script>
+
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -14,3 +45,22 @@
     <script is:inline src="https://unpkg.com/decap-cms@^3.1.2/dist/decap-cms.js"></script>
   </body>
 </html>
+
+<style lang="less">
+@media screen and (min-width: 0) {
+  section {
+    .exus10f2.css-15mesr9-IconWrapper-NetlifyCreditIcon.e1jeq5dr1 {
+      display: none !important;
+    }
+
+    span {
+      width: auto;
+      img {
+        filter: drop-shadow(2px 4px 6px black);
+        width: clamp(300px, 35vw, 500px);
+        border-radius: 12px;
+      }
+    }
+  }
+}
+</style>
