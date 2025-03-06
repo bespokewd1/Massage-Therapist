@@ -2,8 +2,12 @@ import { defineConfig } from "astro/config";
 import sitemap from "@astrojs/sitemap";
 import icon from "astro-icon";
 
+import tailwindcss from "@tailwindcss/vite";
+
 export default defineConfig({
-  site: "https://www.yourwebsite.com", // update me!
+  // update me!
+  site: "https://www.yourwebsite.com",
+
   integrations: [
     icon(),
     sitemap({
@@ -12,4 +16,8 @@ export default defineConfig({
       priority: 0.7,
     }),
   ],
+
+  vite: {
+    plugins: [tailwindcss()],
+  },
 });

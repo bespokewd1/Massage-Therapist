@@ -2,15 +2,44 @@
 import BaseLayout from 'src/layouts/BaseLayout.astro';
 import CTA from '@components/CTA.astro';
 import FAQ from '@components/FAQ.astro';
+import PromotionCard, {
+  type PromotionProps,
+} from '@components/PromotionCard.astro';
 
 // Optimize our landing image and pass it as props to the BaseLayout (for preloading) and Landing (for rendering)
 import { getOptimizedImage } from '@js/utils';
 import aboutImage1 from '@assets/images/About-Section.TherapistImage.jpg';
 import aboutImage2 from '@assets/images/About-Section.TherapistImage1.webp';
+import serviceImg1 from '@assets/images/Services-1.TherapeuticMassage.jpg';
+import serviceImg2 from '@assets/images/Services-2.DeepTissueMassage.jpg';
+import serviceImg3 from '@assets/images/Services-3.RelaxationMassage.jpg';
+
 import heroImg from '@assets/images/hero-img.jpg';
 import landingImage from '@assets/images/landing.jpg'; // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
 import { Picture } from 'astro:assets';
+
 const optimizedImage = await getOptimizedImage(landingImage);
+
+const promotionInfo: PromotionProps[] = [
+  {
+    imgSrc: serviceImg1,
+    title: 'Therapeutic Massage',
+    description:
+      'Experience unparalleled relaxation and pain relief with our expert therapeutic massage services—specializing in deep tissue and hot stone techniques that ease muscle tension and reduce stress.',
+  },
+  {
+    imgSrc: serviceImg2,
+    title: 'Relaxation Massage',
+    description:
+      'Unwind with our Relaxation Massage, designed to melt away stress and promote deep, calming relaxation while boosting overall wellness. ',
+  },
+  {
+    imgSrc: serviceImg3,
+    title: 'Cupping Massage',
+    description:
+      'Experience the benefits of our Cupping Massage, a traditional therapy that enhances blood flow, reduces muscle tension, and supports natural detoxification. ',
+  },
+];
 ---
 
 <BaseLayout
@@ -56,20 +85,6 @@ const optimizedImage = await getOptimizedImage(landingImage);
       pictureAttributes={{ class: 'cs-picture' }}
       loading="eager"
     />
-
-    <!-- <picture class="cs-picture"> -->
-    <!--   <source media="(max-width: 600px)" srcset="/assets/images/hero-m.webp" /> -->
-    <!--   <source media="(min-width: 601px)" srcset="/assets/images/hero.jpg" /> -->
-    <!--   <img -->
-    <!--     aria-hidden="true" -->
-    <!--     decoding="async" -->
-    <!--     src={optimizedImage.src} -->
-    <!--     alt="new home" -->
-    <!--     width="2500" -->
-    <!--     height="1667" -->
-    <!--     loading="eager" -->
-    <!--   /> -->
-    <!-- </picture> -->
   </section>
 
   <!-- ============================================ -->
@@ -164,6 +179,29 @@ const optimizedImage = await getOptimizedImage(landingImage);
         Keep it 1-2 sentences.
       </p>
     </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!--               Promotional                    -->
+  <!-- ============================================ -->
+
+  <section
+    class:list={[
+      'py-12 px-5 grid-flow-col auto-cols-[100%] grid gap-6 ',
+      'overflow-x-auto overscroll-x-contain snap-x [&::-webkit-scrollbar]:hidden [scrollbar-width:none]',
+      'md:gap-4 *:place-self-center',
+      'lg:auto-cols-auto lg:grid-flow-row lg:grid-cols-3 lg:*:place-self-stretch',
+    ]}
+  >
+    {
+      promotionInfo.map((promo) => (
+        <PromotionCard
+          imgSrc={promo.imgSrc}
+          title={promo.title}
+          description={promo.description}
+        />
+      ))
+    }
   </section>
 
   <!-- ============================================ -->
