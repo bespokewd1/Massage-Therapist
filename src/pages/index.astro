@@ -1,18 +1,21 @@
 ---
-import BaseLayout from "src/layouts/BaseLayout.astro";
-import CTA from "@components/CTA.astro";
-import FAQ from "@components/FAQ.astro";
+import BaseLayout from 'src/layouts/BaseLayout.astro';
+import CTA from '@components/CTA.astro';
+import FAQ from '@components/FAQ.astro';
 
 // Optimize our landing image and pass it as props to the BaseLayout (for preloading) and Landing (for rendering)
-import {getOptimizedImage} from "@js/utils"
-import landingImage from "@assets/images/landing.jpg" // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
-const optimizedImage = await getOptimizedImage(landingImage)
+import { getOptimizedImage } from '@js/utils';
+import aboutImage1 from '@assets/images/About-Section.TherapistImage.jpg';
+import aboutImage2 from '@assets/images/About-Section.TherapistImage1.webp';
+import landingImage from '@assets/images/landing.jpg'; // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
+import { Picture } from 'astro:assets';
+const optimizedImage = await getOptimizedImage(landingImage);
 ---
 
 <BaseLayout
   title="Pixel Perfect Websites"
   description="Meta description for the page"
-  preloadedImage = {optimizedImage}
+  preloadedImage={optimizedImage}
 >
   <!-- ============================================ -->
   <!--                    Hero                      -->
@@ -22,9 +25,10 @@ const optimizedImage = await getOptimizedImage(landingImage)
     <div class="cs-container">
       <div class="cs-flex-group">
         <span class="cs-topper">Healing Touch Massage - Edmonton</span>
-        <h1 class="cs-title">Relax, Rejuvenate, and Restore <br/></h1>
+        <h1 class="cs-title">Relax, Rejuvenate, and Restore <br /></h1>
         <p class="cs-text">
-          Professional massage therapy for relaxation, pain relief, and overall wellness in Edmonton. 
+          Professional massage therapy for relaxation, pain relief, and overall
+          wellness in Edmonton.
         </p>
         <a href="/about" class="cs-button-solid">Book Online</a>
         <a href="/contact" class="cs-button-transparent">
@@ -45,10 +49,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
     <!-- Background Image -->
     <!-- We can't use Astro <Picture /> as it does not support multiple sources -->
     <picture class="cs-picture">
-      <source
-        media="(max-width: 600px)"
-        srcset="/assets/images/hero-m.webp"
-      />
+      <source media="(max-width: 600px)" srcset="/assets/images/hero-m.webp" />
       <source media="(min-width: 601px)" srcset="/assets/images/hero.jpg" />
       <img
         aria-hidden="true"
@@ -60,7 +61,6 @@ const optimizedImage = await getOptimizedImage(landingImage)
         loading="eager"
       />
     </picture>
-
   </section>
 
   <!-- ============================================ -->
@@ -155,7 +155,6 @@ const optimizedImage = await getOptimizedImage(landingImage)
         Keep it 1-2 sentences.
       </p>
     </div>
-    
   </section>
 
   <!-- ============================================ -->
@@ -166,78 +165,101 @@ const optimizedImage = await getOptimizedImage(landingImage)
     <div class="cs-container">
       <!-- Left Image Section -->
       <div class="cs-left">
-        <picture class="cs-picture cs-picture1">
-          <source
-            media="(max-width: 600px)"
-            srcset="/assets/images/cabinets2-m.jpg"
-          />
-          <source
-            media="(min-width: 601px)"
-            srcset="/assets/images/cabinets2.jpg"
-          />
-          <img
-            aria-hidden="true"
-            decoding="async"
-            src="/assets/images/cabinets2.jpg"
-            alt="cabinets"
-            loading="lazy"
-            width="400"
-            height="563"
-          />
-        </picture>
-        <picture class="cs-picture cs-picture2">
-          <source
-            media="(max-width: 600px)"
-            srcset="/assets/images/construction-m.jpg"
-          />
-          <source
-            media="(min-width: 601px)"
-            srcset="/assets/images/construction.jpg"
-          />
-          <img
-            aria-hidden="true"
-            decoding="async"
-            src="/assets/images/construction.jpg"
-            alt="house"
-            loading="lazy"
-            width="400"
-            height="563"
-          />
-        </picture>
+        <Picture
+          src={aboutImage1}
+          formats={['avif', 'webp']}
+          alt="massage therapist"
+          pictureAttributes={{ class: 'cs-picture cs-picture1' }}
+        />
+        <Picture
+          src={aboutImage2}
+          formats={['avif', 'webp']}
+          alt="massage therapist"
+          pictureAttributes={{ class: 'cs-picture cs-picture2' }}
+        />
+        <!-- <picture class="cs-picture cs-picture1"> -->
+        <!--   <source -->
+        <!--     media="(max-width: 600px)" -->
+        <!--     srcset="/assets/images/cabinets2-m.jpg" -->
+        <!--   /> -->
+        <!--   <source -->
+        <!--     media="(min-width: 601px)" -->
+        <!--     srcset="/assets/images/cabinets2.jpg" -->
+        <!--   /> -->
+        <!--   <img -->
+        <!--     aria-hidden="true" -->
+        <!--     decoding="async" -->
+        <!--     src="/assets/images/cabinets2.jpg" -->
+        <!--     alt="cabinets" -->
+        <!--     loading="lazy" -->
+        <!--     width="400" -->
+        <!--     height="563" -->
+        <!--   /> -->
+        <!-- </picture> -->
+
+        <!-- <picture class="cs-picture cs-picture2"> -->
+        <!--   <source -->
+        <!--     media="(max-width: 600px)" -->
+        <!--     srcset="/assets/images/construction-m.jpg" -->
+        <!--   /> -->
+        <!--   <source -->
+        <!--     media="(min-width: 601px)" -->
+        <!--     srcset="/assets/images/construction.jpg" -->
+        <!--   /> -->
+        <!--   <img -->
+        <!--     aria-hidden="true" -->
+        <!--     decoding="async" -->
+        <!--     src="/assets/images/construction.jpg" -->
+        <!--     alt="house" -->
+        <!--     loading="lazy" -->
+        <!--     width="400" -->
+        <!--     height="563" -->
+        <!--   /> -->
+        <!-- </picture> -->
       </div>
       <!-- Right Content Section-->
-<div class="cs-right">
-  <span class="cs-topper">About Us</span>
-  <h2 class="cs-title">Healing Touch Massage Therapy</h2>
-  <p class="cs-text">
-    At Healing Touch Massage Therapy, we are dedicated to providing therapeutic massage services that promote relaxation, reduce pain, and improve overall wellness. Whether you're dealing with muscle tension, stress, or simply need a moment of relaxation, our skilled therapists are here to help you feel your best.
-  </p>
-  <p class="cs-text">
-    With years of experience, we pride ourselves on creating a calming environment where you can unwind and experience the therapeutic benefits of massage. From Swedish and deep tissue massages to hot stone therapy, we offer a range of services tailored to your individual needs.
-  </p>
-  <div class="cs-flex-group">
-    <p class="cs-flex-p">
-      We believe in a personalized approach to each session. Our therapists work with you to understand your unique concerns, ensuring that every massage is focused on your health and relaxation.
-    </p>
-    <span class="cs-name">Sarah Thompson</span>
-    <span class="cs-job">Founder & Lead Therapist</span>
-    <img
-      class="cs-quote-icon"
-      loading="lazy"
-      decoding="async"
-      src="https://csimg.nyc3.digitaloceanspaces.com/SideBySide/quote-white.svg"
-      alt="quote"
-      width="136"
-      height="77"
-    />
-  </div>
-  <a href="/services" class="cs-button-solid">Our Services</a>
-</div>
-</div>
-</section>
-<FAQ />
-<CTA />
-
+      <div class="cs-right">
+        <span class="cs-topper">About Us</span>
+        <h2 class="cs-title">Healing Touch Massage Therapy</h2>
+        <p class="cs-text">
+          At Healing Touch Massage Therapy, we are dedicated to providing
+          therapeutic massage services that promote relaxation, reduce pain, and
+          improve overall wellness. Whether you're dealing with muscle tension,
+          stress, or simply need a moment of relaxation, our skilled therapists
+          are here to help you feel your best.
+        </p>
+        <p class="cs-text">
+          With years of experience, we pride ourselves on creating a calming
+          environment where you can unwind and experience the therapeutic
+          benefits of massage. From Swedish and deep tissue massages to hot
+          stone therapy, we offer a range of services tailored to your
+          individual needs.
+        </p>
+        <div class="cs-flex-group">
+          <p class="cs-flex-p">
+            We believe in a personalized approach to each session. Our
+            therapists work with you to understand your unique concerns,
+            ensuring that every massage is focused on your health and
+            relaxation.
+          </p>
+          <span class="cs-name">Sarah Thompson</span>
+          <span class="cs-job">Founder & Lead Therapist</span>
+          <img
+            class="cs-quote-icon"
+            loading="lazy"
+            decoding="async"
+            src="https://csimg.nyc3.digitaloceanspaces.com/SideBySide/quote-white.svg"
+            alt="quote"
+            width="136"
+            height="77"
+          />
+        </div>
+        <a href="/services" class="cs-button-solid">Our Services</a>
+      </div>
+    </div>
+  </section>
+  <FAQ />
+  <CTA />
 
   <!-- ============================================ -->
   <!--            Extra Content To Rank             -->
@@ -287,42 +309,49 @@ const optimizedImage = await getOptimizedImage(landingImage)
         </picture>
       </div>
       <!-- Right Content Section-->
-<div class="cs-right">
-  <span class="cs-topper">Benefits of Massage Therapy</span>
-  <h2 class="cs-title">Reap the Benefits of Massage Therapy Today</h2>
-  <p class="cs-text">
-    Massage therapy is a proven way to relieve stress, ease muscle tension, and improve overall well-being. At Healing Touch Massage Therapy, we offer various techniques tailored to your needs, from relaxation to therapeutic treatments.
-  </p>
-  <p class="cs-text">
-    <strong>1. Reduces Stress</strong><br>
-    Massage helps lower stress hormones and boost relaxation, leaving you feeling calm and rejuvenated.
-  </p>
-  <p class="cs-text">
-    <strong>2. Eases Muscle Tension</strong><br>
-    Deep tissue and Swedish massage techniques target tight muscles, alleviating pain and discomfort.
-  </p>
-  <p class="cs-text">
-    <strong>3. Enhances Circulation</strong><br>
-    Improved blood flow helps reduce inflammation, promote healing, and increase energy levels.
-  </p>
-  <p class="cs-text">
-    <strong>4. Improves Flexibility</strong><br>
-    Regular massage can increase joint mobility and flexibility, promoting better movement and posture.
-  </p>
-  <p class="cs-text">
-    Experience the therapeutic benefits of massage and improve your quality of life. Book your appointment today!
-  </p>
-  <a href="/book-now" class="cs-button-solid">Book Your Massage Today</a>
-</div>
-</div>
-</section>
+      <div class="cs-right">
+        <span class="cs-topper">Benefits of Massage Therapy</span>
+        <h2 class="cs-title">Reap the Benefits of Massage Therapy Today</h2>
+        <p class="cs-text">
+          Massage therapy is a proven way to relieve stress, ease muscle
+          tension, and improve overall well-being. At Healing Touch Massage
+          Therapy, we offer various techniques tailored to your needs, from
+          relaxation to therapeutic treatments.
+        </p>
+        <p class="cs-text">
+          <strong>1. Reduces Stress</strong><br />
+          Massage helps lower stress hormones and boost relaxation, leaving you feeling
+          calm and rejuvenated.
+        </p>
+        <p class="cs-text">
+          <strong>2. Eases Muscle Tension</strong><br />
+          Deep tissue and Swedish massage techniques target tight muscles, alleviating
+          pain and discomfort.
+        </p>
+        <p class="cs-text">
+          <strong>3. Enhances Circulation</strong><br />
+          Improved blood flow helps reduce inflammation, promote healing, and increase
+          energy levels.
+        </p>
+        <p class="cs-text">
+          <strong>4. Improves Flexibility</strong><br />
+          Regular massage can increase joint mobility and flexibility, promoting
+          better movement and posture.
+        </p>
+        <p class="cs-text">
+          Experience the therapeutic benefits of massage and improve your
+          quality of life. Book your appointment today!
+        </p>
+        <a href="/book-now" class="cs-button-solid">Book Your Massage Today</a>
+      </div>
+    </div>
+  </section>
 
-
-    <!-- ============================================ -->
+  <!-- ============================================ -->
   <!--                    FAQ                       -->
   <!-- ============================================ -->
   <FAQ />
-  
+
   <!-- ============================================ -->
   <!--                   Reviews                    -->
   <!-- ============================================ -->
@@ -331,7 +360,9 @@ const optimizedImage = await getOptimizedImage(landingImage)
       <span class="cs-topper">Our Reviews</span>
       <h2 class="cs-title">Words From Our Happy Clients</h2>
       <p class="cs-text">
-        At Healing Touch Massage Therapy, we pride ourselves on providing exceptional care. Here's what some of our clients have to say about their experience with us.
+        At Healing Touch Massage Therapy, we pride ourselves on providing
+        exceptional care. Here's what some of our clients have to say about
+        their experience with us.
       </p>
       <ul class="cs-card-group">
         <!-- Review 1 -->
@@ -347,7 +378,10 @@ const optimizedImage = await getOptimizedImage(landingImage)
             height="80"
           />
           <p class="cs-item-p">
-            "I had an amazing experience at Healing Touch. The massage was exactly what I needed to relieve my stress and muscle tension. I left feeling completely relaxed and rejuvenated. Highly recommend to anyone looking for a professional, therapeutic massage."
+            "I had an amazing experience at Healing Touch. The massage was
+            exactly what I needed to relieve my stress and muscle tension. I
+            left feeling completely relaxed and rejuvenated. Highly recommend to
+            anyone looking for a professional, therapeutic massage."
           </p>
           <span class="cs-reviewer">
             Sarah L.
@@ -377,7 +411,10 @@ const optimizedImage = await getOptimizedImage(landingImage)
             height="80"
           />
           <p class="cs-item-p">
-            "The best massage therapy experience I've had! The therapist was professional and really listened to my needs. I walked out feeling refreshed and with significantly less pain in my lower back. I’ll definitely be coming back!"
+            "The best massage therapy experience I've had! The therapist was
+            professional and really listened to my needs. I walked out feeling
+            refreshed and with significantly less pain in my lower back. I’ll
+            definitely be coming back!"
           </p>
           <span class="cs-reviewer">
             James T.
@@ -407,7 +444,10 @@ const optimizedImage = await getOptimizedImage(landingImage)
             height="80"
           />
           <p class="cs-item-p">
-            "I’ve tried a few massage therapy places, but Healing Touch is by far the best. The environment is peaceful, and the staff is friendly and knowledgeable. My therapist worked wonders on my neck and shoulders. I can’t wait for my next visit!"
+            "I’ve tried a few massage therapy places, but Healing Touch is by
+            far the best. The environment is peaceful, and the staff is friendly
+            and knowledgeable. My therapist worked wonders on my neck and
+            shoulders. I can’t wait for my next visit!"
           </p>
           <span class="cs-reviewer">
             Emily W.
@@ -425,13 +465,14 @@ const optimizedImage = await getOptimizedImage(landingImage)
           />
         </li>
       </ul>
-      <a aria-label="read more reviews" href="/reviews" class="cs-button-solid">Our Reviews</a>
+      <a aria-label="read more reviews" href="/reviews" class="cs-button-solid"
+        >Our Reviews</a
+      >
     </div>
   </section>
-  
+
   <CTA />
-  </BaseLayout>
-  
+</BaseLayout>
 
 <style lang="less">
   /* STYLES FOR ABOVE THE FOLD */
@@ -443,7 +484,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
   /* Mobile - 360px */
   @media only screen and (min-width: 0em) {
     #hero {
-      font-family: "Roboto", "Arial", sans-serif;
+      font-family: 'Roboto', 'Arial', sans-serif;
       /* Centers button */
       text-align: center;
       /* changes on tablet */
@@ -466,7 +507,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
 
         &:before {
           /* Black Color Overlay */
-          content: "";
+          content: '';
           width: 100%;
           height: 100%;
           background: #000;
@@ -503,7 +544,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
 
         &:before {
           /* Left Line */
-          content: "";
+          content: '';
           width: 1px;
           height: 100%;
           background: -moz-linear-gradient(
@@ -587,7 +628,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
         z-index: 1;
 
         &:before {
-          content: "";
+          content: '';
           background: #000;
           opacity: 1;
           display: block;
@@ -628,7 +669,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
         padding: clamp(7em, 27.95vw, 17.5em) 0 clamp(9em, 30.95vw, 23.5em) 0;
         &:after {
           /* Right Line */
-          content: "";
+          content: '';
           width: 1px;
           height: 100%;
           background: -moz-linear-gradient(
@@ -659,7 +700,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
   /* Desktop Parallax Effect - 1300px */
   @media only screen and (min-width: 81.25em) {
     #hero {
-      background: url("/assets/images/hero.jpg");
+      background: url('/assets/images/hero.jpg');
       background-position: center;
       background-size: cover;
       background-repeat: no-repeat;
@@ -747,7 +788,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
   /* Inbetween */
   @media only screen and (min-width: 768px) {
     .services {
-      font-size: ~"min(1.8vw, 1em)";
+      font-size: ~'min(1.8vw, 1em)';
       width: 98%;
       display: flex;
       justify-content: space-between;
@@ -813,7 +854,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
 
       .cs-left {
         /* scaling the font size with the view width */
-        font-size: ~"min(2.31vw, .7em)";
+        font-size: ~'min(2.31vw, .7em)';
         /* using ems so we can use font size to scale the whole section */
         width: (631/16em);
         height: (636/16em);
@@ -939,7 +980,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
       }
 
       .cs-left {
-        font-size: ~"min(1.2vw, 1em)";
+        font-size: ~'min(1.2vw, 1em)';
         flex: none;
       }
 
@@ -1016,7 +1057,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
 
       .cs-left {
         /* scaling the font size with the view width */
-        font-size: ~"min(2.31vw, .7em)";
+        font-size: ~'min(2.31vw, .7em)';
         /* using ems so we can use font size to scale the whole section */
         width: (631/16em);
         height: (636/16em);
@@ -1137,7 +1178,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
       }
 
       .cs-left {
-        font-size: ~"min(1.2vw, 1em)";
+        font-size: ~'min(1.2vw, 1em)';
         /* sends it to the right */
         order: 2;
         flex: none;
@@ -1226,7 +1267,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
 
       .cs-image-group {
         /* used rem so it doesn't scale with the font size of on parent */
-        font-size: ~"min(1.1vw, 1em)";
+        font-size: ~'min(1.1vw, 1em)';
         width: 100%;
         max-width: (1322/16em);
         margin: 0 auto (60/16rem);
