@@ -7,6 +7,7 @@ import FAQ from '@components/FAQ.astro';
 import { getOptimizedImage } from '@js/utils';
 import aboutImage1 from '@assets/images/About-Section.TherapistImage.jpg';
 import aboutImage2 from '@assets/images/About-Section.TherapistImage1.webp';
+import heroImg from '@assets/images/hero-img.jpg';
 import landingImage from '@assets/images/landing.jpg'; // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
 import { Picture } from 'astro:assets';
 const optimizedImage = await getOptimizedImage(landingImage);
@@ -25,42 +26,50 @@ const optimizedImage = await getOptimizedImage(landingImage);
     <div class="cs-container">
       <div class="cs-flex-group">
         <span class="cs-topper">Healing Touch Massage - Edmonton</span>
-        <h1 class="cs-title">Relax, Rejuvenate, and Restore <br /></h1>
+        <h1 class="cs-title">Relax. Rejuvenate. Revive.</h1>
         <p class="cs-text">
           Professional massage therapy for relaxation, pain relief, and overall
           wellness in Edmonton.
         </p>
-        <a href="/about" class="cs-button-solid">Book Online</a>
+        <a href="/about" class="cs-button-solid">Call Now (780-123-4567)</a>
         <a href="/contact" class="cs-button-transparent">
-          <img
-            class="cs-img"
-            loading="lazy"
-            decoding="async"
-            src="https://csimg.nyc3.digitaloceanspaces.com/Hero/play.svg"
-            alt="play icon"
-            width="17"
-            height="17"
-          />
-          Call Now
+          <!-- <img -->
+          <!--   class="cs-img" -->
+          <!--   loading="lazy" -->
+          <!--   decoding="async" -->
+          <!--   src="https://csimg.nyc3.digitaloceanspaces.com/Hero/play.svg" -->
+          <!--   alt="play icon" -->
+          <!--   width="17" -->
+          <!--   height="17" -->
+          <!-- /> -->
+          Book Online
         </a>
       </div>
     </div>
 
     <!-- Background Image -->
     <!-- We can't use Astro <Picture /> as it does not support multiple sources -->
-    <picture class="cs-picture">
-      <source media="(max-width: 600px)" srcset="/assets/images/hero-m.webp" />
-      <source media="(min-width: 601px)" srcset="/assets/images/hero.jpg" />
-      <img
-        aria-hidden="true"
-        decoding="async"
-        src={optimizedImage.src}
-        alt="new home"
-        width="2500"
-        height="1667"
-        loading="eager"
-      />
-    </picture>
+    <Picture
+      src={heroImg}
+      alt="lady in a stone massage"
+      formats={['avif', 'webp']}
+      pictureAttributes={{ class: 'cs-picture' }}
+      loading="eager"
+    />
+
+    <!-- <picture class="cs-picture"> -->
+    <!--   <source media="(max-width: 600px)" srcset="/assets/images/hero-m.webp" /> -->
+    <!--   <source media="(min-width: 601px)" srcset="/assets/images/hero.jpg" /> -->
+    <!--   <img -->
+    <!--     aria-hidden="true" -->
+    <!--     decoding="async" -->
+    <!--     src={optimizedImage.src} -->
+    <!--     alt="new home" -->
+    <!--     width="2500" -->
+    <!--     height="1667" -->
+    <!--     loading="eager" -->
+    <!--   /> -->
+    <!-- </picture> -->
   </section>
 
   <!-- ============================================ -->
@@ -577,11 +586,12 @@ const optimizedImage = await getOptimizedImage(landingImage);
         justify-content: center;
         align-items: flex-start;
         flex-wrap: wrap;
+        gap: 1rem;
       }
 
       .cs-topper {
         text-align: center;
-        margin-bottom: (16/16rem);
+        //  margin-bottom: (16/16rem);
         color: var(--primary);
       }
 
@@ -589,6 +599,7 @@ const optimizedImage = await getOptimizedImage(landingImage);
         text-align: center;
         width: 100%;
         color: var(--bodyTextColorWhite);
+        margin-bottom: 0;
       }
 
       .cs-text {
@@ -596,7 +607,7 @@ const optimizedImage = await getOptimizedImage(landingImage);
         /* 32px - 40px */
         margin: 0 auto clamp(2rem, 4vw, 2.5rem) 0;
         /* 40px - 48px */
-        margin-bottom: clamp(2.5rem, 4vw, 3rem);
+        margin-bottom: clamp(1.5rem, 4vw, 2rem);
         color: var(--bodyTextColorWhite);
       }
 
@@ -604,6 +615,7 @@ const optimizedImage = await getOptimizedImage(landingImage);
         line-height: clamp(2.875em, 5.5vw, 3.5em);
         height: initial;
         margin-bottom: calc(16 / 16 * 1rem);
+        padding: 0 1rem;
       }
 
       .cs-button-transparent {
@@ -691,8 +703,9 @@ const optimizedImage = await getOptimizedImage(landingImage);
       }
 
       .cs-button-solid {
-        margin-right: (20/16rem);
+        // margin-right: (20/16rem);
         margin-bottom: 0;
+        padding: 0 1.875rem;
       }
     }
   }
