@@ -9,11 +9,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (adminEl) {
       const img = adminEl.querySelector("img");
+         const imgParent = img?.parentElement;
       const decapLogo = adminEl.querySelector("span.exus10f2");
 
-      if (img && decapLogo) {
+      if (img && decapLogo && imgParent) {
         // Check if both elements are now found
+            imgParent.setAttribute("style","width:auto");
         img.setAttribute("src", "/assets/images/bespokeog.png");
+         img.setAttribute("style"," filter: drop-shadow(2px 4px 6px black); width: clamp(300px, 35vw, 500px); border-radius: 12px; ")
         decapLogo.setAttribute("style", "display:none");
         observer.disconnect(); // Stop observing once changes are made
       }
@@ -46,21 +49,3 @@ document.addEventListener("DOMContentLoaded", () => {
   </body>
 </html>
 
-<style lang="less">
-@media screen and (min-width: 0) {
-  section.css-no93ty-StyledAuthenticationPage.exus10f5 {
-    .exus10f2.css-15mesr9-IconWrapper-NetlifyCreditIcon.e1jeq5dr1 {
-      display: none !important;
-    }
-
-    span.css-u6jh90-CustomIconWrapper.exus10f4 {
-      width: auto;
-      img {
-        filter: drop-shadow(2px 4px 6px black);
-        width: clamp(300px, 35vw, 500px);
-        border-radius: 12px;
-      }
-    }
-  }
-}
-</style>
