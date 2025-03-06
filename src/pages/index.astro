@@ -185,23 +185,70 @@ const promotionInfo: PromotionProps[] = [
   <!--               Promotional                    -->
   <!-- ============================================ -->
 
-  <section
-    class:list={[
-      'p-(--sectionPadding) max-w-[80rem] mx-auto grid-flow-col auto-cols-[100%] grid gap-6 ',
-      'overflow-x-auto overscroll-x-contain snap-x [&::-webkit-scrollbar]:hidden [scrollbar-width:none]',
-      'md:gap-4 *:place-self-center',
-      'lg:auto-cols-auto lg:grid-flow-row lg:grid-cols-3 lg:*:place-self-stretch',
-    ]}
-  >
-    {
-      promotionInfo.map((promo) => (
-        <PromotionCard
-          imgSrc={promo.imgSrc}
-          title={promo.title}
-          description={promo.description}
-        />
-      ))
-    }
+  <section class="relative max-w-[80rem] p-(--sectionPadding) mx-auto">
+    <!-- Left Arrow -->
+    <button
+      id="scrollLeft"
+      class="absolute left-1 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white rounded-full p-2 shadow-md hidden md:block lg:hidden"
+      aria-label="Scroll left"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+    </button>
+
+    <!-- Cards Container -->
+    <div
+      id="cardsContainer"
+      class:list={[
+        'py-12 px-5 grid-flow-col auto-cols-[100%] grid gap-6 ',
+        'overflow-x-auto overscroll-x-contain snap-x [&::-webkit-scrollbar]:hidden [scrollbar-width:none]',
+        'md:gap-4 *:place-self-center',
+        'lg:auto-cols-auto lg:grid-flow-row lg:grid-cols-3 lg:*:place-self-stretch',
+        'scroll-smooth lg:*:place-self-stretch', // Added for smooth scrolling
+      ]}
+    >
+      {
+        promotionInfo.map((promo) => (
+          <PromotionCard
+            imgSrc={promo.imgSrc}
+            title={promo.title}
+            description={promo.description}
+          />
+        ))
+      }
+    </div>
+
+    <!-- Right Arrow -->
+    <button
+      id="scrollRight"
+      class="absolute right-1 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white rounded-full p-2 shadow-md hidden md:block lg:hidden"
+      aria-label="Scroll right"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <polyline points="9 18 15 12 9 6"></polyline>
+      </svg>
+    </button>
   </section>
 
   <!-- ============================================ -->
@@ -520,6 +567,120 @@ const promotionInfo: PromotionProps[] = [
 
   <CTA />
 </BaseLayout>
+
+<script>
+  // TypeScript type definitions
+  interface ScrollState {
+    currentIndex: number;
+    totalItems: number;
+  }
+
+  // Get DOM elements with appropriate type assertions
+  const scrollLeftBtn = document.getElementById(
+    'scrollLeft'
+  ) as HTMLButtonElement | null;
+  const scrollRightBtn = document.getElementById(
+    'scrollRight'
+  ) as HTMLButtonElement | null;
+  const cardsContainer = document.getElementById(
+    'cardsContainer'
+  ) as HTMLDivElement | null;
+
+  // Initialize state to track current position
+  const state: ScrollState = {
+    currentIndex: 0,
+    totalItems: 3, // Fixed to your three items
+  };
+
+  // Show/hide arrows based on current index
+  function updateArrowVisibility(): void {
+    if (!scrollLeftBtn || !scrollRightBtn) return;
+
+    // Hide left arrow if at the beginning
+    scrollLeftBtn.classList.toggle('invisible', state.currentIndex === 0);
+
+    // Hide right arrow if at the end
+    scrollRightBtn.classList.toggle(
+      'invisible',
+      state.currentIndex === state.totalItems - 1
+    );
+
+    // In desktop mode (lg breakpoint), hide both arrows since all items are visible
+    const isDesktop = window.matchMedia('(min-width: 1024px)').matches;
+    if (isDesktop) {
+      scrollLeftBtn.classList.add('hidden');
+      scrollRightBtn.classList.add('hidden');
+    } else {
+      scrollLeftBtn.classList.remove('hidden');
+      scrollRightBtn.classList.remove('hidden');
+    }
+  }
+
+  // Scroll to a specific item by index
+  function scrollToIndex(index: number): void {
+    if (!cardsContainer) return;
+
+    // Ensure index is within bounds
+    index = Math.max(0, Math.min(index, state.totalItems - 1));
+
+    // Calculate the target scroll position
+    const itemWidth = cardsContainer.clientWidth;
+    const targetScroll = index * itemWidth;
+
+    // Perform the scroll with animation
+    cardsContainer.scrollTo({
+      left: targetScroll,
+      behavior: 'smooth',
+    });
+
+    // Update the state
+    state.currentIndex = index;
+
+    // Update visibility after scrolling
+    updateArrowVisibility();
+  }
+
+  // Set up event listeners
+  if (scrollLeftBtn) {
+    scrollLeftBtn.addEventListener('click', () => {
+      scrollToIndex(state.currentIndex - 1);
+    });
+  }
+
+  if (scrollRightBtn) {
+    scrollRightBtn.addEventListener('click', () => {
+      scrollToIndex(state.currentIndex + 1);
+    });
+  }
+
+  if (cardsContainer) {
+    // When user manually scrolls, update our index accordingly
+    cardsContainer.addEventListener('scroll', () => {
+      if (!cardsContainer) return;
+
+      const itemWidth = cardsContainer.clientWidth;
+      const scrollPosition = cardsContainer.scrollLeft;
+
+      // Calculate current index based on scroll position
+      const newIndex = Math.round(scrollPosition / itemWidth);
+
+      if (newIndex !== state.currentIndex) {
+        state.currentIndex = newIndex;
+        updateArrowVisibility();
+      }
+    });
+
+    // Handle window resize
+    window.addEventListener('resize', () => {
+      // Re-scroll to maintain position after resize
+      scrollToIndex(state.currentIndex);
+      updateArrowVisibility();
+    });
+
+    // Initial check
+    updateArrowVisibility();
+  }
+</script>
 
 <style lang="less">
   /* STYLES FOR ABOVE THE FOLD */
