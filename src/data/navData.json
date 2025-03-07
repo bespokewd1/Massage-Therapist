@@ -5,32 +5,23 @@
     "children": []
   },
   {
-    "key": "About Us",
+    "key": "Services",
     "url": "/about/",
     "children": []
   },
   {
-    "key": "Projects",
+    "key": "Direct Billing",
     "url": "/projects/",
-    "children": [
-      {
-        "key": "Project 1",
-        "url": "/projects/project-1/"
-      },
-      {
-        "key": "Project 2",
-        "url": "/projects/project-2/"
-      }
-    ]
-  },
-  {
-    "key": "Reviews",
-    "url": "/reviews/",
     "children": []
   },
   {
-    "key": "Blog",
+    "key": "Wellness Blog",
     "url": "/blog/",
-    "children": []     
+    "children": []
+  },
+  {
+    "key": "Contact",
+    "url": "/reviews/",
+    "children": []
   }
 ]

@@ -37,7 +37,7 @@ export function ImageSlider({
   return (
     <div
       className={cn(
-        'grid absolute inset-0 w-full h-full -z-[2] place-content-center',
+        'grid absolute inset-0 w-full h-full -z-[2] place-content-stretch',
         'before:content-[""] before:w-full before:h-full before:bg-black before:opacity-70 before:absolute before:inset-0 before:z-[1] before:pointer-events-none'
       )}
     >
