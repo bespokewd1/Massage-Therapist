@@ -2,8 +2,9 @@
 import client from '@data/client.json';
 import navData from '@data/navData.json';
 import { getCurrentYear } from '@js/utils';
-import MainLogo from '@components/Icons/MainLogo.astro';
-
+// import MainLogo from '@components/Icons/MainLogo.astro';
+import MainLogo from '@assets/images/MainLogo.svg';
+import { Image } from 'astro:assets';
 const currentYear = getCurrentYear();
 ---
 
@@ -20,7 +21,9 @@ const currentYear = getCurrentYear();
         <!--   width="264" -->
         <!--   height="78" -->
         <!-- /> -->
-        <MainLogo width={264} height={78} class="pb-6" />
+        <!-- <MainLogo width={264} height={78} class="pb-6" /> -->
+
+        <Image src={MainLogo} alt="Main logo massage" />
       </a>
     </div>
     <div class="right-section">
