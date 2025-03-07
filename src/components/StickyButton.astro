@@ -30,7 +30,7 @@ const { phoneNumber } = Astro.props;
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     const mainElement = document.getElementById('main');
-    let firstChildOfMain = null;
+    let firstChildOfMain: Element | null = null;
 
     if (mainElement) {
       const hero = document.getElementById('hero');

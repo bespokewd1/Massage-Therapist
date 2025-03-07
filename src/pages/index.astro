@@ -82,14 +82,6 @@ const heroImages = [heroImg, serviceImg1, serviceImg2];
     <!-- Background Image -->
     <!-- We can't use Astro <Picture /> as it does not support multiple sources -->
     <ImageSlider imgDatas={heroImages} isAutoSlide client:visible />
-
-    <!-- <Picture -->
-    <!--   src={heroImg} -->
-    <!--   alt="lady in a stone massage" -->
-    <!--   formats={['avif', 'webp']} -->
-    <!--   pictureAttributes={{ class: 'cs-picture' }} -->
-    <!--   loading="eager" -->
-    <!-- /> -->
   </section>
 
   <!-- ============================================ -->
@@ -97,7 +89,7 @@ const heroImages = [heroImg, serviceImg1, serviceImg2];
   <!-- ============================================ -->
 
   <section id="services" class="services">
-    <div class="card">
+    <article class="card">
       <picture>
         <img
           aria-hidden="true"
@@ -113,8 +105,8 @@ const heroImages = [heroImg, serviceImg1, serviceImg2];
         Talk about the service with keywords people will be searching for it by.
         Keep it 1-2 sentences.
       </p>
-    </div>
-    <div class="card">
+    </article>
+    <article class="card">
       <picture>
         <img
           aria-hidden="true"
@@ -130,8 +122,8 @@ const heroImages = [heroImg, serviceImg1, serviceImg2];
         Talk about the service with keywords people will be searching for it by.
         Keep it 1-2 sentences.
       </p>
-    </div>
-    <div class="card">
+    </article>
+    <article class="card">
       <picture>
         <img
           aria-hidden="true"
@@ -147,9 +139,9 @@ const heroImages = [heroImg, serviceImg1, serviceImg2];
         Talk about the service with keywords people will be searching for it by.
         Keep it 1-2 sentences.
       </p>
-    </div>
+    </article>
 
-    <div class="card">
+    <article class="card">
       <picture>
         <img
           aria-hidden="true"
@@ -165,9 +157,9 @@ const heroImages = [heroImg, serviceImg1, serviceImg2];
         Talk about the service with keywords people will be searching for it by.
         Keep it 1-2 sentences.
       </p>
-    </div>
+    </article>
 
-    <div class="card">
+    <article class="card">
       <picture>
         <img
           aria-hidden="true"
@@ -183,7 +175,7 @@ const heroImages = [heroImg, serviceImg1, serviceImg2];
         Talk about the service with keywords people will be searching for it by.
         Keep it 1-2 sentences.
       </p>
-    </div>
+    </article>
   </section>
 
   <!-- ============================================ -->
