@@ -2,6 +2,7 @@
 import navData from '@data/navData.json';
 import { Icon } from 'astro-icon/components';
 import DarkModeToggle from '@components/DarkModeToggle.astro';
+import MainLogo from '@components/Icons/MainLogo.astro';
 import { Image } from 'astro:assets';
 import logo from '@assets/images/Logo.jpg';
 ---
@@ -12,14 +13,15 @@ import logo from '@assets/images/Logo.jpg';
     <!--Nav Logo-->
     <a href="/" class="cs-logo" aria-label="back to home">
       <!-- <Image src={logo} alt="massage therapy logo"/> -->
-      <img
-        src="/assets/svgs/logo-black.svg"
-        alt=""
-        width="210"
-        height="29"
-        aria-hidden="true"
-        decoding="async"
-      />
+      <!-- <img -->
+      <!--   src="/assets/svgs/logo-black.svg" -->
+      <!--   alt="" -->
+      <!--   width="210" -->
+      <!--   height="29" -->
+      <!--   aria-hidden="true" -->
+      <!--   decoding="async" -->
+      <!-- /> -->
+      <MainLogo />
     </a>
     <!--Navigation List-->
     <nav class="cs-nav" role="navigation">
