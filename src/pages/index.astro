@@ -2,6 +2,7 @@
 import BaseLayout from 'src/layouts/BaseLayout.astro';
 import CTA from '@components/CTA.astro';
 import FAQ from '@components/FAQ.astro';
+import { ImageSlider } from '@components/React/Slider';
 import PromotionCard, {
   type PromotionProps,
 } from '@components/PromotionCard.astro';
@@ -40,6 +41,8 @@ const promotionInfo: PromotionProps[] = [
       'Experience the benefits of our Cupping Massage, a traditional therapy that enhances blood flow, reduces muscle tension, and supports natural detoxification. ',
   },
 ];
+
+const heroImages = [heroImg, serviceImg1, serviceImg2];
 ---
 
 <BaseLayout
@@ -78,13 +81,15 @@ const promotionInfo: PromotionProps[] = [
 
     <!-- Background Image -->
     <!-- We can't use Astro <Picture /> as it does not support multiple sources -->
-    <Picture
-      src={heroImg}
-      alt="lady in a stone massage"
-      formats={['avif', 'webp']}
-      pictureAttributes={{ class: 'cs-picture' }}
-      loading="eager"
-    />
+    <ImageSlider imgDatas={heroImages} isAutoSlide client:visible />
+
+    <!-- <Picture -->
+    <!--   src={heroImg} -->
+    <!--   alt="lady in a stone massage" -->
+    <!--   formats={['avif', 'webp']} -->
+    <!--   pictureAttributes={{ class: 'cs-picture' }} -->
+    <!--   loading="eager" -->
+    <!-- /> -->
   </section>
 
   <!-- ============================================ -->
@@ -1458,11 +1463,9 @@ const promotionInfo: PromotionProps[] = [
   /* Mobile - 360px - Contains hover animation */
   @media only screen and (min-width: 0em) {
     #gallery {
-      /* Centers button */
       text-align: center;
       padding: var(--sectionPadding);
       position: relative;
-      /* Prevents overflow from the image going off screen */
       overflow: hidden;
       .cs-container {
         width: 100%;
@@ -1482,7 +1485,6 @@ const promotionInfo: PromotionProps[] = [
       }
 
       .cs-image-group {
-        /* used rem so it doesn't scale with the font size of on parent */
         font-size: ~'min(1.1vw, 1em)';
         width: 100%;
         max-width: (1322/16em);
