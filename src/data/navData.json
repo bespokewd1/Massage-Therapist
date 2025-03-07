@@ -1,5 +1,10 @@
 [
   {
+    "key": "Home",
+    "url": "/",
+    "children": []
+  },
+  {
     "key": "Services",
     "url": "/#massage-services",
     "children": []
