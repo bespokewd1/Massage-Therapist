@@ -30,15 +30,17 @@ const optimizedImage = await getOptimizedImage(landingImage);
     <div class="flex flex-col gap-3">
       <span class="cs-topper text-(--secondary)">Direct Billing</span>
 
-      <div>
-        <h2 class="text-[clamp(1.3375rem,3.4vw,1.5625rem)] mb-4 uppercase">
+      <div class="flex flex-col gap-4">
+        <h2
+          class="text-[clamp(1.3375rem,3.4vw,1.5625rem)] uppercase text-(--primary)"
+        >
           can you direct bill my insurance, benefits provider or wcb coverage?
         </h2>
-        <p class="cs-text mb-2">
+        <p class="cs-text">
           Yes! We can direct bill to several insurance companies:
         </p>
 
-        <ul class="list-disc px-6">
+        <ul class="list-disc px-6 flex flex-col gap-3">
           <li>Alberta Blue Cross/ASEBP</li>
           <li>BPA</li>
           <li>Canada Life/Canada Life PSHCP</li>
@@ -73,11 +75,13 @@ const optimizedImage = await getOptimizedImage(landingImage);
           <li>UV Insurance</li>
         </ul>
       </div>
-      <div class="mt-4">
-        <h2 class="text-[clamp(1.3375rem,3.4vw,1.5625rem)] mb-4 uppercase">
+      <div class="mt-4 flex flex-col gap-4">
+        <h2
+          class="text-[clamp(1.3375rem,3.4vw,1.5625rem)] uppercase text-(--primary)"
+        >
           can osteopathy be direct billed?
         </h2>
-        <p class="cs-text mb-2">
+        <p class="cs-text">
           For Osteopathic treatment, no insurance companies in Alberta accept
           direct billing so far. You can still claim your insurance by
           submitting your receipt, which we will offer after you pay the
@@ -89,7 +93,7 @@ const optimizedImage = await getOptimizedImage(landingImage);
           for osteopathic treatment. Please get in touch with your insurance company
           to find out.
         </p>
-        <ul class="list-disc px-6">
+        <ul class="list-disc px-6 flex flex-col gap-3">
           <li>Alberta Blue Cross</li>
 
           <li>Canada Benefit providers</li>
