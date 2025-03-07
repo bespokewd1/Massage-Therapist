@@ -68,8 +68,11 @@ const heroImages = [heroImg, serviceImg1, serviceImg2];
           Professional massage therapy for relaxation, pain relief, and overall
           wellness in Edmonton.
         </p>
-        <a href="/about" class="cs-button-solid">Call Now (780-123-4567)</a>
-        <a href="/contact" class="cs-button-transparent">
+        <!-- <a href="/about" class="cs-button-solid">Call Now (780-123-4567)</a> -->
+        <a href="/about" class="cs-button-transparent"
+          >Call Now (780-123-4567)</a
+        >
+        <a href="/contact" class="cs-button-solid">
           <!-- <img -->
           <!--   class="cs-img" -->
           <!--   loading="lazy" -->
@@ -210,6 +213,7 @@ const heroImages = [heroImg, serviceImg1, serviceImg2];
   <!-- ============================================ -->
 
   <section
+    id="massage-services"
     class="relative overflow-hidden p-(--sectionPadding) lg:max-w-[80rem] mx-auto gap-4 flex flex-col md:gap-8"
   >
     <h2
@@ -228,43 +232,67 @@ const heroImages = [heroImg, serviceImg1, serviceImg2];
         class:list={[
           'grid grid-rows-[min-content_auto_auto] gap-2 transition-colors  p-4 mr-auto min-w-72 ',
           'sm:mr-0',
-          ' bg-orange-200/50 backdrop-blur-lg  rounded hover:bg-orange-200/75 ',
+          ' bg-teal-200/50 backdrop-blur-lg  rounded hover:bg-teal-200/75  group',
         ]}
       >
         <HotStoneIcon class="w-12 h-12 mb-4" />
-        <h2 class="text-2xl font-semibold">Therapeutic Massage</h2>
-        <p class="">some short text here</p>
+        <h2
+          class="text-2xl font-semibold group-hover:text-black transition-colors"
+        >
+          Therapeutic Massage
+        </h2>
+        <p class="group-hover:text-black transition-colors">
+          some short text here
+        </p>
       </article>
 
       <article
         class:list={[
           'grid grid-rows-[min-content_auto_auto] gap-2 transition-colors p-4 ml-auto min-w-72 sm:ml-0',
-          'bg-orange-50/50  md:bg-orange-200/50 backdrop-blur-lg  rounded hover:bg-orange-200/75 ',
+          'bg-teal-50/50  md:bg-teal-200/50 backdrop-blur-lg  rounded hover:bg-teal-200/75 group ',
         ]}
       >
         <HotStoneIcon class="w-12 h-12 mb-4" />
-        <h2 class="text-2xl font-semibold">Deep tissue Massage</h2>
-        <p class="">some short text here</p>
+        <h2
+          class="text-2xl font-semibold group-hover:text-black transition-colors"
+        >
+          Deep tissue Massage
+        </h2>
+        <p class="group-hover:text-black transition-colors">
+          some short text here
+        </p>
       </article>
       <article
         class:list={[
           'grid grid-rows-[min-content_auto_auto] gap-2 transition-colors p-4 mr-auto min-w-72 sm:mr-0',
-          ' bg-orange-200/50 backdrop-blur-lg  rounded hover:bg-orange-200/75 ',
+          ' bg-teal-200/50 backdrop-blur-lg  rounded hover:bg-teal-200/75 ',
         ]}
       >
         <HotStoneIcon class="w-12 h-12 mb-4" />
-        <h2 class="text-2xl font-semibold">Relaxation Massage</h2>
-        <p class="">some short text here</p>
+        <h2
+          class="text-2xl font-semibold group-hover:text-black transition-colors"
+        >
+          Relaxation Massage
+        </h2>
+        <p class="group-hover:text-black transition-colors">
+          some short text here
+        </p>
       </article>
       <article
         class:list={[
           'grid grid-rows-[min-content_auto_auto] gap-2 transition-colors rounded p-4 ml-auto min-w-72 sm:ml-0',
-          ' bg-orange-50/50 md:bg-orange-200/50  hover:bg-orange-200/75  backdrop-blur-lg ',
+          ' bg-teal-50/50 md:bg-teal-200/50  hover:bg-teal-200/75  backdrop-blur-lg ',
         ]}
       >
         <HotStoneIcon class="w-12 h-12 mb-4" />
-        <h2 class="text-2xl font-semibold">Hotstone Massage</h2>
-        <p class="">some short text here</p>
+        <h2
+          class="text-2xl font-semibold group-hover:text-black transition-colors"
+        >
+          Hotstone Massage
+        </h2>
+        <p class="group-hover:text-black transition-colors">
+          some short text here
+        </p>
       </article>
     </div>
 
@@ -297,45 +325,6 @@ const heroImages = [heroImg, serviceImg1, serviceImg2];
           alt="massage therapist"
           pictureAttributes={{ class: 'cs-picture cs-picture2' }}
         />
-        <!-- <picture class="cs-picture cs-picture1"> -->
-        <!--   <source -->
-        <!--     media="(max-width: 600px)" -->
-        <!--     srcset="/assets/images/cabinets2-m.jpg" -->
-        <!--   /> -->
-        <!--   <source -->
-        <!--     media="(min-width: 601px)" -->
-        <!--     srcset="/assets/images/cabinets2.jpg" -->
-        <!--   /> -->
-        <!--   <img -->
-        <!--     aria-hidden="true" -->
-        <!--     decoding="async" -->
-        <!--     src="/assets/images/cabinets2.jpg" -->
-        <!--     alt="cabinets" -->
-        <!--     loading="lazy" -->
-        <!--     width="400" -->
-        <!--     height="563" -->
-        <!--   /> -->
-        <!-- </picture> -->
-
-        <!-- <picture class="cs-picture cs-picture2"> -->
-        <!--   <source -->
-        <!--     media="(max-width: 600px)" -->
-        <!--     srcset="/assets/images/construction-m.jpg" -->
-        <!--   /> -->
-        <!--   <source -->
-        <!--     media="(min-width: 601px)" -->
-        <!--     srcset="/assets/images/construction.jpg" -->
-        <!--   /> -->
-        <!--   <img -->
-        <!--     aria-hidden="true" -->
-        <!--     decoding="async" -->
-        <!--     src="/assets/images/construction.jpg" -->
-        <!--     alt="house" -->
-        <!--     loading="lazy" -->
-        <!--     width="400" -->
-        <!--     height="563" -->
-        <!--   /> -->
-        <!-- </picture> -->
       </div>
       <!-- Right Content Section-->
       <div class="cs-right">
@@ -466,11 +455,6 @@ const heroImages = [heroImg, serviceImg1, serviceImg2];
       </div>
     </div>
   </section>
-
-  <!-- ============================================ -->
-  <!--                    FAQ                       -->
-  <!-- ============================================ -->
-  <FAQ />
 
   <!-- ============================================ -->
   <!--                   Reviews                    -->
@@ -850,15 +834,15 @@ const heroImages = [heroImg, serviceImg1, serviceImg2];
         /* 46px - 56px */
         line-height: clamp(2.875em, 5.5vw, 3.5em);
         text-decoration: none;
-        width: (180/16rem);
+        //  width: (180/16rem);
+        width: max-content;
         /* 46px - 56px */
         height: clamp(2.875em, 5.5vw, 3.5em);
         margin: 0 (8/16rem);
         box-sizing: border-box;
-        padding: 0;
+        padding: 0 0.5rem;
         color: #fff;
         background-color: transparent;
-        border: 1px solid var(--bodyTextColorWhite);
         display: inline-flex;
         justify-content: center;
         align-items: center;
@@ -1037,7 +1021,8 @@ const heroImages = [heroImg, serviceImg1, serviceImg2];
           margin-bottom: 13/20em;
           color: #1a1a1a;
           backdrop-filter: blur(20px);
-          background-color: #e2d4c2b3;
+          background-color: #d6f1f5b3;
+
           border-top-left-radius: 8px;
           border-top-right-radius: 8px;
           width: 75%;

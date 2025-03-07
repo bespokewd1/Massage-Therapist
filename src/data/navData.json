@@ -1,12 +1,7 @@
 [
   {
-    "key": "Home",
-    "url": "/",
-    "children": []
-  },
-  {
     "key": "Services",
-    "url": "/about/",
+    "url": "/#massage-services",
     "children": []
   },
   {
@@ -21,7 +16,7 @@
   },
   {
     "key": "Contact",
-    "url": "/reviews/",
+    "url": "/contact/",
     "children": []
   }
 ]
