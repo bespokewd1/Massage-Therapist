@@ -14,6 +14,9 @@ import aboutImage2 from '@assets/images/About-Section.TherapistImage1.webp';
 import serviceImg1 from '@assets/images/Services-1.TherapeuticMassage.jpg';
 import serviceImg2 from '@assets/images/Services-2.DeepTissueMassage.jpg';
 import serviceImg3 from '@assets/images/Services-3.RelaxationMassage.jpg';
+import promoImag1 from '@assets/images/promo-1.webp';
+import promoImag2 from '@assets/images/promo-2.webp';
+import promoImag3 from '@assets/images/promo-3.webp';
 
 import heroImg from '@assets/images/hero-img.jpg';
 import landingImage from '@assets/images/landing.jpg'; // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
@@ -89,42 +92,16 @@ const heroImages = [heroImg, serviceImg1, serviceImg2];
   <!-- ============================================ -->
 
   <section id="services" class="services">
+    <h2 class="cs-header">Announcement</h2>
     <article class="card">
-      <picture>
-        <img
-          aria-hidden="true"
-          decoding="async"
-          src="/assets/svgs/service1.svg"
-          alt="appliance"
-          width="48"
-          height="48"
-        />
-      </picture>
-      <h2>Therapeutic Massage</h2>
-      <p>
-        Talk about the service with keywords people will be searching for it by.
-        Keep it 1-2 sentences.
-      </p>
-    </article>
-    <article class="card">
-      <picture>
-        <img
-          aria-hidden="true"
-          decoding="async"
-          src="/assets/svgs/service2.svg"
-          alt="appliance"
-          width="48"
-          height="48"
-        />
-      </picture>
-      <h2>Deep tissue Massage</h2>
-      <p>
-        Talk about the service with keywords people will be searching for it by.
-        Keep it 1-2 sentences.
-      </p>
-    </article>
-    <article class="card">
-      <picture>
+      <Picture
+        src={promoImag1}
+        alt="lady in a stone massage"
+        formats={['avif', 'webp']}
+        pictureAttributes={{ class: 'cs-picture' }}
+      />
+
+      <!-- <picture>
         <img
           aria-hidden="true"
           decoding="async"
@@ -133,16 +110,22 @@ const heroImages = [heroImg, serviceImg1, serviceImg2];
           width="48"
           height="48"
         />
-      </picture>
-      <h2>Relaxation Massage</h2>
-      <p>
+      </picture> -->
+      <h3>10% discount for new customer</h3>
+      <!-- <p>
         Talk about the service with keywords people will be searching for it by.
         Keep it 1-2 sentences.
-      </p>
+      </p> -->
     </article>
 
     <article class="card">
-      <picture>
+      <Picture
+        src={promoImag2}
+        alt="lady in a stone massage"
+        formats={['avif', 'webp']}
+        pictureAttributes={{ class: 'cs-picture' }}
+      />
+      <!-- <picture>
         <img
           aria-hidden="true"
           decoding="async"
@@ -151,16 +134,22 @@ const heroImages = [heroImg, serviceImg1, serviceImg2];
           width="48"
           height="48"
         />
-      </picture>
-      <h2>Hotstone Massage</h2>
-      <p>
+      </picture> -->
+      <h3>Direct Billing available</h3>
+      <!-- <p>
         Talk about the service with keywords people will be searching for it by.
         Keep it 1-2 sentences.
-      </p>
+      </p> -->
     </article>
 
     <article class="card">
-      <picture>
+      <Picture
+        src={promoImag3}
+        alt="lady in a stone massage"
+        formats={['avif', 'webp']}
+        pictureAttributes={{ class: 'cs-picture' }}
+      />
+      <!-- <picture>
         <img
           aria-hidden="true"
           decoding="async"
@@ -169,12 +158,12 @@ const heroImages = [heroImg, serviceImg1, serviceImg2];
           width="48"
           height="48"
         />
-      </picture>
-      <h2>Cupping Massage</h2>
-      <p>
+      </picture> -->
+      <h3>Sample Message</h3>
+      <!-- <p>
         Talk about the service with keywords people will be searching for it by.
         Keep it 1-2 sentences.
-      </p>
+      </p> -->
     </article>
   </section>
 
@@ -947,28 +936,42 @@ const heroImages = [heroImg, serviceImg1, serviceImg2];
       margin: auto;
       margin-top: (-167/16em);
       margin-bottom: (50/16em);
-      padding: (50/16em) (20/16em);
+      padding: 5rem (20/16em) (50/16em);
       background: #fff;
       box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.05);
       border-top: (6/16em) solid var(--primary);
       border-radius: (5/16em);
       position: relative;
       z-index: 100;
+      gap: 0.5rem;
+
+      .cs-header {
+        position: absolute;
+        top: 2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: var(--headerFontSize);
+        font-weight: bold;
+      }
       .card {
         width: 100%;
+        position: relative;
         max-width: (357/16em);
         margin: auto;
         margin-bottom: (50/16em);
-        display: block;
-        &:last-of-type {
-          margin-bottom: 0;
-        }
+        // display: block;
+        display: grid;
+        grid-template-rows: min-content 1fr;
+
+        // &:last-of-type {
+        //   margin-bottom: 0;
+        // }
 
         picture {
-          width: (88/16em);
-          height: (88/16em);
-          margin: auto;
-          margin-bottom: (23/16em);
+          width: 100%;
+          height: 100%;
+          //   margin: auto;
+          //   margin-bottom: (23/16em);
           background: var(--primary);
           border-radius: 50%;
           display: flex;
@@ -976,23 +979,31 @@ const heroImages = [heroImg, serviceImg1, serviceImg2];
           align-items: center;
 
           img {
-            width: (48/16em);
-            height: (48/16em);
+            width: 100%;
+            height: 100%;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            aspect-ratio: 1/1;
+            object-fit: cover;
           }
         }
-        h2 {
-          font-size: (32/16em);
+
+        h3 {
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          font-size: (24/16em);
           font-weight: 700;
           line-height: 27/20em;
           text-align: center;
           margin-bottom: 13/20em;
           color: #1a1a1a;
-        }
-        p {
-          line-height: 24/18em;
-          text-align: center;
-          width: 100%;
-          opacity: 0.7;
+          background-color: var(--medium);
+          border-top-left-radius: 8px;
+          border-top-right-radius: 8px;
+          width: 75%;
+          min-height: 25%;
         }
       }
     }
@@ -1007,9 +1018,30 @@ const heroImages = [heroImg, serviceImg1, serviceImg2];
       justify-content: space-between;
       align-items: flex-start;
 
+      .cs-header {
+        top: 0.5rem;
+      }
+
       .card {
         max-width: (325/16em);
         margin: 0;
+        grid-template-rows: min-content;
+
+        overflow: hidden;
+        picture,
+        h3 {
+          transition: transform 300ms ease;
+        }
+
+        &:hover {
+          picture {
+            transform: scale(1.1);
+          }
+
+          h3 {
+            transform: translateX(-50%);
+          }
+        }
       }
     }
   }
@@ -1017,7 +1049,10 @@ const heroImages = [heroImg, serviceImg1, serviceImg2];
   /* Large Desktop */
   @media only screen and (min-width: 1300px) {
     .services {
-      padding: (50/16em) (80/16em);
+      padding: 5rem (80/16em) (50/16em);
+      .cs-header {
+        top: 0;
+      }
 
       .card {
         max-width: (357/16em);
@@ -1035,7 +1070,7 @@ const heroImages = [heroImg, serviceImg1, serviceImg2];
           background: var(--primaryDark);
         }
 
-        h2 {
+        h3 {
           font-weight: bold;
           color: #fff;
         }
