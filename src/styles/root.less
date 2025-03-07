@@ -83,7 +83,7 @@
     }
 
     &:before {
-      content: "";
+      content: '';
 
       //Transition properties
       width: 0;
@@ -107,40 +107,88 @@
   /* roboto-regular - latin */
   @font-face {
     font-style: normal;
-    font-family: "Roboto";
+    font-family: 'Roboto';
     font-weight: 400;
     font-display: swap;
-    src: local(""),
-      url("/assets/fonts/roboto-v29-latin-regular.woff2") format("woff2"),
+    src:
+      local(''),
+      url('/assets/fonts/roboto-v29-latin-regular.woff2') format('woff2'),
       /* Chrome 26+, Opera 23+, Firefox 39+ */
-        url("/assets/fonts/roboto-v29-latin-regular.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+        url('/assets/fonts/roboto-v29-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
   }
   /* roboto-700 - latin */
   @font-face {
     font-style: normal;
-    font-family: "Roboto";
+    font-family: 'Roboto';
     font-weight: 700;
     font-display: swap;
-    src: local(""),
-      url("/assets/fonts/roboto-v29-latin-700.woff2") format("woff2"),
+    src:
+      local(''),
+      url('/assets/fonts/roboto-v29-latin-700.woff2') format('woff2'),
       /* Chrome 26+, Opera 23+, Firefox 39+ */
-        url("/assets/fonts/roboto-v29-latin-700.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+        url('/assets/fonts/roboto-v29-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
   }
   /* roboto-900 - latin */
   @font-face {
     font-style: normal;
-    font-family: "Roboto";
+    font-family: 'Roboto';
     font-weight: 900;
     font-display: swap;
-    src: local(""),
-      url("/assets/fonts/roboto-v29-latin-900.woff2") format("woff2"),
+    src:
+      local(''),
+      url('/assets/fonts/roboto-v29-latin-900.woff2') format('woff2'),
       /* Chrome 26+, Opera 23+, Firefox 39+ */
-        url("/assets/fonts/roboto-v29-latin-900.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+        url('/assets/fonts/roboto-v29-latin-900.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+
+  /* open-sans-regular - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/assets/fonts/open-sans-v40-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+
+  /* open-sans-500 - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 500;
+    src: url('/assets/fonts/open-sans-v40-latin-500.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+
+  /* open-sans-600 - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    src: url('/assets/fonts/open-sans-v40-latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+
+  /* open-sans-700 - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    src: url('/assets/fonts/open-sans-v40-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+
+  /* open-sans-800 - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 800;
+    src: url('/assets/fonts/open-sans-v40-latin-800.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
   }
 
   body,
   html {
-    font-family: "Roboto", Arial, sans-serif;
+    font-family: 'Open Sans', 'Roboto', Arial, sans-serif;
     font-size: 100%;
     margin: 0;
     padding: 0;
@@ -272,7 +320,9 @@
     .cs-moon {
       z-index: 2;
       // Transition properties
-      transition: transform 0.3s, opacity 0.3s;
+      transition:
+        transform 0.3s,
+        opacity 0.3s;
 
       // fill: yellow; --> uncomment to change the color of the moon if needed
     }
@@ -282,7 +332,9 @@
       z-index: 1;
       // Transition property
       transform: translate(-50%, 100%);
-      transition: transform 0.3s, opacity 0.3s;
+      transition:
+        transform 0.3s,
+        opacity 0.3s;
     }
   }
 }
@@ -301,7 +353,3 @@
     }
   }
 }
-
-
-
-
