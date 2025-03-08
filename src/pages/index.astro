@@ -963,6 +963,63 @@ const heroImages = [heroImg, serviceImg1, serviceImg2];
     }
   }
 
+    /*-- -------------------------- -->
+<---         Introduction           -->
+<--- -------------------------- -*/
+
+  /* Mobile */
+  @media only screen and (min-width: 0em) {
+    .introduction{
+      padding: var(--sectionPadding);
+      position: relative;
+
+      .cs-container {
+        width: 100%;
+        /* changes to 1280px at desktop */
+        max-width: (584/16rem);
+        margin: 2em auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* 48px - 64px */
+        gap: clamp(3rem, 6vw, 4rem);
+      }
+
+      .cs-topper {
+        text-align: center;
+        //  margin-bottom: (16/16rem);
+        // color: var(--primary);
+        color: var(--medium);
+      }
+
+      .cs-title {
+        text-align: center;
+        width: 100%;
+        color: var(--bodyTextColorWhite);
+        margin-bottom: 0;
+      }
+
+      .cs-text {
+        text-align: center;
+        /* 32px - 40px */
+        margin: 0 auto clamp(2rem, 4vw, 2.5rem) 0;
+        /* 40px - 48px */
+        margin-bottom: clamp(1.5rem, 4vw, 2rem);
+        color: var(--bodyTextColorWhite);
+      }
+      
+      .cs-content {
+        /* set text align to left if content needs to be left aligned */
+        text-align: center;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        /* centers content horizontally, set to flex-start to left align */
+        align-items: center;
+      }
+    }
+  }
+
   /*-- -------------------------- -->
 <---          Services          -->
 <--- -------------------------- -*/
