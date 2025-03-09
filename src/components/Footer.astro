@@ -5,6 +5,7 @@ import { getCurrentYear } from '@js/utils';
 // import MainLogo from '@components/Icons/MainLogo.astro';
 import MainLogo from '@assets/images/MainLogo.svg';
 import { Image } from 'astro:assets';
+import { Picture } from 'astro:assets';
 import googleReviewsLogo from '@assets/images/google-reviews-logo.webp';
 const currentYear = getCurrentYear();
 ---
@@ -37,7 +38,12 @@ const currentYear = getCurrentYear();
           </a>
         </div>
         <a href="#">
-          <img src={googleReviewsLogo} alt="" height="32">
+          <Picture
+            src={googleReviewsLogo}
+            alt=""
+            formats={['avif', 'webp']}
+            pictureAttributes={{ class: 'cs-picture' }}
+          />
         </a>
       </div>
     </div>
