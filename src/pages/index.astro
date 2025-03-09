@@ -18,6 +18,7 @@ import promoImag1 from '@assets/images/promo-1.webp';
 import promoImag2 from '@assets/images/promo-2.webp';
 import promoImag3 from '@assets/images/promo-3.webp';
 import serviceBgImg from '@assets/images/Blog2-HeaderPhoto.jpg';
+import checkMark from '@assets/images/check-mark.png';
 
 import heroImg from '@assets/images/hero-img.jpg';
 import landingImage from '@assets/images/landing.jpg'; // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
@@ -435,16 +436,17 @@ const heroImages = [heroImg, serviceImg1, serviceImg2];
   <!-- ============================================ -->
   <section id="sbs-1067">
     <div class="cs-container">
-      <div class="cs-content">
-
-      </div>
         <span class="cs-topper">WE GUARANTEE</span>
         <h2 class="cs-title">Why Choose Us?</h2>
         <div class="cs-content">
-          <img src="/src/assets/images/check-mark.png" alt="">
           <div>
-            <p><b>Certified & Skilled Therapists</b></p>
-            <p>Trained professionals ensuring quality care.</p>
+            <Picture
+              src={checkMark}
+            />
+            <div>
+              <p><b>Certified & Skilled Therapists</b></p>
+             <p>Trained professionals ensuring quality care.</p>
+            </div> 
           </div>
           <div>
             <p><b>Convenient Home Service</b></p>
