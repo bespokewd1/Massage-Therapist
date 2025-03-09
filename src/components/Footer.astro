@@ -5,6 +5,7 @@ import { getCurrentYear } from '@js/utils';
 // import MainLogo from '@components/Icons/MainLogo.astro';
 import MainLogo from '@assets/images/MainLogo.svg';
 import { Image } from 'astro:assets';
+import googleReviewsLogo from '@assets/images/google-reviews-logo.webp';
 const currentYear = getCurrentYear();
 ---
 
@@ -35,6 +36,9 @@ const currentYear = getCurrentYear();
             <img class="cs-social-img" src="https://kms-draft.netlify.app/assets/images/instagram.svg/" alt="Instagram" width="11" height="11">
           </a>
         </div>
+        <a href="#">
+          <img src={googleReviewsLogo} alt="" height="32">
+        </a>
       </div>
     </div>
 
