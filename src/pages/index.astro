@@ -447,8 +447,10 @@ const heroImages = [heroImg, serviceImg1, serviceImg2];
                 formats={['avif', 'webp']}
                 pictureAttributes={{ class: 'cs-picture' }}
               />
-              <p><b>Certified & Skilled Therapists</b></p>
-             <p>Trained professionals ensuring quality care.</p>
+              <div>
+                <p><b>Certified & Skilled Therapists</b></p>
+                <p>Trained professionals ensuring quality care.</p>
+              </div>
             </div> 
           </div>
           <div class="content">
@@ -1975,11 +1977,18 @@ const heroImages = [heroImg, serviceImg1, serviceImg2];
       }
       .cs-content{
         display: flex;
+        flex-direction: row;
         justify-content: center;
         gap: 10px;
       }
       .content{
+        display: flex;
+        gap: 10px;
         padding: 0 2rem;
+      }
+      .cs-picture{
+        height: auto;
+        width: auto;
       }
       .cs-topper {
         text-align: center;
