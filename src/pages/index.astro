@@ -439,16 +439,16 @@ const heroImages = [heroImg, serviceImg1, serviceImg2];
         <h2 class="cs-title">Why Choose Us?</h2>
         <div class="cs-content">
           <div>
-            <div>
+            <div class="content">
               <p><b>Certified & Skilled Therapists</b></p>
              <p>Trained professionals ensuring quality care.</p>
             </div> 
           </div>
-          <div>
+          <div class="content">
             <p><b>Convenient Home Service</b></p>
             <p>Relax without leaving your space.</p>
           </div>
-          <div>
+          <div class="content">
             <p><b>Personalized Experience</b></p>
             <p>Tailored massages for your unique needs.</p>
           </div>
@@ -1971,7 +1971,9 @@ const heroImages = [heroImg, serviceImg1, serviceImg2];
         justify-content: center;
         gap: 10px;
       }
-
+      .content{
+        padding: 0 2rem;
+      }
       .cs-topper {
         text-align: center;
         margin-bottom: (16/16rem);
