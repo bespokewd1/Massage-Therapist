@@ -309,19 +309,27 @@
 
 /* Mobile - 1024px */
 @media only screen and (min-width: 64em) {
-    .main-content{
-        flex-direction: row;
-        justify-content: space-between;
-        .recent-articles {
-            width: 30%;
-            .article-group{
-                height: 25rem;
+    //for homepage
+    #blog{
+        .main-content{
+            flex-direction: row;
+            justify-content: space-between;
+            .recent-articles {
+                width: 30%;
+                .article-group{
+                    height: 25rem;
+                }
+                .blog-h1 {
+                    max-width: (500/16rem);
+                }
             }
-            .blog-h1 {
-                max-width: (500/16rem);
-            }
+        } 
+    }
+    .recent-articles {
+        .blog-h1 {
+            max-width: (500/16rem);
         }
-    } 
+    }
 }
 
 /* Dark Mode */
