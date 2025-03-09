@@ -18,6 +18,7 @@ import promoImag1 from '@assets/images/promo-1.webp';
 import promoImag2 from '@assets/images/promo-2.webp';
 import promoImag3 from '@assets/images/promo-3.webp';
 import serviceBgImg from '@assets/images/Blog2-HeaderPhoto.jpg';
+import checkMark from '@assets/images/check-mark.png';
 
 import heroImg from '@assets/images/hero-img.jpg';
 import landingImage from '@assets/images/landing.jpg'; // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
@@ -440,6 +441,12 @@ const heroImages = [heroImg, serviceImg1, serviceImg2];
         <div class="cs-content">
           <div>
             <div class="content">
+              <Picture
+                src={promoImag2}
+                alt="lady in a stone massage"
+                formats={['avif', 'webp']}
+                pictureAttributes={{ class: 'cs-picture' }}
+              />
               <p><b>Certified & Skilled Therapists</b></p>
              <p>Trained professionals ensuring quality care.</p>
             </div> 
