@@ -3,12 +3,14 @@ import BaseLayout from 'src/layouts/BaseLayout.astro';
 import CTA from '@components/CTA.astro';
 import FAQ from '@components/FAQ.astro';
 import { ImageSlider } from '@components/React/Slider';
+import { getCollection } from "astro:content";
+
 import PromotionCard, {
   type PromotionProps,
 } from '@components/PromotionCard.astro';
 
 // Optimize our landing image and pass it as props to the BaseLayout (for preloading) and Landing (for rendering)
-import { getOptimizedImage } from '@js/utils';
+import { formatDate, getOptimizedImage } from '@js/utils';
 import aboutImage1 from '@assets/images/About-Section.TherapistImage.jpg';
 import aboutImage2 from '@assets/images/About-Section.TherapistImage1.webp';
 import serviceImg1 from '@assets/images/Services-1.TherapeuticMassage.jpg';
@@ -49,6 +51,11 @@ const promotionInfo: PromotionProps[] = [
 ];
 
 const heroImages = [heroImg, serviceImg1, serviceImg2];
+
+const posts = await getCollection("blog");
+posts.sort(
+  (a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf()
+);
 ---
 
 <BaseLayout
@@ -606,7 +613,59 @@ const heroImages = [heroImg, serviceImg1, serviceImg2];
   <!-- ============================================ -->
   <!--                 Blog Section                 -->
   <!-- ============================================ -->
-
+  <section id="blog">
+    <div class="cs-container">
+      <div class="cs-content">
+        <span class="cs-topper">Our Blog</span>
+        <h2 class="cs-title">Wellness Tips & Massage Insights</h2>
+        <p class="cs-text">Explore expert advice on relaxation, pain relief, and self-care.</p>
+      </div>
+      <div class="main-content">
+        <!-- ============================================ -->
+        <!--                 Blog Articles                -->
+        <!-- ============================================ -->
+        {posts.length === 0 && <h1>No Recent Posts</h1>}
+        {
+          posts.length >= 1 &&
+            posts.map((post) => (
+              <article class="recent-articles">
+                <picture class="blog-mainImage">
+                  <Image
+                    src={post.data.image}
+                    alt={post.data.imageAlt}
+                    width="795"
+                    height="400"
+                    decoding="async"
+                  />
+                </picture>
+  
+                <div class="article-group">
+                  <div class="blog-authorGroup">
+                    <picture class="blog-author-img">
+                      <img
+                        src="/assets/svgs/profile.svg"
+                        alt="house"
+                        width="32"
+                        height="32"
+                        decoding="async"
+                      />
+                    </picture>
+                    <span class="blog-author">{post.data.author}</span>
+                    <span aria-hidden="true" class="blog-dot" />
+                    <span class="blog-date">{formatDate(post.data.date)}</span>
+                  </div>
+                  <h2 class="blog-h1">{post.data.title}</h2>
+                  <p class="blog-desc">{post.data.description}</p>
+                  <a href={post.id} class="blog-link">
+                    Continue Reading
+                  </a>
+                </div>
+              </article>
+            ))
+        }
+      </div>
+    </div>
+  </section>
 
 
   <!-- ============================================ -->
