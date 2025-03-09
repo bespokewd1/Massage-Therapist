@@ -454,12 +454,28 @@ const heroImages = [heroImg, serviceImg1, serviceImg2];
             </div> 
           </div>
           <div class="content">
-            <p><b>Convenient Home Service</b></p>
-            <p>Relax without leaving your space.</p>
+            <Picture
+                src={checkMark}
+                alt="lady in a stone massage"
+                formats={['avif', 'webp']}
+                pictureAttributes={{ class: 'cs-picture' }}
+              />
+              <div>
+                <p><b>Convenient Home Service</b></p>
+                <p>Relax without leaving your space.</p>
+              </div>
           </div>
           <div class="content">
-            <p><b>Personalized Experience</b></p>
-            <p>Tailored massages for your unique needs.</p>
+            <Picture
+                src={checkMark}
+                alt="lady in a stone massage"
+                formats={['avif', 'webp']}
+                pictureAttributes={{ class: 'cs-picture' }}
+              />
+              <div>
+                <p><b>Personalized Experience</b></p>
+                <p>Tailored massages for your unique needs.</p>
+              </div>
           </div>
         </div>
     </div>
@@ -1977,7 +1993,7 @@ const heroImages = [heroImg, serviceImg1, serviceImg2];
       }
       .cs-content{
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         justify-content: center;
         gap: 10px;
       }
@@ -1987,7 +2003,7 @@ const heroImages = [heroImg, serviceImg1, serviceImg2];
         padding: 0 2rem;
       }
       .cs-picture{
-        width: (40/16rem);
+        width: (16/16rem);
         height: auto;
       }
       .cs-topper {
