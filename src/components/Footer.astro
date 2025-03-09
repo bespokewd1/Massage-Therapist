@@ -122,7 +122,6 @@ const currentYear = getCurrentYear();
           margin: auto;
           margin-bottom: (30/16em);
           display: inline-block;
-          margin: 0 2rem;
           img {
             width: auto;
             height: 100%;
@@ -257,6 +256,11 @@ const currentYear = getCurrentYear();
   /* tablet */
   @media only screen and (min-width: 48em) {
     #footer {
+      .left-section{
+        .logo{
+          margin: 0 2rem;
+        }
+      }
       .right-section {
         max-width: 40rem;
         .lists {
@@ -299,6 +303,7 @@ const currentYear = getCurrentYear();
           text-align: left;
           height: (40/16rem);
           margin-left: 0;
+          margin: 0 2rem;
         }
 
         p {
