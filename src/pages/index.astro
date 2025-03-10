@@ -372,7 +372,9 @@ posts.sort(
       src={serviceBgImg}
       alt="stone arrangement with rolled towel"
       formats={['avif', 'webp']}
-      pictureAttributes={{ class: 'absolute -z-10 inset-0 w-full h-full ' }}
+      pictureAttributes={{
+        class: 'absolute -z-10 inset-0 w-full h-full lg:hidden ',
+      }}
       class="object-cover w-full h-full"
     />
   </section>
@@ -920,43 +922,57 @@ posts.sort(
 
   // Enhanced parallax effect with smooth scrolling
   document.addEventListener('DOMContentLoaded', () => {
-    const hero = document.querySelector('#hero') as HTMLElement;
+    // Array of sections with parallax
+    const parallaxSections = [
+      // for speed lower is slower
+      { element: document.querySelector('#hero'), speed: 0.5 },
+      { element: document.querySelector('#massage-services'), speed: 0.3 }, // Slower speed for variety
+    ];
 
-    // Only apply parallax on desktop (min-width: 1300px)
     const applyParallax = () => {
-      if (window.matchMedia('(min-width: 81.25em)').matches) {
-        const handleScroll = () => {
-          const scrollPosition = window.scrollY;
-          // Adjust the 0.5 value to control parallax speed (lower = slower)
-          const parallaxOffset = scrollPosition * 0.5;
+      const isDesktop = window.matchMedia('(min-width: 81.25em)').matches;
 
-          hero.style.backgroundPositionY = `${parallaxOffset}px`;
+      parallaxSections.forEach((section) => {
+        if (!section.element) return;
 
-          // Request animation frame for smoother updates
-          requestAnimationFrame(handleScroll);
-        };
+        if (isDesktop) {
+          const handleScroll = () => {
+            const scrollPosition = window.scrollY;
+            const sectionRect = section.element?.getBoundingClientRect();
+            const sectionTop = (sectionRect?.top || 0) + scrollPosition;
+            const offset = (scrollPosition - sectionTop) * section.speed;
 
-        // Throttle scroll events for better performance
-        let ticking = false;
-        window.addEventListener('scroll', () => {
-          if (!ticking) {
-            window.requestAnimationFrame(() => {
-              handleScroll();
-              ticking = false;
-            });
-            ticking = true;
-          }
-        });
-      } else {
-        // Reset for mobile
-        hero.style.backgroundPositionY = 'center';
-      }
+            // Only apply parallax when section is in view
+            if (
+              scrollPosition >= sectionTop - window.innerHeight &&
+              scrollPosition <= sectionTop + (sectionRect?.height || 0)
+            ) {
+              (section.element as HTMLElement).style.backgroundPositionY =
+                `${offset}px`;
+            }
+          };
+
+          // Throttle scroll events
+          let ticking = false;
+          window.addEventListener('scroll', () => {
+            if (!ticking) {
+              window.requestAnimationFrame(() => {
+                handleScroll();
+                ticking = false;
+              });
+              ticking = true;
+            }
+          });
+
+          handleScroll(); // Initial position
+        } else {
+          (section.element as HTMLElement).style.backgroundPositionY = 'center'; // Reset for mobile
+        }
+      });
     };
 
-    // Initial call
+    // Initial call and resize listener
     applyParallax();
-
-    // Recheck on resize
     window.addEventListener('resize', applyParallax);
 
     // Update existing scroll buttons for smooth behavior
@@ -1216,7 +1232,7 @@ posts.sort(
   }
 
   /* Desktop Parallax Effect - 1300px */
-  @media only screen and (min-width: 81.25em) {
+  @media only screen and (min-width: 64em) {
     #hero {
       background: url('/assets/images/hero-img.jpg');
       background-position: center;
@@ -2286,9 +2302,27 @@ posts.sort(
     }
   }
 
+  /*-- -------------------------- -->
+<---            Services            -->
+<--- -------------------------- -*/
+
+  /*custom for massage services*/
   #massage-services {
     .cs-title {
       color: var(--bodyTextColorWhite);
+    }
+  }
+
+  /* Desktop Parallax Effect - 1300px */
+  @media only screen and (min-width: 64em) {
+    #massage-services {
+      background: url('/assets/images/Blog2-HeaderPhoto.jpg');
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed; /* Enable parallax on desktop */
+      transform: translate3d(0, 0, 0); /* Hardware acceleration */
+      will-change: background-position; /* Optimize performance */
     }
   }
 </style>
