@@ -506,7 +506,7 @@ posts.sort(
       <div class="relative lg:contents">
         <button
           id="scrollLeft"
-          class="backdrop-blur-lg absolute left-1 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white rounded-full p-2 shadow-md hidden md:block lg:hidden"
+          class="backdrop-blur-lg absolute left-1 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white rounded-full p-2 shadow-md hidden xmd:hidden"
           aria-label="Scroll left"
         >
           <svg
@@ -627,7 +627,7 @@ posts.sort(
 
         <button
           id="scrollRight"
-          class="backdrop-blur-lg absolute right-1 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white rounded-full p-2 shadow-md hidden md:block lg:hidden"
+          class="backdrop-blur-lg absolute right-1 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white rounded-full p-2 shadow-md hidden xmd:hidden"
           aria-label="Scroll right"
         >
           <svg
@@ -843,7 +843,7 @@ posts.sort(
     );
 
     // In desktop mode (lg breakpoint), hide both arrows since all items are visible
-    const isDesktop = window.matchMedia('(min-width: 1024px)').matches;
+    const isDesktop = window.matchMedia('(min-width: 49rem)').matches;
     if (isDesktop) {
       scrollLeftBtn.classList.add('hidden');
       scrollRightBtn.classList.add('hidden');
@@ -2066,7 +2066,7 @@ posts.sort(
       .cs-card-group {
         /* 48px - 64px */
         margin: 0 auto;
-        padding: var(--_space);
+        padding: 0 var(--_space);
       }
 
       .cs-item {
@@ -2089,10 +2089,6 @@ posts.sort(
         align-items: center;
         flex-wrap: wrap;
         position: relative;
-
-        &:last-of-type {
-          margin-bottom: 0;
-        }
       }
 
       .cs-item-p {
@@ -2138,7 +2134,6 @@ posts.sort(
       .cs-card-group {
         display: flex;
         justify-content: space-between;
-        align-items: center;
         gap: (16/16rem);
         margin: 0 auto clamp(3rem, 5vw, 4rem);
         padding: 0;
