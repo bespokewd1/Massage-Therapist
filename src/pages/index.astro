@@ -3,9 +3,9 @@ import BaseLayout from 'src/layouts/BaseLayout.astro';
 import CTA from '@components/CTA.astro';
 import FAQ from '@components/FAQ.astro';
 import { ImageSlider } from '@components/React/Slider';
-import { getCollection } from "astro:content";
-import { Image } from "astro:assets";
-import "@styles/blog.less";
+import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
+import '@styles/blog.less';
 
 import PromotionCard, {
   type PromotionProps,
@@ -54,7 +54,7 @@ const promotionInfo: PromotionProps[] = [
 
 const heroImages = [heroImg, serviceImg1, serviceImg2];
 
-const posts = await getCollection("blog");
+const posts = await getCollection('blog');
 posts.sort(
   (a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf()
 );
@@ -104,23 +104,26 @@ posts.sort(
       src={heroImg}
       alt="lady in a stone massage"
       formats={['avif', 'webp']}
-      pictureAttributes={{ class: 'cs-picture' }}
+      pictureAttributes={{ class: 'cs-picture hidden' }}
       loading="eager"
     />
   </section>
   <!-- ============================================ -->
   <!--                  Introduction                -->
   <!-- ============================================ -->
-   <section id="introduction">
+  <section id="introduction">
     <div class="cs-container">
       <div class="cs-flex-group">
         <span class="cs-topper">Welcome to</span>
         <h1 class="cs-title">HEALING TOUCH MASSAGE</h1>
         <h1 class="cs-title">EDMONTON</h1>
-        <p class="cs-text">Pamper yourself with an expert masseuse trained in various massage techniques.</p>
+        <p class="cs-text">
+          Pamper yourself with an expert masseuse trained in various massage
+          techniques.
+        </p>
       </div>
     </div>
-   </section>
+  </section>
 
   <!-- ============================================ -->
   <!--                  Promotions                    -->
@@ -239,11 +242,7 @@ posts.sort(
     id="massage-services"
     class="relative overflow-hidden p-(--sectionPadding) lg:max-w-[80rem] mx-auto gap-4 flex flex-col md:gap-8"
   >
-    <h2
-      class="cs-title"
-    >
-      Our Services
-    </h2>
+    <h2 class="cs-title">Our Services</h2>
 
     <div
       class:list={[
@@ -436,7 +435,9 @@ posts.sort(
             height="77"
           />
         </div>
-        <a href="/services" class="cs-button-solid rounded-button">Our Services</a>
+        <a href="/services" class="cs-button-solid rounded-button"
+          >Our Services</a
+        >
       </div>
     </div>
   </section>
@@ -445,51 +446,51 @@ posts.sort(
   <!-- ============================================ -->
   <section id="sbs-1067">
     <div class="cs-container">
-        <h2 class="cs-title">Why Choose Healing Touch Massage Therapy?</h2>
-        <div class="cs-content">
-          <div>
-            <div class="content">
-              <Picture
-                src={checkMark}
-                alt="lady in a stone massage"
-                formats={['avif', 'webp']}
-                pictureAttributes={{ class: 'cs-picture' }}
-              />
-              <div>
-                <p><b>Certified & Skilled Therapists</b></p>
-                <p>Trained professionals ensuring quality care.</p>
-              </div>
-            </div> 
-          </div>
+      <h2 class="cs-title">Why Choose Healing Touch Massage Therapy?</h2>
+      <div class="cs-content">
+        <div>
           <div class="content">
             <Picture
-                src={checkMark}
-                alt="lady in a stone massage"
-                formats={['avif', 'webp']}
-                pictureAttributes={{ class: 'cs-picture' }}
-              />
-              <div>
-                <p><b>Convenient Home Service</b></p>
-                <p>Relax without leaving your space.</p>
-              </div>
-          </div>
-          <div class="content">
-            <Picture
-                src={checkMark}
-                alt="lady in a stone massage"
-                formats={['avif', 'webp']}
-                pictureAttributes={{ class: 'cs-picture' }}
-              />
-              <div>
-                <p><b>Personalized Experience</b></p>
-                <p>Tailored massages for your unique needs.</p>
-              </div>
+              src={checkMark}
+              alt="lady in a stone massage"
+              formats={['avif', 'webp']}
+              pictureAttributes={{ class: 'cs-picture' }}
+            />
+            <div>
+              <p><b>Certified & Skilled Therapists</b></p>
+              <p>Trained professionals ensuring quality care.</p>
+            </div>
           </div>
         </div>
+        <div class="content">
+          <Picture
+            src={checkMark}
+            alt="lady in a stone massage"
+            formats={['avif', 'webp']}
+            pictureAttributes={{ class: 'cs-picture' }}
+          />
+          <div>
+            <p><b>Convenient Home Service</b></p>
+            <p>Relax without leaving your space.</p>
+          </div>
+        </div>
+        <div class="content">
+          <Picture
+            src={checkMark}
+            alt="lady in a stone massage"
+            formats={['avif', 'webp']}
+            pictureAttributes={{ class: 'cs-picture' }}
+          />
+          <div>
+            <p><b>Personalized Experience</b></p>
+            <p>Tailored massages for your unique needs.</p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-   <!-- ============================================ -->
+  <!-- ============================================ -->
   <!--                   Reviews                    -->
   <!-- ============================================ -->
   <section id="reviews">
@@ -602,13 +603,13 @@ posts.sort(
           />
         </li>
       </ul>
-      <a aria-label="read more reviews" href="/reviews" class="cs-button-solid rounded-button"
-        >Our Reviews</a
+      <a
+        aria-label="read more reviews"
+        href="/reviews"
+        class="cs-button-solid rounded-button">Our Reviews</a
       >
     </div>
   </section>
-
-
 
   <FAQ />
   <!-- ============================================ -->
@@ -619,7 +620,9 @@ posts.sort(
       <div class="cs-content">
         <span class="cs-topper">Our Blog</span>
         <h2 class="cs-title">Wellness Tips & Massage Insights</h2>
-        <p class="cs-text">Explore expert advice on relaxation, pain relief, and self-care.</p>
+        <p class="cs-text">
+          Explore expert advice on relaxation, pain relief, and self-care.
+        </p>
       </div>
       <div class="main-content">
         <!-- ============================================ -->
@@ -639,7 +642,7 @@ posts.sort(
                     decoding="async"
                   />
                 </picture>
-  
+
                 <div class="article-group">
                   <div class="blog-authorGroup">
                     <picture class="blog-author-img">
@@ -657,7 +660,7 @@ posts.sort(
                   </div>
                   <h2 class="blog-h1">{post.data.title}</h2>
                   <p class="blog-desc">{post.data.description}</p>
-                  <a href={"/blog/"+ post.id} class="blog-link">
+                  <a href={'/blog/' + post.id} class="blog-link">
                     Continue Reading
                   </a>
                 </div>
@@ -667,7 +670,6 @@ posts.sort(
       </div>
     </div>
   </section>
-
 
   <!-- ============================================ -->
   <!--            Extra Content To Rank             -->
@@ -750,12 +752,12 @@ posts.sort(
           Experience the therapeutic benefits of massage and improve your
           quality of life. Book your appointment today!
         </p>
-        <a href="/book-now" class="cs-button-solid rounded-button">Book Your Massage Today</a>
+        <a href="/book-now" class="cs-button-solid rounded-button"
+          >Book Your Massage Today</a
+        >
       </div>
     </div>
   </section>
-
- 
 
   <CTA />
 </BaseLayout>
@@ -872,10 +874,78 @@ posts.sort(
     // Initial check
     updateArrowVisibility();
   }
+
+  // Enhanced parallax effect with smooth scrolling
+  document.addEventListener('DOMContentLoaded', () => {
+    const hero = document.querySelector('#hero') as HTMLElement;
+
+    // Only apply parallax on desktop (min-width: 1300px)
+    const applyParallax = () => {
+      if (window.matchMedia('(min-width: 81.25em)').matches) {
+        const handleScroll = () => {
+          const scrollPosition = window.scrollY;
+          // Adjust the 0.5 value to control parallax speed (lower = slower)
+          const parallaxOffset = scrollPosition * 0.5;
+
+          hero.style.backgroundPositionY = `${parallaxOffset}px`;
+
+          // Request animation frame for smoother updates
+          requestAnimationFrame(handleScroll);
+        };
+
+        // Throttle scroll events for better performance
+        let ticking = false;
+        window.addEventListener('scroll', () => {
+          if (!ticking) {
+            window.requestAnimationFrame(() => {
+              handleScroll();
+              ticking = false;
+            });
+            ticking = true;
+          }
+        });
+      } else {
+        // Reset for mobile
+        hero.style.backgroundPositionY = 'center';
+      }
+    };
+
+    // Initial call
+    applyParallax();
+
+    // Recheck on resize
+    window.addEventListener('resize', applyParallax);
+
+    // Update existing scroll buttons for smooth behavior
+    const scrollLeftBtn = document.getElementById('scrollLeft');
+    const scrollRightBtn = document.getElementById('scrollRight');
+    const cardsContainer = document.getElementById('cardsContainer');
+
+    if (cardsContainer) {
+      // Enhance existing scrollToIndex function
+      function scrollToIndex(index: number) {
+        if (!cardsContainer) return;
+        index = Math.max(0, Math.min(index, state.totalItems - 1));
+        const itemWidth = cardsContainer.clientWidth;
+        const targetScroll = index * itemWidth;
+
+        cardsContainer.scrollTo({
+          left: targetScroll,
+          behavior: 'smooth',
+        });
+
+        state.currentIndex = index;
+        updateArrowVisibility();
+      }
+    }
+  });
 </script>
 
 <style lang="less">
-  /* STYLES FOR ABOVE THE FOLD */
+  /* Add smooth scrolling to the entire HTML document */
+  html {
+    scroll-behavior: smooth;
+  }
 
   /*-- -------------------------- -->
 <---           Hero             -->
@@ -885,18 +955,17 @@ posts.sort(
   @media only screen and (min-width: 0em) {
     #hero {
       font-family: 'Open Sans', 'Roboto', Arial, sans-serif;
-      /* Centers button */
       text-align: center;
-      /* changes on tablet */
       padding: 0 (16/16rem);
       padding-bottom: (100/16rem);
       position: relative;
       z-index: 1;
-      /* prevents overflow from the lines extending past the screen width */
       overflow: hidden;
+      /* Add background attachment for mobile */
+      background: url('/assets/images/hero-img.jpg') center/cover no-repeat;
+      background-attachment: scroll; /* Default for mobile */
 
       .cs-picture {
-        /* Background Image */
         width: 100%;
         height: 100%;
         display: block;
@@ -906,25 +975,21 @@ posts.sort(
         z-index: -2;
 
         &:before {
-          /* Black Color Overlay */
           content: '';
           width: 100%;
           height: 100%;
-          //   background: #000;
           opacity: 0.7;
           display: block;
           position: absolute;
           top: 0;
           left: 0;
           z-index: 1;
-          /* prevents the cursor from interacting with it */
           pointer-events: none;
         }
 
         img {
           width: 100%;
           height: 100%;
-          /* Makes image act like a background-image */
           object-fit: cover;
           position: absolute;
           top: 0;
@@ -1010,7 +1075,7 @@ posts.sort(
         padding: 0 1rem;
         color: var(--bodyTextColorWhite);
         border-radius: calc(32 / 16 * 1rem);
-        &:before{
+        &:before {
           border-radius: calc(32 / 16 * 1rem);
         }
       }
@@ -1110,12 +1175,14 @@ posts.sort(
   /* Desktop Parallax Effect - 1300px */
   @media only screen and (min-width: 81.25em) {
     #hero {
-      background: url('/assets/images/hero.jpg');
+      background: url('/assets/images/hero-img.jpg');
       background-position: center;
       background-size: cover;
       background-repeat: no-repeat;
-      /* creates parallax effect on background image */
-      background-attachment: fixed;
+      background-attachment: fixed; /* Enable parallax on desktop */
+      /* Add transform for smoother parallax */
+      transform: translate3d(0, 0, 0); /* Enable hardware acceleration */
+      will-change: background-position; /* Optimize performance */
     }
   }
 
@@ -1132,13 +1199,13 @@ posts.sort(
     }
   }
 
-    /*-- -------------------------- -->
+  /*-- -------------------------- -->
 <---         Introduction           -->
 <--- -------------------------- -*/
 
   /* Mobile */
   @media only screen and (min-width: 0em) {
-    #introduction{
+    #introduction {
       padding: var(--sectionPadding);
       position: relative;
       margin-bottom: calc(128 / 16 * 1rem);
@@ -1179,7 +1246,7 @@ posts.sort(
         margin-top: calc(16 / 16 * 1rem);
         color: var(--medium);
       }
-      
+
       .cs-content {
         /* set text align to left if content needs to be left aligned */
         text-align: center;
@@ -1195,13 +1262,13 @@ posts.sort(
   @media only screen and (min-width: 0em) {
     body.dark-mode {
       #introduction {
-        .cs-topper{
+        .cs-topper {
           color: var(--bodyTextColorWhite);
         }
-        .cs-title{
+        .cs-title {
           color: var(--bodyTextColorWhite);
         }
-        .cs-text{
+        .cs-text {
           color: var(--bodyTextColorWhite);
         }
       }
@@ -2039,30 +2106,30 @@ posts.sort(
       }
     }
   }
-/*-- -------------------------- -->
+  /*-- -------------------------- -->
 <---       Why Choose Us?       -->
 <--- -------------------------- -*/
 
   /* Mobile - 360px */
   @media only screen and (min-width: 0em) {
-    #sbs-1067{
+    #sbs-1067 {
       .cs-container {
         width: 100%;
         max-width: (1104/16rem);
         margin: auto;
       }
-      .cs-content{
+      .cs-content {
         display: flex;
         flex-direction: column;
         justify-content: center;
         gap: 10px;
       }
-      .content{
+      .content {
         display: flex;
         gap: 10px;
         padding: 0 2rem;
       }
-      .cs-picture{
+      .cs-picture {
         width: (16/16rem);
         height: auto;
       }
@@ -2084,32 +2151,32 @@ posts.sort(
       }
     }
   }
-    /* Tablet - 768px */
-    @media only screen and (min-width: 48em) {
-      #sbs-1067{
-        .cs-content{
-          flex-direction: row;
-        }
-        .cs-title{
-          margin-bottom: (32/16rem);
-          font-size: (32/16rem);
-        }
+  /* Tablet - 768px */
+  @media only screen and (min-width: 48em) {
+    #sbs-1067 {
+      .cs-content {
+        flex-direction: row;
+      }
+      .cs-title {
+        margin-bottom: (32/16rem);
+        font-size: (32/16rem);
       }
     }
+  }
 
-/*-- -------------------------- -->
+  /*-- -------------------------- -->
 <---            Blog            -->
 <--- -------------------------- -*/
 
   /* Mobile - 360px */
   @media only screen and (min-width: 0em) {
-    #blog{
+    #blog {
       .cs-container {
         width: 100%;
         max-width: (1104/16rem);
         margin: auto;
       }
-      .cs-content{
+      .cs-content {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -2117,12 +2184,12 @@ posts.sort(
         margin-bottom: (32/16rem);
         padding: 0 2rem;
       }
-      .content{
+      .content {
         display: flex;
         gap: 10px;
         padding: 0 2rem;
       }
-      .cs-picture{
+      .cs-picture {
         width: (16/16rem);
         height: auto;
       }
@@ -2146,8 +2213,8 @@ posts.sort(
     }
   }
 
-  #massage-services{
-    .cs-title{
+  #massage-services {
+    .cs-title {
       color: var(--bodyTextColorWhite);
     }
   }
