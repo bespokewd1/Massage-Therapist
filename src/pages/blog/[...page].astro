@@ -8,6 +8,7 @@ import { formatDate, getOptimizedImage } from '@js/utils';
 import Landing from '@components/Landing.astro';
 import FeaturedPost from '@components/FeaturedPost.astro';
 import '@styles/blog.less';
+import { Pagination } from '@components/React/Pagination';
 
 import type { InferGetStaticPropsType, GetStaticPaths } from 'astro';
 
@@ -25,7 +26,6 @@ export const getStaticPaths = (async ({ paginate }) => {
 type Props = InferGetStaticPropsType<typeof getStaticPaths>;
 
 const { page: posts } = Astro.props as Props;
-
 console.log(posts);
 
 // Optimize our landing image and pass it as props to the BaseLayout (for preloading) and Landing (for rendering)
@@ -59,7 +59,7 @@ const optimizedImage = await getOptimizedImage(landingImage);
       {
         posts.total >= 1 &&
           posts.data.map((post) => (
-            <article class="recent-articles">
+            <article class="recent-articles" transition:name={post.id}>
               <picture class="blog-mainImage">
                 <Image
                   src={post.data.image}
@@ -94,9 +94,15 @@ const optimizedImage = await getOptimizedImage(landingImage);
             </article>
           ))
       }
-
     </div>
     <FeaturedPost />
   </div>
+
+  <Pagination
+    currentPage={posts.currentPage}
+    totalPages={posts.total}
+    url={posts.url}
+    client:visible
+  />
   <CTA />
 </BaseLayout>
