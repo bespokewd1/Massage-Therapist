@@ -4,6 +4,7 @@ import client from '@data/client.json';
 import Header from '@components/Header.astro';
 import Footer from '@components/Footer.astro';
 import StickyButton from '@components/StickyButton.astro';
+import ScrollToTop from '@components/ScrollToTop.astro';
 import '@styles/root.less';
 import '@styles/dark.less';
 import '../styles/global.css';
@@ -99,11 +100,18 @@ const { description, title, preloadedImage } = Astro.props;
     >
 
     <Header />
-    <main id="main">
+    <main id="main" class="relative">
       <slot />
+
+      <ScrollToTop />
     </main>
     <Footer />
-    <StickyButton phoneNumber="780-123-4567" />
+
+    {
+      !Astro.url.pathname.startsWith('/contact') && (
+        <StickyButton phoneNumber="780-123-4567" />
+      )
+    }
   </body>
 </html>
 

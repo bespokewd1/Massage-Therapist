@@ -1,0 +1,54 @@
+---
+// This component assumes that your layout has an element with id="main"
+---
+
+<style>
+  /* Enable smooth scrolling for anchor links */
+  html {
+    scroll-behavior: smooth;
+  }
+</style>
+
+<a
+  id="backToTop"
+  href="#main"
+  class="fixed bottom-15 right-5 opacity-0 transition-[opacity_color_background_background-color] duration-500 p-4 z-50 bg-(--primary) rounded-full text-gray-900 hover:bg-black hover:text-white"
+  aria-label="Back to top"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    class="lucide lucide-chevrons-up"
+    ><path d="m17 11-5-5-5 5"></path><path d="m17 18-5-5-5 5"></path></svg
+  >
+</a>
+
+<script>
+  document.addEventListener('astro:page-load', function () {
+    const main = document.getElementById('main');
+    const backToTop = document.getElementById('backToTop');
+
+    function checkScroll() {
+      const mainBottom = main.offsetTop + main.offsetHeight;
+      const scrollPos = window.scrollY + window.innerHeight;
+
+      if (scrollPos >= mainBottom - 100) {
+        backToTop.classList.remove('opacity-0');
+        backToTop.classList.add('opacity-100');
+      } else {
+        backToTop.classList.remove('opacity-100');
+        backToTop.classList.add('opacity-0');
+      }
+    }
+
+    window.addEventListener('scroll', checkScroll);
+    checkScroll();
+  });
+</script>

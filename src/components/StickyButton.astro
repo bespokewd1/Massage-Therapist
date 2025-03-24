@@ -28,7 +28,7 @@ const { phoneNumber } = Astro.props;
 </div>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
+  document.addEventListener('astro:page-load', function () {
     const mainElement = document.getElementById('main');
     let firstChildOfMain: Element | null = null;
 
