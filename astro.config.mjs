@@ -8,7 +8,7 @@ import react from '@astrojs/react';
 
 export default defineConfig({
   // update me!
-  site: 'https://massage-therapist.netlify.app/',
+  site: 'https://stonemassage.ca/',
 
   integrations: [
     icon(),
@@ -24,4 +24,3 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
 });
-
