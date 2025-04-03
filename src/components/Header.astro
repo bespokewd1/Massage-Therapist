@@ -2,10 +2,8 @@
 import navData from '@data/navData.json';
 import { Icon } from 'astro-icon/components';
 import DarkModeToggle from '@components/DarkModeToggle.astro';
-// import MainLogo from '@components/Icons/MainLogo.astro';
-import MainLogo from '@assets/images/MainLogo.svg';
+import MainLogo from '@assets/images/logo/site-transparent.svg';
 import { Image } from 'astro:assets';
-import logo from '@assets/images/Logo.jpg';
 ---
 
 <!-- ============================================ --><!--                 Navigation                   --><!-- ============================================ -->
@@ -13,16 +11,11 @@ import logo from '@assets/images/Logo.jpg';
   <div class="cs-container">
     <!--Nav Logo-->
     <a href="/" class="cs-logo" aria-label="back to home">
-      <Image src={MainLogo} alt="Main logo massage" />
-      <!-- <img -->
-      <!--   src="/assets/svgs/logo-black.svg" -->
-      <!--   alt="" -->
-      <!--   width="210" -->
-      <!--   height="29" -->
-      <!--   aria-hidden="true" -->
-      <!--   decoding="async" -->
-      <!-- /> -->
-      <!-- <MainLogo width={210} fill="current" /> -->
+      <Image
+        src={MainLogo}
+        alt="Main logo massage"
+        class="px-2 drop-shadow-lg max-w-[150px]"
+      />
     </a>
     <!--Navigation List-->
     <nav class="cs-nav" role="navigation">
@@ -136,8 +129,7 @@ import logo from '@assets/images/Logo.jpg';
       /* prevents padding from affecting height and width */
       box-sizing: border-box;
       padding: (12/16rem) (16/16rem);
-      // background-color: #fff;
-      background-color: rgba(255, 255, 255, 0.3);
+      background-color: rgba(var(--primary-rgb), 0.3);
       backdrop-filter: blur(30px);
       box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
       position: fixed;
@@ -411,9 +403,6 @@ import logo from '@assets/images/Logo.jpg';
   @media only screen and (max-width: 63.9375rem) {
     body.dark-mode {
       #cs-navigation {
-        // background-color: var(--dark);
-        background-color: rgba(0, 0, 0, 0.3);
-
         .cs-logo {
           /* makes it white */
           filter: grayscale(1) brightness(1000%);
@@ -656,7 +645,8 @@ import logo from '@assets/images/Logo.jpg';
           /* prevents padding from affecting height and width */
           box-sizing: border-box;
           padding: (12/16rem);
-          color: var(--bodyTextColor);
+          //color: var(--bodyTextColor);
+          color: black;
           display: block;
           transition:
             color 0.3s,
@@ -730,7 +720,7 @@ import logo from '@assets/images/Logo.jpg';
       box-sizing: border-box;
       padding: 0 (16/16rem);
       //  background-color: #fff;
-      background-color: rgba(255, 255, 255, 0.3);
+      background-color: rgba(var(--primary-rgb), 0.3);
       backdrop-filter: blur(30px);
       box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
       position: fixed;
@@ -794,7 +784,8 @@ import logo from '@assets/images/Logo.jpg';
         line-height: 1.5em;
         text-decoration: none;
         margin: 0;
-        color: var(--bodyTextColor);
+        //color: var(--bodyTextColor);
+        color: black;
         display: block;
         position: relative;
         &:hover {
@@ -830,9 +821,6 @@ import logo from '@assets/images/Logo.jpg';
   @media only screen and (min-width: 64rem) {
     body.dark-mode {
       #cs-navigation {
-        //       background-color: var(--dark);
-        background-color: rgba(0, 0, 0, 0.3);
-
         .cs-logo {
           /* makes it turn white */
           filter: grayscale(1) brightness(1000%);
