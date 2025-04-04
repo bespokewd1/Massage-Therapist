@@ -105,7 +105,9 @@ import { Image } from 'astro:assets';
       </div>
     </nav>
     <!--Dark Mode toggle: remove component if you don't want to enable a dark mode toggle-->
-    <DarkModeToggle />
+    <div class="dark-mode-wrapper">
+      <DarkModeToggle />
+    </div>
   </div>
 </header>
 
@@ -175,10 +177,23 @@ import { Image } from 'astro:assets';
 
       .cs-container {
         width: 100%;
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
+        display: grid;
+        /* justify-content: flex-end;
+        align-items: center; */
+        grid-template-areas: 'logo theme nav';
+        grid-template-columns: 1fr auto auto;
+        place-content: center;
       }
+      .dark-mode-wrapper {
+        grid-area: theme;
+        position: relative;
+      }
+
+      .cs-nav {
+        grid-area: nav;
+        place-self: center;
+      }
+
       .cs-button-solid {
         color: var(--bodyTextColorWhite);
         border-radius: calc(32 / 16 * 1rem);
@@ -188,7 +203,8 @@ import { Image } from 'astro:assets';
       }
 
       .cs-logo {
-        width: 40%;
+        grid-area: logo;
+        width: 100%;
         max-width: (146/16rem);
         height: 100%;
         margin: 0 auto 0 0;
