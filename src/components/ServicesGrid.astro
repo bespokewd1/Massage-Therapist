@@ -1,13 +1,14 @@
 ---
 // src/components/ServiceGrid.astro
-import HotStoneIcon from '@components/Icons/HotStoneIcon.astro';
+import HotStoneIcon from '@components/Icons/massages/HotStoneIcon.astro';
 import { Image } from 'astro:assets';
 
+type MassageIcon = typeof HotStoneIcon;
 // Define the structure for a single service item
 export interface IService {
   title: string;
   description: string;
-  logo: ImageMetadata;
+  icon: MassageIcon;
 }
 
 // Define the component's props
@@ -37,6 +38,7 @@ const subduedTextTitles = [
     services.map((service, index) => {
       const isEven = index % 2 === 0;
       const useSubduedText = subduedTextTitles.includes(service.title);
+      const IconComponent = service.icon;
       return (
         <article
           class:list={[
@@ -48,8 +50,10 @@ const subduedTextTitles = [
             'backdrop-blur-lg rounded hover:bg-[rgba(var(--secondary-rgb),0.7)] group',
           ]}
         >
-          <!-- <HotStoneIcon class="w-12 h-12 mb-4" /> -->
-          <Image src={service.logo}  class="w-12 h-12 mb-4 object-cover scale-150 drop-shadow-lg"  alt={service.title} />
+        <div class="w-14  aspect-square drop-shadow-lg object-cover mb-4">
+            <IconComponent  />
+        </div>
+          <!-- <Image src={service.logo}  class="w-12 h-12 mb-4 object-cover scale-150 drop-shadow-lg"  alt={service.title} /> -->
           <h2 class="text-2xl font-semibold text-black transition-colors">
             {service.title}
           </h2>

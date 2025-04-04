@@ -25,19 +25,16 @@ import promoImag3 from '@assets/images/promo-3.webp';
 import serviceBgImg from '@assets/images/Blog2-HeaderPhoto.jpg';
 import checkMark from '@assets/images/check-mark.png';
 
-// images logo for services
-import deepTissue from '@assets/images/service-icons-transparent/deep-tissue.png';
-import swedish from '@assets/images/service-icons-transparent/swedish.png';
-import hotStone from '@assets/images/service-icons-transparent/hot-stone.png';
-import cupping from '@assets/images/service-icons-transparent/cupping.png';
-import prenatal from '@assets/images/service-icons-transparent/prenatal.png';
-import thaiOil from '@assets/images/service-icons-transparent/thai-oil.png';
-import kids from '@assets/images/service-icons-transparent/kids.png';
-
 import heroImg from '@assets/images/hero-img.jpg';
 import landingImage from '@assets/images/landing.jpg'; // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
 import { Picture } from 'astro:assets';
-import HotStoneIcon from '@components/Icons/HotStoneIcon.astro';
+import HotStoneIcon from '@components/Icons/massages/HotStoneIcon.astro';
+import DeepTissueIcon from '@components/Icons/massages/DeepTissueIcon.astro';
+import SwedishIcon from '@components/Icons/massages/SwedishIcon.astro';
+import CuppingIcon from '@components/Icons/massages/CuppingIcon.astro';
+import ThaiOilIcon from '@components/Icons/massages/ThaiOilIcon.astro';
+import PrenatalIcon from '@components/Icons/massages/PrenatalIcon.astro';
+import KidsIcon from '@components/Icons/massages/KidsIcon.astro';
 
 const optimizedImage = await getOptimizedImage(landingImage);
 
@@ -67,43 +64,43 @@ const massageServiceData: Array<IService> = [
     title: 'Deep Tissue Massage',
     description:
       'Deep tissue massage targets deep muscle tension, improves mobility, and aids injury recovery.',
-    logo: deepTissue,
+    icon: DeepTissueIcon,
   },
   {
     title: 'Swedish Massage',
     description:
       'Swedish massage uses oil and gentle, firm strokes to relax muscles and enhance well-being.',
-    logo: swedish,
+    icon: SwedishIcon,
   },
   {
     title: 'Hot Stone Massage',
     description:
       'Heated stones relax muscles, boost circulation, and ease tension.',
-    logo: hotStone,
+    icon: HotStoneIcon,
   },
   {
     title: 'Cupping Massage',
     description:
       'Suction cups relieve tension, boost circulation, and aid healing.',
-    logo: cupping,
+    icon: CuppingIcon,
   },
   {
     title: 'Thai Oil Massage',
     description:
       'Thai stretching and oil massage for relaxation and flexibility.',
-    logo: thaiOil,
+    icon: ThaiOilIcon,
   },
   {
     title: 'Prenatal Massage',
     description:
       'Tailored for expecting mothers with special tables, cushions, and side-lying support.',
-    logo: prenatal,
+    icon: PrenatalIcon,
   },
   {
     title: 'Kids Massage',
     description:
       'A gentle Swedish-style massage designed for relaxation and stress relief for children.',
-    logo: kids,
+    icon: KidsIcon,
   },
 ];
 
