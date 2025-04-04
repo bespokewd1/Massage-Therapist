@@ -139,12 +139,10 @@ export function Pagination({ url, totalPages, currentPage }: PaginationProps) {
                 'before:text-center before:size-6 before:rounded-full',
                 'before:grid before:place-content-center before:font-bold before:bg-(--primary) ',
                 'before:text-black before:p-4 before:shrink-0 before:scale-0 before:transform before:transition-transform before:duration-300',
-                { 'before:scale-95': isNext },
+                { 'before:scale-95': isNext && currentPage === totalPages - 1 },
                 { 'before:hidden': currentPage === totalPages - 1 }
               )}
-              data-next={
-                currentPage + 2 === totalPages ? totalPages : currentPage + 2
-              }
+              data-next={currentPage === totalPages - 1 ? currentPage + 2 : ''}
             >
               <a
                 href={url.next}
