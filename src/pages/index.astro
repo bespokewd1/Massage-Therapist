@@ -6,6 +6,7 @@ import { ImageSlider } from '@components/React/Slider';
 import { getCollection } from 'astro:content';
 import { Image } from 'astro:assets';
 import '@styles/blog.less';
+import ServiceGrid, { type IService } from '@components/ServicesGrid.astro';
 
 import PromotionCard, {
   type PromotionProps,
@@ -23,6 +24,15 @@ import promoImag2 from '@assets/images/promo-2.webp';
 import promoImag3 from '@assets/images/promo-3.webp';
 import serviceBgImg from '@assets/images/Blog2-HeaderPhoto.jpg';
 import checkMark from '@assets/images/check-mark.png';
+
+// images logo for services
+import deepTissue from '@assets/images/service-icons-transparent/deep-tissue.png';
+import swedish from '@assets/images/service-icons-transparent/swedish.png';
+import hotStone from '@assets/images/service-icons-transparent/hot-stone.png';
+import cupping from '@assets/images/service-icons-transparent/cupping.png';
+import prenatal from '@assets/images/service-icons-transparent/prenatal.png';
+import thaiOil from '@assets/images/service-icons-transparent/thai-oil.png';
+import kids from '@assets/images/service-icons-transparent/kids.png';
 
 import heroImg from '@assets/images/hero-img.jpg';
 import landingImage from '@assets/images/landing.jpg'; // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
@@ -49,6 +59,51 @@ const promotionInfo: PromotionProps[] = [
     title: 'sample Massage',
     description:
       'Experience the benefits of our Cupping Massage, a traditional therapy that enhances blood flow, reduces muscle tension, and supports natural detoxification. ',
+  },
+];
+
+const massageServiceData: Array<IService> = [
+  {
+    title: 'Deep Tissue Massage',
+    description:
+      'Deep tissue massage targets deep muscle tension, improves mobility, and aids injury recovery.',
+    logo: deepTissue,
+  },
+  {
+    title: 'Swedish Massage',
+    description:
+      'Swedish massage uses oil and gentle, firm strokes to relax muscles and enhance well-being.',
+    logo: swedish,
+  },
+  {
+    title: 'Hot Stone Massage',
+    description:
+      'Heated stones relax muscles, boost circulation, and ease tension.',
+    logo: hotStone,
+  },
+  {
+    title: 'Cupping Massage',
+    description:
+      'Suction cups relieve tension, boost circulation, and aid healing.',
+    logo: cupping,
+  },
+  {
+    title: 'Thai Oil Massage',
+    description:
+      'Thai stretching and oil massage for relaxation and flexibility.',
+    logo: thaiOil,
+  },
+  {
+    title: 'Prenatal Massage',
+    description:
+      'Tailored for expecting mothers with special tables, cushions, and side-lying support.',
+    logo: prenatal,
+  },
+  {
+    title: 'Kids Massage',
+    description:
+      'A gentle Swedish-style massage designed for relaxation and stress relief for children.',
+    logo: kids,
   },
 ];
 
@@ -243,116 +298,7 @@ posts.sort(
     class="relative overflow-hidden p-(--sectionPadding) lg:max-w-[80rem] mx-auto gap-4 flex flex-col md:gap-8"
   >
     <h2 class="cs-title">Our Services</h2>
-
-    <div
-      class:list={[
-        'flex flex-col gap-4 items-center max-w-[48rem] md:ml-auto md:gap-8 ',
-        'sm:grid sm:grid-cols-2',
-      ]}
-    >
-      <article
-        class:list={[
-          'grid grid-rows-[min-content_auto_auto] gap-2 transition-colors  p-4 mr-auto min-w-72 ',
-          'sm:mr-0',
-          ' bg-[rgba(var(--secondary-rgb),0.4)] backdrop-blur-lg  rounded hover:bg-[rgba(var(--secondary-rgb),0.7)]  group',
-        ]}
-      >
-        <HotStoneIcon class="w-12 h-12 mb-4" />
-        <h2 class="text-2xl font-semibold text-black transition-colors">
-          Deep Tissue Massage
-        </h2>
-        <p class="group-hover:text-black text-black transition-colors">
-          Deep tissue massage targets deep muscle tension, improves mobility, and aids injury recovery.
-        </p>
-      </article>
-
-      <article
-        class:list={[
-          'grid grid-rows-[min-content_auto_auto] gap-2 transition-colors p-4 ml-auto min-w-72 sm:ml-0',
-          ' bg-[rgba(var(--primary-rgb),0.4)]  md:bg-[rgba(var(--secondary-rgb),0.4)] backdrop-blur-lg  rounded hover:bg-[rgba(var(--secondary-rgb),0.7)] group ',
-        ]}
-      >
-        <HotStoneIcon class="w-12 h-12 mb-4" />
-        <h2 class="text-2xl font-semibold text-black transition-colors">
-          Swedish Massage
-        </h2>
-        <p class="group-hover:text-black text-black transition-colors">
-          Swedish massage uses oil and gentle, firm strokes to relax muscles and enhance well-being.
-        </p>
-      </article>
-      <article
-        class:list={[
-          'grid grid-rows-[min-content_auto_auto] gap-2 transition-colors p-4 mr-auto min-w-72 sm:mr-0',
-          ' bg-[rgba(var(--secondary-rgb),0.4)]  backdrop-blur-lg  rounded hover:bg-[rgba(var(--secondary-rgb),0.7)] ',
-        ]}
-      >
-        <HotStoneIcon class="w-12 h-12 mb-4" />
-        <h2 class="text-2xl font-semibold text-black transition-colors">
-          Hot Stone Massage
-        </h2>
-        <p class="group-hover:text-black text-black transition-colors">
-          Heated stones relax muscles, boost circulation, and ease tension.
-        </p>
-      </article>
-      <article
-        class:list={[
-          'grid grid-rows-[min-content_auto_auto] gap-2 transition-colors rounded p-4 ml-auto min-w-72 sm:ml-0',
-          ' bg-[rgba(var(--primary-rgb),0.4)] md:bg-[rgba(var(--secondary-rgb),0.4)]  hover:bg-[rgba(var(--secondary-rgb),0.7)]  backdrop-blur-lg ',
-        ]}
-      >
-        <HotStoneIcon class="w-12 h-12 mb-4" />
-        <h2 class="text-2xl font-semibold text-black transition-colors">
-          Cupping Massage
-        </h2>
-        <p class="group-hover:text-black text-black/85 transition-colors">
-          Suction cups relieve tension, boost circulation, and aid healing.
-        </p>
-      </article>
-      <article
-        class:list={[
-          'grid grid-rows-[min-content_auto_auto] gap-2 transition-colors  p-4 mr-auto min-w-72 ',
-          'sm:mr-0',
-          ' bg-[rgba(var(--secondary-rgb),0.4)]    backdrop-blur-lg  rounded hover:bg-[rgba(var(--secondary-rgb),0.7)]  group',
-        ]}
-      >
-        <HotStoneIcon class="w-12 h-12 mb-4" />
-        <h2 class="text-2xl font-semibold text-black transition-colors">
-          Thai Oil Massage
-        </h2>
-        <p class="group-hover:text-black text-black/85 transition-colors">
-          Thai stretching and oil massage for relaxation and flexibility.
-        </p>
-      </article>
-      <article
-        class:list={[
-          'grid grid-rows-[min-content_auto_auto] gap-2 transition-colors rounded p-4 ml-auto min-w-72 sm:ml-0',
-          ' bg-[rgba(var(--primary-rgb),0.4)] md:bg-[rgba(var(--secondary-rgb),0.4)]  hover:bg-[rgba(var(--secondary-rgb),0.7)]  backdrop-blur-lg ',
-        ]}
-      >
-        <HotStoneIcon class="w-12 h-12 mb-4" />
-        <h2 class="text-2xl font-semibold text-black transition-colors">
-          Prenatal Massage
-        </h2>
-        <p class="group-hover:text-black text-black/85 transition-colors">
-          Tailored for expecting mothers with special tables, cushions, and side-lying support.
-        </p>
-      </article>
-      <article
-        class:list={[
-          'grid grid-rows-[min-content_auto_auto] gap-2 transition-colors  p-4 mr-auto min-w-72 ',
-          'sm:mr-0',
-          ' bg-[rgba(var(--secondary-rgb),0.4)] backdrop-blur-lg  rounded hover:bg-[rgba(var(--secondary-rgb),0.7)]  group',
-        ]}
-      >
-        <HotStoneIcon class="w-12 h-12 mb-4" />
-        <h2 class="text-2xl font-semibold text-black transition-colors">
-          Kids Massage
-        </h2>
-        <p class="text-black/85 group-hover:text-black transition-colors">
-          A gentle Swedish-style massage designed for relaxation and stress relief for children.
-        </p>
-      </article>
-    </div>
+    <ServiceGrid services={massageServiceData} />
 
     <Picture
       src={serviceBgImg}
@@ -391,11 +337,11 @@ posts.sort(
         <span class="cs-topper">About Us</span>
         <h2 class="cs-title">Stone Massage</h2>
         <p class="cs-text">
-          At Stone Massage Edmonton, we are dedicated to providing
-          therapeutic massage services that promote relaxation, reduce pain, and
-          improve overall wellness. Whether you're dealing with muscle tension,
-          stress, or simply need a moment of relaxation, our skilled therapists
-          are here to help you feel your best.
+          At Stone Massage Edmonton, we are dedicated to providing therapeutic
+          massage services that promote relaxation, reduce pain, and improve
+          overall wellness. Whether you're dealing with muscle tension, stress,
+          or simply need a moment of relaxation, our skilled therapists are here
+          to help you feel your best.
         </p>
         <p class="cs-text">
           With years of experience, we pride ourselves on creating a calming
