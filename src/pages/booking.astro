@@ -7,7 +7,7 @@ import StickyButton from '@components/StickyButton.astro';
 import ScrollToTop from '@components/ScrollToTop.astro';
 import '@styles/root.less';
 import '@styles/dark.less';
-import '../styles/global.css';
+import '@styles/global.css';
 
 const { description, title, preloadedImage } = Astro.props;
 ---
@@ -28,9 +28,6 @@ const { description, title, preloadedImage } = Astro.props;
       rel="canonical"
       href={`https://${client.domain}${Astro.url.pathname}`}
     />
-
-    <!-- Preloads the image passed as a prop -->
-    <link rel="preload" href={preloadedImage.src} as="image" />
 
     <!--Social Media Display-->
     <meta property="og:title" content={title} />
@@ -75,20 +72,7 @@ const { description, title, preloadedImage } = Astro.props;
             Home page - House Painting Contractors | Painters and Co. | TestCity, WA
             About Page - About us | Painters and Co.
             -->
-    <title>
-      {
-        Astro.url.pathname === '/'
-          ? `${title}
-                |
-                ${client.name}
-                |
-                ${client.address.city},
-                ${client.address.state}`
-          : `${title}
-                    |
-                    ${client.name}`
-      }
-    </title>
+    <title>Booking</title>
 
     <!-- Sitewide Scripts -->
     <script src="@js/nav.js"></script>
@@ -100,18 +84,13 @@ const { description, title, preloadedImage } = Astro.props;
     >
 
     <Header />
-    <main id="main" class="relative">
-      <slot />
-
-      <ScrollToTop />
+    <main id="main" class="relative *:h-dvh *:pt-10">
+      <iframe
+        src="https://www.massagebook.com/therapists/StoneMassage/widget/services"
+        frameborder="0"
+        width="100%"
+        height="1000"></iframe>
     </main>
-    <Footer />
-
-    {
-      !Astro.url.pathname.startsWith('/contact') && (
-        <StickyButton phoneNumber="780-123-4567" />
-      )
-    }
   </body>
 </html>
 
