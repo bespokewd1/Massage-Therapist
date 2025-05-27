@@ -1,0 +1,100 @@
+---
+// StickyCallButton.astro
+// Props definition
+interface Props {
+  phoneNumber: string;
+}
+
+const { phoneNumber } = Astro.props;
+---
+
+<div
+  id="sticky-call-button"
+  class="fixed bottom-8 w-full z-[1000] flex justify-center items-center invisible opacity-0 translate-y-1/2 transition-all duration-200 ease-in gap-6"
+>
+  <a
+    href={`tel:${phoneNumber}`}
+    class="bg-(--primary) text-sm text-black rounded-full bg-secondary p-3 md:text-base md:py-3 md:px-6 font-medium shadow-md hover:shadow-lg"
+  >
+    Call <span class="hidden md:inline">Now</span> ({phoneNumber})
+  </a>
+
+  <!-- <a
+    href="/booking"
+    class="border rounded-full bg-black text-white text-sm md:text-base p-3 md:py-3 md:px-6 font-medium shadow-md hover:shadow-lg"
+  >
+    Book Online
+  </a> -->
+  <!-- <button onclick="document.getElementById('popup').classList.remove('hidden')" class="border rounded-full bg-black text-white text-sm md:text-base p-3 md:py-3 md:px-6 font-medium shadow-md hover:shadow-lg">
+            Book Online
+  </button> -->
+  <!--Pop Up for Book Online Button -->
+        <!-- Trigger Button -->
+          <button onclick="document.getElementById('popup').classList.remove('hidden')" class="border rounded-full bg-black text-white text-sm md:text-base p-3 md:py-3 md:px-6 font-medium shadow-md hover:shadow-lg">
+            Book Online
+          </button>
+</div>
+
+<script>
+  document.addEventListener('astro:page-load', function () {
+    const mainElement = document.getElementById('main');
+    let firstChildOfMain: Element | null = null;
+
+    if (mainElement) {
+      const hero = document.getElementById('hero');
+      firstChildOfMain = hero ? hero : mainElement.firstElementChild;
+    } else {
+      console.warn(
+        'No <main id="main"> element found. Sticky button will always be visible.'
+      );
+      document
+        .getElementById('sticky-call-button')
+        ?.classList.add('visible', 'opacity-100', 'translate-y-0');
+      return;
+    }
+
+    if (!firstChildOfMain) {
+      console.warn(
+        '<main id="main"> has no first child. Sticky button will always be visible.'
+      );
+      document
+        .getElementById('sticky-call-button')
+        ?.classList.add('visible', 'opacity-100', 'translate-y-0');
+      return;
+    }
+
+    const stickyButton = document.getElementById('sticky-call-button');
+    let ticking = false; // for throttling
+
+    function checkFirstChildVisibility() {
+      if (!firstChildOfMain || !stickyButton) return;
+
+      const rect = firstChildOfMain.getBoundingClientRect();
+      // Check if the bottom of the first child is above the viewport
+      if (rect.bottom <= 0) {
+        stickyButton.classList.add('visible', 'opacity-100', 'translate-y-0');
+      } else {
+        stickyButton.classList.remove(
+          'visible',
+          'opacity-100',
+          'translate-y-0'
+        );
+      }
+    }
+
+    function handleScroll() {
+      if (!ticking) {
+        requestAnimationFrame(function () {
+          checkFirstChildVisibility();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }
+
+    // Initial check in case the page loads already scrolled past the first child
+    checkFirstChildVisibility();
+
+    window.addEventListener('scroll', handleScroll);
+  });
+</script>

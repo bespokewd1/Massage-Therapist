@@ -1,0 +1,51 @@
+<!-- This page is the entry point to the the Decap CMS admin dashboard.--><!-- It should not be modified. -->
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const observer = new MutationObserver((mutationsList, observer) => {
+    const adminEl = document.getElementById("nc-root");
+
+    if (adminEl) {
+      const img = adminEl.querySelector("img");
+         const imgParent = img?.parentElement;
+      const decapLogo = adminEl.querySelector("span.exus10f2");
+         const button = adminEl.querySelector("button")
+
+      if (img && decapLogo && imgParent && button) {
+        // Check if both elements are now found
+            imgParent.setAttribute("style","width:auto");
+        img.setAttribute("src", "/assets/images/bespokeog.png");
+         img.setAttribute("style"," filter: drop-shadow(2px 4px 6px black); width: clamp(300px, 35vw, 500px); border-radius: 12px; ")
+        decapLogo.setAttribute("style", "display:none");
+        observer.disconnect(); // Stop observing once changes are made
+            button.innerText = `Login to Admin Panel`;
+      }
+    }
+  });
+
+  const ncRootElement = document.getElementById("nc-root");
+  if (ncRootElement) {
+    observer.observe(ncRootElement, { childList: true, subtree: true }); // Observe child elements and their descendants
+  } else {
+    console.log("nc-root element not found initially!"); // Optional log
+  }
+});
+</script>
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <link href="/admin/config.yml" type="text/yaml" rel="cms-config-url" />
+    <title>Decap CMS Dashboard</title>
+    <!-- Netlify Identity widget -->
+    <script is:inline src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  </head>
+  <body>
+    <!-- Decap CMS script -->
+    <script is:inline src="https://unpkg.com/decap-cms@^3.1.2/dist/decap-cms.js"></script>
+  </body>
+</html>
+

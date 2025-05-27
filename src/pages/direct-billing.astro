@@ -1,0 +1,355 @@
+---
+import BaseLayout from 'src/layouts/BaseLayout.astro';
+import Landing from '@components/Landing.astro';
+
+// Optimize our landing image and pass it as props to the BaseLayout (for preloading) and Landing (for rendering)
+import { getOptimizedImage } from '@js/utils';
+import landingImage from '@assets/images/landing.jpg'; // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
+const optimizedImage = await getOptimizedImage(landingImage);
+---
+
+<BaseLayout
+  title="Direct Billing"
+  description="Meta description for the page"
+  preloadedImage={optimizedImage}
+>
+  <!-- ============================================ -->
+  <!--                    LANDING                   -->
+  <!-- ============================================ -->
+
+  <Landing title="Direct Billing" image={optimizedImage} />
+
+  <!-- ============================================ -->
+  <!--                Contact Form                  -->
+  <!-- ============================================ -->
+
+  <section id="direct-billing " class="p-(--sectionPadding) max-w-6xl mx-auto">
+    <div class="flex flex-col gap-3">
+      <span class="cs-topper text-(--secondary)">Direct Billing</span>
+
+      <div class="flex flex-col gap-4">
+        <h2
+          class="text-[clamp(1.3375rem,3.4vw,1.5625rem)] uppercase text-(--primary)"
+        >
+          can you direct bill my insurance, benefits provider or wcb coverage?
+        </h2>
+        <p class="cs-text">
+          Yes! We can direct bill to several insurance companies:
+        </p>
+
+        <ul class="list-disc px-6 flex flex-col gap-3">
+          <li>Alberta Blue Cross/ASEBP</li>
+          <li>BPA</li>
+          <li>Canada Life/Canada Life PSHCP</li>
+          <li>Canadian Construction Workers Union</li>
+          <li>Canadian Benefit Providers</li>
+          <li>Chambers of Commerce Group Insurance Plan</li>
+          <li>CINUP</li>
+          <li>ClaimSecure</li>
+          <li>Cowan Insurance Group (managed by Express Scripts Canada)</li>
+          <li>D.A. Townley</li>
+          <li>Desjardins Insurance</li>
+          <li>Equitable Life of Canada</li>
+          <li>
+            First Canadian, GMS Carriers 49 and 50 (Express Scripts Canada)
+          </li>
+          <li>GroupHEALTH</li>
+          <li>GroupSource</li>
+          <li>Industrial Alliance</li>
+          <li>Johnson Inc.</li>
+          <li>La Capitale</li>
+          <li>LiUna Local 183</li>
+          <li>LiUna Local 506</li>
+          <li>Manion</li>
+          <li>Manulife Financial</li>
+          <li>Medavie Blue Cross</li>
+          <li>Maximum Benefit</li>
+          <li>People Corporation</li>
+          <li>RWAM</li>
+          <li>Sunlife</li>
+          <li>TELUS AdjudiCare</li>
+          <li>Union Benefits</li>
+          <li>UV Insurance</li>
+        </ul>
+      </div>
+      <div class="mt-4 flex flex-col gap-4">
+        <a
+          href="/booking"
+          class="mt-6 w-fit cs-button-solid cs-nav-button rounded-button"
+          >Book Online</a
+        >
+      </div>
+
+      <!-- ============================================ -->
+      <!--                   Reviews                    -->
+      <!-- ============================================ -->
+      <section id="reviews">
+        <div class="cs-container">
+          <span class="cs-topper">Our Reviews</span>
+          <h2 class="cs-title">Words From Our Happy Clients</h2>
+          <p class="cs-text">
+            At Healing Touch Massage Therapy, we pride ourselves on providing
+            exceptional care. Here's what some of our clients have to say about
+            their experience with us.
+          </p>
+          <ul class="cs-card-group">
+            <!-- Review 1 -->
+            <li class="cs-item">
+              <img
+                class="cs-item-img"
+                aria-hidden="true"
+                loading="lazy"
+                decoding="async"
+                src="https://csimg.nyc3.digitaloceanspaces.com/Reviews/profile5.png"
+                alt="profile picture"
+                width="80"
+                height="80"
+              />
+              <p class="cs-item-p">
+                "I had an amazing experience at Healing Touch. The massage was
+                exactly what I needed to relieve my stress and muscle tension. I
+                left feeling completely relaxed and rejuvenated. Highly
+                recommend to anyone looking for a professional, therapeutic
+                massage."
+              </p>
+              <span class="cs-reviewer">
+                Sarah L.
+                <span class="cs-desc">Client</span>
+              </span>
+              <img
+                class="cs-item-stars"
+                aria-hidden="true"
+                loading="lazy"
+                decoding="async"
+                src="https://csimg.nyc3.digitaloceanspaces.com/Reviews/stars-yellow.svg"
+                alt="stars"
+                width="96"
+                height="16"
+              />
+            </li>
+            <!-- Review 2 -->
+            <li class="cs-item">
+              <img
+                class="cs-item-img"
+                aria-hidden="true"
+                loading="lazy"
+                decoding="async"
+                src="https://csimg.nyc3.digitaloceanspaces.com/Reviews/profile-4.png"
+                alt="profile picture"
+                width="80"
+                height="80"
+              />
+              <p class="cs-item-p">
+                "The best massage therapy experience I've had! The therapist was
+                professional and really listened to my needs. I walked out
+                feeling refreshed and with significantly less pain in my lower
+                back. I’ll definitely be coming back!"
+              </p>
+              <span class="cs-reviewer">
+                James T.
+                <span class="cs-desc">Client</span>
+              </span>
+              <img
+                class="cs-item-stars"
+                aria-hidden="true"
+                loading="lazy"
+                decoding="async"
+                src="https://csimg.nyc3.digitaloceanspaces.com/Reviews/stars-yellow.svg"
+                alt="stars"
+                width="96"
+                height="16"
+              />
+            </li>
+            <!-- Review 3 -->
+            <li class="cs-item">
+              <img
+                class="cs-item-img"
+                aria-hidden="true"
+                loading="lazy"
+                decoding="async"
+                src="https://csimg.nyc3.digitaloceanspaces.com/Reviews/profile6.png"
+                alt="profile picture"
+                width="80"
+                height="80"
+              />
+              <p class="cs-item-p">
+                "I’ve tried a few massage therapy places, but Healing Touch is
+                by far the best. The environment is peaceful, and the staff is
+                friendly and knowledgeable. My therapist worked wonders on my
+                neck and shoulders. I can’t wait for my next visit!"
+              </p>
+              <span class="cs-reviewer">
+                Emily W.
+                <span class="cs-desc">Client</span>
+              </span>
+              <img
+                class="cs-item-stars"
+                aria-hidden="true"
+                loading="lazy"
+                decoding="async"
+                src="https://csimg.nyc3.digitaloceanspaces.com/Reviews/stars-yellow.svg"
+                alt="stars"
+                width="96"
+                height="16"
+              />
+            </li>
+          </ul>
+          <a
+            aria-label="read more reviews"
+            href="https://www.massagebook.com/therapists/StoneMassage/reviews"
+            class="cs-button-solid rounded-button"
+            target="_blank"
+            rel="noopener noreferrer">Our Reviews</a
+          >
+        </div>
+      </section>
+    </div>
+
+    <style lang="less">
+      /*-- -------------------------- -->
+  <---          Reviews           -->
+  <--- -------------------------- --*/
+
+      /* Mobile - 360px */
+      @media only screen and (min-width: 0em) {
+        #reviews {
+          /* Centers the button */
+          text-align: center;
+          padding: var(--sectionPadding);
+
+          .cs-container {
+            width: 100%;
+            max-width: (1104/16rem);
+            margin: auto;
+          }
+
+          .cs-topper {
+            text-align: center;
+            margin-bottom: (16/16rem);
+          }
+
+          .cs-title {
+            text-align: center;
+            max-width: (700/16rem);
+          }
+
+          .cs-text {
+            text-align: center;
+            max-width: (650/16rem);
+            /* 88px - 104px */
+            margin-bottom: clamp(5.5em, 10.2vw, 6.5em);
+          }
+
+          .cs-card-group {
+            /* 48px - 64px */
+            margin: 0 auto clamp(3rem, 5vw, 4rem);
+            padding: 0;
+          }
+
+          .cs-item {
+            text-align: left;
+            list-style: none;
+            width: 100%;
+            max-width: (542/16rem);
+            margin: 0 auto (64/16rem);
+            /* Prevents padding from affecting height & width */
+            box-sizing: border-box;
+            /* Padding L & R - 16px - 32px */
+            padding: (60/16rem) clamp(1rem, 3.2vw, 2rem) 0;
+            /* 32px - 40px */
+            padding-bottom: clamp(2rem, 5.4vw, 2.5rem);
+            background: #fff;
+            box-shadow: 0px 20px 39px 0px rgba(0, 0, 0, 0.05);
+            border-radius: (4/16rem);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            position: relative;
+
+            &:last-of-type {
+              margin-bottom: 0;
+            }
+          }
+
+          .cs-item-img {
+            width: (80/16rem);
+            height: (80/16rem);
+            position: absolute;
+            top: (-40/16rem);
+          }
+
+          .cs-item-p {
+            font-size: (16/16rem);
+            line-height: 1.5em;
+            margin: 0 0 (20/16rem);
+            padding-bottom: (20/16rem);
+            color: var(--bodyTextColor);
+            border-bottom: 1px solid #e8e9ec;
+          }
+
+          .cs-reviewer {
+            font-size: (16/16rem);
+            font-weight: 700;
+            line-height: 1.5em;
+            width: 40%;
+            margin: 0 auto 0 0;
+            color: var(--headerColor);
+            display: block;
+          }
+
+          .cs-desc {
+            font-size: (14/16rem);
+            font-weight: 400;
+            color: var(#353535);
+            display: block;
+          }
+
+          .cs-item-stars {
+            width: (96/16rem);
+            height: (16/16rem);
+          }
+        }
+      }
+
+      /* Tablet - 768px */
+      @media only screen and (min-width: 48em) {
+        #reviews {
+          .cs-card-group {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: (16/16rem);
+          }
+
+          .cs-item {
+            /* reset margin so it won't interfere with flexbox */
+            margin: 0;
+          }
+        }
+      }
+
+      /* Dark Mode */
+      @media only screen and (min-width: 0em) {
+        body.dark-mode {
+          #reviews {
+            .cs-title,
+            .cs-text,
+            .cs-item-p,
+            .cs-reviewer {
+              color: var(--bodyTextColorWhite);
+            }
+
+            .cs-item {
+              background: var(--medium);
+            }
+
+            .cs-desc {
+              color: var(--primaryLight);
+            }
+          }
+        }
+      }
+    </style>
+  </section></BaseLayout
+>

@@ -1,0 +1,73 @@
+---
+// src/components/ServiceGrid.astro
+import HotStoneIcon from '@components/Icons/massages/HotStoneIcon.astro';
+import { Image } from 'astro:assets';
+
+type MassageIcon = typeof HotStoneIcon;
+// Define the structure for a single service item
+export interface IService {
+  title: string;
+  description: string;
+  icon: MassageIcon;
+}
+
+// Define the component's props
+interface Props {
+  services: IService[]; // Array of service objects is the only input needed
+}
+
+const { services } = Astro.props;
+
+// List of service titles that use a slightly different text color
+// This logic stays with the component rendering the text
+const subduedTextTitles = [
+  'Cupping Massage',
+  'Thai Oil Massage',
+  'Prenatal Massage',
+  'Kids Massage',
+];
+---
+
+<div
+  class:list={[
+    'flex flex-col gap-4 items-center max-w-[48rem] md:ml-auto md:gap-8',
+    'sm:grid sm:grid-cols-2',
+  ]}
+>
+  {
+    services.map((service, index) => {
+      const isEven = index % 2 === 0;
+      const useSubduedText = subduedTextTitles.includes(service.title);
+      const IconComponent = service.icon;
+      return (
+        <article
+          class:list={[
+            'grid grid-rows-[min-content_auto_auto] gap-2 transition-colors p-4 min-w-72 max-w-lg ',
+            isEven ? 'mr-auto sm:mr-0' : 'ml-auto sm:ml-0',
+            !isEven
+              ? 'bg-[rgba(var(--primary-rgb),0.4)] md:bg-[rgba(var(--secondary-rgb),0.4)]'
+              : 'bg-[rgba(var(--secondary-rgb),0.4)]',
+            'backdrop-blur-lg rounded hover:bg-[rgba(var(--secondary-rgb),0.7)] group',
+          ]}
+        >
+        <div class="w-14  aspect-square drop-shadow-lg object-cover mb-4">
+            <IconComponent  />
+        </div>
+          <!-- <Image src={service.logo}  class="w-12 h-12 mb-4 object-cover scale-150 drop-shadow-lg"  alt={service.title} /> -->
+          <h2 class="text-2xl font-semibold text-black transition-colors">
+            {service.title}
+          </h2>
+          <p
+            class:list={[
+              'transition-colors group-hover:text-black',
+              // Apply different base text color for specific services
+              useSubduedText ? 'text-black/85' : 'text-black',
+            ]}
+          >
+            {service.description}
+          </p>
+        </article>
+      );
+    })
+  }
+</div>

@@ -1,0 +1,414 @@
+---
+import client from '@data/client.json';
+import navData from '@data/navData.json';
+import { getCurrentYear } from '@js/utils';
+// import MainLogo from '@components/Icons/MainLogo.astro';
+import MainLogo from '@assets/images/logo/site-transparent.svg';
+import { Image } from 'astro:assets';
+import { Picture } from 'astro:assets';
+import googleReviewsLogo from '@assets/images/google-reviews-banner.png';
+const currentYear = getCurrentYear();
+---
+
+<!-- ============================================ --><!--                   Footer                     --><!-- ============================================ -->
+<footer id="footer">
+  <div class="container">
+    <div class="left-section">
+      <a class="logo" href="/">
+        <!-- <img -->
+        <!--   loading="lazy" -->
+        <!--   decoding="async" -->
+        <!--   src="/assets/svgs/logo-white.svg" -->
+        <!--   alt="logo" -->
+        <!--   width="264" -->
+        <!--   height="78" -->
+        <!-- /> -->
+        <!-- <MainLogo width={264} height={78} class="pb-6" /> -->
+
+        <Image src={MainLogo} alt="Main logo massage" />
+      </a>
+      <div class="socials">
+        <h2>Follow Us</h2>
+        <div class="social-links">
+          <a class="cs-social-link" href="#">
+            <img
+              class="cs-social-img"
+              src="https://kms-draft.netlify.app/assets/images/facebook.svg"
+              alt="facebook"
+              width="11"
+              height="11"
+            />
+          </a>
+          <a class="cs-social-link" href="#">
+            <img
+              class="cs-social-img"
+              src="https://kms-draft.netlify.app/assets/images/instagram.svg/"
+              alt="Instagram"
+              width="11"
+              height="11"
+            />
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="right-section">
+      <div class="lists">
+        <ul>
+          <li>
+            <h2>Information</h2>
+          </li>
+          {
+            navData.map((entry) => (
+              <li class="cs-li">
+                <a href={entry.url}>{entry.key}</a>
+              </li>
+            ))
+          }
+        </ul>
+        <ul>
+          <li>
+            <h2>Services</h2>
+          </li>
+          <li>Therapeutic Massage</li>
+          <li>Deep Tissue Massage</li>
+          <li>Relaxation Massage</li>
+          <li>Hot Stone Massage</li>
+          <li>Cupping Massage</li>
+          <li>Lymphatic Massage</li>
+          <li>Prenatal Massage</li>
+        </ul>
+        <ul>
+          <li>
+            <h2>Contact</h2>
+          </li>
+          <li>
+            <a href="/contact">
+              {client.address.lineOne}<br />
+              {client.address.lineTwo}<br />
+              {client.address.city}
+              {client.address.state}
+              {client.address.zip}
+            </a>
+          </li>
+          <li>
+            <a href={`tel:${client.phoneForTel}`}>
+              T:
+              {client.phoneFormatted}
+            </a>
+          </li>
+          <li>
+            <a href={`mailto:${client.email}`}>Click to Email</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="credit">
+    <span>Designed and Hand Coded by</span>
+    <a href="https://bespokewebdesign.ca/" target="_blank" rel="noopener"
+      >Bespoke Web Design Edmonton</a
+    >
+    <span class="copyright"> Copyright {currentYear} - Present</span>
+  </div>
+</footer>
+
+<style lang="less">
+  /* Mobile */
+  @media only screen and (min-width: 0em) {
+    #footer {
+      font-size: ~'min(4vw, 1.2em)';
+      padding: (54/16rem) (20/16rem);
+      background: #1c1c1c;
+
+      .left-section {
+        text-align: center;
+        margin: auto;
+        margin-bottom: (50/16rem);
+        .logo {
+          text-align: center;
+          width: auto;
+          height: (32/16em);
+          margin: auto;
+          margin-bottom: (30/16em);
+          display: inline-block;
+          img {
+            width: auto;
+            height: 100%;
+            display: block;
+          }
+          .socials {
+            width: 100%;
+            h2 {
+              color: #fff;
+            }
+            .social-links {
+              height: 2rem;
+              width: 2rem;
+              background-color: white;
+              display: flex;
+              justify-content: center;
+              align-content: center;
+              border-radius: 1rem;
+              .cs-social-link {
+                width: 2rem;
+                height: 2rem;
+                background-color: #fff;
+                .cs-social-img {
+                  height: 1rem;
+                  width: 1rem;
+                }
+              }
+            }
+          }
+        }
+
+        p {
+          font-size: (14/16rem);
+          line-height: 27/14;
+          text-align: center;
+          width: 100%;
+          width: 307/14rem;
+          margin: auto;
+          color: #fff;
+          opacity: 0.9;
+        }
+      }
+
+      .right-section {
+        width: 96%;
+        max-width: (407/16rem);
+        margin: auto;
+        .lists {
+          width: 96%;
+          max-width: (307/16rem);
+          margin: auto;
+          display: flex;
+          justify-content: space-between;
+          flex-wrap: wrap;
+          ul {
+            margin-top: 0;
+            margin-bottom: 0;
+            padding: 0;
+
+            &:nth-of-type(3) {
+              margin-top: (50/16rem);
+              li {
+                margin-bottom: (16/16rem);
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+
+                &:last-of-type {
+                  margin-bottom: 0;
+                }
+              }
+            }
+
+            li {
+              font-size: (18/16rem);
+              list-style: none;
+              margin-bottom: (12/16rem);
+              color: #fff;
+              opacity: 0.9;
+
+              a {
+                line-height: 21/18em;
+                text-decoration: none;
+                color: #fff;
+                transition: color 0.3s;
+                &:hover {
+                  color: var(--primary);
+                }
+              }
+            }
+            h2 {
+              font-size: (18/16rem);
+              font-weight: bold;
+              line-height: 21/18em;
+              text-transform: uppercase;
+              margin-bottom: (37/16rem);
+              color: #fff;
+              position: relative;
+
+              &:before {
+                content: '';
+                width: (97/16rem);
+                height: (2/16rem);
+                background: var(--primary);
+                opacity: 1;
+                display: block;
+                position: absolute;
+                bottom: (-16/16rem);
+                left: 0;
+              }
+            }
+          }
+        }
+
+        .buttons {
+          display: flex;
+          justify-content: center;
+        }
+
+        .cs-button-solid {
+          width: (250/16rem);
+          height: (53/16rem);
+          margin: 0;
+          padding-top: (3/16rem);
+        }
+      }
+
+      .credit {
+        font-size: (16/16rem);
+        line-height: (36/16rem);
+        text-align: left;
+        //width: 96%;
+        margin: (25/16rem) auto (35/16rem);
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+
+        a {
+          font-size: (16/16rem);
+          text-decoration: none;
+          color: var(--primary);
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+
+        .copyright {
+          font-size: (16/16rem);
+          display: block;
+        }
+      }
+    }
+  }
+
+  /* tablet */
+  @media only screen and (min-width: 48em) {
+    #footer {
+      .left-section {
+      }
+      .right-section {
+        max-width: 40rem;
+        .lists {
+          max-width: none;
+
+          ul {
+            &:nth-of-type(3) {
+              margin-top: 0;
+            }
+          }
+        }
+      }
+      .credit {
+        text-align: center;
+      }
+    }
+  }
+
+  /* Small Desktop */
+  @media only screen and (min-width: 64em) {
+    #footer {
+      font-size: ~'min(1.2vw, 1em)';
+      .container {
+        width: 96%;
+        max-width: (1320/16rem);
+        margin: auto;
+        padding: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+      }
+
+      .left-section {
+        text-align: left;
+        width: (409/16rem);
+        margin: 0;
+
+        .logo {
+          text-align: left;
+          height: (40/16rem);
+          margin-left: 0;
+        }
+
+        p {
+          text-align: left;
+          margin-left: 0;
+        }
+      }
+
+      .right-section {
+        width: (609/16rem);
+        max-width: none;
+        margin: 0;
+        .lists {
+          width: 96%;
+          max-width: (769/16rem);
+          max-width: initial;
+          margin: 0;
+
+          ul {
+            &:nth-of-type(3) {
+              margin-top: 0;
+
+              li:first-of-type {
+                margin-bottom: 0;
+              }
+            }
+
+            li {
+              a {
+                position: relative;
+
+                &:before {
+                  content: '';
+                  width: 0%;
+                  height: (2/16rem);
+                  background: var(--primary);
+                  opacity: 1;
+                  display: block;
+                  position: absolute;
+                  bottom: (-3/16rem);
+                  left: 0;
+                  transition: width 0.3s;
+                }
+
+                &:hover {
+                  &:before {
+                    width: 100%;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        .buttons {
+          justify-content: flex-start;
+        }
+      }
+
+      .credit {
+        text-align: left;
+        .copyright {
+          display: inline-block;
+        }
+      }
+    }
+  }
+
+  /* Dark Mode */
+  @media only screen and (min-width: 0em) {
+    body.dark-mode {
+      #footer {
+        background: #061623;
+      }
+    }
+  }
+</style>

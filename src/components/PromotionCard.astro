@@ -1,0 +1,52 @@
+---
+import { Picture } from 'astro:assets';
+
+export type PromotionProps = {
+  imgSrc: ImageMetadata;
+  title: string;
+  description: string;
+};
+
+const { imgSrc, title, description } = Astro.props as PromotionProps;
+---
+
+<div
+  class:list={[
+    'grid grid-rows-[min-content] gap-3 p-2 border rounded-md h-auto max-w-xl snap-center group',
+  ]}
+>
+  <Picture
+    src={imgSrc}
+    alt="lady in a stone massage"
+    formats={['avif', 'webp']}
+    loading="eager"
+    class="shadow-[12px_12px_12px_rgba(0,0,0,0.1)] rounded-md h-auto aspect-square object-cover"
+    pictureAttributes={{ class: 'place-self-center' }}
+  />
+
+  <div class="flex flex-col gap-3 p-2">
+    <h3 class="text-xl text-center">{title}</h3>
+    <p>{description}</p>
+    <a
+      class="bg-(--primary) mt-auto color-black font-medium w-fit py-2 px-3 inline-flex items-center gap-2"
+      href="#"
+    >
+      <span class="group-hover:text-black transition-colors"> Learn more </span>
+      <span>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="lucide lucide-move-right transition-transform transition-colors group-hover:text-black duration-200 ease-in-out group-hover:translate-x-2"
+          ><path d="M18 8L22 12L18 16"></path><path d="M2 12H22"></path></svg
+        >
+      </span>
+    </a>
+  </div>
+</div>
