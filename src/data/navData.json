@@ -23,18 +23,7 @@
     "key": "Gallery",
     "url": "/gallery/",
     "children": [
-      {
-        "key": "Inside our Clinic",
-        "url": "/gallery/inside/"
-      },
-      {
-        "key": "Client Experience",
-        "url": "/gallery/client/"
-      },
-      {
-        "key": "Events & Specials",
-        "url": "/gallery/events/"
-      }
+     
     ]
   },
   {

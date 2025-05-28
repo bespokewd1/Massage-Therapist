@@ -4,11 +4,11 @@
 	"phoneForTel": " 587-938-0458",
 	"phoneFormatted": "(587) 938-0458",
 	"address": {
-		"lineOne": "9057 Cooper Link SW",
+		"lineOne": "Clinic Address",
 		"lineTwo": null,
-		"city": "Edmonton",
-		"state": "AB",
-		"zip": "T6W 4A4",
+		"city": "",
+		"state": "",
+		"zip": "",
 		"mapLink": "https://maps.google.com/?q=9057+Cooper+Link+SW,+Edmonton,+AB+T6W+4A4,+Canada"
 	},
 	"domain": "https://stonemassage.ca/"

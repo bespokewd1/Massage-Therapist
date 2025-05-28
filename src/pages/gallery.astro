@@ -1,0 +1,207 @@
+---
+import BaseLayout from "src/layouts/BaseLayout.astro";
+import CTA from "@components/CTA.astro";
+import Landing from "@components/Landing.astro";
+// Optimize our landing image and pass it as props to the BaseLayout (for preloading) and Landing (for rendering)
+import {getOptimizedImage} from "@js/utils"
+import landingImage from "@assets/images/stone-massage-background1.png" // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
+const optimizedImage = await getOptimizedImage(landingImage)
+---
+
+<BaseLayout
+  title="Gallery"
+  description="Meta description for the page"
+  preloadedImage = {optimizedImage}
+>
+  <!-- ============================================ -->
+  <!--                    LANDING                   -->
+  <!-- ============================================ -->
+
+  <Landing 
+    title="Gallery"
+    image={optimizedImage}
+  />
+
+  <!-- ============================================ -->
+  <!--                   Gallery                    -->
+  <!-- ============================================ -->
+
+  <section id="gallery">
+    <div class="flex flex-col  mb-10 gap-y-4 items-center md:flex-row sm:justify-center md:gap-x-8 ">
+      <button id="btn-tab1" class="tab-button cs-button-solid" onclick="switchTab('tab1')">Inside Our Clinic</button>
+      <button id="btn-tab2" class="tab-button cs-button-solid" onclick="switchTab('tab2')">Client Experience</button>
+      <button id="btn-tab3" class="tab-button cs-button-solid" onclick="switchTab('tab3')">Events & Specials</button>
+    </div>
+    <div class="cs-container tab-content" id="tab1">
+      <h1 class="md:text-4xl mb-4" style="text-transform: uppercase;">Inside Our Clinic</h1>
+      <div class="w-full mb-8">
+        <div class=" flex flex-col justify-center items-center gap-4 lg:flex-row lg:flex-wrap ">
+          <img src="/assets/images/clinic1.png" class="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg aspect-video object-cover rounded-lg">
+          <img src="/assets/images/clinic2.png" class="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg aspect-video object-cover rounded-lg">
+          <img src="/assets/images/clinic3.png" class="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg aspect-video object-cover rounded-lg">
+        </div>
+      </div>
+      <a href="/contact" class="cs-button-solid">Get Free Quote</a>
+    </div>
+    <div class="cs-container tab-content  hidden" id="tab2">
+      <h1 class="md:text-4xl mb-4" style="text-transform: uppercase;">Client Experience</h1>
+      <div class="w-full mb-8">
+        <div class=" flex flex-col justify-center items-center gap-4 lg:flex-row lg:flex-wrap ">
+          <img src="/assets/images/stone-massage-background1.png" class="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg aspect-video object-cover rounded-lg">
+          <img src="/assets/images/stone-massage-back.png" class="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg aspect-video object-cover rounded-lg">
+          <img src="/assets/images/stone-massage-feet.png" class="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg aspect-video object-cover rounded-lg">
+        </div>
+      </div>
+      <a href="/contact" class="cs-button-solid">Get Free Quote</a>
+    </div>
+    <div class="cs-container tab-content  hidden" id="tab3">
+      <h1 class="md:text-4xl mb-4" style="text-transform: uppercase;">Events & Specials</h1>
+      <div class="w-full mb-8">
+        <div class=" flex flex-col justify-center items-center gap-4 lg:flex-row lg:flex-wrap ">
+          <img src="/assets/images/stone-massage-feet.png" class="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg aspect-video object-cover rounded-lg">
+          <img src="/assets/images/clinic2.png" class="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg aspect-video object-cover rounded-lg">
+          <img src="/assets/images/stone-massage-background1.png" class="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg aspect-video object-cover rounded-lg">
+        </div>
+      </div>
+      <a href="/contact" class="cs-button-solid">Get Free Quote</a>
+    </div>
+
+  </section>
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const tabs = ["tab1", "tab2", "tab3"];
+
+    window.switchTab = function (tabId) {
+      tabs.forEach((id) => {
+        const tab = document.getElementById(id);
+        const btn = document.getElementById("btn-" + id);
+        if (tab && btn) {
+          tab.classList.add("hidden");
+          btn.classList.remove("bg-blue-500", "text-white");
+          btn.classList.add("bg-gray-200");
+        }
+      });
+
+      const selectedTab = document.getElementById(tabId);
+      const selectedBtn = document.getElementById("btn-" + tabId);
+      if (selectedTab && selectedBtn) {
+        selectedTab.classList.remove("hidden");
+        selectedBtn.classList.remove("bg-gray-200");
+        selectedBtn.classList.add("bg-[#f3117e]", "text-white");
+      }
+    };
+  });
+</script>
+
+  <CTA />
+</BaseLayout>
+
+<style lang="less">
+  /* PAGE-SPECIFIC STYLES FOR THE PROJECTS PAGE */
+
+  /*-- -------------------------- -->
+<---          Gallery           -->
+<--- -------------------------- -*/
+
+  /* Mobile - 360px - Contains hover animation */
+  @media only screen and (min-width: 0em) {
+    #gallery {
+      /* Centers button */
+      text-align: center;
+      padding: var(--sectionPadding);
+      position: relative;
+      /* Prevents overflow from the image going off screen */
+      overflow: hidden;
+      .cs-container {
+        width: 100%;
+        max-width: (1322/16em);
+        margin: auto;
+      }
+
+      .cs-image-group {
+        /* used rem so it doesn't scale with the font size of on parent */
+        font-size: ~"min(1.1vw, 1em)";
+        width: 100%;
+        max-width: (1322/16em);
+        margin: 0 auto (60/16rem);
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        gap: (30/16em);
+      }
+
+      .cs-row {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        gap: (30/16em);
+      }
+
+      .cs-picture {
+        display: block;
+        position: relative;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+      }
+
+      .cs-row-1 {
+        .cs-picture1 {
+          width: (420/16em);
+          height: (567/16em);
+        }
+
+        .cs-picture2 {
+          width: (420/16em);
+          height: (629/16em);
+        }
+
+        .cs-picture3 {
+          width: (420/16em);
+          height: (512/16em);
+        }
+      }
+
+      .cs-row-2 {
+        .cs-picture1 {
+          width: (420/16em);
+          height: (492/16em);
+        }
+
+        .cs-picture2 {
+          width: (420/16em);
+          height: (517/16em);
+        }
+
+        .cs-picture3 {
+          width: (420/16em);
+          height: (629/16em);
+        }
+      }
+
+      .cs-row-3 {
+        .cs-picture1 {
+          width: (420/16em);
+          height: (625/16em);
+        }
+
+        .cs-picture2 {
+          width: (420/16em);
+          height: (452/16em);
+        }
+
+        .cs-picture3 {
+          width: (420/16em);
+          height: (629/16em);
+        }
+      }
+    }
+  }
+</style>

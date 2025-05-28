@@ -5,7 +5,7 @@ import Landing from '@components/Landing.astro';
 
 // Optimize our landing image and pass it as props to the BaseLayout (for preloading) and Landing (for rendering)
 import { getOptimizedImage } from '@js/utils';
-import landingImage from '@assets/images/landing.jpg'; // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
+import landingImage from '@assets/images/stone-massage-background1.png'; // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
 const optimizedImage = await getOptimizedImage(landingImage);
 ---
 
@@ -26,7 +26,60 @@ const optimizedImage = await getOptimizedImage(landingImage);
 
   <section id="cs-contact">
     <div class="cs-container">
-      <form id="cs-form" name="Contact Form" method="post">
+      <div class="cs-content">
+          <span class="cs-topper">Contact</span>
+          <h2 class="cs-title">Get in Touch</h2>
+          <p class="cs-text">
+            Need to relax and recharge? Contact us today to book your massage
+            and feel rejuvenated.
+          </p>
+          <div class="flex flex-col justify-center items-center sm:flex-row">
+            <div class="h-[254px] flex flex-col justify-between items-center text-center sm:w-3/4" style="background: white;
+              border-radius: 1rem;
+              box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+              max-width: 300px;
+              padding: 2rem;
+              margin: 1rem;">
+              <h1 class="font-bold text-xl mb-4">📞 Mobile Massage</h1>
+              <h2 >Call now to book a mobile massage session in your area.</h2>
+              <a
+                href="tel:587-938-0458"
+                class="cs-button-solid rounded-full text-center text-white leading-snug pt-4 pb-4 text-[.6rem] md:text-[1rem]"
+                style="margin: 1rem  0 0 0;width: 100%;"
+              >
+                Call Now
+              </a>
+              <button
+                onclick="document.getElementById('popup').classList.add('hidden')"
+                class="text-sm text-white-500 hover:text-white mt-2 min-w-[400px]"
+              ></button>
+            </div>
+          
+          
+            <div class="h-[254px] flex flex-col justify-center items-center text-center sm:w-3/4" style="background: white;
+              border-radius: 1rem;
+              box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+              max-width: 300px;
+              padding: 2rem;
+              margin: 1rem;">
+              <h1 class="font-bold text-xl mb-4">🏥 In-Clinic Massage</h1>
+              <h2 >Visit our clinic and enjoy a peaceful massage. Book your session online today.</h2>
+              <a
+                href="tel:587-938-0458"
+                class="cs-button-solid rounded-full text-center text-white leading-snug pt-4 pb-4 text-[.6rem] md:text-[1rem]"
+                style="margin: 1rem  0 0 0;width: 100%;"
+              >
+                Book Online
+              </a>
+              <button
+                onclick="document.getElementById('popup').classList.add('hidden')"
+                class="text-sm text-white-500 hover:text-white mt-2 min-w-[400px]"
+              ></button>
+            </div>
+          </div>
+        </div>
+        
+      <!-- <form id="cs-form" name="Contact Form" method="post">
         <div class="cs-content">
           <span class="cs-topper">Contact</span>
           <h2 class="cs-title">Get in Touch</h2>
@@ -85,7 +138,7 @@ const optimizedImage = await getOptimizedImage(landingImage);
         <button class="cs-button-solid rounded-button" type="submit"
           >Submit Message</button
         >
-      </form>
+      </form> -->
       <div class="cs-right-section">
         <!--Email-->
         <span class="cs-header">Email</span>
@@ -113,12 +166,12 @@ const optimizedImage = await getOptimizedImage(landingImage);
         <picture class="cs-bg-picture">
           <source
             media="(min-width: 601px)"
-            srcset="/assets/images/skyscraper.jpg"
+            srcset="/assets/images/contact-background.png"
           />
           <img
             aria-hidden="true"
             decoding="async"
-            src="/assets/images/skyscraper.jpg"
+            src="/assets/images/contact-background.png"
             alt="building"
             loading="lazy"
             width="2500"
