@@ -14,7 +14,9 @@ const props = Astro.props as Props;
 
 <!-- ============================================ --><!--                 Navigation                   --><!-- ============================================ -->
 <!--Banner at the Top - Display on Mobile -->
-
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+</style>
 <header id="cs-navigation" {...props}>
   <!-- Fixed Announcement Bar -->
   <div
@@ -171,8 +173,8 @@ const props = Astro.props as Props;
 
     #cs-navigation {
       /* remove the font family so the Stitch inherits the fonts from your global stylesheet */
-      font-family: 'Fjalla One';
-      // font-weight: bold;
+      font-family: "Poppins",sans-serif;
+      font-weight: bold;
       
       width: 100%;
       /* prevents padding from affecting height and width */
@@ -777,8 +779,10 @@ const props = Astro.props as Props;
   @media only screen and (min-width: 64rem) {
     #cs-navigation {
       /* remove the font family so the Stitch inherits the fonts from your global stylesheet */
-      font-family: 'Fjalla One';
-      letter-spacing: .1rem;
+      font-family: "Poppins", sans-serif;
+      font-weight: 400;
+      font-size: bold;
+      letter-spacing: .05rem;
       width: 100%;
       /* prevents padding from affecting height and width */
       box-sizing: border-box;

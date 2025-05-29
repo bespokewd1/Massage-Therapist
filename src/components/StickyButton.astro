@@ -16,7 +16,7 @@ const { phoneNumber } = Astro.props;
     href={`tel:${phoneNumber}`}
     class="bg-(--primary) text-sm text-black rounded-full bg-secondary p-3 md:text-base md:py-3 md:px-6 font-medium shadow-md hover:shadow-lg"
   >
-    Call <span class="hidden md:inline">Now</span> ({phoneNumber})
+    Call <span class="hidden md:inline">Now</span> {phoneNumber}
   </a>
 
   <!-- <a
