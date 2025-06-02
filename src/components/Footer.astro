@@ -3,7 +3,7 @@ import client from '@data/client.json';
 import navData from '@data/navData.json';
 import { getCurrentYear } from '@js/utils';
 // import MainLogo from '@components/Icons/MainLogo.astro';
-import MainLogo from '@assets/images/logo/stone-black-logo.png';
+import MainLogo from '@assets/images/logo/updated-logo.png';
 import { Image } from 'astro:assets';
 import { Picture } from 'astro:assets';
 import googleReviewsLogo from '@assets/images/google-reviews-banner.png';
@@ -14,7 +14,7 @@ const currentYear = getCurrentYear();
 <footer id="footer">
   <div class="container">
     <div class="left-section">
-      <a class="logo" href="/">
+      <a class="logo mb-28" href="/">
         <!-- <img -->
         <!--   loading="lazy" -->
         <!--   decoding="async" -->
@@ -28,7 +28,7 @@ const currentYear = getCurrentYear();
         <Image src={MainLogo} class="object-fill w-40 h-auto" alt="Main logo massage"  />
       </a>
       <div class="socials">
-        <h2>Follow Us</h2>
+        <h2 class="text-black">Follow Us</h2>
         <div class="social-links">
           <a class="cs-social-link" href="#">
             <img
