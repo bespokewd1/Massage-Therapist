@@ -22,7 +22,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
     <p class="review-subheader">
       We’re grateful you trusted us with your plumbing and gasfitting needs. Please take a moment to rate your experience.
       <br /> <br />
-      <strong>If you’re satisfied with our service, please select 5 stars and leave us a Google review.</strong><br />
+      <strong>If you’re satisfied with our service, please select 4 stars or above and leave us a Google review.</strong><br />
       <strong>If your experience was anything less than great, we’d love your honest feedback so we can make it right.</strong>
     </p>
 
@@ -52,7 +52,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
     </div>
 
     <div id="badFeedback" class="feedback-section" style="display: none;">
-      <p>We're sorry we didn’t meet your expectations. Please share your feedback and we’ll get in touch right away.</p>
+      <p style="color:#353535;">We're sorry we didn’t meet your expectations. Please share your feedback and we’ll get in touch right away.</p>
       <textarea class="textarea" rows="4" placeholder="Tell us what happened..."></textarea>
       <input type="text" placeholder="Your name (optional)" />
       <input type="email" placeholder="Your email or phone (optional)" />
@@ -155,7 +155,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
       margin-bottom: 5rem;
     }
     .review-container {
-        background: white;
+        background: #ffbbf9;
         padding: 2rem;
         max-width: 600px;
         width: 90%;
@@ -203,6 +203,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
       .textarea,
       input[type="text"],
       input[type="email"] {
+        background: white;
         width: 100%;
         padding: 0.75rem;
         margin-bottom: 1rem;
@@ -210,12 +211,12 @@ const optimizedImage = await getOptimizedImage(landingImage)
         border-radius: 8px;
       }
       .review-button {
-        background: #004e92;
+        background: var(--primary);
         color: white;
         border: none;
         padding: 0.75rem 2rem;
         font-size: 1rem;
-        border-radius: 8px;
+        border-radius: 2rem;
         cursor: pointer;
         width: 100%;
         margin-bottom: 1rem;
