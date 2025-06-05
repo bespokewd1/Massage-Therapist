@@ -18,7 +18,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
   <!--                 Review                       -->
   <!-- ============================================ -->
   <div class="review-container">
-    <h1 class="review-h1" style="color:black;">Thank You for Choosing Hot Stone Massage Edmonton</h1>
+    <h1 class="review-h1" style="color:black;">Thank You for choosing Hot Stone Massage Edmonton</h1>
     <p class="review-subheader">
         We’re grateful you chose us for your hot stone massage experience. Please take a moment to share how we did, your feedback means a lot to us.
       <br /> <br />
@@ -237,7 +237,14 @@ const optimizedImage = await getOptimizedImage(landingImage)
         text-decoration: underline;
       }
   }
-
+  @media only screen and (max-width: 47em) {
+    .review-container{
+        margin-top: 10rem;
+    }
+    .review-subheader{
+        font-size: 0.9rem;
+    }
+  }
  
   @media only screen and (min-width: 48em) {
     .review-container{
