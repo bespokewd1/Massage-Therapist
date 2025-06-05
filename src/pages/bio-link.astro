@@ -17,19 +17,19 @@ const optimizedImage = await getOptimizedImage(landingImage)
   <!-- ============================================ -->
   <!--                 Bio Link                     -->
   <!-- ============================================ -->
-
   <div id="bio-link">
+    <img src="/assets/images/updated-logo.png" alt="Logo" class="logo" width="60" height="60" />
     <h1>Hot Stone Massage – Edmonton</h1>
     <p><em>Relax. Rejuvenate. Revive.</em></p>
-    <p>Professional massage therapy for relaxation, pain relief, and wellness in Edmonton.</p>
-    <div class="phone">📞 587-938-0458</div>
+    <!-- <p>Professional massage therapy for relaxation, pain relief, and wellness in Edmonton.</p> -->
+    <!-- <div class="phone">📞 587-938-0458</div> -->
   
     <a href="tel:5879380458" class="link-btn">📞 Call for Mobile Massage</a>
-    <a href="#" class="link-btn">🗓️ Book Online for In-Clinic Massage</a>
+    <a href="https://www.massagebook.com/therapists/StoneMassage?src=external" class="link-btn">🗓️ Book Online for In-Clinic Massage</a>
     <a href="https://stonemassage.ca" class="link-btn">🌐 Visit Our Official Website</a>
     <a href="https://facebook.com/YourPageName" class="link-btn">👍 Follow Us on Facebook</a>
     <a href="https://instagram.com/YourHandle" class="link-btn">📸 Follow Us on Instagram</a>
-    <a href="https://www.google.com/maps/place/Your+Business+Address" class="link-btn">📍 Check Our Address on Google Maps</a>
+    <a href="https://maps.app.goo.gl/qviXiGpS6h1b8kYp8" class="link-btn">📍 Check Our Address on Google Maps</a>
   
     <footer>
       © 2025 Bespoke Web Design. All rights reserved.
@@ -56,7 +56,16 @@ const optimizedImage = await getOptimizedImage(landingImage)
   /* Mobile - 360px */  
   @media only screen and (min-width: 0em) {
     #bio-link{
-        h1 {
+    .logo {
+      width: 96px;
+      height: 96px;
+      margin: 0 auto 1.2rem;
+    //   border-radius: 50%;
+      object-fit: cover;
+    //   box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+    }
+    h1 {
+      font-size: 2rem;
       color: #d63384;
       margin-bottom: 5px;
     }
