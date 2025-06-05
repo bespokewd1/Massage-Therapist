@@ -1,5 +1,5 @@
 ---
-import BaseLayout from "src/layouts/BaseLayout.astro";
+import SecondaryLayout from "src/layouts/SecondaryLayout.astro";
 
 // Optimize our landing image and pass it as props to the BaseLayout (for preloading) and Landing (for rendering)
 import {getOptimizedImage} from "@js/utils"
@@ -7,8 +7,8 @@ import landingImage from "@assets/images/landing.jpg" // <-- THE PATH TO THE ASS
 const optimizedImage = await getOptimizedImage(landingImage)
 ---
 
-<BaseLayout
-  title="Review"
+<SecondaryLayout
+  title="Bio Link"
   description="Meta description for the page"
   preloadedImage = {optimizedImage}
 >
@@ -37,7 +37,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
   
   </div>
 
-</BaseLayout>
+</SecondaryLayout>
 
 <style lang="less">
   /* PAGE-SPECIFIC STYLES FOR THE ABOUT PAGE */
@@ -53,7 +53,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
   #cs-navigation{
     display: none;
   }
-  /* Mobile - 360px */
+  /* Mobile - 360px */  
   @media only screen and (min-width: 0em) {
     #bio-link{
         h1 {
