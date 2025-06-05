@@ -1,0 +1,267 @@
+---
+import BaseLayout from "src/layouts/BaseLayout.astro";
+import Landing from "@components/Landing.astro";
+
+// Optimize our landing image and pass it as props to the BaseLayout (for preloading) and Landing (for rendering)
+import {getOptimizedImage} from "@js/utils"
+import landingImage from "@assets/images/landing.jpg" // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
+const optimizedImage = await getOptimizedImage(landingImage)
+---
+
+<BaseLayout
+  title="About"
+  description="Meta description for the page"
+  preloadedImage = {optimizedImage}
+>
+  <!-- ============================================ -->
+  <!--                    LANDING                   -->
+  <!-- ============================================ -->
+
+  <Landing 
+    title="About Us"
+    image={optimizedImage}
+  />
+
+  <!-- ============================================ -->
+  <!--                 Review                       -->
+  <!-- ============================================ -->
+  <div class="review-container">
+    <h1 class="review-h1">Thank You for Choosing KMS Plumbing & Gasfitting Ltd.</h1>
+    <p class="review-subheader">
+      We’re grateful you trusted us with your plumbing and gasfitting needs. Please take a moment to rate your experience.
+      <br /> <br />
+      <strong>If you’re satisfied with our service, please select 5 stars and leave us a Google review.</strong><br />
+      <strong>If your experience was anything less than great, we’d love your honest feedback so we can make it right.</strong>
+    </p>
+
+    <div class="review-stars" id="starContainer">
+      <span class="star" data-rating="1">★</span>
+      <span class="star" data-rating="2">★</span>
+      <span class="star" data-rating="3">★</span>
+      <a href="https://maps.app.goo.gl/ziSayyvU6qofaYGD8" target="_blank" style="text-decoration: none; color: black;">
+        <span class="star" data-rating="4">★</span>
+      </a>
+      <a href="https://maps.app.goo.gl/ziSayyvU6qofaYGD8" target="_blank" style="text-decoration: none; color: black;">
+        <span class="star" data-rating="5">★</span>
+      </a>
+      
+    </div>
+
+    <div id="goodFeedback" class="review-feedback-section" style="display: none;">
+      <p>Thank you! We're thrilled you’re happy with our service. Please click below to leave us a Google review:</p>
+      <div class="review-buttons">
+        <a href="https://www.facebook.com/KMsSPlumbingyeg/" target="_blank">
+            <button class="review-button">Leave a Facebook Review</button>
+        </a>
+        <a href="https://maps.app.goo.gl/E5q5L71koyxKWpck8" target="_blank">
+          <button class="review-button">Leave a Google Review</button>
+        </a>
+      </div>
+    </div>
+
+    <div id="badFeedback" class="feedback-section" style="display: none;">
+      <p>We're sorry we didn’t meet your expectations. Please share your feedback and we’ll get in touch right away.</p>
+      <textarea class="textarea" rows="4" placeholder="Tell us what happened..."></textarea>
+      <input type="text" placeholder="Your name (optional)" />
+      <input type="email" placeholder="Your email or phone (optional)" />
+      <button class="review-button" onclick="sendFeedback()">Submit Feedback</button>
+    </div>
+
+    <div class="powered">
+      Powered by <a href="https://bespokewebdesign.ca/" target="_blank">Bespoke Web Design Edmonton</a>
+    </div>
+  </div>
+
+    <!-- Review Scripts -->
+    <script>
+        const stars = document.querySelectorAll('.star');
+        const starContainer = document.getElementById('starContainer');
+        const goodFeedback = document.getElementById('goodFeedback');
+        const badFeedback = document.getElementById('badFeedback');
+    
+        stars.forEach(star => {
+          star.addEventListener('mouseover', () => {
+            const rating = parseInt(star.getAttribute('data-rating'));
+            highlightStars(rating);
+          });
+    
+          star.addEventListener('mouseout', () => {
+            highlightStars(0);
+          });
+    
+          star.addEventListener('click', () => {
+            const rating = parseInt(star.getAttribute('data-rating'));
+            stars.forEach(s => s.classList.remove('selected'));
+            star.classList.add('selected');
+            
+    
+            if (rating >= 4) {
+              goodFeedback.style.display = 'none';
+              badFeedback.style.display = 'none';
+            } else {
+              goodFeedback.style.display = 'none';
+              badFeedback.style.display = 'block';
+            }
+    
+            stars.forEach(star => {
+                const starRating = parseInt(star.getAttribute('data-rating'));
+                if (starRating <= rating) {
+                star.classList.add('selected');
+                } else {
+                star.classList.remove('selected');
+                }
+            })
+          });
+        });
+    
+        function highlightStars(rating) {
+          stars.forEach(star => {
+            const starRating = parseInt(star.getAttribute('data-rating'));
+            if (starRating <= rating) {
+              star.classList.add('hover');
+            } else {
+              star.classList.remove('hover');
+            }
+          });
+        }
+    
+    
+        function sendFeedback() {
+          const message = document.querySelector('#badFeedback textarea').value.trim();
+          const name = document.querySelector('#badFeedback input[type="text"]').value.trim();
+          const contact = document.querySelector('#badFeedback input[type="email"]').value.trim();
+    
+          const email = "admin@montanoplumbing.ca";
+          const subject = encodeURIComponent("Customer Feedback - MPC");
+          const body = encodeURIComponent(
+            `Customer Feedback:\n${message}\n\nName: ${name}\nContact: ${contact}`
+          );
+    
+          window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
+        }
+    
+    
+        
+      </script>
+    
+
+
+</BaseLayout>
+
+<style lang="less">
+  /* PAGE-SPECIFIC STYLES FOR THE ABOUT PAGE */
+
+  /*-- -------------------------- -->
+<---       Side By Side         -->
+<--- -------------------------- -*/
+
+  /* Mobile - 360px */
+  @media only screen and (min-width: 0em) {
+    .review-container{
+      margin: auto;
+      margin-top: 6rem;
+      margin-bottom: 5rem;
+    }
+    .review-container {
+        background: white;
+        padding: 2rem;
+        max-width: 600px;
+        width: 90%;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        border-radius: 12px;
+        text-align: center;
+      }
+      .review-logo{
+          width: 100%;
+      }
+      .review-h1 {
+        font-size: 1.25rem;
+        margin-bottom: 0.5rem;
+        padding-top: 2rem;
+      }
+      p.review-subheader {
+        color: #555;
+        font-size: 1.1rem;
+      }
+      .stars {
+        display: flex;
+        justify-content: center;
+        gap: 0.5rem;
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        cursor: pointer;
+      }
+      .review-star {
+        color: #ccc;
+        transition: color 0.3s ease;
+      }
+      .star{
+          font-size: 3rem;
+      }
+      .star:hover,
+      .star.hover,
+      .star.selected {
+        color: #fbc02d;
+      }
+      .review-feedback-section {
+        display: none;
+        margin-top: 1rem;
+      }
+      .textarea,
+      input[type="text"],
+      input[type="email"] {
+        width: 100%;
+        padding: 0.75rem;
+        margin-bottom: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+      }
+      .review-button {
+        background: #004e92;
+        color: white;
+        border: none;
+        padding: 0.75rem 2rem;
+        font-size: 1rem;
+        border-radius: 8px;
+        cursor: pointer;
+        width: 100%;
+        margin-bottom: 1rem;
+      }
+      .review-buttons {
+        margin-top: 1rem;
+        
+      }
+      .powered {
+        margin-top: 2rem;
+        font-size: 0.85rem;
+        color: #888;
+      }
+      .powered a {
+        color: #888;
+        text-decoration: none;
+      }
+      .powered a:hover {
+        text-decoration: underline;
+      }
+  }
+
+ 
+  @media only screen and (min-width: 48em) {
+    .review-container{
+      margin-top: 15rem;
+    }
+    .review-h1{
+        font-size: 1.8rem;
+    }
+    p.review-subheader {
+        font-size: 1.2rem;
+    }
+  }
+
+  /* Dark Mode */
+  @media only screen and (min-width: 0em) {
+    body.dark-mode {
+
+    }
+  }
+</style>
