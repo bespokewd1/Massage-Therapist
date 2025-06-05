@@ -1,5 +1,7 @@
 ---
 import SecondaryLayout from "src/layouts/SecondaryLayout.astro";
+import Logo from '@assets/images/logo/updated-logo.png';
+import { Image } from 'astro:assets';
 
 // Optimize our landing image and pass it as props to the BaseLayout (for preloading) and Landing (for rendering)
 import {getOptimizedImage} from "@js/utils"
@@ -18,7 +20,13 @@ const optimizedImage = await getOptimizedImage(landingImage)
   <!--                 Bio Link                     -->
   <!-- ============================================ -->
   <div id="bio-link">
-    <img src="@assets/images/updated-logo.png" alt="Logo" class="logo" width="60" height="60" />
+    <Image
+        src={Logo}
+        alt="Logo"
+        class="logo"
+        width="60"
+        height="60"
+      />
     <h1>Hot Stone Massage – Edmonton</h1>
     <p><em>Relax. Rejuvenate. Revive.</em></p>
     <!-- <p>Professional massage therapy for relaxation, pain relief, and wellness in Edmonton.</p> -->
