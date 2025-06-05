@@ -1,0 +1,112 @@
+---
+import BaseLayout from "src/layouts/BaseLayout.astro";
+
+// Optimize our landing image and pass it as props to the BaseLayout (for preloading) and Landing (for rendering)
+import {getOptimizedImage} from "@js/utils"
+import landingImage from "@assets/images/landing.jpg" // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
+const optimizedImage = await getOptimizedImage(landingImage)
+---
+
+<BaseLayout
+  title="Review"
+  description="Meta description for the page"
+  preloadedImage = {optimizedImage}
+>
+
+
+  <!-- ============================================ -->
+  <!--                 Bio Link                     -->
+  <!-- ============================================ -->
+
+  <div id="bio-link">
+    <h1>Hot Stone Massage – Edmonton</h1>
+    <p><em>Relax. Rejuvenate. Revive.</em></p>
+    <p>Professional massage therapy for relaxation, pain relief, and wellness in Edmonton.</p>
+    <div class="phone">📞 587-938-0458</div>
+  
+    <a href="tel:5879380458" class="link-btn">📞 Call for Mobile Massage</a>
+    <a href="#" class="link-btn">🗓️ Book Online for In-Clinic Massage</a>
+    <a href="https://stonemassage.ca" class="link-btn">🌐 Visit Our Official Website</a>
+    <a href="https://facebook.com/YourPageName" class="link-btn">👍 Follow Us on Facebook</a>
+    <a href="https://instagram.com/YourHandle" class="link-btn">📸 Follow Us on Instagram</a>
+    <a href="https://www.google.com/maps/place/Your+Business+Address" class="link-btn">📍 Check Our Address on Google Maps</a>
+  
+    <footer>
+      © 2025 Bespoke Web Design. All rights reserved.
+    </footer>
+  
+  </div>
+
+</BaseLayout>
+
+<style lang="less">
+  /* PAGE-SPECIFIC STYLES FOR THE ABOUT PAGE */
+
+  body{
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #ffe6ec;
+    color: #333;
+    text-align: center;
+    padding: 30px 20px;
+  }
+  #cs-navigation{
+    display: none;
+  }
+  /* Mobile - 360px */
+  @media only screen and (min-width: 0em) {
+    #bio-link{
+        h1 {
+      color: #d63384;
+      margin-bottom: 5px;
+    }
+
+    p {
+      font-size: 1rem;
+      margin: 5px 0 20px;
+    }
+
+    .phone {
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 30px;
+    }
+
+    .link-btn {
+      display: block;
+      background: #ff69b4;
+      color: white;
+      padding: 14px 20px;
+      margin: 10px auto;
+      border: none;
+      border-radius: 30px;
+      text-decoration: none;
+      max-width: 320px;
+      font-size: 1rem;
+      transition: background 0.3s ease;
+    }
+
+    .link-btn:hover {
+      background: #e055a1;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 0.8rem;
+      color: #666;
+    }
+    }
+  }
+ 
+  @media only screen and (min-width: 48em) {
+
+  }
+
+  /* Dark Mode */
+  @media only screen and (min-width: 0em) {
+    body.dark-mode {
+
+    }
+  }
+</style>
