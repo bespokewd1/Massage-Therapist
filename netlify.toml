@@ -1,0 +1,11 @@
+[[redirects]]
+  from = "https://stonemassage.ca/book"
+  to = "https://www.massagebook.com/therapists/StoneMassage"
+  status = 301
+  force = true
+
+  [[redirects]]
+  from = "/book"
+  to = "https://www.massagebook.com/therapists/StoneMassage"
+  status = 301
+  force = true
