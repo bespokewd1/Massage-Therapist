@@ -30,12 +30,9 @@ const optimizedImage = await getOptimizedImage(landingImage)
       <span class="star" data-rating="1">★</span>
       <span class="star" data-rating="2">★</span>
       <span class="star" data-rating="3">★</span>
-      <a href="https://maps.app.goo.gl/ap3WoWPsprZ7wX3z7" target="_blank" style="text-decoration: none; color: #4e4b66;">
-        <span class="star" data-rating="4">★</span>
-      </a>
-      <a href="https://maps.app.goo.gl/ap3WoWPsprZ7wX3z7" target="_blank" style="text-decoration: none; color: #4e4b66;">
-        <span class="star" data-rating="5">★</span>
-      </a>
+      <span class="star" data-rating="4">★</span>
+      <span class="star" data-rating="5">★</span>
+
       
     </div>
 
@@ -43,7 +40,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
       <p>Thank you! We're thrilled you’re happy with our service. Please click below to leave us a Google review:</p>
       <div class="review-buttons">
         
-        <a href="https://maps.app.goo.gl/E5q5L71koyxKWpck8" target="_blank">
+        <a href="https://www.google.com/maps/place/Stone+Massage/@53.399848,-113.5897509,492m/data=!3m1!1e3!4m18!1m9!3m8!1s0x2f64181384393b25:0xcc81b73ee08007b3!2sStone+Massage!8m2!3d53.399848!4d-113.587176!9m1!1b1!16s%2Fg%2F11xgk681yb!3m7!1s0x2f64181384393b25:0xcc81b73ee08007b3!8m2!3d53.399848!4d-113.587176!9m1!1b1!16s%2Fg%2F11xgk681yb?entry=ttu&g_ep=EgoyMDI1MDYwMy4wIKXMDSoASAFQAw%3D%3D" target="_blank">
           <button class="review-button">Leave a Google Review</button>
         </a>
         <a href="https://www.facebook.com/profile.php?id=61576565295541&sk=reviews/" target="_blank">
@@ -89,7 +86,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
             
     
             if (rating >= 4) {
-              goodFeedback.style.display = 'none';
+              goodFeedback.style.display = 'block';
               badFeedback.style.display = 'none';
             } else {
               goodFeedback.style.display = 'none';
