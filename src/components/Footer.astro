@@ -30,22 +30,34 @@ const currentYear = getCurrentYear();
       <div class="socials">
         <h2 class="text-black">Follow Us</h2>
         <div class="social-links">
-          <a class="cs-social-link" href="https://www.facebook.com/profile.php?id=61576565295541" target="_blank">
+          <a 
+          class="cs-social-link" 
+          href="https://www.facebook.com/profile.php?id=61576565295541" 
+          target="_blank"
+          style="width: 3rem; height: 3rem; border-radius: 1.5rem;"
+          >
             <img
               class="cs-social-img"
               src="https://kms-draft.netlify.app/assets/images/facebook.svg"
               alt="facebook"
               width="11"
               height="11"
+              style="height: 2rem; width: 2rem;"
             />
           </a>
-          <a class="cs-social-link" href="https://www.instagram.com/stonemassage.yeg/" target="_blank">
+          <a 
+          class="cs-social-link" 
+          href="https://www.instagram.com/stonemassage.yeg/" 
+          target="_blank"
+          style="width: 3rem; height: 3rem; border-radius: 1.5rem;"
+          >
             <img
               class="cs-social-img"
               src="https://kms-draft.netlify.app/assets/images/instagram.svg/"
               alt="Instagram"
               width="11"
               height="11"
+              style="height: 2rem; width: 2rem;"
             />
           </a>
         </div>
@@ -159,6 +171,7 @@ const currentYear = getCurrentYear();
             display: block;
           }
           .socials {
+            margin-top: 1rem;
             width: 100%;
             h2 {
               // color: #fff;
@@ -434,16 +447,24 @@ const currentYear = getCurrentYear();
     body.dark-mode {
       #footer {
         background: #061623;
-        .left-section{
-          h2,span{
+        .container{
+          .left-section{
+            .socials{
+              h2{
+                color: #fff !important;
+              }
+            }
+          span{
             color: #fff !important;
           }
         }
-        .right-section{
-          h2,a{
-            color: #fff !important;
+          .right-section{
+            h2,a,li{
+              color: #fff !important;
+            }
           }
         }
+
       }
     }
   }
