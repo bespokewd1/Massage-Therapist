@@ -3,7 +3,7 @@ import client from '@data/client.json';
 import navData from '@data/navData.json';
 import { getCurrentYear } from '@js/utils';
 // import MainLogo from '@components/Icons/MainLogo.astro';
-import MainLogo from '@assets/images/logo/updated-logo.png';
+import MainLogo from '@assets/images/logo/no-space-logo.png';
 import { Image } from 'astro:assets';
 import { Picture } from 'astro:assets';
 import googleReviewsLogo from '@assets/images/google-reviews-banner.png';
@@ -165,16 +165,16 @@ const currentYear = getCurrentYear();
               color: #000000;
             }
             .social-links {
-              height: 2rem;
-              width: 2rem;
+              height: 3rem;
+              width: 3rem;
               background-color: black;
               display: flex;
               justify-content: center;
               align-content: center;
-              border-radius: 1rem;
+              border-radius: 1.5rem;
               .cs-social-link {
-                width: 2rem;
-                height: 2rem;
+                width: 3rem;
+                height: 3rem;
                 background-color: black;
                 .cs-social-img {
                   height: 2rem;
@@ -434,6 +434,16 @@ const currentYear = getCurrentYear();
     body.dark-mode {
       #footer {
         background: #061623;
+        .left-section{
+          h2,span{
+            color: #fff !important;
+          }
+        }
+        .right-section{
+          h2,a{
+            color: #fff !important;
+          }
+        }
       }
     }
   }
