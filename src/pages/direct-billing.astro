@@ -2,6 +2,9 @@
 import BaseLayout from 'src/layouts/BaseLayout.astro';
 import Landing from '@components/Landing.astro';
 
+import { Picture } from 'astro:assets';
+import Stars from '@assets/images/stars.png';
+
 // Optimize our landing image and pass it as props to the BaseLayout (for preloading) and Landing (for rendering)
 import { getOptimizedImage } from '@js/utils';
 import landingImage from '@assets/images/stone-massage-background1.png'; // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
@@ -9,7 +12,7 @@ const optimizedImage = await getOptimizedImage(landingImage);
 ---
 
 <BaseLayout
-  title="Direct Billing - Hot Stone Massage Edmonton"
+  title="Direct Billing - Professional Massage Therapy"
   preloadedImage={optimizedImage}
 >
   <!-- ============================================ -->
@@ -91,7 +94,7 @@ const optimizedImage = await getOptimizedImage(landingImage);
             exceptional care. Here's what some of our clients have to say about
             their experience with us.
           </p>
-          <ul id="reviews-container" class="cs-card-group mobile-scroll-x">
+          <ul class="cs-card-group">
             <!-- Review 1 -->
             <li class="cs-item">
               <img
@@ -137,7 +140,7 @@ const optimizedImage = await getOptimizedImage(landingImage);
                 "Does a very good job, friendly, and an absolute pleasure to have around! Would definitely recommend."
               </p>
               <span class="cs-reviewer">
-                Bien B.
+                Bine B.
                 <span class="cs-desc">Client</span>
               </span>
               <Picture
@@ -182,10 +185,10 @@ const optimizedImage = await getOptimizedImage(landingImage);
           </ul>
           <a
             aria-label="read more reviews"
-            href="https://www.google.com/maps/place/Stone+Massage/@53.399848,-113.5897509,526m/data=!3m1!1e3!4m18!1m9!3m8!1s0x2f64181384393b25:0xcc81b73ee08007b3!2sStone+Massage!8m2!3d53.399848!4d-113.587176!9m1!1b1!16s%2Fg%2F11xgk681yb!3m7!1s0x2f64181384393b25:0xcc81b73ee08007b3!8m2!3d53.399848!4d-113.587176!9m1!1b1!16s%2Fg%2F11xgk681yb?entry=ttu&g_ep=EgoyMDI1MDYwMy4wIKXMDSoASAFQAw%3D%3D"
+            href="https://www.massagebook.com/therapists/StoneMassage/reviews"
+            class="cs-button-solid rounded-button"
             target="_blank"
-            rel="noopener noreferrer"
-            class="cs-button-solid rounded-button">Our Reviews</a
+            rel="noopener noreferrer">Our Reviews</a
           >
         </div>
       </section>
