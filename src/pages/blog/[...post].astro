@@ -24,8 +24,14 @@ const { title, date, description, image, imageAlt, author } = post.data;
 const { Content } = await render(post);
 ---
 
-<BaseLayout
+<!-- Old Meta Tag -->
+<!-- <BaseLayout
   title={title}
+  description={description}
+  preloadedImage = {optimizedImage}
+> -->
+<BaseLayout
+  title="Wellness Blog - Hot Stone Massage Edmonton"
   description={description}
   preloadedImage = {optimizedImage}
 >
