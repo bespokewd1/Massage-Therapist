@@ -42,10 +42,10 @@ const { description, title, preloadedImage } = Astro.props;
       property="og:url"
       content={`https://${client.domain}${Astro.url.pathname}`}
     />
-    <meta property="og:image" content="/assets/favicons/favicon-stone-massage.jpg" />
+    <meta property="og:image" content={preloadedImage} />
     <meta
       property="og:image:secure_url"
-      content="/assets/favicons/favicon-stone-massage.jpg"
+      content={preloadedImage}
     />
 
     <!--Favicons-->
