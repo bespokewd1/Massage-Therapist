@@ -40,6 +40,9 @@ const { title, image } = Astro.props
         position: relative;
         z-index: 1;
 
+        padding-top: 9rem;
+        padding-bottom: 2.5rem;
+
         &:before {
             content: "";
             width: 100%;
@@ -98,6 +101,8 @@ const { title, image } = Astro.props
 /* Small Desktop */
 @media only screen and (min-width: 64em) {
     #int-hero {
+        padding-bottom: 0;
+
         height: auto;
         min-height: (300/16rem);
         padding-top: (180/16rem);
