@@ -308,7 +308,45 @@ posts.sort(
       </svg>
     </button>
   </section> -->
-
+  <!-- ============================================ -->
+  <!--               MOBILE MASSAGE                 -->
+  <!-- ============================================ -->
+   <section class="mobile mt-8" >
+      <div class="w-5/6 flex flex-col justify-center items-center " style="margin: auto;">
+        <h1 class="text-3xl text-center md:text-5xl text-[var(--primary)]" style="animation: blink 1s step-start infinite;">Mobile Massage Available– We Come to You!</h1>
+        <p class="text-left mt-2">Experience the ultimate relaxation without leaving your home. 
+          Our mobile massage service brings the full spa experience right to your doorstep — 
+          complete with a professional massage table, cozy warm towels, soothing lotion, and optional add-ons like:
+        </p>
+        <div class="w-5/6 flex flex-col justify-center items-center place-items-center mt-4 sm:w-5/6 md:w-full md:flex-row md:items-start md:justify-evenly md:mt-8">
+          <div class="w-full flex flex-row justify-start items-center mb-8 md:flex-col">
+            <img src="assets/images/stone-massage.png" class="w-1/3">
+            <h1 class="text-2xl md:text-center">Hot Stone Therapy</h1>
+          </div>
+          <div class="w-full flex flex-row justify-start items-center mb-8 md:flex-col">
+            <img src="assets/images/cupping-theraphy.png" class="w-1/3">
+            <h1 class="text-2xl md:text-center">Cupping Treatment</h1>
+          </div>
+          <div class="w-full flex flex-row justify-start items-center mb-8 md:flex-col">
+            <img src="assets/images/foot-massage.png" class="w-1/3">
+            <h1 class="text-2xl md:text-center">Foot Scrub</h1>
+          </div>
+        </div>
+        <p class="text-left mt-2 italic">Whether you need stress relief or targeted therapy, enjoy 
+          personalized care in the comfort and privacy of your own space.
+        </p>
+        <div class="w-full flex flex-row justify-center items-center mt-8 ">
+            <h1 class="text-3xl">📍</h1>
+            <h1 class="text-xl md:text-center">Serving Edmonton & Nearby Areas</h1>
+        </div>
+        <a
+          href="tel:587-938-0458"
+          class="h-auto cs-button-solid w-[300px] rounded-full mt-8 text-center text-white leading-snug p-4 text-[.6rem] md:text-[1rem] lg:w-[220px] xl:w-[230px]"
+          >
+          <span class="text-[1rem]">Call for Mobile Massage</span> <i class="fas fa-phone text-[#28a745] ml-1"></i>
+         </a>
+      </div>
+   </section>
   <!-- ============================================ -->
   <!--               Services                    -->
   <!-- ============================================ -->
@@ -1430,6 +1468,138 @@ posts.sort(
       }
     }
   }
+  @media only screen and (min-width: 0em) {
+    .mobile {
+      width: 90%;
+      max-width: (1320/16em);
+      margin: auto;
+      margin-top: (-167/16em);
+      margin-bottom: (50/16em);
+      padding: 5rem (20/16em) (50/16em);
+      background: #fff;
+      box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.05);
+      border-top: (6/16em) solid var(--primary);
+      border-radius: (5/16em);
+      position: relative;
+      z-index: 100;
+      gap: 0.5rem;
+
+      .cs-header {
+        position: absolute;
+        top: 2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: var(--headerFontSize);
+        font-weight: 500;
+      }
+      .card {
+        width: 100%;
+        position: relative;
+        max-width: (357/16em);
+        margin: auto;
+        margin-bottom: (50/16em);
+        // display: block;
+        display: grid;
+        grid-template-rows: min-content 1fr;
+
+        // &:last-of-type {
+        //   margin-bottom: 0;
+        // }
+
+        picture {
+          width: 100%;
+          height: 100%;
+          //   margin: auto;
+          //   margin-bottom: (23/16em);
+          background: var(--primary);
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          img {
+            width: 100%;
+            height: 100%;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+          }
+        }
+
+        h3 {
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          font-size: (24/16em);
+          font-weight: 500;
+          line-height: 27/20em;
+          text-align: center;
+          margin-bottom: 13/20em;
+          color: #1a1a1a;
+          backdrop-filter: blur(20px);
+          //background-color: #d6f1f5b3;
+          background-color: rgba(var(--secondary-rgb), 0.3);
+          border-top-left-radius: 8px;
+          border-top-right-radius: 8px;
+          width: 75%;
+          min-height: 25%;
+        }
+      }
+    }
+  }
+
+  /* Inbetween */
+  @media only screen and (min-width: 768px) {
+    .mobile {
+      font-size: ~'min(1.8vw, 1em)';
+      width: 98%;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+
+      .cs-header {
+        top: 0.5rem;
+      }
+
+      .card {
+        max-width: (325/16em);
+        margin: 0;
+        grid-template-rows: min-content;
+
+        overflow: hidden;
+        picture,
+        h3 {
+          transition: transform 300ms ease;
+        }
+
+        &:hover {
+          picture {
+            transform: scale(1.1);
+          }
+
+          h3 {
+            transform: translateX(-50%);
+          }
+        }
+      }
+    }
+  }
+
+  /* Large Desktop */
+  @media only screen and (min-width: 1300px) {
+    .mobile {
+      padding: 5rem (80/16em) (50/16em);
+      .cs-header {
+        top: 0;
+      }
+
+      .card {
+        max-width: (357/16em);
+      }
+    }
+  }
 
   /* Dark mode */
   @media only screen and (min-width: 0em) {
@@ -2284,5 +2454,9 @@ posts.sort(
       transform: translate3d(0, 0, 0); /* Hardware acceleration */
       will-change: background-position; /* Optimize performance */
     }
+  }
+  @keyframes blink {
+    0%,100% {opacity: 1;}
+    50%{opacity: 0;}
   }
 </style>
