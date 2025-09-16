@@ -28,6 +28,8 @@ import promoImag6 from '@assets/images/stress.png';
 import serviceBgImg from '@assets/images/Blog2-HeaderPhoto.jpg';
 import checkMark from '@assets/images/check-mark.png';
 
+import ogImage from '@assets/images/CTA/mobile-massage.jpg';
+
 import heroImg from '@assets/images/hero-img.jpg';
 import landingImage from '@assets/images/landing.jpg'; // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
 import { Picture } from 'astro:assets';
@@ -39,8 +41,8 @@ import ThaiOilIcon from '@components/Icons/massages/ThaiOilIcon.astro';
 import PrenatalIcon from '@components/Icons/massages/PrenatalIcon.astro';
 import KidsIcon from '@components/Icons/massages/KidsIcon.astro';
 
-
 const optimizedImage = await getOptimizedImage(landingImage);
+const optimizedOg = await getOptimizedImage(ogImage);
 
 const promotionInfo: PromotionProps[] = [
   {
@@ -115,11 +117,16 @@ posts.sort(
   (a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf()
 );
 ---
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
 <BaseLayout
   title="Mobile Massage in Edmonton — We Come to You!"
   description="Skip the commute and let the spa come to you. Our mobile massage service brings everything you need for total relaxation — directly to your doorstep."
   preloadedImage={optimizedImage}
+  ogImage={optimizedOg}
 >
   <!-- ============================================ -->
   <!--                    Hero                      -->
@@ -128,25 +135,30 @@ posts.sort(
   <section id="hero">
     <div class="cs-container">
       <div class="cs-flex-group">
-        <span class="cs-topper mt-12">Mobile Massage in Edmonton — We Come to You!</span>
+        <span class="cs-topper mt-12"
+          >Mobile Massage in Edmonton — We Come to You!</span
+        >
         <h1 class="cs-title">Relax. Rejuvenate. Right at Home.</h1>
         <p class="cs-text mt-28">
-          Skip the commute and let the spa come to you. Our mobile massage service brings everything you 
-          need for total relaxation — directly to your doorstep.
+          Skip the commute and let the spa come to you. Our mobile massage
+          service brings everything you need for total relaxation — directly to
+          your doorstep.
         </p>
         <!-- <a href="/about" class="cs-button-solid">Call Now (780-123-4567)</a> -->
         <a
           href="tel:587-938-0458"
           class="cs-button-solid w-[300px] rounded-full mt-8 text-center text-white leading-snug p-4 text-[.6rem] md:text-[1rem] lg:w-[220px] xl:w-[230px]"
-          >
-          <span class="text-[1rem]">Call for Mobile Massage</span> <i class="fas fa-phone text-[#28a745] ml-1"></i>
-         </a>
+        >
+          <span class="text-[1rem]">Call for Mobile Massage</span>
+          <i class="fas fa-phone text-[#28a745] ml-1"></i>
+        </a>
         <a
           href="https://www.massagebook.com/therapists/StoneMassage?src=external"
-          class="cs-button-solid w-[300px]  rounded-full text-center text-white leading-snug p-4 text-[.6rem] md:text-[1rem] lg:w-[230px] lg:mt-8"
-          >
-          <span class="text-[1rem]">Book In-Clinic Massage </span> <i class="fas fa-calendar text-[#28a745]"></i>
-          </a>
+          class="cs-button-solid w-[300px] rounded-full text-center text-white leading-snug p-4 text-[.6rem] md:text-[1rem] lg:w-[230px] lg:mt-8"
+        >
+          <span class="text-[1rem]">Book In-Clinic Massage </span>
+          <i class="fas fa-calendar text-[#28a745]"></i>
+        </a>
       </div>
     </div>
 
@@ -162,30 +174,36 @@ posts.sort(
     />
   </section>
   <!-- Popup Overlay -->
-          <div id="popup" class="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-[9999] hidden">
-            <div class="p-6 rounded-xl shadow-xl w-11/12 max-w-md" style="background: rgba(255, 255, 255, 0.3);">
-              <div class="flex flex-col gap-4">
-                <a
-                  href="https://www.massagebook.com/therapists/StoneMassage?src=external"
-                  class="cs-button-solid rounded-full text-center text-white leading-snug p-4 text-[.6rem] md:text-[1rem]"
-                >
-                  Book In-Clinic Appointment (Online)
-                </a>
-                <a
-                  href="tel:587-938-0458"
-                  class="cs-button-solid rounded-full text-center text-white leading-snug p-4 text-[.6rem] md:text-[1rem]"
-                >
-                  Call to Book In-Home Massage
-                </a>
-                <button
-                  onclick="document.getElementById('popup').classList.add('hidden')"
-                  class="text-sm text-white-500 hover:text-white mt-2"
-                >
-                  Close
-                </button>
-              </div>
-            </div>
-          </div>
+  <div
+    id="popup"
+    class="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-[9999] hidden"
+  >
+    <div
+      class="p-6 rounded-xl shadow-xl w-11/12 max-w-md"
+      style="background: rgba(255, 255, 255, 0.3);"
+    >
+      <div class="flex flex-col gap-4">
+        <a
+          href="https://www.massagebook.com/therapists/StoneMassage?src=external"
+          class="cs-button-solid rounded-full text-center text-white leading-snug p-4 text-[.6rem] md:text-[1rem]"
+        >
+          Book In-Clinic Appointment (Online)
+        </a>
+        <a
+          href="tel:587-938-0458"
+          class="cs-button-solid rounded-full text-center text-white leading-snug p-4 text-[.6rem] md:text-[1rem]"
+        >
+          Call to Book In-Home Massage
+        </a>
+        <button
+          onclick="document.getElementById('popup').classList.add('hidden')"
+          class="text-sm text-white-500 hover:text-white mt-2"
+        >
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
   <!-- ============================================ -->
   <!--                  Introduction                -->
   <!-- ============================================ -->
@@ -208,7 +226,7 @@ posts.sort(
   <!-- ============================================ -->
 
   <!-- <section id="services" class="services"> -->
-    <!-- <h2 class="cs-header">What's Included:</h2>
+  <!-- <h2 class="cs-header">What's Included:</h2>
     <article class="card">
       <Picture
         src={promoImag1}
@@ -230,7 +248,7 @@ posts.sort(
       <h3>Warm Towels & Soothing Lotion</h3>
     </article> -->
 
-    <!-- <article class="card">
+  <!-- <article class="card">
       <Picture
         src={promoImag3}
         alt="lady in a stone massage"
@@ -314,141 +332,185 @@ posts.sort(
   <!-- ============================================ -->
   <!--               MOBILE MASSAGE                 -->
   <!-- ============================================ -->
-   <section class="mobile mt-8" >
-      <div class="w-5/6 flex flex-col justify-center items-center " style="margin: auto;">
-        <h1 class="text-3xl text-center md:text-5xl text-[var(--primary)]">What's Included:</h1>
-        <div class="w-5/6 flex flex-col justify-center items-center place-items-center mt-4 sm:w-5/6 md:w-full md:flex-row md:items-start md:justify-evenly md:mt-8">
-          <div class="w-full flex flex-row justify-start items-center mb-8 md:flex-col">
-            <article class="card">
-              <Picture
-                src={promoImag1}
-                alt="in-home massage Edmonton"
-                formats={['avif', 'webp']}
-                pictureAttributes={{ class: 'cs-picture' }}
-              />
+  <section class="mobile mt-8">
+    <div
+      class="w-5/6 flex flex-col justify-center items-center"
+      style="margin: auto;"
+    >
+      <h1 class="text-3xl text-center md:text-5xl text-[var(--primary)]">
+        What's Included:
+      </h1>
+      <div
+        class="w-5/6 flex flex-col justify-center items-center place-items-center mt-4 sm:w-5/6 md:w-full md:flex-row md:items-start md:justify-evenly md:mt-8"
+      >
+        <div
+          class="w-full flex flex-row justify-start items-center mb-8 md:flex-col"
+        >
+          <article class="card">
+            <Picture
+              src={promoImag1}
+              alt="in-home massage Edmonton"
+              formats={['avif', 'webp']}
+              pictureAttributes={{ class: 'cs-picture' }}
+            />
 
-              <h3>Professional Massage Table</h3>
-            </article>
-          </div>
-          <div class="w-full flex flex-row justify-start items-center mb-8 md:flex-col">
-            <article class="card">
-              <Picture
-                src={promoImag2}
-                alt="Edmonton massage therapist"
-                formats={['avif', 'webp']}
-                pictureAttributes={{ class: 'cs-picture' }}
-              />
+            <h3>Professional Massage Table</h3>
+          </article>
+        </div>
+        <div
+          class="w-full flex flex-row justify-start items-center mb-8 md:flex-col"
+        >
+          <article class="card">
+            <Picture
+              src={promoImag2}
+              alt="Edmonton massage therapist"
+              formats={['avif', 'webp']}
+              pictureAttributes={{ class: 'cs-picture' }}
+            />
 
-              <h3>Warm Towels & Soothing Lotion</h3>
-            </article>
-          </div>
-          <!-- <div class="w-full flex flex-row justify-start items-center mb-8 md:flex-col">
+            <h3>Warm Towels & Soothing Lotion</h3>
+          </article>
+        </div>
+        <!-- <div class="w-full flex flex-row justify-start items-center mb-8 md:flex-col">
             <img src="/assets/images/foot-massage.png" class="w-1/3">
             <h1 class="text-2xl md:text-center">Foot Scrub</h1>
           </div> -->
+      </div>
+      <h1 class="text-xl text-center md:text-3xl">Add On Options:</h1>
+      <div
+        class="w-5/6 flex flex-col justify-center items-center place-items-center mt-4 sm:w-5/6 md:w-full md:flex-row md:items-start md:justify-evenly md:mt-8"
+      >
+        <div
+          class="w-full flex flex-row justify-start items-center mb-8 md:flex-col"
+        >
+          <img
+            src="/assets/images/stone-massage.png"
+            class="w-1/3"
+            alt="hot stone theraphy"
+          />
+          <h1 class="text-2xl md:text-center">Hot Stone Therapy</h1>
         </div>
-        <h1 class="text-xl text-center md:text-3xl ">Add On Options:</h1>
-        <div class="w-5/6 flex flex-col justify-center items-center place-items-center mt-4 sm:w-5/6 md:w-full md:flex-row md:items-start md:justify-evenly md:mt-8">
-          <div class="w-full flex flex-row justify-start items-center mb-8 md:flex-col">
-            <img src="/assets/images/stone-massage.png" class="w-1/3" alt="hot stone theraphy">
-            <h1 class="text-2xl md:text-center">Hot Stone Therapy</h1>
-          </div>
-          <div class="w-full flex flex-row justify-start items-center mb-8 md:flex-col">
-            <img src="/assets/images/cupping-theraphy.png" class="w-1/3" alt="cupping treatment">
-            <h1 class="text-2xl md:text-center">Cupping Treatment</h1>
-          </div>
-          <div class="w-full flex flex-row justify-start items-center mb-8 md:flex-col">
-            <img src="/assets/images/foot-massage.png" class="w-1/3" alt="foot scrub">
-            <h1 class="text-2xl md:text-center">Foot Scrub</h1>
-          </div>
+        <div
+          class="w-full flex flex-row justify-start items-center mb-8 md:flex-col"
+        >
+          <img
+            src="/assets/images/cupping-theraphy.png"
+            class="w-1/3"
+            alt="cupping treatment"
+          />
+          <h1 class="text-2xl md:text-center">Cupping Treatment</h1>
+        </div>
+        <div
+          class="w-full flex flex-row justify-start items-center mb-8 md:flex-col"
+        >
+          <img
+            src="/assets/images/foot-massage.png"
+            class="w-1/3"
+            alt="foot scrub"
+          />
+          <h1 class="text-2xl md:text-center">Foot Scrub</h1>
         </div>
       </div>
-   </section>
+    </div>
+  </section>
   <!-- ============================================ -->
   <!--               Perfect for                    -->
   <!-- ============================================ -->
-   <section class="mobile mt-8" >
-      <div class="w-5/6 flex flex-col justify-center items-center " style="margin: auto;">
-        <h1 class="text-3xl text-center md:text-5xl text-[var(--primary)] ">Perfect For:</h1>
-        <!-- <p class="text-left mt-2">Experience the ultimate relaxation without leaving your home. 
-          Our mobile massage service brings the full spa experience right to your doorstep — 
+  <section class="mobile mt-8">
+    <div
+      class="w-5/6 flex flex-col justify-center items-center"
+      style="margin: auto;"
+    >
+      <h1 class="text-3xl text-center md:text-5xl text-[var(--primary)]">
+        Perfect For:
+      </h1>
+      <!-- <p class="text-left mt-2">Experience the ultimate relaxation without leaving your home.
+          Our mobile massage service brings the full spa experience right to your doorstep —
           complete with a professional massage table, cozy warm towels, soothing lotion, and optional add-ons like:
         </p> -->
-        <div class="mt-16 flex gap-16 flex-col justify-center items-center md:flex-row md:flex-wrap md:justify-between">
-          <div class="">
-            <article class="card">
-              <Picture
-                src={promoImag3}
-                alt="in-home massage Edmonton"
-                formats={['avif', 'webp']}
-                pictureAttributes={{ class: 'cs-picture' }}
-              />
+      <div
+        class="mt-16 flex gap-16 flex-col justify-center items-center md:flex-row md:flex-wrap md:justify-between"
+      >
+        <div class="">
+          <article class="card">
+            <Picture
+              src={promoImag3}
+              alt="in-home massage Edmonton"
+              formats={['avif', 'webp']}
+              pictureAttributes={{ class: 'cs-picture' }}
+            />
 
-              <h3 class="text-white text-[1.5rem]">Busy Professionals</h3>
-            </article>
-          </div>
-          <div class="">
-            <article class="card">
-              <Picture
-                src={promoImag4}
-                alt="Edmonton massage therapist"
-                formats={['avif', 'webp']}
-                pictureAttributes={{ class: 'cs-picture' }}
-              />
+            <h3 class="text-white text-[1.5rem]">Busy Professionals</h3>
+          </article>
+        </div>
+        <div class="">
+          <article class="card">
+            <Picture
+              src={promoImag4}
+              alt="Edmonton massage therapist"
+              formats={['avif', 'webp']}
+              pictureAttributes={{ class: 'cs-picture' }}
+            />
 
-              <h3 class="text-white text-[1.5rem]">Stay-at-home parents</h3>
-            </article>
-          </div>
-          <div class="">
-            <article class="card">
-              <Picture
-                src={promoImag5}
-                alt="spa at home Edmonton"
-                formats={['avif', 'webp']}
-                pictureAttributes={{ class: 'cs-picture' }}
-              />
+            <h3 class="text-white text-[1.5rem]">Stay-at-home parents</h3>
+          </article>
+        </div>
+        <div class="">
+          <article class="card">
+            <Picture
+              src={promoImag5}
+              alt="spa at home Edmonton"
+              formats={['avif', 'webp']}
+              pictureAttributes={{ class: 'cs-picture' }}
+            />
 
-              <h3 class="text-white text-[1.5rem]">Seniors & limited mobility clients</h3>
-            </article>
-          </div>
-          <div class="">
-            <article class="card">
-              <Picture
-                src={promoImag6}
-                alt="massage that comes to you"
-                formats={['avif', 'webp']}
-                pictureAttributes={{ class: 'cs-picture' }}
-              />
+            <h3 class="text-white text-[1.5rem]">
+              Seniors & limited mobility clients
+            </h3>
+          </article>
+        </div>
+        <div class="">
+          <article class="card">
+            <Picture
+              src={promoImag6}
+              alt="massage that comes to you"
+              formats={['avif', 'webp']}
+              pictureAttributes={{ class: 'cs-picture' }}
+            />
 
-              <h3 class="text-white text-[1.5rem]">Anyone needing stress relief or pain relief</h3>
-            </article>
-          </div>
-          <!-- <div class="w-full flex flex-row justify-start items-center mb-8 md:flex-col">
+            <h3 class="text-white text-[1.5rem]">
+              Anyone needing stress relief or pain relief
+            </h3>
+          </article>
+        </div>
+        <!-- <div class="w-full flex flex-row justify-start items-center mb-8 md:flex-col">
             <img src="/assets/images/foot-massage.png" class="w-1/3">
             <h1 class="text-2xl md:text-center">Foot Scrub</h1>
           </div> -->
-        </div>
-        <div class="w-full flex flex-row justify-center items-center mt-12">
-            <h1 class="text-3xl">📍</h1>
-            <h1 class="text-xl md:text-start">Now Serving:</h1>
-        </div>
-            <h1 class="text-xl md:text-center">Edmonton, Sherwood Park, St. Albert & Surrounding Areas</h1>
-        <a
-          href="tel:587-938-0458"
-          class="h-auto cs-button-solid w-[300px] rounded-full mt-8 text-center text-white leading-snug p-4 text-[.6rem] md:text-[1rem] lg:w-[220px] xl:w-[230px]"
-          >
-          <span class="text-[1rem]">Call for Mobile Massage</span> <i class="fas fa-phone text-[#28a745] ml-1"></i>
-         </a>    
       </div>
-   </section>
- 
+      <div class="w-full flex flex-row justify-center items-center mt-12">
+        <h1 class="text-3xl">📍</h1>
+        <h1 class="text-xl md:text-start">Now Serving:</h1>
+      </div>
+      <h1 class="text-xl md:text-center">
+        Edmonton, Sherwood Park, St. Albert & Surrounding Areas
+      </h1>
+      <a
+        href="tel:587-938-0458"
+        class="h-auto cs-button-solid w-[300px] rounded-full mt-8 text-center text-white leading-snug p-4 text-[.6rem] md:text-[1rem] lg:w-[220px] xl:w-[230px]"
+      >
+        <span class="text-[1rem]">Call for Mobile Massage</span>
+        <i class="fas fa-phone text-[#28a745] ml-1"></i>
+      </a>
+    </div>
+  </section>
+
   <FAQ />
- 
+
   <!-- ============================================ -->
   <!--            Extra Content To Rank             -->
   <!-- ============================================ -->
 
-  
   <CTAcopy />
 </BaseLayout>
 
@@ -659,7 +721,7 @@ posts.sort(
   @media only screen and (min-width: 0em) {
     #hero {
       font-family: 'Open Sans', 'Roboto', Arial, sans-serif;
-      
+
       text-align: center;
       padding: 0 (16/16rem);
       padding-bottom: (100/16rem);
@@ -667,7 +729,8 @@ posts.sort(
       z-index: 1;
       overflow: hidden;
       /* Add background attachment for mobile */
-      background: url('/assets/images/mobile-massage.jpg') center/cover no-repeat;
+      background: url('/assets/images/mobile-massage.jpg') center/cover
+        no-repeat;
       background-attachment: scroll; /* Default for mobile */
 
       .cs-picture {
@@ -2105,7 +2168,12 @@ posts.sort(
     }
   }
   @keyframes blink {
-    0%,100% {opacity: 1;}
-    50%{opacity: 0;}
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
   }
 </style>

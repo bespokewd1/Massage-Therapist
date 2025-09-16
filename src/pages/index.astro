@@ -8,6 +8,8 @@ import { Image } from 'astro:assets';
 import '@styles/blog.less';
 import ServiceGrid, { type IService } from '@components/ServicesGrid.astro';
 
+import ogImage from '@assets/images/CTA/home-og.jpg';
+
 import PromotionCard, {
   type PromotionProps,
 } from '@components/PromotionCard.astro';
@@ -38,6 +40,8 @@ import KidsIcon from '@components/Icons/massages/KidsIcon.astro';
 
 
 const optimizedImage = await getOptimizedImage(landingImage);
+
+const optimizedOg = await getOptimizedImage(ogImage);
 
 const promotionInfo: PromotionProps[] = [
   {
@@ -117,6 +121,7 @@ posts.sort(
   title="Hot Stone Massage Edmonton - Professional Massage Therapy"
   description="Professional massage therapy for relaxation, pain relief, and overall wellness in Edmonton."
   preloadedImage={optimizedImage}
+  ogImage={optimizedOg}
 >
   <!-- ============================================ -->
   <!--                    Hero                      -->
@@ -314,8 +319,8 @@ posts.sort(
    <section class="mobile mt-8" >
       <div class="w-5/6 flex flex-col justify-center items-center " style="margin: auto;">
         <h1 class="text-3xl text-center md:text-5xl text-[var(--primary)]" style="animation: blink 1s step-start infinite;">Mobile Massage Available– We Come to You!</h1>
-        <p class="text-left mt-2">Experience the ultimate relaxation without leaving your home. 
-          Our mobile massage service brings the full spa experience right to your doorstep — 
+        <p class="text-left mt-2">Experience the ultimate relaxation without leaving your home.
+          Our mobile massage service brings the full spa experience right to your doorstep —
           complete with a professional massage table, cozy warm towels, soothing lotion, and optional add-ons like:
         </p>
         <div class="w-5/6 flex flex-col justify-center items-center place-items-center mt-4 sm:w-5/6 md:w-full md:flex-row md:items-start md:justify-evenly md:mt-8">
@@ -332,7 +337,7 @@ posts.sort(
             <h1 class="text-2xl md:text-center">Foot Scrub</h1>
           </div>
         </div>
-        <p class="text-left mt-2 italic">Whether you need stress relief or targeted therapy, enjoy 
+        <p class="text-left mt-2 italic">Whether you need stress relief or targeted therapy, enjoy
           personalized care in the comfort and privacy of your own space.
         </p>
         <div class="w-full flex flex-row justify-center items-center mt-8 ">
@@ -1010,7 +1015,7 @@ posts.sort(
   @media only screen and (min-width: 0em) {
     #hero {
       font-family: 'Open Sans', 'Roboto', Arial, sans-serif;
-      
+
       text-align: center;
       padding: 0 (16/16rem);
       padding-bottom: (100/16rem);

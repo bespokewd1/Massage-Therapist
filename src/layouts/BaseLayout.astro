@@ -8,8 +8,19 @@ import ScrollToTop from '@components/ScrollToTop.astro';
 import '@styles/root.less';
 import '@styles/dark.less';
 import '../styles/global.css';
+import type { GetImageResult } from 'astro';
 
-const { description, title, preloadedImage } = Astro.props;
+export interface Props {
+  description: string;
+  title: string;
+  preloadedImage: GetImageResult;
+  ogImage?: GetImageResult;
+}
+
+const { description, title, preloadedImage, ogImage = null } = Astro.props;
+
+const defaultOg = '/assets/favicons/favicon-stone-massage.jpg';
+const og = ogImage?.src ?? defaultOg;
 ---
 
 <!-- A fully fleshed-out <head>, dynamically changing based on client.json and the page front matter -->
@@ -24,7 +35,10 @@ const { description, title, preloadedImage } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
     <meta name="keywords" content="" />
-    <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Fjalla+One&family=Hammersmith+One&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Fjalla+One&family=Hammersmith+One&display=swap"
+      rel="stylesheet"
+    />
 
     <link
       rel="canonical"
@@ -42,11 +56,8 @@ const { description, title, preloadedImage } = Astro.props;
       property="og:url"
       content={`https://${client.domain}${Astro.url.pathname}`}
     />
-    <meta property="og:image" content="/assets/favicons/favicon-stone-massage.jpg" />
-    <meta
-      property="og:image:secure_url"
-      content="/assets/favicons/favicon-stone-massage.jpg"
-    />
+    <meta property="og:image" content={og} />
+    <meta property="og:image:secure_url" content={og} />
 
     <!--Favicons-->
     <link

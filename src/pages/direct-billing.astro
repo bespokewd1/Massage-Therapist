@@ -3,12 +3,15 @@ import BaseLayout from 'src/layouts/BaseLayout.astro';
 import Landing from '@components/Landing.astro';
 import clientData from '@data/client.json';
 
-// import Star from '@components/Icons/utility/star.astro';
-// import StarFilled from '@components/Icons/utility/StarFilled.astro';
+import StarSvg from '@assets/images/logo/TablerStar.svg';
+import StarFilledSvg from '@assets/images/logo/TablerStarFilled.svg';
 
 // Optimize our landing image and pass it as props to the BaseLayout (for preloading) and Landing (for rendering)
 import { getOptimizedImage } from '@js/utils';
 import landingImage from '@assets/images/stone-massage-background1.png'; // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
+import { Image } from 'astro:assets';
+import Star from '@components/Icons/Utils/star.astro';
+import StarFilled from '@components/Icons/Utils/StarFilled.astro';
 const optimizedImage = await getOptimizedImage(landingImage);
 
 const reviewLink =
@@ -121,7 +124,7 @@ const getInitials = (fullName: string) => {
       <!-- ============================================ -->
       <!--                   Reviews                    -->
       <!-- ============================================ -->
-      <section id="reviews" class="px-6 py-16 max-w-6xl mx-auto text-center">
+      <section id="reviews" class="sm:px-6 py-16 max-w-6xl mx-auto text-center">
         <div class="mx-auto max-w-[69rem]">
           <span class="inline-block text-(--secondary) mb-4">Our Reviews</span>
           <h2 class="text-3xl sm:text-4xl font-semibold text-(--primary)">
@@ -161,13 +164,25 @@ const getInitials = (fullName: string) => {
                   </span>
 
                   <div class="flex items-center gap-1">
-                    {/* {Array.from({ length: 5 }).map((_, i) =>
+                    {Array.from({ length: 5 }).map((_, i) =>
                       i < r.rating ? (
                         <StarFilled class="w-5 h-5 text-yellow-400" />
                       ) : (
+                        // <Image
+                        //   src={StarFilled}
+                        //   alt="star filled"
+                        //   width="20"
+                        //   height="20"
+                        // />
                         <Star class="w-5 h-5 text-yellow-400" />
+                        // <Image
+                        //   src={Star}
+                        //   alt="star filled"
+                        //   width="20"
+                        //   height="20"
+                        // />
                       )
-                    )} */}
+                    )}
                   </div>
                 </div>
               </li>
