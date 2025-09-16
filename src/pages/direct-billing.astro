@@ -10,8 +10,8 @@ import StarFilledSvg from '@assets/images/logo/TablerStarFilled.svg';
 import { getOptimizedImage } from '@js/utils';
 import landingImage from '@assets/images/stone-massage-background1.png'; // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
 import { Image } from 'astro:assets';
-import Star from '@components/Icons/Utils/star.astro';
-import StarFilled from '@components/Icons/Utils/StarFilled.astro';
+import Star from '@components/Icons/Star.astro';
+import StarFilled from '@components/Icons/StarFilled.astro';
 const optimizedImage = await getOptimizedImage(landingImage);
 
 const reviewLink =
