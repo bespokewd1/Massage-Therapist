@@ -1,26 +1,23 @@
 ---
-import BaseLayout from "src/layouts/BaseLayout.astro";
-import CTA from "@components/CTA.astro";
-import Landing from "@components/Landing.astro";
+import BaseLayout from 'src/layouts/BaseLayout.astro';
+import CTA from '@components/CTA.astro';
+import Landing from '@components/Landing.astro';
 // Optimize our landing image and pass it as props to the BaseLayout (for preloading) and Landing (for rendering)
-import {getOptimizedImage} from "@js/utils"
-import landingImage from "@assets/images/landing.jpg" // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
-const optimizedImage = await getOptimizedImage(landingImage)
+import { getOptimizedImage } from '@js/utils';
+import landingImage from '@assets/images/landing.jpg'; // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
+const optimizedImage = await getOptimizedImage(landingImage);
 ---
 
 <BaseLayout
   title="Reviews"
   description="Meta description for the page"
-  preloadedImage = {optimizedImage}
+  preloadedImage={optimizedImage}
 >
   <!-- ============================================ -->
   <!--                    LANDING                   -->
   <!-- ============================================ -->
 
-  <Landing 
-    title="Reviews"
-    image={optimizedImage}
-  />
+  <Landing title="Reviews" image={optimizedImage} />
 
   <!-- ============================================ -->
   <!--                  Reviews                     -->
@@ -41,12 +38,12 @@ const optimizedImage = await getOptimizedImage(landingImage)
           />
         </picture>
         <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed
-          recusandae rerum unde similique ratione sapiente necessitatibus natus
-          mollitia nam iusto.
+          Cecilia is just amazing. For the first time i felt relief and
+          satisfied after a massage. She felt so experienced. Thank you would
+          highly recommend her.
         </p>
         <div class="star-group">
-          <span class="name">B Miller<span class="desc">Homeowner</span></span>
+          <span class="name">J P<span class="desc">Client</span></span>
           <picture>
             <img
               aria-hidden="true"
@@ -73,12 +70,12 @@ const optimizedImage = await getOptimizedImage(landingImage)
           />
         </picture>
         <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed
-          recusandae rerum unde similique ratione sapiente necessitatibus natus
-          mollitia nam iusto.
+          Highly recommend Cecilia. She has been my therapist for several years.
+          She is the very best.
         </p>
         <div class="star-group">
-          <span class="name">Vincent M.<span class="desc">Homeowner</span></span
+          <span class="name"
+            >Farah Mocquais<span class="desc">Client</span></span
           >
           <picture>
             <img
@@ -322,7 +319,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
       padding-bottom: (50/16rem);
 
       .container {
-        font-size: ~"min(1.4vw, 1em)";
+        font-size: ~'min(1.4vw, 1em)';
         padding: 0;
         display: flex;
         justify-content: center;

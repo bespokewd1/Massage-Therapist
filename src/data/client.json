@@ -9,7 +9,8 @@
 		"city": "",
 		"state": "",
 		"zip": "",
-		"mapLink": "https://maps.google.com/?q=9057+Cooper+Link+SW,+Edmonton,+AB+T6W+4A4,+Canada"
+		"mapLink": "https://maps.google.com/?q=9057+Cooper+Link+SW,+Edmonton,+AB+T6W+4A4,+Canada",
+		"reviewLink": "https://www.google.com/maps/place/Stone+Massage/@53.3997971,-113.589755,932m/data=!3m1!1e3!4m15!1m8!3m7!1s0x539ff5e24f15059d:0xaeb59dd29f77c2be!2s9057+Cooper+Link+SW,+Edmonton,+AB+T6W+4A4,+Canada!3b1!8m2!3d53.3997971!4d-113.5871801!16s%2Fg%2F11nxb_nf59!3m5!1s0x2f64181384393b25:0xcc81b73ee08007b3!8m2!3d53.399848!4d-113.587176!16s%2Fg%2F11xgk681yb?entry=ttu&g_ep=EgoyMDI1MDkxMC4wIKXMDSoASAFQAw%3D%3D"
 	},
 	"domain": "https://stonemassage.ca/"
 }
