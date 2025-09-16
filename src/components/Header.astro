@@ -12,20 +12,60 @@ interface Props extends HTMLAttributes<'header'> {}
 const props = Astro.props as Props;
 ---
 
-<!-- ============================================ --><!--                 Navigation                   --><!-- ============================================ -->
-<!--Banner at the Top - Display on Mobile -->
+<!-- ============================================ --><!--                 Navigation                   --><!-- ============================================ --><!--Banner at the Top - Display on Mobile -->
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 </style>
 <header id="cs-navigation" {...props}>
   <!-- Fixed Announcement Bar -->
   <div
-    class="fixed h-[40px] flex top-0 left-0 w-full z-50 bg-[#f3117e] text-muted text-sm dark:bg-transparent dark:border-b dark:border-slate-800 dark:text-slate-400  md:flex gap-1 overflow-hidden px-3 py-2 text-ellipsis whitespace-nowrap"
+    class="fixed h-[40px] flex top-0 left-0 w-full z-50 bg-[#f3117e] text-muted text-sm dark:bg-transparent dark:border-b dark:border-slate-800 dark:text-slate-400 md:flex gap-1 overflow-hidden px-3 py-2 text-ellipsis whitespace-nowrap"
   >
+    <!-- content: "";
+    width: 0%;
+    height: 2px;
+    background: var(--primary);
+    opacity: 1;
+    display: block;
+    position: absolute;
+    bottom: 0rem;
+    left: 0;
+    transition: width 0.3s; -->
+
+    <!-- 🎉Offering professional in-clinic and in-home massage in Edmonton & Nearby. Call now for mobile massage, or book in-clinic online -->
     <a
-      class="inline-block animate-scroll px-4 text-white animate-[scroll_15s_linear_infinite] lg:animate-none"
+      class="inline-block animate-scroll px-4 text-(--bodyText) animate-[scroll_15s_linear_infinite] lg:animate-none"
     >
-      🎉Offering professional in-clinic and in-home massage in Edmonton & Nearby. Call now for mobile massage, or book in-clinic online
+      <strong class="text-(--primary)">FREE</strong>
+      Add-On with Any 1-Hour Massage! Choose one:
+
+      <!-- after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-[var(--primary)]
+         after:opacity-100 after:block after:transition-[width] after:duration-300 hover:after:w-full focus:after:w-full" -->
+      <span
+        class="relative bg-clip-text text-transparent bg-gradient-to-r from-[var(--primary)] to-purple-500"
+      >
+        Hot Stone
+      </span>
+      •
+      <span
+        class="relative bg-clip-text text-transparent bg-gradient-to-l from-[var(--primary)] to-purple-500"
+      >
+        Cupping
+      </span>
+
+      •
+      <span
+        class="relative bg-clip-text text-transparent bg-gradient-to-r from-[var(--primary)] to-purple-500"
+      >
+        Foot Scrub
+      </span>
+
+      •
+      <span
+        class="relative bg-clip-text text-transparent bg-gradient-to-l from-[var(--primary)] to-purple-500"
+      >
+        Neck Tension Release
+      </span>
     </a>
   </div>
 
@@ -78,7 +118,11 @@ const props = Astro.props as Props;
                     ]}
                   >
                     {entry.key}
-                    <Icon name="mdi--caret" class="cs-drop-icon" style="font:bold" />
+                    <Icon
+                      name="mdi--caret"
+                      class="cs-drop-icon"
+                      style="font:bold"
+                    />
                   </button>
                 ) : (
                   <a
@@ -103,7 +147,9 @@ const props = Astro.props as Props;
                           href={child.url}
                           class="cs-li-link cs-drop-link"
                           aria-current={
-                            Astro.url.pathname === child.url ? 'page' : undefined
+                            Astro.url.pathname === child.url
+                              ? 'page'
+                              : undefined
                           }
                         >
                           {child.key}
@@ -118,9 +164,12 @@ const props = Astro.props as Props;
 
           <!-- Book Online Button -->
           <li>
-            <button onclick="document.getElementById('popup').classList.remove('hidden')" class="cs-button-solid flex justify-center items-center leading-none">
-            Book Online
-          </button>
+            <button
+              onclick="document.getElementById('popup').classList.remove('hidden')"
+              class="cs-button-solid flex justify-center items-center leading-none"
+            >
+              Book Online
+            </button>
           </li>
         </ul>
       </div>
@@ -133,30 +182,36 @@ const props = Astro.props as Props;
   </div>
 </header>
 <!-- Popup Overlay -->
-          <div id="popup" class="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-[9999] hidden">
-            <div class="p-6 rounded-xl shadow-xl w-11/12 max-w-md" style="background: rgba(255, 255, 255, 0.3);">
-              <div class="flex flex-col gap-4">
-                <a
-                  href="https://www.massagebook.com/therapists/StoneMassage?src=external"
-                  class="cs-button-solid rounded-full text-center text-white leading-snug p-4 text-[.6rem] md:text-[1rem]"
-                >
-                  Book In-Clinic Appointment (Online)
-                </a>
-                <a
-                  href="tel:587-938-0458"
-                  class="cs-button-solid rounded-full text-center text-white leading-snug p-4 text-[.6rem] md:text-[1rem]"
-                >
-                  Call to Book In-Home Massage
-                </a>
-                <button
-                  onclick="document.getElementById('popup').classList.add('hidden')"
-                  class="text-sm text-white-500 hover:text-white mt-2"
-                >
-                  Close
-                </button>
-              </div>
-            </div>
-          </div>
+<div
+  id="popup"
+  class="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-[9999] hidden"
+>
+  <div
+    class="p-6 rounded-xl shadow-xl w-11/12 max-w-md"
+    style="background: rgba(255, 255, 255, 0.3);"
+  >
+    <div class="flex flex-col gap-4">
+      <a
+        href="https://www.massagebook.com/therapists/StoneMassage?src=external"
+        class="cs-button-solid rounded-full text-center text-white leading-snug p-4 text-[.6rem] md:text-[1rem]"
+      >
+        Book In-Clinic Appointment (Online)
+      </a>
+      <a
+        href="tel:587-938-0458"
+        class="cs-button-solid rounded-full text-center text-white leading-snug p-4 text-[.6rem] md:text-[1rem]"
+      >
+        Call to Book In-Home Massage
+      </a>
+      <button
+        onclick="document.getElementById('popup').classList.add('hidden')"
+        class="text-sm text-white-500 hover:text-white mt-2"
+      >
+        Close
+      </button>
+    </div>
+  </div>
+</div>
 
 <style lang="less">
   /*-- -------------------------- -->
@@ -173,9 +228,9 @@ const props = Astro.props as Props;
 
     #cs-navigation {
       /* remove the font family so the Stitch inherits the fonts from your global stylesheet */
-      font-family: "Poppins",sans-serif;
+      font-family: 'Poppins', sans-serif;
       font-weight: bold;
-      
+
       width: 100%;
       /* prevents padding from affecting height and width */
       box-sizing: border-box;
@@ -779,10 +834,10 @@ const props = Astro.props as Props;
   @media only screen and (min-width: 64rem) {
     #cs-navigation {
       /* remove the font family so the Stitch inherits the fonts from your global stylesheet */
-      font-family: "Poppins", sans-serif;
+      font-family: 'Poppins', sans-serif;
       font-weight: 400;
       font-size: bold;
-      letter-spacing: .05rem;
+      letter-spacing: 0.05rem;
       width: 100%;
       /* prevents padding from affecting height and width */
       box-sizing: border-box;
@@ -907,12 +962,11 @@ const props = Astro.props as Props;
     }
   }
   @keyframes scroll {
-  0% {
-    transform: translateX(100%);
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
   }
-  100% {
-    transform: translateX(-100%);
-  }
-}
-
 </style>
