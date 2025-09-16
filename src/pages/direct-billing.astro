@@ -3,8 +3,8 @@ import BaseLayout from 'src/layouts/BaseLayout.astro';
 import Landing from '@components/Landing.astro';
 import clientData from '@data/client.json';
 
-import Star from '@components/Icons/utility/star.astro';
-import StarFilled from '@components/Icons/utility/StarFilled.astro';
+// import Star from '@components/Icons/utility/star.astro';
+// import StarFilled from '@components/Icons/utility/StarFilled.astro';
 
 // Optimize our landing image and pass it as props to the BaseLayout (for preloading) and Landing (for rendering)
 import { getOptimizedImage } from '@js/utils';
@@ -161,13 +161,13 @@ const getInitials = (fullName: string) => {
                   </span>
 
                   <div class="flex items-center gap-1">
-                    {Array.from({ length: 5 }).map((_, i) =>
+                    {/* {Array.from({ length: 5 }).map((_, i) =>
                       i < r.rating ? (
                         <StarFilled class="w-5 h-5 text-yellow-400" />
                       ) : (
                         <Star class="w-5 h-5 text-yellow-400" />
                       )
-                    )}
+                    )} */}
                   </div>
                 </div>
               </li>
