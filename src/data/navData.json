@@ -27,9 +27,7 @@
   {
     "key": "Gallery",
     "url": "/gallery/",
-    "children": [
-     
-    ]
+    "children": []
   },
   {
     "key": "Contact",

@@ -141,21 +141,22 @@ const props = Astro.props as Props;
 
                 {entry.children?.length > 0 && (
                   <ul id={`submenu-${entry.key}`} class="cs-drop-ul">
-                    {entry.children.map((child) => (
-                      <li class="cs-drop-li">
-                        <a
-                          href={child.url}
-                          class="cs-li-link cs-drop-link"
-                          aria-current={
-                            Astro.url.pathname === child.url
-                              ? 'page'
-                              : undefined
-                          }
-                        >
-                          {child.key}
-                        </a>
-                      </li>
-                    ))}
+                    {entry.children.length > 0 &&
+                      entry.children.map((child) => (
+                        <li class="cs-drop-li">
+                          <a
+                            href={child.url}
+                            class="cs-li-link cs-drop-link"
+                            aria-current={
+                              Astro.url.pathname === child.url
+                                ? 'page'
+                                : undefined
+                            }
+                          >
+                            {child.key}
+                          </a>
+                        </li>
+                      ))}
                   </ul>
                 )}
               </li>
