@@ -1,52 +1,14 @@
 ---
 import BaseLayout from 'src/layouts/BaseLayout.astro';
 import Landing from '@components/Landing.astro';
-import clientData from '@data/client.json';
-
-import StarSvg from '@assets/images/logo/TablerStar.svg';
-import StarFilledSvg from '@assets/images/logo/TablerStarFilled.svg';
-
-// Optimize our landing image and pass it as props to the BaseLayout (for preloading) and Landing (for rendering)
 import { getOptimizedImage } from '@js/utils';
 import landingImage from '@assets/images/stone-massage-background1.png'; // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
-import { Image } from 'astro:assets';
-import Star from '@components/Icons/Star.astro';
-import StarFilled from '@components/Icons/StarFilled.astro';
+// Optimize our landing image and pass it as props to the BaseLayout (for preloading) and Landing (for rendering)
+
+import Review from "@components/Review.astro";
+
 const optimizedImage = await getOptimizedImage(landingImage);
 
-const reviewLink =
-  clientData.address.reviewLink ??
-  'https://www.google.com/maps/place/Stone+Massage/@53.3997971,-113.589755,932m/data=!3m1!1e3!4m15!1m8!3m7!1s0x539ff5e24f15059d:0xaeb59dd29f77c2be!2s9057+Cooper+Link+SW,+Edmonton,+AB+T6W+4A4,+Canada!3b1!8m2!3d53.3997971!4d-113.5871801!16s%2Fg%2F11nxb_nf59!3m5!1s0x2f64181384393b25:0xcc81b73ee08007b3!8m2!3d53.399848!4d-113.587176!16s%2Fg%2F11xgk681yb?entry=ttu&g_ep=EgoyMDI1MDkxMC4wIKXMDSoASAFQAw%3D%3D';
-
-const reviews = [
-  {
-    name: 'J P',
-    role: 'Client',
-    text: 'Cecilia is just amazing. For the first time i felt relief and satisfied after a massage. She felt so experienced. Thank you would highly recommend her.',
-    rating: 5,
-  },
-  {
-    name: 'Farah Mocquais',
-    role: 'Client',
-    text: 'Highly recommend Cecilia. She has been my therapist for several years. She is the very best.',
-    rating: 5,
-  },
-  {
-    name: 'Marilynne Paterson',
-    role: 'Client',
-    text: 'Cecelia is a great massage therapist. She gives amazing deep tissue massages. Definitely recommend!',
-    rating: 5,
-  },
-];
-
-// Helper to get initials from a name string
-const getInitials = (fullName: string) => {
-  if (!fullName) return '';
-  const parts = fullName.trim().split(/\s+/).filter(Boolean);
-  const first = parts[0]?.[0] ?? '';
-  const last = parts.length > 1 ? (parts[parts.length - 1][0] ?? '') : '';
-  return (first + last).toUpperCase();
-};
 ---
 
 <BaseLayout
@@ -124,82 +86,8 @@ const getInitials = (fullName: string) => {
       <!-- ============================================ -->
       <!--                   Reviews                    -->
       <!-- ============================================ -->
-      <section id="reviews" class="sm:px-6 py-16 max-w-6xl mx-auto text-center">
-        <div class="mx-auto max-w-[69rem]">
-          <span class="inline-block text-(--secondary) mb-4">Our Reviews</span>
-          <h2 class="text-3xl sm:text-4xl font-semibold text-(--primary)">
-            Words From Our Happy Clients
-          </h2>
-          <p class="mt-4 text-base text-(--bodyTextColor)">
-            At Healing Touch Massage Therapy, we pride ourselves on providing
-            exceptional care. Here's what some of our clients have to say about
-            their experience with us.
-          </p>
-        </div>
-
-        <!-- Cards -->
-        <ul
-          class="mt-14 grid grid-cols-1 gap-y-12 gap-x-6 lg:gap-6 sm:grid-cols-2 lg:grid-cols-3 items-stretch"
-        >
-          <!-- grid grid-rows-[min-content_auto_auto] gap-2 transition-colors p-4 min-w-72 max-w-lg  ml-auto sm:ml-0 bg-[rgba(var(--primary-rgb),0.4)] md:bg-[rgba(var(--secondary-rgb),0.4)] backdrop-blur-lg rounded hover:bg-[rgba(var(--secondary-rgb),0.7)] group -->
-          {
-            reviews.map((r) => (
-              <li class="transition-colors bg-[rgba(var(--primary-rgb),0.4)] hover:bg-[rgba(var(--secondary-rgb),0.7)] backdrop-blur-lg relative rounded-md shadow-[0_20px_39px_rgba(0,0,0,0.05)] p-6 pt-14 text-left flex flex-col h-full group">
-                <div
-                  class="absolute -top-8 left-4 size-16 rounded-full bg-(--primary) text-white flex items-center justify-center text-2xl font-semibold shadow-md select-none"
-                  aria-hidden="true"
-                >
-                  {getInitials(r.name)}
-                </div>
-                <p class="text-(--bodyText) transition-colors group-hover:text-black duration-300 text-base leading-relaxed pb-5 mb-5 ">
-                  "{r.text}"
-                </p>
-
-                <div class="mt-auto flex items-center justify-between gap-4 border-t pt-3 border-[#e8e9ec]">
-                  <span class="block font-semibold text-(--bodyText) transition-colors group-hover:text-black duration-300 ">
-                    {r.name}
-                    <span class="block text-sm font-normal text-(--bodyText) transition-colors group-hover:text-black duration-300 ">
-                      {r.role}
-                    </span>
-                  </span>
-
-                  <div class="flex items-center gap-1">
-                    {Array.from({ length: 5 }).map((_, i) =>
-                      i < r.rating ? (
-                        <StarFilled class="w-5 h-5 text-yellow-400" />
-                      ) : (
-                        // <Image
-                        //   src={StarFilled}
-                        //   alt="star filled"
-                        //   width="20"
-                        //   height="20"
-                        // />
-                        <Star class="w-5 h-5 text-yellow-400" />
-                        // <Image
-                        //   src={Star}
-                        //   alt="star filled"
-                        //   width="20"
-                        //   height="20"
-                        // />
-                      )
-                    )}
-                  </div>
-                </div>
-              </li>
-            ))
-          }
-        </ul>
-
-        <a
-          aria-label="read more reviews"
-          href={reviewLink}
-          class="inline-flex mt-10 cs-button-solid rounded-button"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Our Reviews
-        </a>
-      </section>
+        <Review/>
+      
     </div>
   </section>
 </BaseLayout>

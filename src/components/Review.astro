@@ -1,0 +1,113 @@
+---
+import clientData from '@data/client.json';
+import Star from '@components/Icons/Star.astro';
+import StarFilled from '@components/Icons/StarFilled.astro';
+
+const reviews = [
+    {
+        name: 'Cassie Queenville',
+        role: 'Client',
+        text: 'I have been seeing Cecilia for 6 years and she is the best massage I’ve had. She is also the sweetest, warmest and kindest woman alive. Cannot say enough good things.',
+        rating: 5,
+    },
+    {
+        name: 'Jovy Azarcon',
+        role: 'Client',
+        text: 'I had a wonderful experience with this massage therapist. She is very professional, and the ambiance of the room was calming without being overpowering. Out of everyone I’ve tried in the city, this was by far the best massage I’ve had. Highly recommend!',
+        rating: 5,
+    },
+    {
+        name: 'Charlene A.',
+        role: 'Client',
+        text: 'Ate Cecil and Lycel are both exceptional at what they do. They’re attentive to your needs, whether you prefer to relax and sleep or chat during your massage, they respect your comfort and preferences.',
+        rating: 5,
+    },
+];
+
+
+const getInitials = (fullName: string) => {
+    if (!fullName) return '';
+    const parts = fullName.trim().split(/\s+/).filter(Boolean);
+    const first = parts[0]?.[0] ?? '';
+    const last = parts.length > 1 ? (parts[parts.length - 1][0] ?? '') : '';
+   return (first + last).toUpperCase();
+};
+
+const reviewLink =
+    clientData.address.reviewLink ??
+    'https://www.google.com/maps/place/Stone+Massage/@53.3997971,-113.589755,932m/data=!3m1!1e3!4m15!1m8!3m7!1s0x539ff5e24f15059d:0xaeb59dd29f77c2be!2s9057+Cooper+Link+SW,+Edmonton,+AB+T6W+4A4,+Canada!3b1!8m2!3d53.3997971!4d-113.5871801!16s%2Fg%2F11nxb_nf59!3m5!1s0x2f64181384393b25:0xcc81b73ee08007b3!8m2!3d53.399848!4d-113.587176!16s%2Fg%2F11xgk681yb?entry=ttu&g_ep=EgoyMDI1MDkxMC4wIKXMDSoASAFQAw%3D%3D';
+
+---
+
+<!-- ============================================ -->
+<!--                   Reviews                    -->
+<!-- ============================================ -->
+<section id="reviews" class="sm:px-6 py-16 max-w-6xl mx-auto text-center">
+    <div class="mx-auto max-w-[69rem]">
+
+        <span class="cs-topper">Our Reviews</span>
+        <h2 class="cs-title">
+            Words From Our Happy Clients
+        </h2>
+        <!--<span class="inline-block text-(&#45;&#45;secondary) mb-4">Our Reviews</span>-->
+        <!--<h2 class="text-3xl sm:text-4xl font-semibold text-(&#45;&#45;primary)">-->
+        <!--    Words From Our Happy Clients-->
+        <!--</h2>-->
+        <p class="mt-4 text-base text-(--bodyTextColor)">
+            At Healing Touch Massage Therapy, we pride ourselves on providing
+            exceptional care. Here's what some of our clients have to say about
+            their experience with us.
+        </p>
+    </div>
+
+    <!-- Cards -->
+    <ul
+            class="mt-14 grid grid-cols-1 gap-y-12 gap-x-6 lg:gap-6 sm:grid-cols-2 lg:grid-cols-3 items-stretch"
+    >
+        <!-- grid grid-rows-[min-content_auto_auto] gap-2 transition-colors p-4 min-w-72 max-w-lg  ml-auto sm:ml-0 bg-[rgba(var(--primary-rgb),0.4)] md:bg-[rgba(var(--secondary-rgb),0.4)] backdrop-blur-lg rounded hover:bg-[rgba(var(--secondary-rgb),0.7)] group -->
+        {
+            reviews.map((r) => (
+                    <li class="transition-colors bg-[rgba(var(--primary-rgb),0.4)] hover:bg-[rgba(var(--secondary-rgb),0.7)] backdrop-blur-lg relative rounded-md shadow-[0_20px_39px_rgba(0,0,0,0.05)] p-6 pt-14 text-left flex flex-col h-full group">
+                        <div
+                                class="absolute -top-8 left-4 size-16 rounded-full bg-(--primary) text-white flex items-center justify-center text-2xl font-semibold shadow-md select-none"
+                                aria-hidden="true"
+                        >
+                            {getInitials(r.name)}
+                        </div>
+                        <p class="text-(--bodyText) transition-colors group-hover:text-black duration-300 text-base leading-relaxed pb-5 mb-5 ">
+                            "{r.text}"
+                        </p>
+
+                        <div class="mt-auto flex items-center justify-between gap-4 border-t pt-3 border-[#e8e9ec]">
+                  <span class="block font-semibold text-(--bodyText) transition-colors group-hover:text-black duration-300 ">
+                    {r.name}
+                      <span class="block text-sm font-normal text-(--bodyText) transition-colors group-hover:text-black duration-300 ">
+                      {r.role}
+                    </span>
+                  </span>
+
+                            <div class="flex items-center gap-1">
+                                {Array.from({ length: 5 }).map((_, i) =>
+                                    i < r.rating ? (
+                                            <StarFilled class="w-5 h-5 text-yellow-400" />
+                                    ) : (
+                                            <Star class="w-5 h-5 text-yellow-400" />
+                                    )
+                                )}
+                            </div>
+                        </div>
+                    </li>
+            ))
+        }
+    </ul>
+
+    <a
+            aria-label="read more reviews"
+            href={reviewLink}
+            class="inline-flex mt-10 cs-button-solid rounded-button"
+            target="_blank"
+            rel="noopener noreferrer"
+    >
+        Our Reviews
+    </a>
+</section>

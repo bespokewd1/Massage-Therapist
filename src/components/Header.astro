@@ -1066,7 +1066,7 @@ const props = Astro.props as Props;
     }
 
     // Recalculate on resize (debounced)
-    let rafId = null;
+    let rafId:number|null = null;
     const onResize = () => {
       if (rafId) cancelAnimationFrame(rafId);
       rafId = requestAnimationFrame(measure);
