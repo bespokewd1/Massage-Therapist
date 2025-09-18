@@ -72,7 +72,7 @@ const props = Astro.props as Props;
   <!-- Push content below the fixed top bar -->
   <div class="pt-12 cs-container">
     <!-- Logo -->
-    <a href="/" class="cs-logo" aria-label="back to home">
+    <a href="/" class="cs-logo dark:grayscale-0 dark:brightness" aria-label="back to home">
       <Image
         src={MainLogo}
         alt="Main logo massage"
@@ -99,13 +99,14 @@ const props = Astro.props as Props;
 
       <!-- Navigation Items -->
       <div class="cs-ul-wrapper">
-        <ul id="cs-expanded-ul" class="cs-ul">
+        <ul id="cs-expanded-ul" class="cs-ul lg:text-(--bodyTextColorWhite) lg:dark:text-(--bodyTextColorWhite)">
           {
             navData.map((entry) => (
               <li
                 class:list={[
                   'cs-li',
                   { 'cs-dropdown': entry.children?.length > 0 },
+                    'lg:text-(--bodyTextColorWhite) lg:dark:text-(--bodyTextColorWhite)'
                 ]}
               >
                 {entry.children?.length > 0 ? (
@@ -115,13 +116,14 @@ const props = Astro.props as Props;
                     class:list={[
                       'cs-li-link cs-dropdown-button',
                       { 'cs-active': Astro.url.pathname.includes(entry.url) },
+                    'lg:text-(--bodyTextColorWhite) lg:dark:text-(--bodyTextColorWhite)'
                     ]}
                   >
                     {entry.key}
                     <Icon
                       name="mdi--caret"
                       class="cs-drop-icon"
-                      style="font:bold"
+                      style="font: bold"
                     />
                   </button>
                 ) : (
@@ -130,6 +132,7 @@ const props = Astro.props as Props;
                     class:list={[
                       'cs-li-link',
                       { 'cs-active': Astro.url.pathname === entry.url },
+                        'lg:text-(--bodyTextColorWhite) lg:dark:text-(--bodyTextColorWhite)'
                     ]}
                     aria-current={
                       Astro.url.pathname === entry.url ? 'page' : undefined
@@ -146,7 +149,7 @@ const props = Astro.props as Props;
                         <li class="cs-drop-li">
                           <a
                             href={child.url}
-                            class="cs-li-link cs-drop-link"
+                            class="cs-li-link cs-drop-link lg:text-(--bodyTextColorWhite) lg:dark:text-(--bodyTextColorWhite)"
                             aria-current={
                               Astro.url.pathname === child.url
                                 ? 'page'
@@ -236,8 +239,10 @@ const props = Astro.props as Props;
       /* prevents padding from affecting height and width */
       box-sizing: border-box;
       padding: (12/16rem) (16/16rem);
-      background-color: rgba(var(--primary-rgb), 0.3);
-      backdrop-filter: blur(30px);
+      /*background-color: rgba(var(--primary-rgb), 0.3);*/
+      background: #e685a8;
+      background: linear-gradient(90deg, rgba(230, 133, 168, 1) 0%, rgba(243, 17, 126, 1) 52%, rgba(240, 151, 184, 1) 100%);
+      /*backdrop-filter: blur(30px);*/
       box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
       position: fixed;
       z-index: 10000;
@@ -844,8 +849,10 @@ const props = Astro.props as Props;
       box-sizing: border-box;
       padding: 0 (16/16rem);
       //  background-color: #fff;
-      background-color: rgba(var(--primary-rgb), 0.3);
-      backdrop-filter: blur(30px);
+      /*background-color: rgba(var(--primary-rgb), 0.3);*/
+      /*backdrop-filter: blur(30px);*/
+      background: #e685a8;
+      background: linear-gradient(90deg, rgba(230, 133, 168, 1) 0%, rgba(243, 17, 126, 1) 52%, rgba(240, 151, 184, 1) 100%);
       box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
       position: fixed;
       z-index: 10000;
@@ -929,7 +936,7 @@ const props = Astro.props as Props;
           content: '';
           width: 0%;
           height: 2px;
-          background: var(--primary);
+          background: var(--primaryLight);
           opacity: 1;
           display: block;
           position: absolute;
