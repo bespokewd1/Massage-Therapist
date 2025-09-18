@@ -9,7 +9,6 @@ import Landing from "@components/Landing.astro";
 import FeaturedPost from "@components/FeaturedPost.astro";
 import "@styles/blog.less";
 import ogImage from '@assets/images/CTA/blog-og.jpg';
-const optimizedOg = await getOptimizedImage(ogImage);
 
 const posts = await getCollection("blog");
 posts.sort(
@@ -19,6 +18,7 @@ posts.sort(
 // Optimize our landing image and pass it as props to the BaseLayout (for preloading) and Landing (for rendering)
 import landingImage from "@assets/images/stone-massage-background1.png" // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
 const optimizedImage = await getOptimizedImage(landingImage)
+const optimizedOg = await getOptimizedImage(ogImage);
 ---
 
 <BaseLayout

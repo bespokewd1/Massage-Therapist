@@ -10,14 +10,6 @@ import '@styles/dark.less';
 import '@styles/global.css';
 
 const { description, title, preloadedImage } = Astro.props;
-
-
-import ogImage from '@assets/images/CTA/booking-og.jpg';
-
-const optimizedOg = await getOptimizedImage(ogImage);
-
-const defaultOg = '/assets/favicons/favicon-stone-massage.jpg';
-const og = optimizedOg?.src ?? defaultOg;
 ---
 
 <!-- A fully fleshed-out <head>, dynamically changing based on client.json and the page front matter -->
@@ -45,10 +37,10 @@ const og = optimizedOg?.src ?? defaultOg;
       property="og:url"
       content={`https://${client.domain}${Astro.url.pathname}`}
     />
-    <meta property="og:image" content={og} />
+    <meta property="og:image" content="/assets/images/logo-small.png" />
     <meta
       property="og:image:secure_url"
-      content={og}
+      content="/assets/images/logo-small.png"
     />
 
     <!--Favicons-->

@@ -11,7 +11,7 @@ import "@styles/blog.less";
 // import landingImage from "@assets/images/landing.jpg" // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
 const optimizedImage = await getOptimizedImage(landingImage)
 
-import landingImage from '@assets/images/Blog2-HeaderPhoto.jpg'; // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
+import landingImage from '@assets/images/blog-landing.jpg';
 export async function getStaticPaths() {
   const posts = await getCollection("blog");
   return posts.map((entry) => ({
@@ -29,6 +29,7 @@ const { Content } = await render(post);
   title={title}
   description={description}
   preloadedImage = {optimizedImage}
+  ogImage={optimizedImage}
 >
 
   <Landing 
