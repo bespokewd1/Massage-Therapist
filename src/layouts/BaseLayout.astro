@@ -14,13 +14,20 @@ export interface Props {
   description: string;
   title: string;
   preloadedImage: GetImageResult;
-  ogImage?: GetImageResult;
+  ogImage?: GetImageResult | string;
 }
 
 const { description, title, preloadedImage, ogImage = null } = Astro.props;
 
 const defaultOg = '/assets/favicons/favicon-stone-massage.jpg';
-const og = ogImage?.src ?? defaultOg;
+// const og = ogImage?.src ?? defaultOg;
+
+const og =
+    typeof ogImage === "string"
+        ? ogImage
+        : ogImage
+            ? ogImage.src
+            : defaultOg;
 ---
 
 <!-- A fully fleshed-out <head>, dynamically changing based on client.json and the page front matter -->
