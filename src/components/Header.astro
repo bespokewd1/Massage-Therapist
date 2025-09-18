@@ -18,59 +18,84 @@ const props = Astro.props as Props;
 </style>
 <header id="cs-navigation" {...props}>
   <!-- Fixed Announcement Bar -->
-  <!-- Fixed Announcement Bar -->
-<div
-  class="fixed top-0 left-0 z-50 flex h-10 w-full items-center overflow-hidden px-3 py-2 gap-2
+    <!-- Fixed Announcement Bar -->
+    <div
+            id="announcement-bar"
+            class="fixed top-0 left-0 z-50 flex h-10 w-full items-center overflow-hidden px-3 py-2 gap-2
          bg-gradient-to-r from-[#b80d64] via-[#f3117e] to-[#b80d64]
          text-white/95 backdrop-blur-sm
          border-b border-white/10
          dark:from-[#7a0a45] dark:via-[#a40e5e] dark:to-[#7a0a45] dark:text-white"
->
-  <a
-    class="inline-flex items-center gap-2 px-4 lg:px-0
-           animate-[scroll_15s_linear_infinite] lg:animate-none"
-  >
-    <!-- FREE pill -->
-    <span
-      class="flex items-center rounded-full bg-white text-[#f3117e] font-semibold
-             px-2 py-0.5 text-xs md:text-sm shadow-sm ring-1 ring-white/40"
     >
-      FREE
-    </span>
+        <!-- Track -->
+        <div
+                id="marquee-track"
+                class="relative flex w-auto items-center will-change-transform
+           touch-pan-x select-none"
+                style=" --marquee-duration: 12s; --marquee-gap: 2rem; "
+        >
+            <!-- Chunk (single copy) -->
+            <div class="marquee-chunk flex items-center gap-2 pr-[var(--marquee-gap)] shrink-0">
+                <!-- FREE pill -->
+                <span
+                        class="flex items-center rounded-full bg-white text-[#f3117e] font-semibold
+               px-2 py-0.5 text-xs md:text-sm shadow-sm ring-1 ring-white/40"
+                >
+                FREE
+              </span>
 
-    <span class="hidden lg:inline">Add-On with Any 1-Hour Massage! Choose one:</span>
-    <span class="block whitespace-nowrap lg:hidden">Add-On with Any 1-Hour Massage!</span>
+                <span class="hidden lg:inline">Add-On with Any 1-Hour Massage! Choose one:</span>
+                <span class="block whitespace-nowrap lg:hidden">Add-On with Any 1-Hour Massage!</span>
 
-    <!-- Offer items with readable styles -->
-    <span
-      class="flex whitespace-nowrap items-center rounded-full bg-white text-[#f3117e] font-semibold
-             px-2 py-0.5 text-xs md:text-sm shadow-sm ring-1 ring-white/40"
-    >
-      Hot Stone
-    </span>
-    <span aria-hidden="true" class="opacity-80">•</span>
-    <span
-      class="flex whitespace-nowrap items-center rounded-full bg-white text-[#f3117e] font-semibold
-             px-2 py-0.5 text-xs md:text-sm shadow-sm ring-1 ring-white/40"
-    >
-      Cupping
-    </span>
-    <span aria-hidden="true" class="opacity-80">•</span>
-    <span
-      class="flex whitespace-nowrap items-center rounded-full bg-white text-[#f3117e] font-semibold
-             px-2 py-0.5 text-xs md:text-sm shadow-sm ring-1 ring-white/40"
-    >
-      Foot Scrub
-    </span>
-    <span aria-hidden="true" class="opacity-80">•</span>
-    <span
-      class="flex whitespace-nowrap items-center rounded-full bg-white text-[#f3117e] font-semibold
-             px-2 py-0.5 text-xs md:text-sm shadow-sm ring-1 ring-white/40"
-    >
-      Neck Tension Release
-    </span>
-  </a>
-</div>
+                {[
+                    'Hot Stone',
+                    'Cupping',
+                    'Foot Scrub',
+                    'Neck Tension Release',
+                ].map((item, idx) => (
+                        <>
+                            {idx > 0 && <span aria-hidden="true" class="opacity-80">•</span>}
+                            <span
+                                    class="flex whitespace-nowrap items-center rounded-full bg-white text-[#f3117e] font-semibold
+                   px-2 py-0.5 text-xs md:text-sm shadow-sm ring-1 ring-white/40"
+                            >
+            {item}
+          </span>
+                        </>
+                ))}
+            </div>
+
+            <!-- Duplicate chunk for seamless loop -->
+            <div class="marquee-chunk flex items-center gap-2 pr-[var(--marquee-gap)] shrink-0 lg:hidden" aria-hidden="true">
+      <span
+              class="flex items-center rounded-full bg-white text-[#f3117e] font-semibold
+               px-2 py-0.5 text-xs md:text-sm shadow-sm ring-1 ring-white/40"
+      >
+        FREE
+      </span>
+
+                <span class="hidden lg:inline">Add-On with Any 1-Hour Massage! Choose one:</span>
+                <span class="block whitespace-nowrap lg:hidden">Add-On with Any 1-Hour Massage!</span>
+
+                {[
+                    'Hot Stone',
+                    'Cupping',
+                    'Foot Scrub',
+                    'Neck Tension Release',
+                ].map((item, idx) => (
+                        <>
+                            {idx > 0 && <span aria-hidden="true" class="opacity-80">•</span>}
+                            <span
+                                    class="flex whitespace-nowrap items-center rounded-full bg-white text-[#f3117e] font-semibold
+                   px-2 py-0.5 text-xs md:text-sm shadow-sm ring-1 ring-white/40"
+                            >
+            {item}
+          </span>
+                        </>
+                ))}
+            </div>
+        </div>
+    </div>
     
 
   <!-- Push content below the fixed top bar -->
@@ -126,8 +151,7 @@ const props = Astro.props as Props;
                     {entry.key}
                     <Icon
                       name="mdi--caret"
-                      class="cs-drop-icon"
-                      style="font: bold"
+                      class="cs-drop-icon font-bold"
                     />
                   </button>
                 ) : (
@@ -846,7 +870,7 @@ const props = Astro.props as Props;
       /* remove the font family so the Stitch inherits the fonts from your global stylesheet */
       font-family: 'Poppins', sans-serif;
       font-weight: 400;
-      font-size: bold;
+      /*font-size: bold;*/
       letter-spacing: 0.05rem;
       width: 100%;
       /* prevents padding from affecting height and width */
@@ -981,4 +1005,89 @@ const props = Astro.props as Props;
       transform: translateX(-100%);
     }
   }
+
+  /* Animation: start in-view at 0, then slide left by one chunk width */
+  @keyframes marquee-slide-left {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-1 * var(--chunk-width)));
+    }
+  }
+
+  /* Animate only on tablet/mobile; desktop remains static */
+  @media (max-width: 64rem) { /* <= 1024px */
+    #announcement-bar #marquee-track {
+      animation: marquee-slide-left var(--marquee-duration) linear infinite;
+    }
+
+    /* Pause on hover/focus (desktop when hovering within this range) */
+    #announcement-bar #marquee-track:hover,
+    #announcement-bar #marquee-track:focus-within {
+      animation-play-state: paused;
+    }
+  }
+
+  /* Respect reduced motion: no animation */
+  @media (prefers-reduced-motion: reduce) {
+    #announcement-bar #marquee-track {
+      animation: none !important;
+      transform: none !important;
+    }
+  }
 </style>
+
+<script>
+  // Measure one chunk width and set CSS var on the track
+  function initMarquee() {
+    const track = document.getElementById('marquee-track');
+    if (!track) return;
+    const chunks = track.querySelectorAll('.marquee-chunk');
+    if (!chunks.length) return;
+
+    // Measure the first chunk including the gap padding
+    const first = chunks[0];
+
+    const measure = () => {
+      // Important: force layout after fonts load
+      const rect = first.getBoundingClientRect();
+      // Use exact pixel width for precise loop
+      const width = Math.ceil(rect.width);
+      track.style.setProperty('--chunk-width', width + 'px');
+    };
+
+    // Initial measure after fonts may be ready
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(measure).catch(measure);
+    } else {
+      // Fallback
+      requestAnimationFrame(measure);
+    }
+
+    // Recalculate on resize (debounced)
+    let rafId = null;
+    const onResize = () => {
+      if (rafId) cancelAnimationFrame(rafId);
+      rafId = requestAnimationFrame(measure);
+    };
+    window.addEventListener('resize', onResize, { passive: true });
+
+    // Observe content changes in case offers change dynamically
+    const mo = new MutationObserver(() => {
+      requestAnimationFrame(measure);
+    });
+    mo.observe(first, { childList: true, subtree: true, characterData: true });
+
+    // Optional: recalc when images load inside the chunk (if any in future)
+    first.querySelectorAll('img').forEach((img) => {
+      if (!img.complete) img.addEventListener('load', measure, { once: true });
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initMarquee, { once: true });
+  } else {
+    initMarquee();
+  }
+</script>
