@@ -8,6 +8,8 @@ import { formatDate, getOptimizedImage } from "@js/utils";
 import Landing from "@components/Landing.astro";
 import FeaturedPost from "@components/FeaturedPost.astro";
 import "@styles/blog.less";
+import ogImage from '@assets/images/CTA/blog-og.jpg';
+const optimizedOg = await getOptimizedImage(ogImage);
 
 const posts = await getCollection("blog");
 posts.sort(
@@ -23,6 +25,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
   title="Blog"
   description="Meta description for the page"
   preloadedImage = {optimizedImage}
+  ogImage={optimizedOg}
 >
   <!-- ============================================ -->
   <!--                    LANDING                   -->
