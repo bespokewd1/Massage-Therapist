@@ -18,56 +18,60 @@ const props = Astro.props as Props;
 </style>
 <header id="cs-navigation" {...props}>
   <!-- Fixed Announcement Bar -->
-  <div
-    class="fixed h-[40px] flex top-0 left-0 w-full z-50 bg-[#f3117e] text-muted text-sm dark:bg-transparent dark:border-b dark:border-slate-800 dark:text-slate-400 md:flex gap-1 overflow-hidden px-3 py-2 text-ellipsis whitespace-nowrap"
+  <!-- Fixed Announcement Bar -->
+<div
+  class="fixed top-0 left-0 z-50 flex h-10 w-full items-center overflow-hidden px-3 py-2 gap-2
+         bg-gradient-to-r from-[#b80d64] via-[#f3117e] to-[#b80d64]
+         text-white/95 backdrop-blur-sm
+         border-b border-white/10
+         dark:from-[#7a0a45] dark:via-[#a40e5e] dark:to-[#7a0a45] dark:text-white"
+>
+  <a
+    class="inline-flex items-center gap-2 px-4 lg:px-0
+           animate-[scroll_15s_linear_infinite] lg:animate-none"
   >
-    <!-- content: "";
-    width: 0%;
-    height: 2px;
-    background: var(--primary);
-    opacity: 1;
-    display: block;
-    position: absolute;
-    bottom: 0rem;
-    left: 0;
-    transition: width 0.3s; -->
-
-    <!-- 🎉Offering professional in-clinic and in-home massage in Edmonton & Nearby. Call now for mobile massage, or book in-clinic online -->
-    <a
-      class="inline-block animate-scroll px-4 text-(--bodyText) animate-[scroll_15s_linear_infinite] lg:animate-none"
+    <!-- FREE pill -->
+    <span
+      class="flex items-center rounded-full bg-white text-[#f3117e] font-semibold
+             px-2 py-0.5 text-xs md:text-sm shadow-sm ring-1 ring-white/40"
     >
-      <strong class="text-(--primary)">FREE</strong>
-      Add-On with Any 1-Hour Massage! Choose one:
+      FREE
+    </span>
 
-      <!-- after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-[var(--primary)]
-         after:opacity-100 after:block after:transition-[width] after:duration-300 hover:after:w-full focus:after:w-full" -->
-      <span
-        class="relative bg-clip-text text-transparent bg-gradient-to-r from-[var(--primary)] to-purple-500"
-      >
-        Hot Stone
-      </span>
-      •
-      <span
-        class="relative bg-clip-text text-transparent bg-gradient-to-l from-[var(--primary)] to-purple-500"
-      >
-        Cupping
-      </span>
+    <span class="hidden lg:inline">Add-On with Any 1-Hour Massage! Choose one:</span>
+    <span class="block whitespace-nowrap lg:hidden">Add-On with Any 1-Hour Massage!</span>
 
-      •
-      <span
-        class="relative bg-clip-text text-transparent bg-gradient-to-r from-[var(--primary)] to-purple-500"
-      >
-        Foot Scrub
-      </span>
-
-      •
-      <span
-        class="relative bg-clip-text text-transparent bg-gradient-to-l from-[var(--primary)] to-purple-500"
-      >
-        Neck Tension Release
-      </span>
-    </a>
-  </div>
+    <!-- Offer items with readable styles -->
+    <span
+      class="flex whitespace-nowrap items-center rounded-full bg-white text-[#f3117e] font-semibold
+             px-2 py-0.5 text-xs md:text-sm shadow-sm ring-1 ring-white/40"
+    >
+      Hot Stone
+    </span>
+    <span aria-hidden="true" class="opacity-80">•</span>
+    <span
+      class="flex whitespace-nowrap items-center rounded-full bg-white text-[#f3117e] font-semibold
+             px-2 py-0.5 text-xs md:text-sm shadow-sm ring-1 ring-white/40"
+    >
+      Cupping
+    </span>
+    <span aria-hidden="true" class="opacity-80">•</span>
+    <span
+      class="flex whitespace-nowrap items-center rounded-full bg-white text-[#f3117e] font-semibold
+             px-2 py-0.5 text-xs md:text-sm shadow-sm ring-1 ring-white/40"
+    >
+      Foot Scrub
+    </span>
+    <span aria-hidden="true" class="opacity-80">•</span>
+    <span
+      class="flex whitespace-nowrap items-center rounded-full bg-white text-[#f3117e] font-semibold
+             px-2 py-0.5 text-xs md:text-sm shadow-sm ring-1 ring-white/40"
+    >
+      Neck Tension Release
+    </span>
+  </a>
+</div>
+    
 
   <!-- Push content below the fixed top bar -->
   <div class="pt-12 cs-container">
