@@ -4,7 +4,7 @@ import client from '@data/client.json';
 import Landing from '@components/Landing.astro';
 import ogImage from '@assets/images/CTA/gallery-og.jpg';
 
-import imgHero from '@assets/images/gc hero.jpg';
+import imgHero from '@assets/images/gc-hero.jpg';
 
 import { Picture } from 'astro:assets';
 
@@ -42,9 +42,9 @@ const optimizedOg = await getOptimizedImage(ogImage);
 
     <!-- Background Image -->
     <picture class="cs-picture">
-        <source media="(max-width: 600px)" srcset="/assets/images/gc-hero.jpg">
-        <source media="(min-width: 601px)" srcset="/assets/images/gc-hero.jpg">
-        <img loading="lazy" decoding="async" src="/assets/images/gc-hero.jpg" alt="mountains" width="2250" height="1500" aria-hidden="true">
+        <source media="(max-width: 600px)" srcset={imgHero}>
+        <source media="(min-width: 601px)" srcset={imgHero}>
+        <img loading="lazy" decoding="async" src={imgHero} alt="mountains" width="2250" height="1500" aria-hidden="true">
     </picture>
 </section>
                                 
