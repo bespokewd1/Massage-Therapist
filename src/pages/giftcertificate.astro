@@ -119,7 +119,7 @@ const optimizedOg = await getOptimizedImage(ogImage);
         /* we put the padding top and bottom on the container instead of #Hero so the pseudo element lines go to the top and bottom of the section */
         /* 144px - 280px - leaving extra space for the navigation */
         /* changes on tablet */
-        padding: clamp(9em, 25.95vw, 17.5em) 0;
+        padding: clamp(6em, 25.95vw, 17.5em) 0;
         position: relative;
 
         &:before {
@@ -164,7 +164,7 @@ const optimizedOg = await getOptimizedImage(ogImage);
         text-align: center;
         //  margin-bottom: (16/16rem);
         // color: var(--primary);
-        color: var(--medium);
+        color: #f0aece;
       }
 
       .cs-title {
@@ -255,7 +255,10 @@ const optimizedOg = await getOptimizedImage(ogImage);
       padding: 0 clamp(2em, 5vw, 2.5em);
 
       .cs-container {
-        padding: clamp(7em, 27.95vw, 17.5em) 0 clamp(9em, 30.95vw, 23.5em) 0;
+        padding: clamp(7em, 27.95vw, 7em) 0;
+        .cs-text{
+          margin-top: 4rem !important;
+        }
         &:after {
           /* Right Line */
           content: '';
