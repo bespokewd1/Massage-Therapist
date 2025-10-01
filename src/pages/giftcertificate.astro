@@ -11,11 +11,12 @@ import { Picture } from 'astro:assets';
 // Optimize our landing image and pass it as props to the BaseLayout (for preloading) and Landing (for rendering)
 import { getOptimizedImage } from '@js/utils';
 import landingImage from '@assets/images/stone-massage-background1.png'; // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
+import SecondaryLayout from 'src/layouts/SecondaryLayout.astro';
 const optimizedImage = await getOptimizedImage(landingImage);
 const optimizedOg = await getOptimizedImage(ogImage);
 ---
 
-<BaseLayout
+<SecondaryLayout
   title="Gift Certificate"
   description="Surprise your loved ones with the ultimate wellness gift. Choose a 1-hour or 2-hour massage certificate and let them experience expert care and deep relaxation."
   preloadedImage={optimizedImage}
@@ -70,10 +71,6 @@ const optimizedOg = await getOptimizedImage(ogImage);
 
   <style lang="less">
     /* PAGE-SPECIFIC STYLES FOR THE CONTACT PAGE */
-
-    #cs-navigation{
-      visibility: hidden !important;
-    }
 
     /*-- -------------------------- -->
     <---           Hero             -->
