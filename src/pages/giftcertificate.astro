@@ -7,6 +7,7 @@ import ogImage from '@assets/images/CTA/gallery-og.jpg';
 import imgHero from '@assets/images/gc-hero.jpg';
 
 import { Picture } from 'astro:assets';
+import Review from "../components/Review.astro";
 
 // Optimize our landing image and pass it as props to the BaseLayout (for preloading) and Landing (for rendering)
 import { getOptimizedImage } from '@js/utils';
@@ -275,6 +276,10 @@ const optimizedOg = await getOptimizedImage(ogImage);
     </div>
 </section>
                                                     
+  <!-- ============================================ -->
+  <!--                   Reviews                    -->
+  <!-- ============================================ -->
+  <Review/>
 
   <style lang="less">
     /* PAGE-SPECIFIC STYLES FOR THE CONTACT PAGE */
