@@ -22,76 +22,56 @@ const optimizedOg = await getOptimizedImage(ogImage);
   preloadedImage={optimizedImage}
   ogImage={optimizedOg}
 >
-  <!-- ============================================ -->
-  <!--                    LANDING                   -->
-  <!-- ============================================ -->
+<!-- ============================================ -->
+<!--                    Hero                      -->
+<!-- ============================================ -->
 
-  <!-- <Landing title="Contact" image={optimizedImage} /> -->
-
-  <!-- ============================================ -->
-  <!--                    Hero                      -->
-  <!-- ============================================ -->
-
-  <section id="hero">
+<section id="hero-229">
     <div class="cs-container">
-      <div class="cs-flex-group">
-        <span class="cs-topper mt-12">Hot Stone Massage - Edmonton</span>
-        <h1 class="cs-title shadow-text-lg">Relax. Rejuvenate. Revive.</h1>
-        <p class="cs-text mt-28 shadow-text-lg">
-          Professional massage therapy for relaxation, pain relief, and overall
-          wellness in Edmonton.
-        </p>
-        <!-- <a href="/about" class="cs-button-solid">Call Now (780-123-4567)</a> -->
-        <a
-          href="tel:587-938-0458"
-          class="cs-button-solid w-[300px] rounded-full mt-8 text-center text-white leading-snug p-4 text-[.6rem] md:text-[1rem] lg:w-[220px] xl:w-[230px]"
-          >
-          <span class="text-[1rem]">Call for Mobile Massage</span> <i class="fas fa-phone text-[#28a745] ml-1"></i>
-         </a>
-        <a
-          href="https://www.massagebook.com/therapists/StoneMassage?src=external"
-          class="cs-button-solid w-[300px]  rounded-full text-center text-white leading-snug p-4 text-[.6rem] md:text-[1rem] lg:w-[230px] lg:mt-8"
-          >
-          <span class="text-[1rem]">Book In-Clinic Massage </span> <i class="fas fa-calendar text-[#28a745]"></i>
-          </a>
-      </div>
+        <div class="cs-flex-group">
+            <span class="cs-topper">mountain hiking society</span>
+            <h1 class="cs-title">Explore the World with Exciting People</h1>
+            <p class="cs-text">
+                Tincidunt lobortis feugiat vivamus at augue eget arcu dictum varius. Nibh tortor id aliquet lectus proin nibh condimentum.
+            </p>
+            <div class="cs-button-group">
+                <a href="" class="cs-button-solid cs-button">Explore More</a>
+                <a href="" class="cs-button-transparent cs-button">
+                    <img class="cs-img" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Hero/play.svg" alt="play icon" width="17" height="17">
+                    Learn More
+                </a>
+            </div>
+        </div>
     </div>
 
     <!-- Background Image -->
-    <!-- We can't use Astro <Picture /> as it does not support multiple sources -->
-    <!-- <ImageSlider imgDatas={heroImages} isAutoSlide client:visible /> -->
-    <Picture
-      src={heroImg}
-      alt="lady in a stone massage"
-      formats={['avif', 'webp']}
-      pictureAttributes={{ class: 'cs-picture hidden' }}
-      loading="eager"
-    />
-  </section>
+    <picture class="cs-picture">
+        <source media="(max-width: 600px)" srcset="https://csimg.nyc3.digitaloceanspaces.com/Hero/Background-m.jpg">
+        <source media="(min-width: 601px)" srcset="https://csimg.nyc3.digitaloceanspaces.com/Hero/Background.jpg">
+        <img loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Hero/Background.jpg" alt="mountains" width="2250" height="1500" aria-hidden="true">
+    </picture>
+</section>
+                                
 
   <style lang="less">
     /* PAGE-SPECIFIC STYLES FOR THE CONTACT PAGE */
 
-    /*-- -------------------------- -->
-    <---           Hero             -->
-    <--- -------------------------- -*/
+/*-- -------------------------- -->
+<---           Hero             -->
+<--- -------------------------- -*/
 
-      /* Mobile - 360px */
-      @media only screen and (min-width: 0em) {
-        #hero {
-          font-family: 'Open Sans', 'Roboto', Arial, sans-serif;
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #hero-229 {
+        /* changes on tablet */
+        padding: 0 (16/16rem);
+        position: relative;
+        z-index: 1;
+        /* prevents overflow from the lines extending past the screen width */
+        overflow: hidden;
 
-          text-align: center;
-          padding: 0 (16/16rem);
-          padding-bottom: (100/16rem);
-          position: relative;
-          z-index: 1;
-          overflow: hidden;
-          /* Add background attachment for mobile */
-          background: url('/assets/images/hero-img.avif') center/cover no-repeat;
-          background-attachment: scroll; /* Default for mobile */
-
-          .cs-picture {
+        .cs-picture {
+            /* Background Image */
             width: 100%;
             height: 100%;
             display: block;
@@ -101,126 +81,181 @@ const optimizedOg = await getOptimizedImage(ogImage);
             z-index: -2;
 
             &:before {
-              content: '';
-              width: 100%;
-              height: 100%;
-              opacity: 0.7;
-              display: block;
-              position: absolute;
-              top: 0;
-              left: 0;
-              z-index: 1;
-              pointer-events: none;
+                /* Black Color Overlay */
+                content: '';
+                width: 100%;
+                height: 100%;
+                background: #000;
+                opacity: .6;
+                position: absolute;
+                display: block;
+                top: 0;
+                left: 0;
+                z-index: 1;
+                /* prevents the cursor from interacting with it */
+                pointer-events: none;
             }
-
+            
             img {
-              width: 100%;
-              height: 100%;
-              object-fit: cover;
-              position: absolute;
-              top: 0;
-              left: 0;
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                /* Makes image act like a background-image */
+                object-fit: cover;
             }
-          }
+        }
 
-          .cs-container {
+        .cs-container {
             width: 100%;
-            max-width: (1280/16em);
-            margin: auto;
+            max-width: (1280/16rem);
             /* we put the padding top and bottom on the container instead of #Hero so the pseudo element lines go to the top and bottom of the section */
             /* 144px - 280px - leaving extra space for the navigation */
             /* changes on tablet */
-            padding: clamp(9em, 25.95vw, 17.5em) 0;
+            padding: clamp(9rem, 25.95vw, 17.5rem) 0 ;
+            margin: auto;
             position: relative;
 
             &:before {
-              /* Left Line */
-              content: '';
-              width: 1px;
-              height: 100%;
-              background: -moz-linear-gradient(
-                top,
-                rgba(250, 251, 252, 0.5) 0%,
-                rgba(250, 251, 252, 0) 100%
-              ); /* FF3.6-15 */
-              background: -webkit-linear-gradient(
-                top,
-                rgba(250, 251, 252, 0.5) 0%,
-                rgba(250, 251, 252, 0) 100%
-              ); /* Chrome10-25,Safari5.1-6 */
-              opacity: 1;
-              display: block;
-              position: absolute;
-              top: 0;
-              left: 0;
+                /* Left Line */
+                content: '';
+                width: 1px;
+                height: 100%;
+                background: -moz-linear-gradient(top, rgba(250,251,252,0.5) 0%, rgba(250,251,252,0) 100%); /* FF3.6-15 */
+                background: -webkit-linear-gradient(top, rgba(250,251,252,0.5) 0%,rgba(250,251,252,0) 100%); /* Chrome10-25,Safari5.1-6 */
+                opacity: 1;
+                position: absolute;
+                display: block;
+                top: 0;
+                left: 0;
             }
-          }
+        }
 
-          .cs-flex-group {
+        .cs-flex-group {
+            /* 60px - 220px */
+            margin-bottom: clamp(3.75rem, 15.5vw, 13.75rem);
+            margin: auto;
             width: 80vw;
             /* 464px - 562px */
-            max-width: clamp(29em, 60vw, 35.125em);
-            margin: auto;
-            /* 60px - 220px */
-            margin-bottom: clamp(3.75em, 15.5vw, 13.75em);
-            box-sizing: border-box;
+            max-width: clamp(29rem, 60vw, 35.125rem);
             display: flex;
-            justify-content: center;
             align-items: flex-start;
+            justify-content: center;
             flex-wrap: wrap;
-            gap: 1rem;
-          }
+            column-gap: (20/16rem);
+            box-sizing: border-box;
+        }
 
-          .cs-topper {
+        .cs-topper {
+            /* 13px - 16px */
+            font-size: clamp(.8125rem, 1.6vw, 1rem);
+            line-height: 1.2em;
+            text-transform: uppercase;
             text-align: center;
-            //  margin-bottom: (16/16rem);
-            // color: var(--primary);
-            color: var(--medium);
-          }
+            letter-spacing: .1rem;
+            font-weight: 700;
+            color: var(--primaryLight);
+            margin-bottom: (16/16rem);
+            display: block;
+        }
 
-          .cs-title {
+        .cs-title {
+            /* 39px - 61px */
+            font-size: clamp(2.4375rem, 6.40vw, 3.8125rem);
+            font-weight: 900;
+            line-height: 1.2em;
             text-align: center;
             width: 100%;
+            /* 32px - 40px */
+            margin: 0 auto clamp(2rem, 4vw, 2.5rem) 0;
             color: var(--bodyTextColorWhite);
-            margin-bottom: 0;
-          }
+            position: relative;
+        }
 
-          .cs-text {
+        .cs-text {
+            /* 16px - 20px */
+            font-size: clamp(1rem, 1.95vw, 1.25rem);
+            line-height: 1.5em;
             text-align: center;
+            width: 100%;
             /* 32px - 40px */
             margin: 0 auto clamp(2rem, 4vw, 2.5rem) 0;
             /* 40px - 48px */
-            margin-bottom: clamp(1.5rem, 4vw, 2rem);
+            margin-bottom: clamp(2.5rem, 4vw, 3rem);
             color: var(--bodyTextColorWhite);
-          }
+        }
 
-          .cs-button-solid {
-            line-height: clamp(2.875em, 5.5vw, 3.5em);
-            height: initial;
-            margin-bottom: calc(16 / 16 * 1rem);
-            padding: 0 1rem;
-            color: var(--bodyTextColorWhite);
-            border-radius: calc(32 / 16 * 1rem);
-            &:before {
-              border-radius: calc(32 / 16 * 1rem);
-            }
-          }
+        .cs-button-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            /* 16px - 20px */
+            gap: clamp(1rem, 2.3vw, 1.25rem);
+        }
 
-          .cs-button-transparent {
+        .cs-button {
+            min-width: (197/16rem);
+        }
+
+        .cs-button-solid {
             font-size: (16/16rem);
             font-weight: 700;
             /* 46px - 56px */
             line-height: clamp(2.875em, 5.5vw, 3.5em);
+            text-align: center;
             text-decoration: none;
-            //  width: (180/16rem);
-            width: max-content;
-            /* 46px - 56px */
-            height: clamp(2.875em, 5.5vw, 3.5em);
-            margin: 0 (8/16rem);
+            margin: 0;
+            /* prevents padding from adding to the width */
             box-sizing: border-box;
-            padding: 0 0.5rem;
+            padding: 0 (48/16rem);
+            background-color: var(--primary);
+            overflow: hidden;
             color: #fff;
+            border: none;
+            display: inline-block;
+            position: relative;
+            z-index: 1;
+            transition: color 0.3s;
+
+            &:before {
+                content: "";
+                width: 0;
+                height: 100%;
+                background: #000;
+                opacity: 1;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: -1;
+                transition: width 0.3s;
+            }
+
+            &:hover {
+                color: #fff;
+
+                &:before {
+                    width: 100%;
+                }
+            }
+        }
+
+        .cs-button-transparent {
+            font-size: (16/16rem);
+            /* 46px - 56px */
+            line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+            width: (180/16rem);
+            /* 46px - 56px */
+            height: clamp(2.875rem, 5.5vw, 3.5rem);
+            text-decoration: none;
+	    	font-weight: 700;
+            margin: 0;
+            color: #fff;
+            padding: 0;
             background-color: transparent;
+            border: 1px solid var(--bodyTextColorWhite);
+            box-sizing: border-box;
             display: inline-flex;
             justify-content: center;
             align-items: center;
@@ -228,102 +263,96 @@ const optimizedOg = await getOptimizedImage(ogImage);
             z-index: 1;
 
             &:before {
-              content: '';
-              background: #000;
-              opacity: 1;
-              display: block;
-              position: absolute;
-              /* so it sits on top of the border */
-              top: -1px;
-              right: -1px;
-              bottom: -1px;
-              left: -1px;
-              z-index: -1;
-              /* this is what creates the grow affect on hover */
-              transform: scaleX(0);
-              transition: transform 0.3s;
-              transform-origin: left;
+                content: '';
+                position: absolute;
+                display: block;
+                background: #000;
+                opacity: 1;
+                /* so it sits on top of the border */
+                top: -1px;
+                left: -1px;
+                right: -1px;
+                bottom: -1px;
+                z-index: -1;
+                transform-origin: left;
+                /* this is what creates the grow affect on hover */
+                transform: scaleX(0);
+                transition: transform .3s;
             }
 
             &:hover {
-              &:before {
-                transform: scaleX(1);
-              }
+                &:before {
+                    transform: scaleX(1);
+                }
             }
 
             .cs-img {
-              margin-right: (12/16rem);
-              display: block;
+                display: block;
+                margin-right: (12/16rem);
             }
-          }
         }
-      }
+    }
+}
 
-      /* Tablet - 768px */
-      @media only screen and (min-width: 48em) {
-        #hero {
-          /* 32px - 40px */
-          padding: 0 clamp(2em, 5vw, 2.5em);
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #hero-229 {
+        /* 32px - 40px */
+        padding: 0 clamp(2rem, 5vw, 2.5rem);
 
-          .cs-container {
-            padding: clamp(7em, 27.95vw, 17.5em) 0 clamp(9em, 30.95vw, 23.5em) 0;
+        .cs-container {
             &:after {
-              /* Right Line */
-              content: '';
-              width: 1px;
-              height: 100%;
-              background: -moz-linear-gradient(
-                top,
-                rgba(250, 251, 252, 0) 0%,
-                rgba(250, 251, 252, 0.5) 100%
-              ); /* FF3.6-15 */
-              background: -webkit-linear-gradient(
-                top,
-                rgba(250, 251, 252, 0) 0%,
-                rgba(250, 251, 252, 0.5) 100%
-              ); /* Chrome10-25,Safari5.1-6 */
-              opacity: 1;
-              display: block;
-              position: absolute;
-              top: 0;
-              right: 0;
+                /* Right Line */
+                content: '';
+                width: 1px;
+                height: 100%;
+                background: -moz-linear-gradient(top, rgba(250,251,252,0) 0%, rgba(250,251,252,0.5) 100%); /* FF3.6-15 */
+                background: -webkit-linear-gradient(top, rgba(250,251,252,0) 0%,rgba(250,251,252,0.5) 100%); /* Chrome10-25,Safari5.1-6 */
+                opacity: 1;
+                position: absolute;
+                display: block;
+                top: 0;
+                right: 0;
             }
-          }
-
-          .cs-button-solid {
-            // margin-right: (20/16rem);
-            margin-bottom: 0;
-            padding: 0 1.875rem;
-          }
         }
-      }
 
-      /* Desktop Parallax Effect - 1300px */
-      @media only screen and (min-width: 64em) {
-        #hero {
-          background: url('/assets/images/hero-img.avif');
-          background-position: center;
-          background-size: cover;
-          background-repeat: no-repeat;
-          background-attachment: fixed; /* Enable parallax on desktop */
-          /* Add transform for smoother parallax */
-          transform: translate3d(0, 0, 0); /* Enable hardware acceleration */
-          will-change: background-position; /* Optimize performance */
+        .cs-button-group {
+            flex-direction: row;
         }
-      }
+    }
+}
 
-      /* Dark Mode */
-      @media only screen and (min-width: 0em) {
-        body.dark-mode {
-          #hero {
+/* Desktop Parallax Effect - 1300px */
+@media only screen and (min-width: 81.25rem) {
+    #hero-229 {
+        background: url("https://csimg.nyc3.digitaloceanspaces.com/Hero/Background.jpg");
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+        /* creates parallax effect on background image */
+        background-attachment: fixed;
+        /* remove img tag so we can make parallax work */
+        .cs-picture {
+            img {
+                display: none;
+            }
+        }
+    }
+}
+
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+    body.dark-mode {
+        #hero-229 {
             .cs-background {
-              &:before {
-                opacity: 0.8;
-              }
+                &:before {
+                    opacity: .8;
+                }
             }
-          }
         }
-      }
+    }
+}
+                                
 
   </style>
 </BaseLayout>
