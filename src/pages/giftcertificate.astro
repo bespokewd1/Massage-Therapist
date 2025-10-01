@@ -41,18 +41,11 @@ const optimizedOg = await getOptimizedImage(ogImage);
     </div>
 
     <!-- Background Image -->
-         <Picture
-      src={imgHero}
-      alt="head massage"
-      formats={['avif', 'webp']}
-      pictureAttributes={{ class: 'cs-picture hidden' }}
-      loading="eager"
-    />
-    <!-- <picture class="cs-picture">
-        <source media="(max-width: 600px)" srcset="https://csimg.nyc3.digitaloceanspaces.com/Hero/Background-m.jpg">
-        <source media="(min-width: 601px)" srcset="https://csimg.nyc3.digitaloceanspaces.com/Hero/Background.jpg">
-        <img loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Hero/Background.jpg" alt="mountains" width="2250" height="1500" aria-hidden="true">
-    </picture> -->
+    <picture class="cs-picture">
+        <source media="(max-width: 600px)" srcset="@assets/images/gc hero.jpg">
+        <source media="(min-width: 601px)" srcset="@assets/images/gc hero.jpg">
+        <img loading="lazy" decoding="async" src="@assets/images/gc hero.jpg" alt="mountains" width="2250" height="1500" aria-hidden="true">
+    </picture>
 </section>
                                 
 
