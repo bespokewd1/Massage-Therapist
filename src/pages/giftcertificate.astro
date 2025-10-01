@@ -71,5 +71,262 @@ const optimizedOg = await getOptimizedImage(ogImage);
   <style lang="less">
     /* PAGE-SPECIFIC STYLES FOR THE CONTACT PAGE */
 
+    #cs-navigation{
+      visibility: hidden !important;
+    }
+
+    /*-- -------------------------- -->
+    <---           Hero             -->
+    <--- -------------------------- -*/
+
+      /* Mobile - 360px */
+      @media only screen and (min-width: 0em) {
+        #hero {
+          font-family: 'Open Sans', 'Roboto', Arial, sans-serif;
+
+          text-align: center;
+          padding: 0 (16/16rem);
+          padding-bottom: (100/16rem);
+          position: relative;
+          z-index: 1;
+          overflow: hidden;
+          /* Add background attachment for mobile */
+          background: url('/assets/images/hero-img.avif') center/cover no-repeat;
+          background-attachment: scroll; /* Default for mobile */
+
+          .cs-picture {
+            width: 100%;
+            height: 100%;
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -2;
+
+            &:before {
+              content: '';
+              width: 100%;
+              height: 100%;
+              opacity: 0.7;
+              display: block;
+              position: absolute;
+              top: 0;
+              left: 0;
+              z-index: 1;
+              pointer-events: none;
+            }
+
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              position: absolute;
+              top: 0;
+              left: 0;
+            }
+          }
+
+          .cs-container {
+            width: 100%;
+            max-width: (1280/16em);
+            margin: auto;
+            /* we put the padding top and bottom on the container instead of #Hero so the pseudo element lines go to the top and bottom of the section */
+            /* 144px - 280px - leaving extra space for the navigation */
+            /* changes on tablet */
+            padding: clamp(9em, 25.95vw, 17.5em) 0;
+            position: relative;
+
+            &:before {
+              /* Left Line */
+              content: '';
+              width: 1px;
+              height: 100%;
+              background: -moz-linear-gradient(
+                top,
+                rgba(250, 251, 252, 0.5) 0%,
+                rgba(250, 251, 252, 0) 100%
+              ); /* FF3.6-15 */
+              background: -webkit-linear-gradient(
+                top,
+                rgba(250, 251, 252, 0.5) 0%,
+                rgba(250, 251, 252, 0) 100%
+              ); /* Chrome10-25,Safari5.1-6 */
+              opacity: 1;
+              display: block;
+              position: absolute;
+              top: 0;
+              left: 0;
+            }
+          }
+
+          .cs-flex-group {
+            width: 80vw;
+            /* 464px - 562px */
+            max-width: clamp(29em, 60vw, 35.125em);
+            margin: auto;
+            /* 60px - 220px */
+            margin-bottom: clamp(3.75em, 15.5vw, 13.75em);
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 1rem;
+          }
+
+          .cs-topper {
+            text-align: center;
+            //  margin-bottom: (16/16rem);
+            // color: var(--primary);
+            color: var(--medium);
+          }
+
+          .cs-title {
+            text-align: center;
+            width: 100%;
+            color: var(--bodyTextColorWhite);
+            margin-bottom: 0;
+          }
+
+          .cs-text {
+            text-align: center;
+            /* 32px - 40px */
+            margin: 0 auto clamp(2rem, 4vw, 2.5rem) 0;
+            /* 40px - 48px */
+            margin-bottom: clamp(1.5rem, 4vw, 2rem);
+            color: var(--bodyTextColorWhite);
+          }
+
+          .cs-button-solid {
+            line-height: clamp(2.875em, 5.5vw, 3.5em);
+            height: initial;
+            margin-bottom: calc(16 / 16 * 1rem);
+            padding: 0 1rem;
+            color: var(--bodyTextColorWhite);
+            border-radius: calc(32 / 16 * 1rem);
+            &:before {
+              border-radius: calc(32 / 16 * 1rem);
+            }
+          }
+
+          .cs-button-transparent {
+            font-size: (16/16rem);
+            font-weight: 700;
+            /* 46px - 56px */
+            line-height: clamp(2.875em, 5.5vw, 3.5em);
+            text-decoration: none;
+            //  width: (180/16rem);
+            width: max-content;
+            /* 46px - 56px */
+            height: clamp(2.875em, 5.5vw, 3.5em);
+            margin: 0 (8/16rem);
+            box-sizing: border-box;
+            padding: 0 0.5rem;
+            color: #fff;
+            background-color: transparent;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+
+            &:before {
+              content: '';
+              background: #000;
+              opacity: 1;
+              display: block;
+              position: absolute;
+              /* so it sits on top of the border */
+              top: -1px;
+              right: -1px;
+              bottom: -1px;
+              left: -1px;
+              z-index: -1;
+              /* this is what creates the grow affect on hover */
+              transform: scaleX(0);
+              transition: transform 0.3s;
+              transform-origin: left;
+            }
+
+            &:hover {
+              &:before {
+                transform: scaleX(1);
+              }
+            }
+
+            .cs-img {
+              margin-right: (12/16rem);
+              display: block;
+            }
+          }
+        }
+      }
+
+      /* Tablet - 768px */
+      @media only screen and (min-width: 48em) {
+        #hero {
+          /* 32px - 40px */
+          padding: 0 clamp(2em, 5vw, 2.5em);
+
+          .cs-container {
+            padding: clamp(7em, 27.95vw, 17.5em) 0 clamp(9em, 30.95vw, 23.5em) 0;
+            &:after {
+              /* Right Line */
+              content: '';
+              width: 1px;
+              height: 100%;
+              background: -moz-linear-gradient(
+                top,
+                rgba(250, 251, 252, 0) 0%,
+                rgba(250, 251, 252, 0.5) 100%
+              ); /* FF3.6-15 */
+              background: -webkit-linear-gradient(
+                top,
+                rgba(250, 251, 252, 0) 0%,
+                rgba(250, 251, 252, 0.5) 100%
+              ); /* Chrome10-25,Safari5.1-6 */
+              opacity: 1;
+              display: block;
+              position: absolute;
+              top: 0;
+              right: 0;
+            }
+          }
+
+          .cs-button-solid {
+            // margin-right: (20/16rem);
+            margin-bottom: 0;
+            padding: 0 1.875rem;
+          }
+        }
+      }
+
+      /* Desktop Parallax Effect - 1300px */
+      @media only screen and (min-width: 64em) {
+        #hero {
+          background: url('/assets/images/hero-img.avif');
+          background-position: center;
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-attachment: fixed; /* Enable parallax on desktop */
+          /* Add transform for smoother parallax */
+          transform: translate3d(0, 0, 0); /* Enable hardware acceleration */
+          will-change: background-position; /* Optimize performance */
+        }
+      }
+
+      /* Dark Mode */
+      @media only screen and (min-width: 0em) {
+        body.dark-mode {
+          #hero {
+            .cs-background {
+              &:before {
+                opacity: 0.8;
+              }
+            }
+          }
+        }
+      }
+
   </style>
 </BaseLayout>
