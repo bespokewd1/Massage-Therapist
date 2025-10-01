@@ -191,40 +191,32 @@ const optimizedOg = await getOptimizedImage(ogImage);
 </section> -->
                                 
 <!-- ============================================ -->
-<!--                    Services                  -->
+<!--                   Gallery                    -->
 <!-- ============================================ -->
 
-<section id="services-1354">
+<section id="gallery-1152">
     <div class="cs-container">
         <div class="cs-content">
-            <span class="cs-topper">Our Services</span>
-            <h2 class="cs-title">We’re Committed to Deliver Top High Quality Services</h2>
+            <span class="cs-topper">Our Portfolio</span>
+            <h2 class="cs-title">Our Photo Gallery</h2>
         </div>
-        <ul class="cs-card-group">
-            <li class="cs-item">
-                <a href="" class="cs-link">
-                    <h3 class="cs-h3"><span class="cs-span">Growing</span> Businesses</h3>
-                </a>
-                <picture class="cs-background">
-                    <source media="(max-width: 600px)" srcset="/assets/images/100gc.png">
-                    <source media="(min-width: 601px)" srcset="/assets/images/100gc.png">
-                    <img decoding="async" src="/assets/images/100gc.png" alt="construction" width="305" height="305" aria-hidden="true">
-                </picture>
-            </li>
-            <li class="cs-item">
-                <a href="" class="cs-link">
-                    <h3 class="cs-h3"><span class="cs-span">Building</span> Relationships</h3>
-                </a>
-                <picture class="cs-background">
-                    <source media="(max-width: 600px)" srcset="/assets/images/200gc.png">
-                    <source media="(min-width: 601px)" srcset="/assets/images/200gc.png">
-                    <img decoding="async" src="/assets/images/200gc.png" alt="construction" width="305" height="305" aria-hidden="true">
-                </picture>
-            </li>
-        </ul>
+        <div class="cs-gallery">
+            <!--Picture 1-->
+            <picture class="cs-image">
+                <source media="(max-width: 600px)" srcset="/assets/images/100gc.png">
+                <source media="(min-width: 601px)" srcset="/assets/images/100gc.png">
+                <img loading="lazy" decoding="async" src="/assets/images/100gc.png" alt="gallery" width="272" height="320">
+            </picture>
+            <!--Picture 2-->
+            <picture class="cs-image">
+                <source media="(max-width: 600px)" srcset="/assets/images/200gc.png">
+                <source media="(min-width: 601px)" srcset="/assets/images/200gc.png">
+                <img loading="lazy" decoding="async" src="/assets/images/200gc.png" alt="gallery" width="272" height="320">
+            </picture>
+        </div>
     </div>
 </section>
-                                
+                                                 
                                 
 
   <style lang="less">
@@ -786,7 +778,7 @@ const optimizedOg = await getOptimizedImage(ogImage);
             padding: 0;
             width: 100%;
             display: grid;
-            grid-template-columns: repeat(12, 1fr);
+            grid-template-columns: repeat(2, 1fr);
             /* 16px - 20px */
             gap: clamp(1rem, 2vw, 1.25rem);
         }
