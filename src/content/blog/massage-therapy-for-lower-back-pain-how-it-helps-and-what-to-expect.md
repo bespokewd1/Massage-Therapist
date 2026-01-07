@@ -4,7 +4,7 @@ description: Learn how massage therapy can help relieve lower back pain, improve
   mobility, and support recovery—explained by a Registered Massage Therapist in
   Edmonton, AB.
 author: Stone Massage Admin
-date: 2025-10-07T12:04:00.000-06:00
+date: 2026-01-07T12:38:00.000-07:00
 image: src/assets/images/blog/gemini_generated_image_o7ivy6o7ivy6o7iv.png
 imageAlt: Massage Therapy for Lower Back Pain
 tags:
