@@ -5,7 +5,7 @@ description: Give the gift of wellness this holiday season with a Stone Massage
   experienced massage therapists offer the perfect way for your loved ones to
   relax and recharge. Purchase online easily and share the ultimate gift of
   relaxation today.
-author: Team Stone Massage
+author: Stone Massage Admin
 date: 2025-10-12T13:51:00.000-06:00
 image: src/assets/images/blog/gc.png
 imageAlt: Gift Certificate
