@@ -4,7 +4,7 @@ description: Discover the benefits of hot stone massage, how it helps relieve
   muscle tension, and whether it’s right for you—expertly explained by an
   Edmonton RMT.
 author: Stone Massage Admin
-date: 2025-08-07T11:19:00.000-06:00
+date: 2025-11-07T11:19:00.000-07:00
 image: src/assets/images/blog/gemini_generated_image_b0a7xyb0a7xyb0a7.jpg
 imageAlt: Stone Massage
 tags:
