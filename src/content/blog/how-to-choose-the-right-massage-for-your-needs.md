@@ -1,7 +1,9 @@
 ---
 title: How to Choose the Right Massage for Your Needs
-description: Not sure which massage is right for you? Learn the differences between Swedish, deep tissue, hot stone, and other massage types to find the best one for your needs.
-author: Code Stitch
+description: Not sure which massage is right for you? Learn the differences
+  between Swedish, deep tissue, hot stone, and other massage types to find the
+  best one for your needs.
+author: Stone Massage Admin
 date: 2023-06-08T15:27:34.591Z
 image: src/assets/images/blog/blog-1.webp
 imageAlt: Woman with oil massage
