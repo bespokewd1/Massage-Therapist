@@ -4,7 +4,7 @@ description: Learn how mobile massage works, who it’s best for, and why many
   Edmonton clients choose in-home massage therapy for comfort, convenience, and
   stress relief.
 author: Stone Massage Admin
-date: 2025-09-07T11:54:00.000-06:00
+date: 2025-12-07T11:54:00.000-07:00
 image: src/assets/images/blog/gemini_generated_image_8aojm98aojm98aoj.png
 imageAlt: Mobile Massage
 tags:
