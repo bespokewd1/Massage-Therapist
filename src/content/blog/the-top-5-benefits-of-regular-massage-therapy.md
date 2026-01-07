@@ -1,13 +1,14 @@
 ---
 title: The Top 5 Benefits of Regular Massage Therapy
-description: Regular massage therapy isn’t just for relaxation—it helps reduce stress, relieve pain, improve circulation, and enhance overall well-being.
-author: Code Stitch
+description: Regular massage therapy isn’t just for relaxation—it helps reduce
+  stress, relieve pain, improve circulation, and enhance overall well-being.
+author: Stone Massage Admin
 date: 2023-06-08T15:28:08.486Z
+image: /src/assets/images/blog/blog-3.webp
+imageAlt: male in a massage
 tags:
   - post
   - featured
-image: /src/assets/images/blog/blog-3.webp
-imageAlt: male in a massage
 ---
 
 Massage therapy has been practiced for thousands of years, dating back to ancient Egypt, China, and Greece. Hippocrates, the “Father of Medicine,” even prescribed massages for healing! Today, science backs up what people have known for centuries—regular massages provide amazing health benefits.
