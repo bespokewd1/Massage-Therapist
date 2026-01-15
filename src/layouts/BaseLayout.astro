@@ -23,11 +23,7 @@ const defaultOg = '/assets/favicons/favicon-stone-massage.jpg';
 // const og = ogImage?.src ?? defaultOg;
 
 const og =
-    typeof ogImage === "string"
-        ? ogImage
-        : ogImage
-            ? ogImage.src
-            : defaultOg;
+  typeof ogImage === 'string' ? ogImage : ogImage ? ogImage.src : defaultOg;
 ---
 
 <!-- A fully fleshed-out <head>, dynamically changing based on client.json and the page front matter -->
@@ -35,6 +31,24 @@ const og =
   <head>
     <!-- View Transitions support -->
     <ClientRouter />
+
+    <script>
+      (function (w, d, s, l, i) {
+        //@ts-expect-error
+        w[l] = w[l] || [];
+        //@ts-expect-error
+        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : '';
+        //@ts-expect-error
+        j.async = true;
+        //@ts-expect-error
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        //@ts-expect-error
+        f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-KJSHS6L8');
+    </script>
 
     <!-- Standard meta tags -->
     <meta charset="UTF-8" />
@@ -113,10 +127,21 @@ const og =
     <!-- Sitewide Scripts -->
     <script src="@js/nav.js"></script>
 
-    <meta name="google-site-verification" content="35f16sCSVS0yEIBRKet-xeKNVquA6d0er89D30-Rj7g" />
-
+    <meta
+      name="google-site-verification"
+      content="35f16sCSVS0yEIBRKet-xeKNVquA6d0er89D30-Rj7g"
+    />
   </head>
+
   <body>
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-KJSHS6L8"
+        height="0"
+        width="0"
+        style="display:none;visibility:hidden"></iframe></noscript
+    >
+
     <!--Screen reader skip main nav-->
     <a class="skip" aria-label="skip to main content" href="#main"
       >Click To Skip To Main Content</a
