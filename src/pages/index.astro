@@ -7,6 +7,7 @@ import { getCollection } from 'astro:content';
 import { Image } from 'astro:assets';
 import '@styles/blog.less';
 import ServiceGrid, { type IService } from '@components/ServicesGrid.astro';
+import { Icon } from 'astro-icon/components'
 
 import ogImage from '@assets/images/CTA/home-og.jpg';
 
@@ -117,7 +118,7 @@ posts.sort(
   (a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf()
 );
 ---
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"> -->
 <BaseLayout
   title="Hot Stone Massage Edmonton - Professional Massage Therapy"
   description="Professional massage therapy for relaxation, pain relief, and overall wellness in Edmonton."
@@ -142,13 +143,18 @@ posts.sort(
           href="tel:587-938-0458"
           class="cs-button-solid w-[300px] rounded-full mt-8 text-center before:rounded-[inherit] text-white leading-snug p-4 text-[.6rem] md:text-[1rem] lg:w-[220px] xl:w-[230px]"
           >
-          <span class="text-[1rem]">Call for Mobile Massage</span> <i class="fas fa-phone text-[#28a745] ml-1"></i>
+          <span class="text-[1rem]">Call for Mobile Massage</span> 
+          <Icon name="fa7-solid:phone" class="text-[#28a745] ml-1 size-5 inline" />
+          <!-- <i class="fas fa-phone text-[#28a745] ml-1"></i> -->
          </a>
         <a
           href="https://www.massagebook.com/therapists/StoneMassage?src=external"
           class="cs-button-solid w-[300px]  rounded-full text-center text-white leading-snug p-4 text-[.6rem] md:text-[1rem] lg:w-[230px] lg:mt-8"
           >
-          <span class="text-[1rem]">Book In-Clinic Massage </span> <i class="fas fa-calendar text-[#28a745]"></i>
+          <span class="text-[1rem]">Book In-Clinic Massage </span>
+
+          <Icon name="fa7-solid:calendar" class="text-[#28a745] ml-1 size-5 inline" />
+           <!-- <i class="fas fa-calendar text-[#28a745]"></i> -->
           </a>
       </div>
     </div>
@@ -349,7 +355,10 @@ posts.sort(
           href="tel:587-938-0458"
           class="h-auto cs-button-solid w-[300px] rounded-full before:rounded-[inherit] mt-8 text-center text-white leading-snug p-4 text-[.6rem] md:text-[1rem] lg:w-[220px] xl:w-[230px]"
           >
-          <span class="text-[1rem]">Call for Mobile Massage</span> <i class="fas fa-phone text-[#28a745] ml-1"></i>
+          <span class="text-[1rem]">Call for Mobile Massage</span> 
+
+          <Icon name="fa7-solid:phone" class="text-[#28a745] ml-1 size-5 " />
+          <!-- <i class="fas fa-phone text-[#28a745] ml-1"></i> -->
          </a>
       </div>
    </section>
