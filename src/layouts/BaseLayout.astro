@@ -58,6 +58,9 @@ const og =
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
     <meta name="keywords" content="" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
       href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Fjalla+One&family=Hammersmith+One&display=swap"
       rel="stylesheet"
@@ -133,6 +136,18 @@ const og =
       name="google-site-verification"
       content="35f16sCSVS0yEIBRKet-xeKNVquA6d0er89D30-Rj7g"
     />
+
+    <script is:inline>
+      // This helps browsers load stylesheets asynchronously
+      window.addEventListener('load', () => {
+        const stylesheets = document.querySelectorAll('link[rel="stylesheet"]');
+        stylesheets.forEach(link => {
+          if (link.media === 'print') {
+            link.media = 'all';
+          }
+        });
+      });
+    </script>
   </head>
 
   <body>
