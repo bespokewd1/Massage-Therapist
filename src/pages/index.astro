@@ -125,6 +125,30 @@ posts.sort(
   preloadedImage={optimizedImage}
   ogImage={optimizedOg}
 >
+  <Fragment slot="head"> <!-- pass table header -->
+    <link
+      rel="preload"
+      as="image"
+      href="/assets/images/hero-img_mobile.webp"
+      media="(max-width: 768px)"
+      fetchpriority="high"
+    />
+    <!-- <link
+      rel="preload"
+      as="image"
+      href="/assets/images/hero-img.avif"
+      media="(min-width: 601px) and (max-width: 1024px)"
+      fetchpriority="high"
+    /> -->
+    <link
+      rel="preload"
+      as="image"
+      href="/assets/images/hero-img.avif"
+      media="(min-width: 769px)"
+      fetchpriority="high"
+    />
+  </Fragment>
+
   <!-- ============================================ -->
   <!--                    Hero                      -->
   <!-- ============================================ -->
@@ -162,13 +186,13 @@ posts.sort(
     <!-- Background Image -->
     <!-- We can't use Astro <Picture /> as it does not support multiple sources -->
     <!-- <ImageSlider imgDatas={heroImages} isAutoSlide client:visible /> -->
-    <Picture
+    <!-- <Picture
       src={heroImg}
       alt="lady in a stone massage"
       formats={['avif', 'webp']}
       pictureAttributes={{ class: 'cs-picture hidden' }}
       loading="eager"
-    />
+    /> -->
   </section>
   <!-- Popup Overlay -->
           <div id="popup" class="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-[9999] hidden">
@@ -872,7 +896,7 @@ posts.sort(
       z-index: 1;
       overflow: hidden;
       /* Add background attachment for mobile */
-      background: url('/assets/images/hero-img.avif') center/cover no-repeat;
+/*      background: url('/assets/images/hero-img.avif') center/cover no-repeat; */
       background-attachment: scroll; /* Default for mobile */
 
       .cs-picture {
@@ -1040,6 +1064,19 @@ posts.sort(
           display: block;
         }
       }
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    #hero{
+      background: url('/assets/images/hero-img_mobile.webp') center/cover no-repeat; 
+    }
+  }
+
+  @media only screen and (min-width: 769px) {
+
+    #hero{
+      background: url('/assets/images/hero-img.avif') center/cover no-repeat; 
     }
   }
 
