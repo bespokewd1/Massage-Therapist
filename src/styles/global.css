@@ -1,4 +1,5 @@
-@import 'tailwindcss' important;
+@import 'tailwindcss' source(none) important;
+@source '../';
 
 @theme {
   --breakpoint-xmd: 49rem;

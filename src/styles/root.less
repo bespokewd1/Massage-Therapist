@@ -36,10 +36,13 @@
     /* 60px - 100px top and bottom */
     --sectionPadding: clamp(3.75rem, 7.82vw, 6.25rem) 1rem;
   }
-  
-  .shadow-text-lg{
+
+  .shadow-text-lg {
     --tw-text-shadow-alpha: 30%;
-    text-shadow: 0px 1px 2px var(--tw-text-shadow-color,oklab(0% 0 0/.3)),0px 3px 2px var(--tw-text-shadow-color,oklab(0% 0 0/.3)),0px 4px 8px var(--tw-text-shadow-color,oklab(0% 0 0/.3));
+    text-shadow:
+      0px 1px 2px var(--tw-text-shadow-color, oklab(0% 0 0/0.3)),
+      0px 3px 2px var(--tw-text-shadow-color, oklab(0% 0 0/0.3)),
+      0px 4px 8px var(--tw-text-shadow-color, oklab(0% 0 0/0.3));
   }
 
   .glass-bg {
@@ -228,13 +231,10 @@
     src: url('/assets/fonts/poppins-400.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
   }
 
-
-
   .poppins-regular {
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
     font-style: normal;
-
   }
 
   body,
@@ -311,14 +311,6 @@
   html {
     margin: 0;
     padding: 0;
-  }
-}
-
-/* Scale full website with the viewport width */
-@media only screen and (min-width: 2000px) {
-  body,
-  html {
-    font-size: 0.85vw;
   }
 }
 
