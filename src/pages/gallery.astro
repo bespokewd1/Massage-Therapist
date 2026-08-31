@@ -5,6 +5,10 @@ import Landing from "@components/Landing.astro";
 import { getOptimizedImage } from "@js/utils";
 import landingImage from "@assets/images/stone-massage-background1.png";
 import ogImage from "@assets/images/CTA/gallery-og.jpg";
+import clinicStaffImage from "@assets/images/gallery/inside-our-clinic/RMT-in-towel-warmer.webp";
+import clinicReceptionImage from "@assets/images/gallery/inside-our-clinic/reception-area.webp";
+import clinicMassageRoomImage from "@assets/images/gallery/inside-our-clinic/massage-room.webp";
+import clinicMassageRoomTwoImage from "@assets/images/gallery/inside-our-clinic/massage-room-2.webp";
 
 const optimizedImage = await getOptimizedImage(landingImage);
 const optimizedOg = await getOptimizedImage(ogImage);
@@ -15,9 +19,10 @@ const galleries = [
     label: "Inside Our Clinic",
     description: "A quiet look inside the treatment space prepared for your visit.",
     images: [
-      { src: "/assets/images/clinic1.png", alt: "Stone Massage clinic treatment room" },
-      { src: "/assets/images/clinic2.png", alt: "Treatment area inside the Stone Massage clinic" },
-      { src: "/assets/images/clinic3.png", alt: "A welcoming view inside the Stone Massage clinic" },
+      { src: clinicStaffImage.src, alt: "Stone Massage therapists beside the towel warmer in a treatment room" },
+      { src: clinicReceptionImage.src, alt: "Stone Massage reception area with seating and anatomy charts" },
+      { src: clinicMassageRoomImage.src, alt: "Pink massage treatment room with a prepared therapy table" },
+      { src: clinicMassageRoomTwoImage.src, alt: "Private massage room with a prepared treatment table and pink decor" },
     ],
   },
   {
