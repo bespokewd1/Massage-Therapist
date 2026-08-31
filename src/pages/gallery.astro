@@ -33,9 +33,9 @@ const optimizedOg = await getOptimizedImage(ogImage);
 
   <section id="gallery">
     <div class="flex flex-col  mb-10 gap-y-4 items-center md:flex-row sm:justify-center md:gap-x-8 ">
-      <button id="btn-tab1" class="tab-button cs-button-solid" onclick="switchTab('tab1')">Inside Our Clinic</button>
-      <button id="btn-tab2" class="tab-button cs-button-solid" onclick="switchTab('tab2')">Client Experience</button>
-      <button id="btn-tab3" class="tab-button cs-button-solid" onclick="switchTab('tab3')">Events & Specials</button>
+      <button type="button" id="btn-tab1" class="tab-button cs-button-solid" data-tab="tab1" aria-controls="tab1" aria-selected="true">Inside Our Clinic</button>
+      <button type="button" id="btn-tab2" class="tab-button cs-button-solid" data-tab="tab2" aria-controls="tab2" aria-selected="false">Client Experience</button>
+      <button type="button" id="btn-tab3" class="tab-button cs-button-solid" data-tab="tab3" aria-controls="tab3" aria-selected="false">Events & Specials</button>
     </div>
     <div class="cs-container tab-content" id="tab1">
       <h1 class="md:text-4xl mb-4" style="text-transform: uppercase;">Inside Our Clinic</h1>
@@ -73,28 +73,32 @@ const optimizedOg = await getOptimizedImage(ogImage);
 
   </section>
   <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const tabs = ["tab1", "tab2", "tab3"];
+  document.addEventListener("astro:page-load", () => {
+    const gallery = document.getElementById("gallery");
+    if (!gallery) return;
 
-    window.switchTab = function (tabId) {
-      tabs.forEach((id) => {
-        const tab = document.getElementById(id);
-        const btn = document.getElementById("btn-" + id);
-        if (tab && btn) {
-          tab.classList.add("hidden");
-          btn.classList.remove("bg-blue-500", "text-white");
-          btn.classList.add("bg-gray-200");
-        }
+    const buttons = gallery.querySelectorAll<HTMLButtonElement>(".tab-button");
+    const panels = gallery.querySelectorAll<HTMLElement>(".tab-content");
+
+    function switchTab(tabId: string) {
+      panels.forEach((panel) => panel.classList.toggle("hidden", panel.id !== tabId));
+
+      buttons.forEach((button) => {
+        const isSelected = button.dataset.tab === tabId;
+        button.setAttribute("aria-selected", String(isSelected));
+        button.classList.toggle("bg-gray-200", !isSelected);
+        button.classList.toggle("bg-[#f3117e]", isSelected);
+        button.classList.toggle("text-white", isSelected);
       });
+    }
 
-      const selectedTab = document.getElementById(tabId);
-      const selectedBtn = document.getElementById("btn-" + tabId);
-      if (selectedTab && selectedBtn) {
-        selectedTab.classList.remove("hidden");
-        selectedBtn.classList.remove("bg-gray-200");
-        selectedBtn.classList.add("bg-[#f3117e]", "text-white");
-      }
-    };
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        if (button.dataset.tab) switchTab(button.dataset.tab);
+      });
+    });
+
+    switchTab("tab1");
   });
 </script>
 
