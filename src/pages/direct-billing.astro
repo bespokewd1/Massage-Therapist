@@ -7,19 +7,14 @@ import landingImage from '@assets/images/stone-massage-background1.png'; // <-- 
 
 import Review from "@components/Review.astro";
 
-import ogImage from '@assets/images/CTA/billing-og.jpg';
 
 const optimizedImage = await getOptimizedImage(landingImage);
 
-const optimizedOg = await getOptimizedImage(ogImage);
 
 ---
 
 <BaseLayout
-  title="Direct Billing"
-  description="Meta description for the page"
   preloadedImage={optimizedImage}
-  ogImage={optimizedOg}
 >
   <!-- ============================================ -->
   <!--                    LANDING                   -->

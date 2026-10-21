@@ -2,7 +2,6 @@
 import BaseLayout from 'src/layouts/BaseLayout.astro';
 import client from '@data/client.json';
 import Landing from '@components/Landing.astro';
-import ogImage from '@assets/images/CTA/gallery-og.jpg';
 
 import imgHero from '@assets/images/gc-hero.jpg';
 import ctaBg from '@assets/images/CTA-Background-Image.jpg';
@@ -15,14 +14,10 @@ import { getOptimizedImage } from '@js/utils';
 import landingImage from '@assets/images/stone-massage-background1.png'; // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
 import SecondaryLayout from 'src/layouts/SecondaryLayout.astro';
 const optimizedImage = await getOptimizedImage(landingImage);
-const optimizedOg = await getOptimizedImage(ogImage);
 ---
 
 <SecondaryLayout
-  title="Gift Certificate"
-  description="Surprise your loved ones with the ultimate wellness gift. Choose a 1-hour or 2-hour massage certificate and let them experience expert care and deep relaxation."
   preloadedImage={optimizedImage}
-  ogImage={optimizedOg}
 >
 
   <!-- ============================================ -->

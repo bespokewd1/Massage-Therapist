@@ -10,7 +10,6 @@ import '@styles/blog.less';
 import ServiceGrid, { type IService } from '@components/ServicesGrid.astro';
 import { Icon } from 'astro-icon/components'
 
-import ogImage from '@assets/images/CTA/home-og.jpg';
 
 import PromotionCard, {
   type PromotionProps,
@@ -49,7 +48,6 @@ import Review from "../components/Review.astro";
 
 const optimizedImage = await getOptimizedImage(landingImage);
 
-const optimizedOg = await getOptimizedImage(ogImage);
 
 const promotionInfo: PromotionProps[] = [
   {
@@ -126,10 +124,7 @@ posts.sort(
 ---
 <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"> -->
 <BaseLayout
-  title="Hot Stone Massage Edmonton - Professional Massage Therapy"
-  description="Professional massage therapy for relaxation, pain relief, and overall wellness in Edmonton."
   preloadedImage={optimizedImage}
-  ogImage={optimizedOg}
 >
   <Fragment slot="head"> 
     <link

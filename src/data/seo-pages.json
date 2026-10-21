@@ -1,0 +1,74 @@
+{
+  "global": {
+    "title": "Massage Therapy in Edmonton",
+    "description": "Stone Massage offers in-clinic massage in Edmonton and mobile appointments. Book a clinic visit online or call (587) 938-0458 for mobile massage.",
+    "socialDescription": "In-clinic and mobile massage in Edmonton. Book online or call Stone Massage for a mobile appointment.",
+    "ogPhoto": "/src/assets/images/hero-img.jpg",
+    "ogImage": "",
+    "ogImageAlt": "Stone Massage social card for massage therapy in Edmonton. Hot stones placed along a massage client's back."
+  },
+  "home": {
+    "title": "Hot Stone and Massage Therapy in Edmonton",
+    "description": "Book hot stone, deep tissue, Swedish and other massage treatments at Stone Massage in Edmonton. Clinic booking is online; call for mobile appointments.",
+    "socialDescription": "Explore massage treatments in Edmonton. Book a clinic visit online or call for mobile massage.",
+    "ogPhoto": "/src/assets/images/hero-img.jpg",
+    "ogImage": "",
+    "ogImageAlt": "Stone Massage social card for Hot Stone and Massage Therapy in Edmonton. Hot stones placed along a massage client's back."
+  },
+  "mobileMassage": {
+    "title": "Mobile Massage in Edmonton",
+    "description": "Book an in-home massage in Edmonton with Stone Massage. Call (587) 938-0458 to arrange a mobile appointment with a massage table and supplies provided.",
+    "socialDescription": "Massage in the comfort of your Edmonton home. Call (587) 938-0458 to arrange your mobile appointment.",
+    "ogPhoto": "/src/assets/images/massage-table.png",
+    "ogImage": "",
+    "ogImageAlt": "Stone Massage social card for Mobile Massage in Edmonton. A prepared massage table in a bright room."
+  },
+  "directBilling": {
+    "title": "Massage Direct Billing in Edmonton",
+    "description": "See the insurance providers Stone Massage can direct bill for massage therapy in Edmonton. Contact us to ask about your benefits before your appointment.",
+    "socialDescription": "Learn about massage direct billing in Edmonton. Contact Stone Massage to check your insurance benefits.",
+    "ogPhoto": "/src/assets/images/DirectBillingPage.jpg",
+    "ogImage": "",
+    "ogImageAlt": "Stone Massage social card for Massage Direct Billing in Edmonton. Paperwork and a calculator on a desk."
+  },
+  "blog": {
+    "title": "Massage and Wellness Blog",
+    "description": "Read Stone Massage articles about massage treatments, self-care and wellness, with information for Edmonton clinic and mobile massage clients.",
+    "socialDescription": "Read about massage treatments and self-care with practical articles from Stone Massage in Edmonton.",
+    "ogPhoto": "/src/assets/images/blog-landing.jpg",
+    "ogImage": "",
+    "ogImageAlt": "Stone Massage social card for Massage and Wellness Blog. Massage stones, towels and candles."
+  },
+  "gallery": {
+    "title": "Clinic and Treatment Photos in Edmonton",
+    "description": "Browse photos of the Stone Massage clinic in Edmonton, including treatment rooms, the reception area and massage experiences.",
+    "socialDescription": "Look inside our Edmonton clinic, from the reception area to the treatment rooms prepared for your visit.",
+    "ogPhoto": "/src/assets/images/gallery/inside-our-clinic/massage-room.webp",
+    "ogImage": "",
+    "ogImageAlt": "Stone Massage social card for Stone Massage Clinic and Treatment Photos. A prepared massage table in a pink Stone Massage treatment room."
+  },
+  "contact": {
+    "title": "Contact Our Edmonton Massage Clinic",
+    "description": "Find Stone Massage at 9057 Cooper Link SW, Edmonton, AB T6W 4A4, Canada. Call (587) 938-0458 for mobile massage or book a clinic visit online.",
+    "socialDescription": "Find our Edmonton clinic at 9057 Cooper Link SW. Call (587) 938-0458 or book a clinic visit online.",
+    "ogPhoto": "/src/assets/images/gallery/inside-our-clinic/reception-area.webp",
+    "ogImage": "",
+    "ogImageAlt": "Stone Massage social card for Contact Stone Massage in Edmonton. The Stone Massage reception area with seating and anatomy charts."
+  },
+  "giftCertificate": {
+    "title": "Massage Gift Certificates in Edmonton",
+    "description": "Give a Stone Massage gift certificate for a massage in Edmonton. Call (587) 938-0458 to ask about certificate options and arrange your gift.",
+    "socialDescription": "Give someone time to unwind. Call Stone Massage to ask about massage gift certificate options.",
+    "ogPhoto": "/src/assets/images/gc-hero.jpg",
+    "ogImage": "",
+    "ogImageAlt": "Stone Massage social card for Massage Gift Certificates in Edmonton. A massage client receiving a facial massage."
+  },
+  "booking": {
+    "title": "Book an Edmonton Massage Appointment",
+    "description": "Book an in-clinic appointment at Stone Massage in Edmonton through MassageBook. For an in-home mobile massage, call (587) 938-0458.",
+    "socialDescription": "Choose an in-clinic massage appointment in Edmonton. Book through MassageBook or call about mobile care.",
+    "ogPhoto": "/src/assets/images/gallery/inside-our-clinic/massage-room-2.webp",
+    "ogImage": "",
+    "ogImageAlt": "Stone Massage social card for Book an Edmonton Massage Appointment. A private Stone Massage treatment room with a prepared table."
+  }
+}

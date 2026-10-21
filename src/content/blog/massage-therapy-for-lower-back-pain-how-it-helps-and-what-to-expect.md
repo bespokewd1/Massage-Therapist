@@ -9,6 +9,11 @@ image: src/assets/images/blog/gemini_generated_image_o7ivy6o7ivy6o7iv.png
 imageAlt: Massage Therapy for Lower Back Pain
 tags:
   - post
+seo:
+  title: Massage Therapy for Lower Back Pain
+  ogPhoto: /src/assets/images/Services-1.TherapeuticMassage.jpg
+  ogImageAlt: "Stone Massage article card with a therapeutic massage treatment."
+  socialDescription: "Learn what to expect from a massage appointment focused on lower back tension and comfort."
 ---
 Lower back pain is one of the most common reasons people seek massage therapy in Edmonton. Whether caused by long hours of sitting, physical work, stress, or cold weather, lower back discomfort can affect daily movement, sleep, and overall quality of life.
 

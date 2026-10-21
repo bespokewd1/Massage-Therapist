@@ -9,6 +9,12 @@ image: src/assets/images/blog/gemini_generated_image_z0sm1sz0sm1sz0sm-1-.png
 imageAlt: Massage Therapy for Desk & Office Workers
 tags:
   - post
+seo:
+  title: Massage Therapy for Desk and Office Workers
+  ogPhoto: /src/assets/images/Services-2.DeepTissueMassage.jpg
+  ogImageAlt: "Stone Massage article card with a massage treatment for muscle tension."
+  socialDescription: "Read about massage care for desk workers dealing with neck, shoulder, and back tension."
+  description: "Read about massage therapy for desk workers in Edmonton, including care for neck, shoulder and back tension and what to discuss with your RMT."
 ---
 Many Edmonton residents spend hours sitting at a desk, working on a computer, or attending long meetings. While this lifestyle may be necessary, it often leads to muscle tension, poor posture, and stress-related discomfort.
 

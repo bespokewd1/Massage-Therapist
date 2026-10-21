@@ -10,6 +10,11 @@ imageAlt: Mobile Massage
 tags:
   - post
   - featured
+seo:
+  title: "Mobile Massage in Edmonton: What to Expect"
+  ogPhoto: /src/assets/images/massage-table.png
+  ogImageAlt: "Stone Massage article card with a massage table prepared for an appointment."
+  socialDescription: "Understand how mobile massage works in Edmonton and what to expect from an in-home appointment."
 ---
 Mobile massage has become an increasingly popular option for people in Edmonton who want professional massage therapy without leaving the comfort of their home. Whether you’re managing a busy schedule, dealing with mobility challenges, or simply prefer a familiar environment, mobile massage offers a convenient and effective solution.
 

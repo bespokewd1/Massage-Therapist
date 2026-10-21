@@ -10,6 +10,11 @@ imageAlt: Stone Massage
 tags:
   - post
   - featured
+seo:
+  title: Hot Stone Massage Benefits and Safety
+  ogPhoto: /src/assets/images/Services-5.HotStoneMassage.jpg
+  ogImageAlt: "Stone Massage article card with a hot stone massage treatment."
+  socialDescription: "Learn about hot stone massage, its benefits, safety considerations, and whether it may suit your needs."
 ---
 Hot stone massage is one of the most requested massage treatments in Edmonton, especially during colder months. While many people associate it with relaxation, hot stone massage also offers therapeutic benefits when performed by a Registered Massage Therapist (RMT).
 

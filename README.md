@@ -31,6 +31,7 @@
   - [Astro Content Collections](#AstroContentCollections)
   - [Preloading images](#preloadingimages)
   - [Sitemap Configuration](#sitemapConfiguration)
+- [SEO and social images](#seo-and-social-images)
 - [Deployment](#deployment)
 - [Acknowledgments](#acknowledgments)
 - [Conclusion](#conclusion)
@@ -600,6 +601,22 @@ export default defineConfig({
 > Note: Make sure to replace `https://yourwebsite.com` with your actual site URL in `astro.config.mjs` and `robots.txt`.
 
 Fore more configuration options, read the [full Astro Sitemap documentation](https://docs.astro.build/en/guides/integrations-guide/sitemap/)
+
+## SEO and social images
+
+Stone Massage builds page metadata and 1200 x 630 PNG social cards with the site. Edit main-page settings in the CMS under **Site settings > SEO and social sharing**. Articles have optional SEO and social overrides in the Blog editor.
+
+See [SEO and social images](docs/seo-and-social-images.md) for field fallbacks, image uploads, article overrides, indexing rules, and deployment checks. Preview the cards locally at `/dev/og/` while `npm run dev` is running. This gallery is not included in production builds.
+
+Before deploying, run:
+
+```sh
+npm run build
+npm run check:seo
+npm run test:seo
+```
+
+`check:seo` validates the generated `dist/` output, so rebuild after every metadata or image change. Length and file-size warnings are review targets; missing metadata, broken canonical URLs, and invalid social images fail the check.
 
 <a name="deployment"></a>
 

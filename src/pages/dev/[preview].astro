@@ -1,0 +1,171 @@
+---
+import { getOgCards } from '@lib/seo';
+
+export function getStaticPaths() {
+  return import.meta.env.DEV ? [{ params: { preview: 'og' } }] : [];
+}
+const cards = import.meta.env.DEV ? await getOgCards() : [];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Social card preview | Stone Massage</title>
+  </head>
+  <body>
+    <header>
+      <h1>Social card preview</h1>
+      <p>
+        {cards.length} local images, each 1200 × 630 pixels. Open an image to inspect
+        its full-size PNG. This page is not included in production builds.
+      </p>
+    </header>
+    <main>
+      {
+        cards.map((card) => (
+          <article>
+            <h2>{card.key}</h2>
+            <a
+              class="image-link"
+              href={card.image.src}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Open full-size image: ${card.headline.replace(/\n/g, ' ')}`}
+            >
+              <img
+                src={card.image.src}
+                alt={card.image.alt}
+                width={card.image.width}
+                height={card.image.height}
+                loading="lazy"
+                decoding="async"
+              />
+            </a>
+            <p class="card-info">
+              <a href={card.route}>View page</a>
+              <span>
+                {card.override
+                  ? 'Uploaded full-image override'
+                  : 'Generated card'}
+              </span>
+            </p>
+          </article>
+        ))
+      }
+    </main>
+  </body>
+</html>
+
+<style>
+  @font-face {
+    font-family: 'Open Sans';
+    src: url('../../assets/fonts/open-sans-latin-400-normal.woff')
+      format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Open Sans';
+    src: url('../../assets/fonts/open-sans-latin-700-normal.woff')
+      format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  :global(body) {
+    margin: 0;
+    padding: clamp(20px, 4vw, 48px);
+    background: #fafbfc;
+    color: #1a1a1a;
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  :global(::selection) {
+    background: #f984ef;
+    color: #1a1a1a;
+  }
+
+  header,
+  main {
+    max-width: 1440px;
+    margin-inline: auto;
+  }
+
+  header {
+    margin-bottom: 40px;
+  }
+
+  h1 {
+    margin: 0 0 12px;
+    font-size: clamp(1.9375rem, 3.9vw, 3.0625rem);
+    line-height: 1.2;
+    font-weight: 700;
+  }
+
+  header p {
+    max-width: 68ch;
+    margin: 0;
+    line-height: 1.6;
+    color: #353535;
+  }
+
+  main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 560px), 1fr));
+    gap: 40px 32px;
+  }
+
+  article {
+    min-width: 0;
+  }
+
+  h2 {
+    margin: 0 0 12px;
+    font-size: 1.5rem;
+    line-height: 1.4;
+    font-weight: 700;
+    overflow-wrap: anywhere;
+  }
+
+  .image-link,
+  img {
+    display: block;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  .card-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 8px 20px;
+    margin: 12px 0 0;
+    color: #353535;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  a {
+    color: #1a1a1a;
+    text-decoration-color: #f3117e;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+  }
+
+  a:hover {
+    text-decoration-color: #1a1a1a;
+  }
+
+  a:focus-visible {
+    outline: 3px solid #f3117e;
+    outline-offset: 5px;
+  }
+</style>

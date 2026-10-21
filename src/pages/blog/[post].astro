@@ -21,15 +21,12 @@ export async function getStaticPaths() {
 }
 
 const { post } = Astro.props;
-const { title, date, description, image, imageAlt, author } = post.data;
+const { title, date, image, imageAlt } = post.data;
 const { Content } = await render(post);
 ---
 
 <BaseLayout
-  title={title}
-  description={description}
   preloadedImage = {optimizedImage}
-  ogImage={image.src}
 >
 
   <Landing 
@@ -78,7 +75,7 @@ const { Content } = await render(post);
              <span class="blog-author">Stone Massage Admin</span>
             <span aria-hidden="true" class="blog-dot"></span>
             <!--Blog Date-->
-            <span class="blog-date">Jun 14, 2025</span>
+            <span class="blog-date">{formatDate(date)}</span>
           </div>
         </div>
         <section id="blog-content">

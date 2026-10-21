@@ -9,6 +9,9 @@ image: src/assets/images/blog/blog-1.webp
 imageAlt: Woman with oil massage
 tags:
   - post
+seo:
+  title: Choosing the Right Massage for Your Needs
+  socialDescription: "Compare Swedish, deep tissue, hot stone, and other massage treatments to understand your options."
 ---
 
 With so many types of massages available, it’s easy to feel overwhelmed when booking a session. Should you go for a **Swedish massage** or **deep tissue**? What about **hot stones** or a **sports massage**? Let’s break it down to help you choose the perfect massage for your needs.

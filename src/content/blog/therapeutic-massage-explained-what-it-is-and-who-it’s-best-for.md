@@ -9,6 +9,12 @@ image: src/assets/images/blog/gemini_generated_image_1lh52z1lh52z1lh5-1-.png
 imageAlt: Therapeutic Massage
 tags:
   - post
+seo:
+  title: "Therapeutic Massage: What to Expect"
+  ogPhoto: /src/assets/images/Services-1.TherapeuticMassage.jpg
+  ogImageAlt: "Stone Massage article card with a therapeutic massage treatment."
+  socialDescription: "Learn what therapeutic massage means, who it may suit, and what to expect from an RMT appointment."
+  description: "Learn what therapeutic massage means, how an appointment can address your care needs, and what to expect from an Edmonton Registered Massage Therapist."
 ---
 If you’ve ever searched for massage therapy in Edmonton, you’ve likely seen the term **“therapeutic massage.”** While it’s one of the most common types of massage booked, many people aren’t exactly sure what it means—or how it’s different from other massage styles.
 

@@ -28,7 +28,6 @@ import promoImag6 from '@assets/images/stress.png';
 import serviceBgImg from '@assets/images/Blog2-HeaderPhoto.jpg';
 import checkMark from '@assets/images/check-mark.png';
 
-import ogImage from '@assets/images/CTA/mobile-massage.jpg';
 
 import heroImg from '@assets/images/hero-img.jpg';
 import landingImage from '@assets/images/landing.jpg'; // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
@@ -42,7 +41,6 @@ import PrenatalIcon from '@components/Icons/massages/PrenatalIcon.astro';
 import KidsIcon from '@components/Icons/massages/KidsIcon.astro';
 
 const optimizedImage = await getOptimizedImage(landingImage);
-const optimizedOg = await getOptimizedImage(ogImage);
 
 const promotionInfo: PromotionProps[] = [
   {
@@ -123,10 +121,7 @@ posts.sort(
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
 />
 <BaseLayout
-  title="Mobile Massage in Edmonton — We Come to You!"
-  description="Skip the commute and let the spa come to you. Our mobile massage service brings everything you need for total relaxation — directly to your doorstep."
   preloadedImage={optimizedImage}
-  ogImage={optimizedOg}
 >
   <!-- ============================================ -->
   <!--                    Hero                      -->

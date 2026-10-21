@@ -10,6 +10,11 @@ imageAlt: Deep Tissue Massage vs Therapeutic Massage
 tags:
   - post
   - featured
+seo:
+  title: Deep Tissue vs Therapeutic Massage
+  ogPhoto: /src/assets/images/Services-2.DeepTissueMassage.jpg
+  ogImageAlt: "Stone Massage article card with deep tissue massage treatment."
+  socialDescription: "Compare deep tissue and therapeutic massage, including their approaches to muscle tension and pain relief."
 ---
 If you’re looking for massage therapy in Edmonton, you’ve probably come across terms like **deep tissue massage** and **therapeutic massage**. Many people assume they are the same—or that deep tissue massage is simply a stronger version of therapeutic massage.
 

@@ -10,6 +10,12 @@ imageAlt: How Often Should You Get a Massage?
 tags:
   - post
   - featured
+seo:
+  title: How Often Should You Get a Massage?
+  ogPhoto: /src/assets/images/hero-img.jpg
+  ogImageAlt: "Stone Massage article card with hot stones on a massage client\u2019s back."
+  socialDescription: "Explore what can affect massage frequency, including stress, muscle tension, and your own care needs."
+  description: "Learn what can affect how often you book a massage, including stress, muscle tension and personal care needs, with guidance from an Edmonton RMT."
 ---
 One of the most common questions clients ask is: *“How often should I get a massage?”*  
 The answer depends on your lifestyle, your goals, and how your body responds to treatment.

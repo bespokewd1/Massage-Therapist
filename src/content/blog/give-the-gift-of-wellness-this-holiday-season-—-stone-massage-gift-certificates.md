@@ -11,6 +11,12 @@ image: src/assets/images/blog/gc.png
 imageAlt: Gift Certificate
 tags:
   - post
+seo:
+  title: Massage Gift Certificates for the Holidays
+  description: Read about giving a Stone Massage gift certificate for the holidays. Contact our Edmonton clinic to ask about certificate options and arrangements.
+  socialDescription: Give someone time to unwind. Ask our Edmonton clinic about massage gift certificate options.
+  ogPhoto: /src/assets/images/gc-hero.jpg
+  ogImageAlt: "Stone Massage article card with a client receiving a facial massage."
 ---
 🎁 Give the Gift of Wellness with a Stone Massage Gift Certificate
 The holidays are the perfect time to show your loved ones you care — and nothing says care like the gift of relaxation and wellness.

@@ -20,4 +20,457 @@ collections:
       - { label: "Featured Image", name: "image", widget: "image" }
       - { label: "Image Caption", name: "imageAlt", widget: "string" }
       - { label: "Tags", name: "tags", widget: "list", default: ["post"] }
+      - label: SEO and social sharing
+        name: seo
+        widget: object
+        required: false
+        collapsed: true
+        hint: Optional metadata overrides. Blank fields use the article title, description and featured image.
+        fields:
+        - label: SEO title
+          name: title
+          widget: string
+          required: false
+          hint: Leave blank to use the article title. Stone Massage is added automatically.
+        - label: SEO description
+          name: description
+          widget: text
+          required: false
+          hint: Leave blank to use the article description.
+        - label: Social description
+          name: socialDescription
+          widget: text
+          required: false
+          hint: Leave blank to use the SEO description.
+        - label: Photo for generated social card
+          name: ogPhoto
+          widget: image
+          required: false
+          media_folder: /src/assets/images/og
+          public_folder: /src/assets/images/og
+          choose_url: true
+          hint: Leave blank to use the featured image. Use a clean photo without text for the generated card,
+            not a complete card. Upload a photo, or enter an existing /src/assets/images/... path.
+        - label: Complete social image override
+          name: ogImage
+          widget: image
+          required: false
+          media_folder: /src/assets/images/og
+          public_folder: /src/assets/images/og
+          choose_url: true
+          hint: Leave blank for an automatically generated social card. Upload a complete 1200 x 630 card, or enter an
+            existing /src/assets/images/... path.
+        - label: Social image alt text
+          name: ogImageAlt
+          widget: string
+          required: false
+          hint: Describe the image. Leave blank to use the featured image caption.
       - { label: "Body", name: "body", widget: "markdown" }
+  - name: siteSettings
+    label: Site settings
+    media_folder: /src/assets/images/og
+    public_folder: /src/assets/images/og
+    editor:
+      preview: false
+    files:
+    - label: SEO and social sharing
+      name: seoPages
+      file: src/data/seo-pages.json
+      format: json
+      fields:
+      - label: Global defaults
+        name: global
+        widget: object
+        collapsed: false
+        required: true
+        fields:
+        - label: SEO title
+          name: title
+          widget: string
+          required: true
+          hint: Stone Massage is added automatically.
+        - label: SEO description
+          name: description
+          widget: text
+          required: true
+          hint: Default description for pages without an override.
+        - label: Social description
+          name: socialDescription
+          widget: text
+          required: false
+          hint: Leave blank to use the SEO description.
+        - label: Photo for generated social card
+          name: ogPhoto
+          widget: image
+          required: true
+          media_folder: /src/assets/images/og
+          public_folder: /src/assets/images/og
+          choose_url: true
+          hint: Use a clean source photo, not a screenshot or finished card. Upload a photo, or enter an existing
+            /src/assets/images/... path.
+        - label: Complete social image override
+          name: ogImage
+          widget: image
+          required: false
+          media_folder: /src/assets/images/og
+          public_folder: /src/assets/images/og
+          choose_url: true
+          hint: Leave blank for an automatically generated social card. Upload a complete 1200 x 630 card, or enter
+            an existing /src/assets/images/... path.
+        - label: Social image alt text
+          name: ogImageAlt
+          widget: string
+          required: false
+          hint: Describe the generated card photo or the complete override image.
+      - label: Home
+        name: home
+        widget: object
+        collapsed: true
+        required: false
+        fields:
+        - label: SEO title
+          name: title
+          widget: string
+          required: false
+          hint: Leave blank to use the global title. Stone Massage is added automatically.
+        - label: SEO description
+          name: description
+          widget: text
+          required: false
+          hint: Leave blank to use the global description.
+        - label: Social description
+          name: socialDescription
+          widget: text
+          required: false
+          hint: Leave blank to use the SEO description.
+        - label: Photo for generated social card
+          name: ogPhoto
+          widget: image
+          required: false
+          media_folder: /src/assets/images/og
+          public_folder: /src/assets/images/og
+          choose_url: true
+          hint: Leave blank to use the global photo. Upload a clean photo, or enter an existing /src/assets/images/...
+            path.
+        - label: Complete social image override
+          name: ogImage
+          widget: image
+          required: false
+          media_folder: /src/assets/images/og
+          public_folder: /src/assets/images/og
+          choose_url: true
+          hint: Leave blank for an automatically generated social card. Upload a complete 1200 x 630 card, or enter
+            an existing /src/assets/images/... path.
+        - label: Social image alt text
+          name: ogImageAlt
+          widget: string
+          required: false
+          hint: Describe the generated card photo or the complete override image.
+      - label: Mobile massage
+        name: mobileMassage
+        widget: object
+        collapsed: true
+        required: false
+        fields:
+        - label: SEO title
+          name: title
+          widget: string
+          required: false
+          hint: Leave blank to use the global title. Stone Massage is added automatically.
+        - label: SEO description
+          name: description
+          widget: text
+          required: false
+          hint: Leave blank to use the global description.
+        - label: Social description
+          name: socialDescription
+          widget: text
+          required: false
+          hint: Leave blank to use the SEO description.
+        - label: Photo for generated social card
+          name: ogPhoto
+          widget: image
+          required: false
+          media_folder: /src/assets/images/og
+          public_folder: /src/assets/images/og
+          choose_url: true
+          hint: Leave blank to use the global photo. Upload a clean photo, or enter an existing /src/assets/images/...
+            path.
+        - label: Complete social image override
+          name: ogImage
+          widget: image
+          required: false
+          media_folder: /src/assets/images/og
+          public_folder: /src/assets/images/og
+          choose_url: true
+          hint: Leave blank for an automatically generated social card. Upload a complete 1200 x 630 card, or enter
+            an existing /src/assets/images/... path.
+        - label: Social image alt text
+          name: ogImageAlt
+          widget: string
+          required: false
+          hint: Describe the generated card photo or the complete override image.
+      - label: Direct billing
+        name: directBilling
+        widget: object
+        collapsed: true
+        required: false
+        fields:
+        - label: SEO title
+          name: title
+          widget: string
+          required: false
+          hint: Leave blank to use the global title. Stone Massage is added automatically.
+        - label: SEO description
+          name: description
+          widget: text
+          required: false
+          hint: Leave blank to use the global description.
+        - label: Social description
+          name: socialDescription
+          widget: text
+          required: false
+          hint: Leave blank to use the SEO description.
+        - label: Photo for generated social card
+          name: ogPhoto
+          widget: image
+          required: false
+          media_folder: /src/assets/images/og
+          public_folder: /src/assets/images/og
+          choose_url: true
+          hint: Leave blank to use the global photo. Upload a clean photo, or enter an existing /src/assets/images/...
+            path.
+        - label: Complete social image override
+          name: ogImage
+          widget: image
+          required: false
+          media_folder: /src/assets/images/og
+          public_folder: /src/assets/images/og
+          choose_url: true
+          hint: Leave blank for an automatically generated social card. Upload a complete 1200 x 630 card, or enter
+            an existing /src/assets/images/... path.
+        - label: Social image alt text
+          name: ogImageAlt
+          widget: string
+          required: false
+          hint: Describe the generated card photo or the complete override image.
+      - label: Blog listing
+        name: blog
+        widget: object
+        collapsed: true
+        required: false
+        fields:
+        - label: SEO title
+          name: title
+          widget: string
+          required: false
+          hint: Leave blank to use the global title. Stone Massage is added automatically.
+        - label: SEO description
+          name: description
+          widget: text
+          required: false
+          hint: Leave blank to use the global description.
+        - label: Social description
+          name: socialDescription
+          widget: text
+          required: false
+          hint: Leave blank to use the SEO description.
+        - label: Photo for generated social card
+          name: ogPhoto
+          widget: image
+          required: false
+          media_folder: /src/assets/images/og
+          public_folder: /src/assets/images/og
+          choose_url: true
+          hint: Leave blank to use the global photo. Upload a clean photo, or enter an existing /src/assets/images/...
+            path.
+        - label: Complete social image override
+          name: ogImage
+          widget: image
+          required: false
+          media_folder: /src/assets/images/og
+          public_folder: /src/assets/images/og
+          choose_url: true
+          hint: Leave blank for an automatically generated social card. Upload a complete 1200 x 630 card, or enter
+            an existing /src/assets/images/... path.
+        - label: Social image alt text
+          name: ogImageAlt
+          widget: string
+          required: false
+          hint: Describe the generated card photo or the complete override image.
+      - label: Gallery
+        name: gallery
+        widget: object
+        collapsed: true
+        required: false
+        fields:
+        - label: SEO title
+          name: title
+          widget: string
+          required: false
+          hint: Leave blank to use the global title. Stone Massage is added automatically.
+        - label: SEO description
+          name: description
+          widget: text
+          required: false
+          hint: Leave blank to use the global description.
+        - label: Social description
+          name: socialDescription
+          widget: text
+          required: false
+          hint: Leave blank to use the SEO description.
+        - label: Photo for generated social card
+          name: ogPhoto
+          widget: image
+          required: false
+          media_folder: /src/assets/images/og
+          public_folder: /src/assets/images/og
+          choose_url: true
+          hint: Leave blank to use the global photo. Upload a clean photo, or enter an existing /src/assets/images/...
+            path.
+        - label: Complete social image override
+          name: ogImage
+          widget: image
+          required: false
+          media_folder: /src/assets/images/og
+          public_folder: /src/assets/images/og
+          choose_url: true
+          hint: Leave blank for an automatically generated social card. Upload a complete 1200 x 630 card, or enter
+            an existing /src/assets/images/... path.
+        - label: Social image alt text
+          name: ogImageAlt
+          widget: string
+          required: false
+          hint: Describe the generated card photo or the complete override image.
+      - label: Contact
+        name: contact
+        widget: object
+        collapsed: true
+        required: false
+        fields:
+        - label: SEO title
+          name: title
+          widget: string
+          required: false
+          hint: Leave blank to use the global title. Stone Massage is added automatically.
+        - label: SEO description
+          name: description
+          widget: text
+          required: false
+          hint: Leave blank to use the global description.
+        - label: Social description
+          name: socialDescription
+          widget: text
+          required: false
+          hint: Leave blank to use the SEO description.
+        - label: Photo for generated social card
+          name: ogPhoto
+          widget: image
+          required: false
+          media_folder: /src/assets/images/og
+          public_folder: /src/assets/images/og
+          choose_url: true
+          hint: Leave blank to use the global photo. Upload a clean photo, or enter an existing /src/assets/images/...
+            path.
+        - label: Complete social image override
+          name: ogImage
+          widget: image
+          required: false
+          media_folder: /src/assets/images/og
+          public_folder: /src/assets/images/og
+          choose_url: true
+          hint: Leave blank for an automatically generated social card. Upload a complete 1200 x 630 card, or enter
+            an existing /src/assets/images/... path.
+        - label: Social image alt text
+          name: ogImageAlt
+          widget: string
+          required: false
+          hint: Describe the generated card photo or the complete override image.
+      - label: Gift certificates
+        name: giftCertificate
+        widget: object
+        collapsed: true
+        required: false
+        fields:
+        - label: SEO title
+          name: title
+          widget: string
+          required: false
+          hint: Leave blank to use the global title. Stone Massage is added automatically.
+        - label: SEO description
+          name: description
+          widget: text
+          required: false
+          hint: Leave blank to use the global description.
+        - label: Social description
+          name: socialDescription
+          widget: text
+          required: false
+          hint: Leave blank to use the SEO description.
+        - label: Photo for generated social card
+          name: ogPhoto
+          widget: image
+          required: false
+          media_folder: /src/assets/images/og
+          public_folder: /src/assets/images/og
+          choose_url: true
+          hint: Leave blank to use the global photo. Upload a clean photo, or enter an existing /src/assets/images/...
+            path.
+        - label: Complete social image override
+          name: ogImage
+          widget: image
+          required: false
+          media_folder: /src/assets/images/og
+          public_folder: /src/assets/images/og
+          choose_url: true
+          hint: Leave blank for an automatically generated social card. Upload a complete 1200 x 630 card, or enter
+            an existing /src/assets/images/... path.
+        - label: Social image alt text
+          name: ogImageAlt
+          widget: string
+          required: false
+          hint: Describe the generated card photo or the complete override image.
+      - label: Booking
+        name: booking
+        widget: object
+        collapsed: true
+        required: false
+        fields:
+        - label: SEO title
+          name: title
+          widget: string
+          required: false
+          hint: Leave blank to use the global title. Stone Massage is added automatically.
+        - label: SEO description
+          name: description
+          widget: text
+          required: false
+          hint: Leave blank to use the global description.
+        - label: Social description
+          name: socialDescription
+          widget: text
+          required: false
+          hint: Leave blank to use the SEO description.
+        - label: Photo for generated social card
+          name: ogPhoto
+          widget: image
+          required: false
+          media_folder: /src/assets/images/og
+          public_folder: /src/assets/images/og
+          choose_url: true
+          hint: Leave blank to use the global photo. Upload a clean photo, or enter an existing /src/assets/images/...
+            path.
+        - label: Complete social image override
+          name: ogImage
+          widget: image
+          required: false
+          media_folder: /src/assets/images/og
+          public_folder: /src/assets/images/og
+          choose_url: true
+          hint: Leave blank for an automatically generated social card. Upload a complete 1200 x 630 card, or enter
+            an existing /src/assets/images/... path.
+        - label: Social image alt text
+          name: ogImageAlt
+          widget: string
+          required: false
+          hint: Describe the generated card photo or the complete override image.

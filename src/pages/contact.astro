@@ -2,20 +2,15 @@
 import BaseLayout from 'src/layouts/BaseLayout.astro';
 import client from '@data/client.json';
 import Landing from '@components/Landing.astro';
-import ogImage from '@assets/images/CTA/gallery-og.jpg';
 
 // Optimize our landing image and pass it as props to the BaseLayout (for preloading) and Landing (for rendering)
 import { getOptimizedImage } from '@js/utils';
 import landingImage from '@assets/images/stone-massage-background1.png'; // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
 const optimizedImage = await getOptimizedImage(landingImage);
-const optimizedOg = await getOptimizedImage(ogImage);
 ---
 
 <BaseLayout
-  title="Contact"
-  description="Meta description for the page"
   preloadedImage={optimizedImage}
-  ogImage={optimizedOg}
 >
   <!-- ============================================ -->
   <!--                    LANDING                   -->
@@ -154,14 +149,9 @@ const optimizedOg = await getOptimizedImage(ogImage);
         <!--Address-->
         <span class="cs-header">Address</span>
         <a class="cs-link" href={client.address.mapLink}>
-          {client.address.lineOne},
-          <br />
-          {client.address.lineTwo},
-          <br />
+          {client.address.lineOne}<br />
           <span class="cs-block">
-            {client.address.city}
-            {client.address.state}
-            {client.address.zip}
+            {client.address.city}, {client.address.state} {client.address.zip}, Canada
           </span>
         </a>
 

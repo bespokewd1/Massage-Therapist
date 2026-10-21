@@ -28,15 +28,12 @@ type Props = InferGetStaticPropsType<typeof getStaticPaths>;
 const { page: posts } = Astro.props as Props;
 
 // Optimize our landing image and pass it as props to the BaseLayout (for preloading) and Landing (for rendering)
-import landingImage from '@assets/images/blog-landing.jpg'; 
+import landingImage from '@assets/images/stone-massage-background1.png';
 const optimizedImage = await getOptimizedImage(landingImage);
 ---
 
 <BaseLayout
-  title="Blog"
-  description="Meta description for the page"
   preloadedImage={optimizedImage}
-  ogImage={optimizedImage}
 >
   <!-- ============================================ -->
   <!--                    LANDING                   -->
@@ -87,7 +84,7 @@ const optimizedImage = await getOptimizedImage(landingImage);
                 </div>
                 <h2 class="blog-h1">{post.data.title}</h2>
                 <p class="blog-desc">{post.data.description}</p>
-                <a href={post.id} class="blog-link">
+                <a href={`/blog/${post.id}/`} class="blog-link">
                   Continue Reading
                 </a>
               </div>
@@ -100,7 +97,7 @@ const optimizedImage = await getOptimizedImage(landingImage);
 
   <Pagination
     currentPage={posts.currentPage}
-    totalPages={posts.total}
+    totalPages={posts.lastPage}
     url={posts.url}
     client:visible
   />

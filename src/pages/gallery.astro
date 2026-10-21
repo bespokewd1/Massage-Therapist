@@ -4,14 +4,12 @@ import CTA from "@components/CTA.astro";
 import Landing from "@components/Landing.astro";
 import { getOptimizedImage } from "@js/utils";
 import landingImage from "@assets/images/stone-massage-background1.png";
-import ogImage from "@assets/images/CTA/gallery-og.jpg";
 import clinicStaffImage from "@assets/images/gallery/inside-our-clinic/RMT-in-towel-warmer.webp";
 import clinicReceptionImage from "@assets/images/gallery/inside-our-clinic/reception-area.webp";
 import clinicMassageRoomImage from "@assets/images/gallery/inside-our-clinic/massage-room.webp";
 import clinicMassageRoomTwoImage from "@assets/images/gallery/inside-our-clinic/massage-room-2.webp";
 
 const optimizedImage = await getOptimizedImage(landingImage);
-const optimizedOg = await getOptimizedImage(ogImage);
 
 const galleries = [
   {
@@ -49,10 +47,7 @@ const galleries = [
 ---
 
 <BaseLayout
-  title="Gallery"
-  description="Explore the Stone Massage clinic, client experience, events, and specials in Edmonton."
   preloadedImage={optimizedImage}
-  ogImage={optimizedOg}
 >
   <Landing title="Gallery" image={optimizedImage} />
 

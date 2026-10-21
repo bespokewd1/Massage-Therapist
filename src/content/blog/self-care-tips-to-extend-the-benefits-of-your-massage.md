@@ -8,6 +8,9 @@ image: /src/assets/images/blog/blog-2.webp
 imageAlt: Couple hot stone massage
 tags:
   - post
+seo:
+  title: Self-Care Tips After Your Massage
+  socialDescription: "Explore hydration, gentle movement, and other self-care tips to consider after a massage."
 ---
 
 A great massage doesn’t just make you feel amazing—it sets the stage for better well-being. But how can you keep that **post-massage feeling** lasting longer? Follow these simple self-care tips to make the most of your session.

@@ -9,6 +9,9 @@ imageAlt: male in a massage
 tags:
   - post
   - featured
+seo:
+  title: 5 Benefits of Regular Massage Therapy
+  socialDescription: "Read about regular massage, including its role in relaxation, muscle tension, and everyday wellbeing."
 ---
 
 Massage therapy has been practiced for thousands of years, dating back to ancient Egypt, China, and Greece. Hippocrates, the “Father of Medicine,” even prescribed massages for healing! Today, science backs up what people have known for centuries—regular massages provide amazing health benefits.
