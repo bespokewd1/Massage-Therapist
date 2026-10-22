@@ -1,6 +1,4 @@
 ---
-// StickyCallButton.astro
-// Props definition
 interface Props {
   phoneNumber: string;
 }
@@ -8,93 +6,83 @@ interface Props {
 const { phoneNumber } = Astro.props;
 ---
 
-<div
-  id="sticky-call-button"
-  class="fixed bottom-8 w-full z-[1000] flex justify-center items-center invisible opacity-0 translate-y-1/2 transition-all duration-200 ease-in gap-6"
->
-  <a
-    href={`tel:${phoneNumber}`}
-    class="bg-(--primary) text-sm text-black rounded-full bg-secondary p-3 md:text-base md:py-3 md:px-6 font-medium shadow-md hover:shadow-lg"
-  >
+<div id="sticky-call-button" class="sticky-booking" hidden>
+  <a href={`tel:${phoneNumber}`} class="sticky-booking__call">
     Call <span class="hidden md:inline">Now</span> {phoneNumber}
   </a>
-
-  <!-- <a
-    href="/booking"
-    class="border rounded-full bg-black text-white text-sm md:text-base p-3 md:py-3 md:px-6 font-medium shadow-md hover:shadow-lg"
-  >
-    Book Online
-  </a> -->
-  <!-- <button onclick="document.getElementById('popup').classList.remove('hidden')" class="border rounded-full bg-black text-white text-sm md:text-base p-3 md:py-3 md:px-6 font-medium shadow-md hover:shadow-lg">
-            Book Online
-  </button> -->
-  <!--Pop Up for Book Online Button -->
-        <!-- Trigger Button -->
-          <button onclick="document.getElementById('popup').classList.remove('hidden')" class="border rounded-full bg-black text-white text-sm md:text-base p-3 md:py-3 md:px-6 font-medium shadow-md hover:shadow-lg">
-            Book Online
-          </button>
+  <button
+    type="button"
+    onclick="document.getElementById('booking-dialog').showModal()"
+    class="sticky-booking__online"
+  >Book Online</button>
 </div>
 
+<style>
+  .sticky-booking {
+    position: fixed;
+    inset-inline: 0;
+    bottom: 2rem;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding-inline: 1rem;
+    pointer-events: none;
+  }
+
+  .sticky-booking[hidden] {
+    display: none;
+  }
+
+  .sticky-booking a,
+  .sticky-booking button {
+    min-height: 44px;
+    padding: 0.75rem 1rem;
+    border-radius: 999px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 1.5;
+    text-decoration: none;
+    pointer-events: auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.16);
+  }
+
+  .sticky-booking__call {
+    color: var(--on-action);
+    background: var(--action-bg);
+  }
+
+  .sticky-booking__call:hover {
+    background: var(--action-hover);
+  }
+
+  .sticky-booking__online {
+    color: #ffffff;
+    background: #1a1a1a;
+    border: 1px solid #ffffff;
+  }
+
+  .sticky-booking__online:hover {
+    color: #1a1a1a;
+    background: #ffffff;
+  }
+</style>
+
 <script>
-  document.addEventListener('astro:page-load', function () {
-    const mainElement = document.getElementById('main');
-    let firstChildOfMain: Element | null = null;
+  let observer: IntersectionObserver | undefined;
+  const initStickyBooking = () => {
+    observer?.disconnect();
+    const control = document.getElementById('sticky-call-button');
+    const main = document.getElementById('main');
+    const hero = document.getElementById('hero') || main?.firstElementChild;
+    if (!control || !hero) return;
 
-    if (mainElement) {
-      const hero = document.getElementById('hero');
-      firstChildOfMain = hero ? hero : mainElement.firstElementChild;
-    } else {
-      console.warn(
-        'No <main id="main"> element found. Sticky button will always be visible.'
-      );
-      document
-        .getElementById('sticky-call-button')
-        ?.classList.add('visible', 'opacity-100', 'translate-y-0');
-      return;
-    }
+    observer = new IntersectionObserver(([entry]) => {
+      control.hidden = entry.boundingClientRect.bottom > 0;
+    });
+    observer.observe(hero);
+  };
 
-    if (!firstChildOfMain) {
-      console.warn(
-        '<main id="main"> has no first child. Sticky button will always be visible.'
-      );
-      document
-        .getElementById('sticky-call-button')
-        ?.classList.add('visible', 'opacity-100', 'translate-y-0');
-      return;
-    }
-
-    const stickyButton = document.getElementById('sticky-call-button');
-    let ticking = false; // for throttling
-
-    function checkFirstChildVisibility() {
-      if (!firstChildOfMain || !stickyButton) return;
-
-      const rect = firstChildOfMain.getBoundingClientRect();
-      // Check if the bottom of the first child is above the viewport
-      if (rect.bottom <= 0) {
-        stickyButton.classList.add('visible', 'opacity-100', 'translate-y-0');
-      } else {
-        stickyButton.classList.remove(
-          'visible',
-          'opacity-100',
-          'translate-y-0'
-        );
-      }
-    }
-
-    function handleScroll() {
-      if (!ticking) {
-        requestAnimationFrame(function () {
-          checkFirstChildVisibility();
-          ticking = false;
-        });
-        ticking = true;
-      }
-    }
-
-    // Initial check in case the page loads already scrolled past the first child
-    checkFirstChildVisibility();
-
-    window.addEventListener('scroll', handleScroll);
-  });
+  document.addEventListener('astro:before-swap', () => observer?.disconnect());
+  document.addEventListener('astro:page-load', initStickyBooking);
 </script>

@@ -54,7 +54,7 @@ const reviewLink =
         <!--    Words From Our Happy Clients-->
         <!--</h2>-->
         <p class="mt-4 text-base text-(--bodyTextColor)">
-            At Healing Touch Massage Therapy, we pride ourselves on providing
+            At Stone Massage, we pride ourselves on providing
             exceptional care. Here's what some of our clients have to say about
             their experience with us.
         </p>
@@ -67,21 +67,21 @@ const reviewLink =
         <!-- grid grid-rows-[min-content_auto_auto] gap-2 transition-colors p-4 min-w-72 max-w-lg  ml-auto sm:ml-0 bg-[rgba(var(--primary-rgb),0.4)] md:bg-[rgba(var(--secondary-rgb),0.4)] backdrop-blur-lg rounded hover:bg-[rgba(var(--secondary-rgb),0.7)] group -->
         {
             reviews.map((r) => (
-                    <li class="transition-colors bg-[rgba(var(--primary-rgb),0.4)] hover:bg-[rgba(var(--secondary-rgb),0.7)] backdrop-blur-lg relative rounded-md shadow-[0_20px_39px_rgba(0,0,0,0.05)] p-6 pt-14 text-left flex flex-col h-full group">
+                    <li class="transition-colors bg-(--review-surface) hover:bg-(--secondary) relative rounded-md shadow-[0_20px_39px_rgba(0,0,0,0.05)] p-6 pt-14 text-left flex flex-col h-full group">
                         <div
-                                class="absolute -top-8 left-4 size-16 rounded-full bg-(--primary) text-white flex items-center justify-center text-2xl font-semibold shadow-md select-none"
+                                class="absolute -top-8 left-4 size-16 rounded-full bg-(--action-bg) text-(--on-action) flex items-center justify-center text-2xl font-semibold shadow-md select-none"
                                 aria-hidden="true"
                         >
                             {getInitials(r.name)}
                         </div>
-                        <p class="text-(--bodyText) transition-colors group-hover:text-black duration-300 text-base leading-relaxed pb-5 mb-5 ">
+                        <p class="text-(--review-text) transition-colors group-hover:text-[#1a1a1a] duration-300 motion-reduce:transition-none text-base leading-relaxed pb-5 mb-5 ">
                             "{r.text}"
                         </p>
 
-                        <div class="mt-auto flex items-center justify-between gap-4 border-t pt-3 border-[#e8e9ec]">
-                  <span class="block font-semibold text-(--bodyText) transition-colors group-hover:text-black duration-300 ">
+                        <div class="mt-auto flex items-center justify-between gap-4 border-t pt-3 border-[var(--border-color)]">
+                  <span class="block font-semibold text-(--review-text) transition-colors group-hover:text-[#1a1a1a] duration-300 motion-reduce:transition-none ">
                     {r.name}
-                      <span class="block text-sm font-normal text-(--bodyText) transition-colors group-hover:text-black duration-300 ">
+                      <span class="block text-sm font-normal text-(--review-text) transition-colors group-hover:text-[#1a1a1a] duration-300 motion-reduce:transition-none ">
                       {r.role}
                     </span>
                   </span>

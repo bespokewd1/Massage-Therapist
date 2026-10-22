@@ -28,11 +28,11 @@ const currentYear = getCurrentYear();
         <Image
           src={MainLogo}
           class="object-fill w-40 h-auto"
-          alt="Main logo massage"
+          alt="Stone Massage"
         />
       </a>
       <div class="socials">
-        <h2 class="text-black">Follow Us</h2>
+        <h2>Follow Us</h2>
         <div class="social-links">
           <a class="cs-social-link" href="#">
             <img
@@ -131,6 +131,21 @@ const currentYear = getCurrentYear();
 // Mobile -
 @media only screen and (min-width: 0em) {
   #footer {
+    --footer-surface: transparent;
+    --footer-text: #000000;
+    --footer-muted: #353535;
+    --footer-link: var(--link-color);
+    color: var(--footer-text);
+
+    :is(a, button):focus-visible {
+      outline: 2px solid var(--focus-color);
+      outline-offset: 4px;
+    }
+
+    .socials h1 {
+      color: var(--footer-text);
+    }
+
     .left-section {
       max-width: 19.1875rem;
       margin: auto;
@@ -139,7 +154,7 @@ const currentYear = getCurrentYear();
         h2 {
           font-size: 1.125rem;
           font-weight: 700;
-          color: #fff;
+          color: var(--footer-text);
           text-align: left;
           margin-bottom: (8/16rem);
         }
@@ -179,7 +194,7 @@ const currentYear = getCurrentYear();
       font-size: ~'min(4vw, 1.2em)';
       padding: (54/16rem) (20/16rem);
       // background: #1c1c1c;
-      background: linear-gradient(to bottom, var(--primary) 2%, transparent 0%);
+      background: linear-gradient(to bottom, var(--primary) 2%, var(--footer-surface) 0%);
 
       .left-section {
         text-align: center;
@@ -201,7 +216,7 @@ const currentYear = getCurrentYear();
             width: 100%;
             h2 {
               // color: #fff;
-              color: #000000;
+              color: var(--footer-text);
             }
             .social-links {
               height: 2rem;
@@ -232,8 +247,8 @@ const currentYear = getCurrentYear();
           width: 307/14rem;
           margin: auto;
           // color: #fff;
-          color: #000000;
-          opacity: 0.9;
+          color: var(--footer-muted);
+          opacity: 1;
         }
       }
 
@@ -272,17 +287,19 @@ const currentYear = getCurrentYear();
               list-style: none;
               margin-bottom: (12/16rem);
               // color: #fff;
-              color: #000000;
+              color: var(--footer-text);
               opacity: 0.9;
 
               a {
                 line-height: 21/18em;
                 text-decoration: none;
                 // color: #fff;
-                color: #000000;
+                color: var(--footer-text);
                 transition: color 0.3s;
                 &:hover {
-                  color: var(--primary);
+                  color: var(--footer-link);
+                  text-decoration: underline;
+                  text-underline-offset: 0.2em;
                 }
               }
             }
@@ -293,7 +310,7 @@ const currentYear = getCurrentYear();
               text-transform: uppercase;
               margin-bottom: (37/16rem);
               // color: #fff;
-              color: #000000;
+              color: var(--footer-text);
               position: relative;
 
               &:before {
@@ -330,15 +347,14 @@ const currentYear = getCurrentYear();
         text-align: left;
         //width: 96%;
         margin-top: clamp(2rem, 20vw, 5rem);
-        // color: #fff;
-        color: #000000;
+        color: var(--footer-muted);
         display: flex;
         flex-direction: column;
 
         a {
           font-size: (16/16rem);
           text-decoration: none;
-          color: var(--primary);
+          color: var(--footer-link);
 
           &:hover {
             text-decoration: underline;
@@ -433,20 +449,22 @@ const currentYear = getCurrentYear();
 
                 &:before {
                   content: '';
-                  width: 0%;
+                  width: 100%;
                   height: (2/16rem);
-                  background: var(--primary);
+                  background: var(--footer-link);
                   opacity: 1;
                   display: block;
                   position: absolute;
                   bottom: (-3/16rem);
                   left: 0;
-                  transition: width 0.3s;
+                  transform: scaleX(0);
+                  transform-origin: left;
+                  transition: transform 0.3s;
                 }
 
                 &:hover {
                   &:before {
-                    width: 100%;
+                    transform: scaleX(1);
                   }
                 }
               }
@@ -472,8 +490,21 @@ const currentYear = getCurrentYear();
   @media only screen and (min-width: 0em) {
     body.dark-mode {
       #footer {
-        background: #061623;
+        --footer-surface: #211c18;
+        --footer-text: #f5f1ed;
+        --footer-muted: #cfc5bd;
+
+        .logo img {
+          background: #ffffff;
+          border-radius: 4px;
+        }
       }
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    #footer .right-section .lists a,
+    #footer .right-section .lists a:before {
+      transition: none;
     }
   }
 </style>

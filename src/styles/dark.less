@@ -1,54 +1,51 @@
-/* DARK MODE AND TOGGLE STYLES */
+/* The body class is the shared theme selector for LESS and Tailwind. */
+:root {
+  --dark: #12110f;
+  --accent: #334756;
+}
 
-/*-- -------------------------- -->
-<---      Core Dark Styles      -->
-<--- -------------------------- -*/
+body.dark-mode {
+  --page-bg: #12110f;
+  --surface: #211c18;
+  --surface-raised: #302720;
+  --headerColor: #f5f1ed;
+  --bodyTextColor: #cfc5bd;
+  --body-strong: #e8dfd7;
+  --bodyText: #f5f1ed;
+  --border-color: #806c60;
+  --link-color: #f984ef;
+  --accent-text: #f984ef;
+  --focus-color: #f984ef;
+  --service-surface: #30232b;
+  --service-text: #f5f1ed;
+  --review-surface: #4b2036;
+  --review-text: #f5f1ed;
+  background-color: var(--page-bg);
 
-/* Mobile */
-@media only screen and (min-width: 0em) {
-  // Dark Mode Color Scheme
-  :root {
-    // --dark: hsl(163, 96%, 5%);
-    --dark: #12110f;
-    // --medium: hsl(163, 95%, 8%);
-    --accent: #334756;
-  }
-
-  .dark-mode {
-    // --primary: #d4a373;
-    // --primaryLight: #825d36;
-    // --medium: #34281e;
-    // --secondary: #a9e3ec;
-    --bodyText: #fafbfc;
-    --clr-primary: #f984ef;
-  }
-
-  body.dark-mode {
-    background-color: var(--dark);
-
-    p,
-    li,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      color: #fff;
-    }
-
-    // hide all light classes
-    .light {
-      display: none;
-    }
-
-    // show all dark classes
-    .dark {
-      display: block !important;
-    }
+  .light {
+    display: none;
   }
 
   .dark {
-    display: none;
+    display: block !important;
+  }
+}
+
+.dark {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body {
+    transition: none;
+  }
+
+  .cs-button-solid:before {
+    transition: none;
+  }
+
+  #dark-mode-toggle .cs-sun,
+  #dark-mode-toggle .cs-moon {
+    transition: opacity 0.15s;
   }
 }

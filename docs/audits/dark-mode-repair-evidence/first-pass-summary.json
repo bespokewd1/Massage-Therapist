@@ -1,0 +1,132 @@
+{
+  "routeModeChecks": 52,
+  "localStatusCounts": {
+    "200": 52
+  },
+  "axeViolations": [
+    {
+      "mode": "mobile-dark",
+      "route": "/blog/",
+      "violations": [
+        {
+          "id": "aria-prohibited-attr",
+          "impact": "serious",
+          "nodes": [
+            {
+              "target": [
+                "span[aria-label=\"First page\"]"
+              ],
+              "html": "<span aria-label=\"First page\" aria-disabled=\"true\" class=\"grid place-content-center size-6 rounded-full text-(--headerColor) p-4 shrink-0 opacity-30\">",
+              "summary": "Fix all of the following:\n  aria-label attribute cannot be used on \"span\" elements with no valid role attribute.",
+              "checks": []
+            },
+            {
+              "target": [
+                "span[aria-label=\"Previous page\"]"
+              ],
+              "html": "<span aria-label=\"Previous page\" aria-disabled=\"true\" class=\"grid place-content-center size-6 rounded-full text-(--headerColor) p-4 shrink-0 opacity-30\">",
+              "summary": "Fix all of the following:\n  aria-label attribute cannot be used on \"span\" elements with no valid role attribute.",
+              "checks": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "mobile-light",
+      "route": "/blog/",
+      "violations": [
+        {
+          "id": "aria-prohibited-attr",
+          "impact": "serious",
+          "nodes": [
+            {
+              "target": [
+                "span[aria-label=\"First page\"]"
+              ],
+              "html": "<span aria-label=\"First page\" aria-disabled=\"true\" class=\"grid place-content-center size-6 rounded-full text-(--headerColor) p-4 shrink-0 opacity-30\">",
+              "summary": "Fix all of the following:\n  aria-label attribute cannot be used on \"span\" elements with no valid role attribute.",
+              "checks": []
+            },
+            {
+              "target": [
+                "span[aria-label=\"Previous page\"]"
+              ],
+              "html": "<span aria-label=\"Previous page\" aria-disabled=\"true\" class=\"grid place-content-center size-6 rounded-full text-(--headerColor) p-4 shrink-0 opacity-30\">",
+              "summary": "Fix all of the following:\n  aria-label attribute cannot be used on \"span\" elements with no valid role attribute.",
+              "checks": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "desktop-light",
+      "route": "/blog/",
+      "violations": [
+        {
+          "id": "aria-prohibited-attr",
+          "impact": "serious",
+          "nodes": [
+            {
+              "target": [
+                "span[aria-label=\"First page\"]"
+              ],
+              "html": "<span aria-label=\"First page\" aria-disabled=\"true\" class=\"grid place-content-center size-6 rounded-full text-(--headerColor) p-4 shrink-0 opacity-30\">",
+              "summary": "Fix all of the following:\n  aria-label attribute cannot be used on \"span\" elements with no valid role attribute.",
+              "checks": []
+            },
+            {
+              "target": [
+                "span[aria-label=\"Previous page\"]"
+              ],
+              "html": "<span aria-label=\"Previous page\" aria-disabled=\"true\" class=\"grid place-content-center size-6 rounded-full text-(--headerColor) p-4 shrink-0 opacity-30\">",
+              "summary": "Fix all of the following:\n  aria-label attribute cannot be used on \"span\" elements with no valid role attribute.",
+              "checks": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "desktop-dark",
+      "route": "/blog/",
+      "violations": [
+        {
+          "id": "aria-prohibited-attr",
+          "impact": "serious",
+          "nodes": [
+            {
+              "target": [
+                "span[aria-label=\"First page\"]"
+              ],
+              "html": "<span aria-label=\"First page\" aria-disabled=\"true\" class=\"grid place-content-center size-6 rounded-full text-(--headerColor) p-4 shrink-0 opacity-30\">",
+              "summary": "Fix all of the following:\n  aria-label attribute cannot be used on \"span\" elements with no valid role attribute.",
+              "checks": []
+            },
+            {
+              "target": [
+                "span[aria-label=\"Previous page\"]"
+              ],
+              "html": "<span aria-label=\"Previous page\" aria-disabled=\"true\" class=\"grid place-content-center size-6 rounded-full text-(--headerColor) p-4 shrink-0 opacity-30\">",
+              "summary": "Fix all of the following:\n  aria-label attribute cannot be used on \"span\" elements with no valid role attribute.",
+              "checks": []
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "duplicateIDs": [],
+  "overflow": [],
+  "fixes": [
+    "Allow native dialog Escape before navigation handling.",
+    "Give disabled pagination controls the link role their labels require.",
+    "Place dark-footer logo backing on image bounds instead of short anchor."
+  ],
+  "harnessNotes": [
+    "First inspection paused waiting for a hidden lazy image to decode. Forced eager image load only within screenshot regions and continued the same desktop inspection. No new application defect was inferred.",
+    "The two phone-home click timeouts are a consequence of the confirmed dialog/menu Escape defect, not separate defects.",
+    "First-pass phone and desktop screenshots were collected before this fixes batch."
+  ]
+}

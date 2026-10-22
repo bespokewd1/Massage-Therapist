@@ -1,0 +1,32 @@
+{
+  "/": {
+    "before": 112992,
+    "after": 101452,
+    "savedBytes": 11540,
+    "savedPercent": 10.2
+  },
+  "/mobile-massage/": {
+    "before": 117811,
+    "after": 81636,
+    "savedBytes": 36175,
+    "savedPercent": 30.7
+  },
+  "/contact/": {
+    "before": 83300,
+    "after": 78902,
+    "savedBytes": 4398,
+    "savedPercent": 5.3
+  },
+  "/giftcertificate/": {
+    "before": 69791,
+    "after": 66094,
+    "savedBytes": 3697,
+    "savedPercent": 5.3
+  },
+  "/blog/": {
+    "before": 87568,
+    "after": 82221,
+    "savedBytes": 5347,
+    "savedPercent": 6.1
+  }
+}

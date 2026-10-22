@@ -1,0 +1,51 @@
+{
+  "/": {
+    "htmlBytes": 233522,
+    "cssBytes": 101452,
+    "stylesheets": [
+      "/_astro/about.DDr1GAvJ.css",
+      "/_astro/_page_.BP1sYmg2.css",
+      "/_astro/about.VYmiDQYx.css",
+      "/_astro/index.TTgdR1V1.css",
+      "/_astro/about.lm8zyS_2.css"
+    ]
+  },
+  "/mobile-massage/": {
+    "htmlBytes": 42188,
+    "cssBytes": 81636,
+    "stylesheets": [
+      "/_astro/about.DDr1GAvJ.css",
+      "/_astro/mobile-massage.D-gpiZJ4.css",
+      "/_astro/about.VYmiDQYx.css",
+      "/_astro/about.lm8zyS_2.css"
+    ]
+  },
+  "/contact/": {
+    "htmlBytes": 26556,
+    "cssBytes": 78902,
+    "stylesheets": [
+      "/_astro/about.DDr1GAvJ.css",
+      "/_astro/contact.95OQBpzJ.css",
+      "/_astro/about.VYmiDQYx.css",
+      "/_astro/about.lm8zyS_2.css"
+    ]
+  },
+  "/giftcertificate/": {
+    "htmlBytes": 30152,
+    "cssBytes": 66094,
+    "stylesheets": [
+      "/_astro/giftcertificate.Dv1iCdPj.css",
+      "/_astro/about.DDr1GAvJ.css"
+    ]
+  },
+  "/blog/": {
+    "htmlBytes": 45424,
+    "cssBytes": 82221,
+    "stylesheets": [
+      "/_astro/about.DDr1GAvJ.css",
+      "/_astro/about.VYmiDQYx.css",
+      "/_astro/_page_.BP1sYmg2.css",
+      "/_astro/about.lm8zyS_2.css"
+    ]
+  }
+}

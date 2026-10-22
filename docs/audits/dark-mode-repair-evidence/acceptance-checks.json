@@ -1,0 +1,252 @@
+[
+  {
+    "check": "52 local route/theme/viewport checks",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "All local responses HTTP 200",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "No page-script or runner errors",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "No axe WCAG A/AA violations detected",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "No duplicate IDs",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "No document horizontal overflow",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "desktop-light: faq-keyboard",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "mobile-dark: faq-keyboard",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "desktop-light: skip-focus",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "mobile-dark: skip-focus",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "desktop-light: booking-dialog-open",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "mobile-dark: booking-dialog-open",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "desktop-light: booking-dialog-escape",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "mobile-dark: booking-dialog-escape",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "desktop-dark: faq-keyboard",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "desktop-light: booking-dialog-close-button",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "mobile-dark: booking-dialog-close-button",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "desktop-light: / reduced backgrounds",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "mobile-light: faq-keyboard",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "desktop-dark: skip-focus",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "mobile-dark: menu-escape",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "mobile-dark: / reduced backgrounds",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "mobile-light: skip-focus",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "desktop-dark: booking-dialog-open",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "mobile-light: booking-dialog-open",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "desktop-dark: booking-dialog-escape",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "mobile-light: booking-dialog-escape",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "desktop-dark: booking-dialog-close-button",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "desktop-dark: / reduced backgrounds",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "mobile-light: booking-dialog-close-button",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "mobile-light: menu-escape",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "mobile-light: / reduced backgrounds",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "desktop-light: /mobile-massage/ reduced backgrounds",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "mobile-dark: /mobile-massage/ reduced backgrounds",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "mobile-light: /mobile-massage/ reduced backgrounds",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "desktop-dark: /mobile-massage/ reduced backgrounds",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "initial-theme: light/light",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "explicit-ignores-system: light/light",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "initial-theme: light/dark",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "explicit-ignores-system: light/dark",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "initial-theme: light/None",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "system-change: light",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "initial-theme: dark/light",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "explicit-ignores-system: dark/light",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "initial-theme: dark/dark",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "explicit-ignores-system: dark/dark",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "initial-theme: dark/None",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "system-change: dark",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "Back and forward keep explicit theme",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "Denied storage works without JS errors",
+    "passed": true,
+    "detail": null
+  }
+]

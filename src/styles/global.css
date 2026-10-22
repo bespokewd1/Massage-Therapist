@@ -1,6 +1,8 @@
 @import 'tailwindcss' source(none) important;
 @source '../';
 
+@custom-variant dark (&:where(.dark-mode, .dark-mode *));
+
 @theme {
   --breakpoint-xmd: 49rem;
 }

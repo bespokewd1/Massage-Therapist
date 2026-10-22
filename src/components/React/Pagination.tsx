@@ -1,7 +1,7 @@
 import ChevronRightIcon from './ChevronRightIcon';
 import ChevronLeftIcon from './ChevronLeftIcon';
 import { cn } from 'src/lib/utils';
-import { useState } from 'react';
+import { useState, type ReactNode } from 'react';
 import ChevronLastIcon from './ChevronLastIcon';
 import ChevronFirstIcon from './ChevronFirstIcon';
 
@@ -17,8 +17,40 @@ export type PaginationProps = {
   };
 };
 
-/*the animation delay*/
-const DELAY_MS: number = 300;
+const DELAY_MS = 300;
+const arrowClasses =
+  'grid place-content-center size-6 rounded-full hover:bg-(--action-bg) hover:text-(--on-action) transition-colors text-(--headerColor) p-4 shrink-0 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-(--focus-color) motion-reduce:transition-none';
+
+function ArrowControl({
+  href,
+  label,
+  children,
+  onClick,
+}: {
+  href: string | undefined;
+  label: string;
+  children: ReactNode;
+  onClick?: React.MouseEventHandler<HTMLAnchorElement>;
+}) {
+  if (!href) {
+    return (
+      <span
+        role="link"
+        aria-label={label}
+        aria-disabled="true"
+        className="grid place-content-center size-6 rounded-full text-(--headerColor) p-4 shrink-0 opacity-30"
+      >
+        <span className="size-6" aria-hidden="true">{children}</span>
+      </span>
+    );
+  }
+
+  return (
+    <a href={href} aria-label={label} className={arrowClasses} onClick={onClick}>
+      <span className="size-6" aria-hidden="true">{children}</span>
+    </a>
+  );
+}
 
 export function Pagination({ url, totalPages, currentPage }: PaginationProps) {
   const [isNext, setIsNext] = useState<boolean>(false);
@@ -28,6 +60,10 @@ export function Pagination({ url, totalPages, currentPage }: PaginationProps) {
     href: string | undefined,
     event: React.MouseEvent<HTMLAnchorElement, MouseEvent>
   ) => {
+    if (
+      event.metaKey || event.ctrlKey || event.shiftKey || event.altKey ||
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    ) return;
     event.preventDefault();
     if (href) {
       setIsNext(true);
@@ -42,6 +78,10 @@ export function Pagination({ url, totalPages, currentPage }: PaginationProps) {
     href: string | undefined,
     event: React.MouseEvent<HTMLAnchorElement, MouseEvent>
   ) => {
+    if (
+      event.metaKey || event.ctrlKey || event.shiftKey || event.altKey ||
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    ) return;
     event.preventDefault();
     if (href) {
       setIsPrev(true);
@@ -53,37 +93,18 @@ export function Pagination({ url, totalPages, currentPage }: PaginationProps) {
   };
 
   return (
-    <nav className="flex gap-4 max-w-xl mx-auto items-center justify-center p-[clamp(40px,7vw,70px)_1rem]  sm:p-[clamp(40px,7vw,70px)_0] ">
+    <nav aria-label="Blog pagination" className="flex gap-4 max-w-xl mx-auto items-center justify-center p-[clamp(40px,7vw,70px)_1rem]  sm:p-[clamp(40px,7vw,70px)_0] ">
       <ul className="flex gap-6 items-center justify-center w-full">
-        <li
-          className={cn('', {
-            'grayscale pointer-events-none opacity-30': !url.first,
-          })}
-        >
-          <a
-            href={url.first}
-            className="grid place-content-center size-6 rounded-full hover:bg-(--primary) hover:text-white transition-colors  text-black p-4 shrink-0"
-          >
-            <span className="size-6">
-              <ChevronFirstIcon />
-            </span>
-          </a>
+        <li>
+          <ArrowControl href={url.first} label="First page">
+            <ChevronFirstIcon />
+          </ArrowControl>
         </li>
 
-        <li
-          className={cn({
-            'grayscale pointer-events-none opacity-30': !url.prev,
-          })}
-        >
-          <a
-            href={url.prev}
-            className="grid place-content-center size-6 rounded-full hover:bg-(--primary) hover:text-white transition-colors text-black p-4 shrink-0"
-            onClick={(e) => handlePrev(url.prev, e)}
-          >
-            <span className="size-6">
-              <ChevronLeftIcon />
-            </span>
-          </a>
+        <li>
+          <ArrowControl href={url.prev} label="Previous page" onClick={(e) => handlePrev(url.prev, e)}>
+            <ChevronLeftIcon />
+          </ArrowControl>
         </li>
 
         <li className="flex gap-6 md:mx-6 md:px-4">
@@ -93,8 +114,8 @@ export function Pagination({ url, totalPages, currentPage }: PaginationProps) {
                 'grid before:[grid-area:1/1]',
                 'before:content-[attr(data-prev)] before:grayscale-50',
                 'before:text-center before:size-6 before:rounded-full',
-                'before:grid before:place-content-center before:font-bold before:bg-(--primary) ',
-                'before:text-black before:p-4 before:shrink-0 before:scale-0 before:transform before:transition-transform before:duration-300',
+                'before:grid before:place-content-center before:font-bold before:bg-(--action-bg) ',
+                'before:text-(--on-action) before:p-4 before:shrink-0 before:scale-0 before:transform before:transition-transform before:duration-300 motion-reduce:before:transition-none',
                 { 'before:scale-95': isPrev },
                 { 'before:hidden': currentPage === 2 }
               )}
@@ -102,9 +123,10 @@ export function Pagination({ url, totalPages, currentPage }: PaginationProps) {
             >
               <a
                 href={url.prev}
+                aria-label={`Page ${currentPage - 1}`}
                 className={cn(
-                  'grid [grid-area:1/1] place-content-center size-6 rounded-full bg-(--primary) text-black p-4 shrink-0 scale-95',
-                  'scale-95 grayscale-50 transform transition-transform duration-300',
+                  'grid [grid-area:1/1] place-content-center size-6 rounded-full bg-(--action-bg) text-(--on-action) p-4 shrink-0 scale-95 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-(--focus-color)',
+                  'scale-95 grayscale-50 transform transition-transform duration-300 motion-reduce:transition-none',
                   { 'translate-x-14 z-10 scale-110': isPrev },
                   { 'scale-0 duration-150': isNext }
                 )}
@@ -120,9 +142,11 @@ export function Pagination({ url, totalPages, currentPage }: PaginationProps) {
           <div>
             <a
               href={url.current}
+              aria-label={`Page ${currentPage}`}
+              aria-current="page"
               className={cn(
-                'grid place-content-center scale-110 size-6 rounded-full bg-(--primary) text-black p-4 shrink-0',
-                'grayscale-50 transform transition-transform duration-300',
+                'grid place-content-center scale-110 size-6 rounded-full bg-(--action-bg) text-(--on-action) p-4 shrink-0 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-(--focus-color)',
+                'grayscale-50 transform transition-transform duration-300 motion-reduce:transition-none',
                 { 'scale-95 translate-x-14 -z-10': isPrev },
                 { 'scale-95 -translate-x-14 -z-10': isNext }
               )}
@@ -137,8 +161,8 @@ export function Pagination({ url, totalPages, currentPage }: PaginationProps) {
                 'grid before:[grid-area:1/1]',
                 'before:content-[attr(data-next)] before:grayscale-50',
                 'before:text-center before:size-6 before:rounded-full',
-                'before:grid before:place-content-center before:font-bold before:bg-(--primary) ',
-                'before:text-black before:p-4 before:shrink-0 before:scale-0 before:transform before:transition-transform before:duration-300',
+                'before:grid before:place-content-center before:font-bold before:bg-(--action-bg) ',
+                'before:text-(--on-action) before:p-4 before:shrink-0 before:scale-0 before:transform before:transition-transform before:duration-300 motion-reduce:before:transition-none',
                 { 'before:scale-95': isNext && currentPage === totalPages - 1 },
                 { 'before:hidden': currentPage === totalPages - 1 }
               )}
@@ -146,9 +170,10 @@ export function Pagination({ url, totalPages, currentPage }: PaginationProps) {
             >
               <a
                 href={url.next}
+                aria-label={`Page ${currentPage + 1}`}
                 className={cn(
-                  'grid place-content-center size-6 rounded-full bg-(--primary) text-black p-4 shrink-0 ',
-                  '[grid-area:1/1] scale-95 grayscale-50 transform transition-transform duration-300',
+                  'grid place-content-center size-6 rounded-full bg-(--action-bg) text-(--on-action) p-4 shrink-0 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-(--focus-color) ',
+                  '[grid-area:1/1] scale-95 grayscale-50 transform transition-transform duration-300 motion-reduce:transition-none',
                   { '-translate-x-14 z-10 scale-110': isNext },
                   { 'scale-0 duration-150': isPrev }
                 )}
@@ -160,35 +185,16 @@ export function Pagination({ url, totalPages, currentPage }: PaginationProps) {
           )}
         </li>
 
-        <li
-          className={cn({
-            'grayscale pointer-events-none opacity-30': !url.next,
-          })}
-        >
-          <a
-            href={url.next}
-            className="grid place-content-center size-6 rounded-full hover:bg-(--primary) hover:text-white transition-colors  text-black p-4 shrink-0"
-            onClick={(e) => handleNext(url.next, e)}
-          >
-            <span className="size-6">
-              <ChevronRightIcon />
-            </span>
-          </a>
+        <li>
+          <ArrowControl href={url.next} label="Next page" onClick={(e) => handleNext(url.next, e)}>
+            <ChevronRightIcon />
+          </ArrowControl>
         </li>
 
-        <li
-          className={cn({
-            'grayscale pointer-events-none opacity-30': !url.last,
-          })}
-        >
-          <a
-            href={url.last}
-            className="grid place-content-center size-6 rounded-full hover:bg-(--primary) hover:text-white transition-colors  text-black p-4 shrink-0"
-          >
-            <span className="size-6">
-              <ChevronLastIcon />
-            </span>
-          </a>
+        <li>
+          <ArrowControl href={url.last} label="Last page">
+            <ChevronLastIcon />
+          </ArrowControl>
         </li>
       </ul>
     </nav>

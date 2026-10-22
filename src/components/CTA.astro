@@ -5,7 +5,7 @@ import ctaBg from '@assets/images/CTA-Background-Image.jpg';
 
 <section
   id="cta"
-  class="relative overflow-hidden py-[3.125rem] lg:py-[10.5rem] xl:mt-[6.25rem]"
+  class="relative isolate overflow-hidden py-[3.125rem] lg:py-[10.5rem] xl:mt-[6.25rem]"
 >
   <div class="relative z-10 mx-auto w-[92%] text-center xl:w-[90.0625%]">
     <h2
@@ -22,7 +22,7 @@ import ctaBg from '@assets/images/CTA-Background-Image.jpg';
 
     <a
       href="/booking"
-      class="inline-flex h-[3.125rem] items-center justify-center rounded-full bg-[var(--primary)] px-[1.875rem] text-base font-bold uppercase text-[var(--bodyTextColorWhite)] transition-colors duration-300 hover:bg-[#ff66ad]"
+      class="inline-flex h-[3.125rem] items-center justify-center rounded-full bg-[var(--action-bg)] px-[1.875rem] text-base font-bold uppercase text-[var(--on-action)] transition-colors duration-300 hover:bg-[var(--action-hover)] motion-reduce:transition-none"
     >
       Book Online
     </a>
@@ -36,8 +36,17 @@ import ctaBg from '@assets/images/CTA-Background-Image.jpg';
     decoding="async"
     pictureAttributes={{
       class:
-        'absolute inset-0 -z-10 h-full w-full xl:left-1/2 xl:w-[90.0625%] xl:-translate-x-1/2',
+        'absolute inset-0 z-0 h-full w-full xl:left-1/2 xl:w-[90.0625%] xl:-translate-x-1/2',
     }}
     class="h-full w-full object-cover"
   />
 </section>
+<style>
+  picture::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgb(18 17 15 / 70%);
+    pointer-events: none;
+  }
+</style>

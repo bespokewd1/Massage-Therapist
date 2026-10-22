@@ -44,7 +44,7 @@ const faqs = [
       class="flex w-full flex-col items-center text-center lg:w-[40%] lg:flex-none lg:items-start lg:text-left"
     >
       <span
-        class="mb-2 block text-[clamp(0.8125rem,1.6vw,1rem)] font-bold uppercase tracking-[0.1em] text-[var(--secondary)]"
+        class="mb-2 block text-[clamp(0.8125rem,1.6vw,1rem)] font-bold uppercase tracking-[0.1em] text-[var(--accent-text)]"
       >
         Frequently Asked Questions
       </span>
@@ -62,7 +62,7 @@ const faqs = [
           <li class="list-none">
             <details class="group overflow-hidden" open={index === 0}>
               <summary
-                class="relative block cursor-pointer list-none border border-[#e8e8e8] bg-transparent py-4 pl-12 pr-4 text-left text-[clamp(1rem,2.5vw,1.25rem)] font-bold leading-[1.2] text-[var(--headerColor)] transition-colors duration-300 marker:content-[''] [&::-webkit-details-marker]:hidden group-open:bg-[var(--secondary)] group-open:text-[var(--bodyTextColorWhite)]"
+                class="relative block cursor-pointer list-none border border-[var(--border-color)] bg-transparent py-4 pl-12 pr-4 text-left text-[clamp(1rem,2.5vw,1.25rem)] font-bold leading-[1.2] text-[var(--headerColor)] transition-colors duration-300 motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--focus-color)] marker:content-[''] [&::-webkit-details-marker]:hidden group-open:bg-[var(--secondary)] group-open:text-[var(--on-selected)]"
               >
                 <svg
                   viewBox="0 0 20 20"
@@ -71,7 +71,7 @@ const faqs = [
                   stroke-width="2"
                   stroke-linecap="round"
                   stroke-linejoin="round"
-                  class="absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 transition-transform duration-300 group-open:rotate-180"
+                  class="absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 transition-transform duration-300 motion-reduce:transition-none group-open:rotate-180"
                   aria-hidden="true"
                 >
                   <path d="M5 7.5 10 12.5 15 7.5"></path>
@@ -81,10 +81,10 @@ const faqs = [
               </summary>
 
               <div
-                class="grid grid-rows-[0fr] transition-all duration-300 group-open:grid-rows-[1fr]"
+                class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 motion-reduce:transition-none group-open:grid-rows-[1fr]"
               >
                 <p
-                  class="overflow-hidden border border-t-0 border-[#e8e8e8] px-4 py-0 text-[clamp(0.875rem,1.5vw,1rem)] leading-[1.5] text-[var(--bodyTextColor)] opacity-0 transition-all duration-300 group-open:px-6 group-open:py-4 group-open:opacity-100"
+                  class="overflow-hidden border border-t-0 border-[var(--border-color)] px-6 py-4 text-[clamp(0.875rem,1.5vw,1rem)] leading-[1.5] text-[var(--bodyTextColor)] opacity-0 transition-opacity duration-300 motion-reduce:transition-none group-open:opacity-100"
                 >
                   {faq.answer}
                 </p>

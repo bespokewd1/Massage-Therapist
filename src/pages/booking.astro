@@ -1,10 +1,8 @@
 ---
 import { ClientRouter } from 'astro:transitions';
 import SeoHead from '@components/SeoHead.astro';
+import ThemeInit from '@components/ThemeInit.astro';
 import Header from '@components/Header.astro';
-import Footer from '@components/Footer.astro';
-import StickyButton from '@components/StickyButton.astro';
-import ScrollToTop from '@components/ScrollToTop.astro';
 import '@styles/root.less';
 import '@styles/dark.less';
 import '@styles/global.css';
@@ -49,55 +47,53 @@ import '@styles/global.css';
     <script src="@js/nav.js"></script>
   </head>
   <body>
+    <ThemeInit />
     <!--Screen reader skip main nav-->
     <a class="skip" aria-label="skip to main content" href="#main"
       >Click To Skip To Main Content</a
     >
 
     <Header />
-    <main id="main" class="relative *:h-dvh *:md:pt-12 *:pt-20 *:lg:pt-16">
+    <main id="main" class="booking-page relative">
+      <p class="booking-alternative">
+        Prefer to book directly?
+        <a href="https://www.massagebook.com/therapists/StoneMassage?src=external">Book an in-clinic appointment on MassageBook</a>.
+        For in-home massage, <a href="tel:587-938-0458">call (587) 938-0458</a>.
+      </p>
       <iframe
+        title="Stone Massage in-clinic appointment booking through MassageBook"
         src="https://www.massagebook.com/therapists/StoneMassage/widget/services"
-        frameborder="0"
         width="100%"
         height="1000"></iframe>
     </main>
   </body>
 </html>
 
-<script is:inline>
-  // helper functions to toggle dark mode
-  function enableDarkMode() {
-    document.body.classList.add('dark-mode');
-    localStorage.setItem('theme', 'dark');
+<style>
+  .booking-page {
+    padding-block-start: 10rem;
   }
 
-  function disableDarkMode() {
-    document.body.classList.remove('dark-mode');
-    localStorage.setItem('theme', 'light');
+  .booking-alternative {
+    max-width: 75ch;
+    margin: 0 auto;
+    padding: 1.5rem 1rem;
+    color: var(--bodyTextColor);
+    line-height: 1.5;
   }
 
-  function setTheme() {
-    // default to the light theme
-    let theme = 'light';
-
-    // check localStorage for a saved 'theme' variable. if it's there, the user has visited before, so apply the necessary theme choices
-    if (localStorage.getItem('theme')) {
-      theme = localStorage.getItem('theme');
-    }
-    // if it's not there, check to see if the user has applied dark mode preferences themselves in the browser
-    else if (
-      window.matchMedia &&
-      window.matchMedia('(prefers-color-scheme: dark)').matches
-    ) {
-      theme = 'dark';
-    }
-
-    // if there is no preference set, the default of light will be used. apply accordingly
-    theme === 'dark' ? enableDarkMode() : disableDarkMode();
+  .booking-alternative a {
+    color: var(--link-color);
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
   }
 
-  setTheme();
-
-  document.addEventListener('astro:after-swap', setTheme); // For View Transitions purposes - astro:after-swap ensures that the theme is kept after navigating to a new page.
-</script>
+  iframe {
+    display: block;
+    width: 100%;
+    min-height: 100dvh;
+    border: 0;
+    background: #fff;
+    color-scheme: light;
+  }
+</style>

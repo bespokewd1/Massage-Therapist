@@ -2,40 +2,24 @@
 import BaseLayout from 'src/layouts/BaseLayout.astro';
 import CTA from '@components/CTA.astro';
 import FAQ from '@components/FAQ.astro';
-import { ImageSlider } from '@components/React/Slider';
 import { getCollection } from 'astro:content';
 import { Image } from 'astro:assets';
 import { Picture } from 'astro-lqip/components';
 import '@styles/blog.less';
 import ServiceGrid, { type IService } from '@components/ServicesGrid.astro';
-import { Icon } from 'astro-icon/components'
-
-
-import PromotionCard, {
-  type PromotionProps,
-} from '@components/PromotionCard.astro';
-
-// Optimize our landing image and pass it as props to the BaseLayout (for preloading) and Landing (for rendering)
-import { formatDate, getOptimizedImage } from '@js/utils';
+import { Icon } from 'astro-icon/components';
+import { getOptimizedImage } from '@js/utils';
 import aboutImage1 from '@assets/images/Services-2.DeepTissueMassage.jpg';
 import aboutImage2 from '@assets/images/Services-5.HotStoneMassage.jpg';
-import serviceImg1 from '@assets/images/Services-1.TherapeuticMassage.jpg';
-import serviceImg2 from '@assets/images/Services-2.DeepTissueMassage.jpg';
-import serviceImg3 from '@assets/images/Services-3.RelaxationMassage.jpg';
 import promoImag1 from '@assets/images/promo-1.webp';
 import promoImag2 from '@assets/images/promo-2.webp';
 import promoImag3 from '@assets/images/promo-3.webp';
 import mobile1 from '@assets/images/home/stone-massage.webp';
 import mobile2 from '@assets/images/home/cupping-theraphy.webp';
 import mobile3 from '@assets/images/home/foot-massage.webp';
-
-
 import serviceBgImg from '@assets/images/Blog2-HeaderPhoto.jpg';
 import checkMark from '@assets/images/check-mark.png';
-
-import heroImg from '@assets/images/hero-img.jpg';
-import landingImage from '@assets/images/landing.jpg'; // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
-// import { Picture } from 'astro:assets';
+import landingImage from '@assets/images/landing.jpg';
 import HotStoneIcon from '@components/Icons/massages/HotStoneIcon.astro';
 import DeepTissueIcon from '@components/Icons/massages/DeepTissueIcon.astro';
 import SwedishIcon from '@components/Icons/massages/SwedishIcon.astro';
@@ -43,32 +27,9 @@ import CuppingIcon from '@components/Icons/massages/CuppingIcon.astro';
 import ThaiOilIcon from '@components/Icons/massages/ThaiOilIcon.astro';
 import PrenatalIcon from '@components/Icons/massages/PrenatalIcon.astro';
 import KidsIcon from '@components/Icons/massages/KidsIcon.astro';
-import Review from "../components/Review.astro";
-
+import Review from '../components/Review.astro';
 
 const optimizedImage = await getOptimizedImage(landingImage);
-
-
-const promotionInfo: PromotionProps[] = [
-  {
-    imgSrc: serviceImg1,
-    title: '10% for new Customer',
-    description:
-      'Experience unparalleled relaxation and pain relief with our expert therapeutic massage services—specializing in deep tissue and hot stone techniques that ease muscle tension and reduce stress.',
-  },
-  {
-    imgSrc: serviceImg2,
-    title: 'Direct Billing Available',
-    description:
-      'Unwind with our Relaxation Massage, designed to melt away stress and promote deep, calming relaxation while boosting overall wellness. ',
-  },
-  {
-    imgSrc: serviceImg3,
-    title: 'sample Massage',
-    description:
-      'Experience the benefits of our Cupping Massage, a traditional therapy that enhances blood flow, reduces muscle tension, and supports natural detoxification. ',
-  },
-];
 
 const massageServiceData: Array<IService> = [
   {
@@ -114,8 +75,6 @@ const massageServiceData: Array<IService> = [
     icon: KidsIcon,
   },
 ];
-
-const heroImages = [heroImg, serviceImg1, serviceImg2];
 
 const posts = await getCollection('blog');
 posts.sort(
@@ -166,60 +125,25 @@ posts.sort(
         <!-- <a href="/about" class="cs-button-solid">Call Now (780-123-4567)</a> -->
         <a
           href="tel:587-938-0458"
-          class="cs-button-solid w-[300px] rounded-full mt-8 text-center before:rounded-[inherit] text-white leading-snug p-4 text-[.6rem] md:text-[1rem] lg:w-[220px] xl:w-[230px]"
+          class="cs-button-solid w-[300px] rounded-full mt-8 text-center before:rounded-[inherit] text-(--on-action) leading-snug p-4 text-[.6rem] md:text-[1rem] lg:w-[220px] xl:w-[230px]"
           >
           <span class="text-[1rem]">Call for Mobile Massage</span> 
-          <Icon name="fa7-solid:phone" class="text-[#28a745] ml-1 size-5 inline" />
-          <!-- <i class="fas fa-phone text-[#28a745] ml-1"></i> -->
+          <Icon name="fa7-solid:phone" class="text-current ml-1 size-5 inline" />
+          <!-- <i class="fas fa-phone text-current ml-1"></i> -->
          </a>
         <a
           href="https://www.massagebook.com/therapists/StoneMassage?src=external"
-          class="cs-button-solid w-[300px]  rounded-full text-center text-white leading-snug p-4 text-[.6rem] md:text-[1rem] lg:w-[230px] lg:mt-8"
+          class="cs-button-solid w-[300px]  rounded-full text-center text-(--on-action) leading-snug p-4 text-[.6rem] md:text-[1rem] lg:w-[230px] lg:mt-8"
           >
           <span class="text-[1rem]">Book In-Clinic Massage </span>
 
-          <Icon name="fa7-solid:calendar" class="text-[#28a745] ml-1 size-5 inline" />
-           <!-- <i class="fas fa-calendar text-[#28a745]"></i> -->
+          <Icon name="fa7-solid:calendar" class="text-current ml-1 size-5 inline" />
+           <!-- <i class="fas fa-calendar text-current"></i> -->
           </a>
       </div>
     </div>
 
-    <!-- Background Image -->
-    <!-- We can't use Astro <Picture /> as it does not support multiple sources -->
-    <!-- <ImageSlider imgDatas={heroImages} isAutoSlide client:visible /> -->
-    <!-- <Picture
-      src={heroImg}
-      alt="lady in a stone massage"
-      formats={['avif', 'webp']}
-      pictureAttributes={{ class: 'cs-picture hidden' }}
-      loading="eager"
-    /> -->
   </section>
-  <!-- Popup Overlay -->
-          <div id="popup" class="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-[9999] hidden">
-            <div class="p-6 rounded-xl shadow-xl w-11/12 max-w-md" style="background: rgba(255, 255, 255, 0.3);">
-              <div class="flex flex-col gap-4">
-                <a
-                  href="https://www.massagebook.com/therapists/StoneMassage?src=external"
-                  class="cs-button-solid rounded-full text-center text-white leading-snug p-4 text-[.6rem] md:text-[1rem]"
-                >
-                  Book In-Clinic Appointment (Online)
-                </a>
-                <a
-                  href="tel:587-938-0458"
-                  class="cs-button-solid rounded-full text-center text-white leading-snug p-4 text-[.6rem] md:text-[1rem]"
-                >
-                  Call to Book In-Home Massage
-                </a>
-                <button
-                  onclick="document.getElementById('popup').classList.add('hidden')"
-                  class="text-sm text-white-500 hover:text-white mt-2"
-                >
-                  Close
-                </button>
-              </div>
-            </div>
-          </div>
   <!-- ============================================ -->
   <!--                  Introduction                -->
   <!-- ============================================ -->
@@ -287,7 +211,7 @@ posts.sort(
   <!-- ============================================ -->
    <section class="mobile mt-8" >
       <div class="w-5/6 flex flex-col justify-center items-center " style="margin: auto;">
-        <h1 class="text-3xl text-center md:text-5xl text-[var(--primary)]" style="animation: blink 1s step-start infinite;">Mobile Massage Available– We Come to You!</h1>
+        <h1 class="text-3xl text-center md:text-5xl text-[var(--primary)]">Mobile Massage Available– We Come to You!</h1>
         <p class="text-left mt-2">Experience the ultimate relaxation without leaving your home.
           Our mobile massage service brings the full spa experience right to your doorstep —
           complete with a professional massage table, cozy warm towels, soothing lotion, and optional add-ons like:
@@ -334,12 +258,12 @@ posts.sort(
         </div>
         <a
           href="tel:587-938-0458"
-          class="h-auto cs-button-solid w-[300px] rounded-full before:rounded-[inherit] mt-8 text-center text-white leading-snug p-4 text-[.6rem] md:text-[1rem] lg:w-[220px] xl:w-[230px]"
+          class="h-auto cs-button-solid w-[300px] rounded-full before:rounded-[inherit] mt-8 text-center text-(--on-action) leading-snug p-4 text-[.6rem] md:text-[1rem] lg:w-[220px] xl:w-[230px]"
           >
           <span class="text-[1rem]">Call for Mobile Massage</span> 
 
-          <Icon name="fa7-solid:phone" class="text-[#28a745] ml-1 size-5 " />
-          <!-- <i class="fas fa-phone text-[#28a745] ml-1"></i> -->
+          <Icon name="fa7-solid:phone" class="text-current ml-1 size-5 " />
+          <!-- <i class="fas fa-phone text-current ml-1"></i> -->
          </a>
       </div>
    </section>
@@ -429,7 +353,7 @@ posts.sort(
             height="77"
           />
         </div>
-        <a href="/services" class="cs-button-solid rounded-button"
+        <a href="/#massage-services" class="cs-button-solid rounded-button"
           >Our Services</a
         >
       </div>
@@ -440,7 +364,7 @@ posts.sort(
   <!-- ============================================ -->
   <section id="sbs-1067" class="glass-bg py-16">
     <div class="cs-container">
-      <h2 class="cs-title">Why Choose Healing Touch Massage Therapy?</h2>
+      <h2 class="cs-title">Why Choose Stone Massage?</h2>
       <div class="cs-content">
         <div>
           <div class="content">
@@ -612,8 +536,8 @@ posts.sort(
         <h2 class="cs-title">Reap the Benefits of Massage Therapy Today</h2>
         <p class="cs-text">
           Massage therapy is a proven way to relieve stress, ease muscle
-          tension, and improve overall well-being. At Healing Touch Massage
-          Therapy, we offer various techniques tailored to your needs, from
+          tension, and improve overall well-being. At Stone Massage,
+          we offer various techniques tailored to your needs, from
           relaxation to therapeutic treatments.
         </p>
         <p class="cs-text">
@@ -650,205 +574,9 @@ posts.sort(
   <CTA />
 </BaseLayout>
 
-<script>
-  // TypeScript type definitions
-  interface ScrollState {
-    currentIndex: number;
-    totalItems: number;
-  }
 
-  // Get DOM elements with appropriate type assertions
-  const scrollLeftBtn = document.getElementById(
-    'scrollLeft'
-  ) as HTMLButtonElement | null;
-  const scrollRightBtn = document.getElementById(
-    'scrollRight'
-  ) as HTMLButtonElement | null;
-  const cardsContainer = document.getElementById(
-    'reviews-container'
-  ) as HTMLDivElement | null;
-
-  // Initialize state to track current position
-  const state: ScrollState = {
-    currentIndex: 0,
-    totalItems: 3, // Fixed to your items
-  };
-
-  // Show/hide arrows based on current index
-  function updateArrowVisibility(): void {
-    if (!scrollLeftBtn || !scrollRightBtn) return;
-
-    // Hide left arrow if at the beginning
-    scrollLeftBtn.classList.toggle('invisible', state.currentIndex === 0);
-
-    // Hide right arrow if at the end
-    scrollRightBtn.classList.toggle(
-      'invisible',
-      state.currentIndex === state.totalItems - 1
-    );
-
-    // In desktop mode (lg breakpoint), hide both arrows since all items are visible
-    const isDesktop = window.matchMedia('(min-width: 49rem)').matches;
-    if (isDesktop) {
-      scrollLeftBtn.classList.add('hidden');
-      scrollRightBtn.classList.add('hidden');
-    } else {
-      scrollLeftBtn.classList.remove('hidden');
-      scrollRightBtn.classList.remove('hidden');
-    }
-  }
-
-  // Scroll to a specific item by index
-  function scrollToIndex(index: number): void {
-    if (!cardsContainer) return;
-
-    // Ensure index is within bounds
-    index = Math.max(0, Math.min(index, state.totalItems - 1));
-
-    // Calculate the target scroll position
-    const itemWidth = cardsContainer.clientWidth;
-    const targetScroll = index * itemWidth;
-
-    // Perform the scroll with animation
-    cardsContainer.scrollTo({
-      left: targetScroll,
-      behavior: 'smooth',
-    });
-
-    // Update the state
-    state.currentIndex = index;
-
-    // Update visibility after scrolling
-    updateArrowVisibility();
-  }
-
-  // Set up event listeners
-  if (scrollLeftBtn) {
-    scrollLeftBtn.addEventListener('click', () => {
-      scrollToIndex(state.currentIndex - 1);
-    });
-  }
-
-  if (scrollRightBtn) {
-    scrollRightBtn.addEventListener('click', () => {
-      scrollToIndex(state.currentIndex + 1);
-    });
-  }
-
-  if (cardsContainer) {
-    // When user manually scrolls, update our index accordingly
-    cardsContainer.addEventListener('scroll', () => {
-      if (!cardsContainer) return;
-
-      const itemWidth = cardsContainer.clientWidth;
-      const scrollPosition = cardsContainer.scrollLeft;
-
-      // Calculate current index based on scroll position
-      const newIndex = Math.round(scrollPosition / itemWidth);
-
-      if (newIndex !== state.currentIndex) {
-        state.currentIndex = newIndex;
-        updateArrowVisibility();
-      }
-    });
-
-    // Handle window resize
-    window.addEventListener('resize', () => {
-      // Re-scroll to maintain position after resize
-      scrollToIndex(state.currentIndex);
-      updateArrowVisibility();
-    });
-
-    // Initial check
-    updateArrowVisibility();
-  }
-
-  // Enhanced parallax effect with smooth scrolling
-  document.addEventListener('DOMContentLoaded', () => {
-    // Array of sections with parallax
-    const parallaxSections = [
-      // for speed lower is slower
-      { element: document.querySelector('#hero'), speed: 0.5 },
-      { element: document.querySelector('#massage-services'), speed: 0.3 }, // Slower speed for variety
-    ];
-
-    const applyParallax = () => {
-      const isDesktop = window.matchMedia('(min-width: 81.25em)').matches;
-
-      parallaxSections.forEach((section) => {
-        if (!section.element) return;
-
-        if (isDesktop) {
-          const handleScroll = () => {
-            const scrollPosition = window.scrollY;
-            const sectionRect = section.element?.getBoundingClientRect();
-            const sectionTop = (sectionRect?.top || 0) + scrollPosition;
-            const offset = (scrollPosition - sectionTop) * section.speed;
-
-            // Only apply parallax when section is in view
-            if (
-              scrollPosition >= sectionTop - window.innerHeight &&
-              scrollPosition <= sectionTop + (sectionRect?.height || 0)
-            ) {
-              (section.element as HTMLElement).style.backgroundPositionY =
-                `${offset}px`;
-            }
-          };
-
-          // Throttle scroll events
-          let ticking = false;
-          window.addEventListener('scroll', () => {
-            if (!ticking) {
-              window.requestAnimationFrame(() => {
-                handleScroll();
-                ticking = false;
-              });
-              ticking = true;
-            }
-          });
-
-          handleScroll(); // Initial position
-        } else {
-          (section.element as HTMLElement).style.backgroundPositionY = 'center'; // Reset for mobile
-        }
-      });
-    };
-
-    // Initial call and resize listener
-    applyParallax();
-    window.addEventListener('resize', applyParallax);
-
-    // Update existing scroll buttons for smooth behavior
-    const scrollLeftBtn = document.getElementById('scrollLeft');
-    const scrollRightBtn = document.getElementById('scrollRight');
-    const cardsContainer = document.getElementById('cardsContainer');
-
-    if (cardsContainer) {
-      // Enhance existing scrollToIndex function
-      function scrollToIndex(index: number) {
-        if (!cardsContainer) return;
-        index = Math.max(0, Math.min(index, state.totalItems - 1));
-        const itemWidth = cardsContainer.clientWidth;
-        const targetScroll = index * itemWidth;
-
-        cardsContainer.scrollTo({
-          left: targetScroll,
-          behavior: 'smooth',
-        });
-
-        state.currentIndex = index;
-        updateArrowVisibility();
-      }
-    }
-  });
-</script>
 
 <style lang="less">
-  /* Add smooth scrolling to the entire HTML document */
-  html {
-    scroll-behavior: smooth;
-  }
-
   /*-- -------------------------- -->
 <---           Hero             -->
 <--- -------------------------- -*/
@@ -866,38 +594,14 @@ posts.sort(
       overflow: hidden;
       /* Add background attachment for mobile */
 /*      background: url('/assets/images/hero-img.avif') center/cover no-repeat; */
-      background-attachment: scroll; /* Default for mobile */
+      background-attachment: scroll;
 
-      .cs-picture {
-        width: 100%;
-        height: 100%;
-        display: block;
+      &:before {
+        content: '';
         position: absolute;
-        top: 0;
-        left: 0;
-        z-index: -2;
-
-        &:before {
-          content: '';
-          width: 100%;
-          height: 100%;
-          opacity: 0.7;
-          display: block;
-          position: absolute;
-          top: 0;
-          left: 0;
-          z-index: 1;
-          pointer-events: none;
-        }
-
-        img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          position: absolute;
-          top: 0;
-          left: 0;
-        }
+        inset: 0;
+        background: rgba(0, 0, 0, 0.65);
+        pointer-events: none;
       }
 
       .cs-container {
@@ -909,6 +613,7 @@ posts.sort(
         /* changes on tablet */
         padding: clamp(9em, 25.95vw, 17.5em) 0;
         position: relative;
+        z-index: 1;
 
         &:before {
           /* Left Line */
@@ -950,9 +655,7 @@ posts.sort(
 
       .cs-topper {
         text-align: center;
-        //  margin-bottom: (16/16rem);
-        // color: var(--primary);
-        color: var(--medium);
+        color: var(--bodyTextColorWhite);
       }
 
       .cs-title {
@@ -976,63 +679,13 @@ posts.sort(
         height: initial;
         margin-bottom: calc(16 / 16 * 1rem);
         padding: 0 1rem;
-        color: var(--bodyTextColorWhite);
+        color: var(--on-action);
         border-radius: calc(32 / 16 * 1rem);
         &:before {
           border-radius: calc(32 / 16 * 1rem);
         }
       }
 
-      .cs-button-transparent {
-        font-size: (16/16rem);
-        font-weight: 700;
-        /* 46px - 56px */
-        line-height: clamp(2.875em, 5.5vw, 3.5em);
-        text-decoration: none;
-        //  width: (180/16rem);
-        width: max-content;
-        /* 46px - 56px */
-        height: clamp(2.875em, 5.5vw, 3.5em);
-        margin: 0 (8/16rem);
-        box-sizing: border-box;
-        padding: 0 0.5rem;
-        color: #fff;
-        background-color: transparent;
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-        z-index: 1;
-
-        &:before {
-          content: '';
-          background: #000;
-          opacity: 1;
-          display: block;
-          position: absolute;
-          /* so it sits on top of the border */
-          top: -1px;
-          right: -1px;
-          bottom: -1px;
-          left: -1px;
-          z-index: -1;
-          /* this is what creates the grow affect on hover */
-          transform: scaleX(0);
-          transition: transform 0.3s;
-          transform-origin: left;
-        }
-
-        &:hover {
-          &:before {
-            transform: scaleX(1);
-          }
-        }
-
-        .cs-img {
-          margin-right: (12/16rem);
-          display: block;
-        }
-      }
     }
   }
 
@@ -1096,22 +749,6 @@ posts.sort(
       background-size: cover;
       background-repeat: no-repeat;
       background-attachment: fixed; /* Enable parallax on desktop */
-      /* Add transform for smoother parallax */
-      transform: translate3d(0, 0, 0); /* Enable hardware acceleration */
-      will-change: background-position; /* Optimize performance */
-    }
-  }
-
-  /* Dark Mode */
-  @media only screen and (min-width: 0em) {
-    body.dark-mode {
-      #hero {
-        .cs-background {
-          &:before {
-            opacity: 0.8;
-          }
-        }
-      }
     }
   }
 
@@ -1204,7 +841,8 @@ posts.sort(
       margin-top: (-167/16em);
       margin-bottom: (50/16em);
       padding: 5rem (20/16em) (50/16em);
-      background: #fff;
+      color: var(--headerColor);
+      background: var(--surface);
       box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.05);
       border-top: (6/16em) solid var(--primary);
       border-radius: (5/16em);
@@ -1265,10 +903,8 @@ posts.sort(
           line-height: 27/20em;
           text-align: center;
           margin-bottom: 13/20em;
-          color: #1a1a1a;
-          backdrop-filter: blur(20px);
-          //background-color: #d6f1f5b3;
-          background-color: rgba(var(--secondary-rgb), 0.3);
+          color: var(--service-text);
+          background-color: var(--service-surface);
           border-top-left-radius: 8px;
           border-top-right-radius: 8px;
           width: 75%;
@@ -1336,7 +972,8 @@ posts.sort(
       margin-top: (-167/16em);
       margin-bottom: (50/16em);
       padding: 5rem (20/16em) (50/16em);
-      background: #fff;
+      color: var(--bodyTextColor);
+      background: var(--surface);
       box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.05);
       border-top: (6/16em) solid var(--primary);
       border-radius: (5/16em);
@@ -1344,73 +981,12 @@ posts.sort(
       z-index: 100;
       gap: 0.5rem;
 
-      .cs-header {
-        position: absolute;
-        top: 2rem;
-        left: 50%;
-        transform: translateX(-50%);
-        font-size: var(--headerFontSize);
-        font-weight: 500;
-      }
-      .card {
-        width: 100%;
-        position: relative;
-        max-width: (357/16em);
-        margin: auto;
-        margin-bottom: (50/16em);
-        // display: block;
-        display: grid;
-        grid-template-rows: min-content 1fr;
-
-        // &:last-of-type {
-        //   margin-bottom: 0;
-        // }
-
-        picture {
-          width: 100%;
-          height: 100%;
-          //   margin: auto;
-          //   margin-bottom: (23/16em);
-          background: var(--primary);
-          border-radius: 50%;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-
-          img {
-            width: 100%;
-            height: 100%;
-            border-top-left-radius: 8px;
-            border-top-right-radius: 8px;
-            aspect-ratio: 1/1;
-            object-fit: cover;
-          }
-        }
-
-        h3 {
-          position: absolute;
-          bottom: 0;
-          left: 50%;
-          transform: translateX(-50%);
-          font-size: (24/16em);
-          font-weight: 500;
-          line-height: 27/20em;
-          text-align: center;
-          margin-bottom: 13/20em;
-          color: #1a1a1a;
-          backdrop-filter: blur(20px);
-          //background-color: #d6f1f5b3;
-          background-color: rgba(var(--secondary-rgb), 0.3);
-          border-top-left-radius: 8px;
-          border-top-right-radius: 8px;
-          width: 75%;
-          min-height: 25%;
-        }
+      h1 {
+        color: var(--headerColor);
       }
     }
   }
 
-  /* Inbetween */
   @media only screen and (min-width: 768px) {
     .mobile {
       font-size: ~'min(1.8vw, 1em)';
@@ -1418,65 +994,12 @@ posts.sort(
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-
-      .cs-header {
-        top: 0.5rem;
-      }
-
-      .card {
-        max-width: (325/16em);
-        margin: 0;
-        grid-template-rows: min-content;
-
-        overflow: hidden;
-        picture,
-        h3 {
-          transition: transform 300ms ease;
-        }
-
-        &:hover {
-          picture {
-            transform: scale(1.1);
-          }
-
-          h3 {
-            transform: translateX(-50%);
-          }
-        }
-      }
     }
   }
 
-  /* Large Desktop */
   @media only screen and (min-width: 1300px) {
     .mobile {
       padding: 5rem (80/16em) (50/16em);
-      .cs-header {
-        top: 0;
-      }
-
-      .card {
-        max-width: (357/16em);
-      }
-    }
-  }
-
-  /* Dark mode */
-  @media only screen and (min-width: 0em) {
-    body.dark-mode {
-      #services {
-        background: var(--medium);
-
-        picture {
-          background: var(--primaryDark);
-        }
-
-        h3 {
-          font-weight: 500;
-          // color: #fff;
-          //background-color: var(--medium);
-        }
-      }
     }
   }
 
@@ -1887,131 +1410,6 @@ posts.sort(
   }
 
   /*-- -------------------------- -->
-<---          Gallery           -->
-<--- -------------------------- -*/
-
-  /* Mobile - 360px - Contains hover animation */
-  @media only screen and (min-width: 0em) {
-    #gallery {
-      text-align: center;
-      padding: var(--sectionPadding);
-      position: relative;
-      overflow: hidden;
-      .cs-container {
-        width: 100%;
-        max-width: (1322/16em);
-        margin: auto;
-      }
-
-      .cs-topper {
-        text-align: center;
-        margin-bottom: (16/16rem);
-      }
-
-      .cs-title {
-        text-align: center;
-        max-width: (621/16rem);
-        margin-bottom: (40/16rem);
-      }
-
-      .cs-image-group {
-        font-size: ~'min(1.1vw, 1em)';
-        width: 100%;
-        max-width: (1322/16em);
-        margin: 0 auto (60/16rem);
-        padding: 0;
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
-        gap: (30/16em);
-      }
-
-      .cs-row {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-        gap: (30/16em);
-      }
-
-      .cs-picture {
-        display: block;
-        position: relative;
-        img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          position: absolute;
-          top: 0;
-          left: 0;
-        }
-      }
-
-      .cs-row-1 {
-        .cs-picture1 {
-          width: (420/16em);
-          height: (567/16em);
-        }
-
-        .cs-picture2 {
-          width: (420/16em);
-          height: (629/16em);
-        }
-
-        .cs-picture3 {
-          width: (420/16em);
-          height: (512/16em);
-        }
-      }
-
-      .cs-row-2 {
-        .cs-picture1 {
-          width: (420/16em);
-          height: (492/16em);
-        }
-
-        .cs-picture2 {
-          width: (420/16em);
-          height: (517/16em);
-        }
-
-        .cs-picture3 {
-          width: (420/16em);
-          height: (629/16em);
-        }
-      }
-
-      .cs-row-3 {
-        .cs-picture1 {
-          width: (420/16em);
-          height: (625/16em);
-        }
-
-        .cs-picture2 {
-          width: (420/16em);
-          height: (452/16em);
-        }
-
-        .cs-picture3 {
-          width: (420/16em);
-          height: (629/16em);
-        }
-      }
-    }
-  }
-
-  /* Dark mode */
-  @media only screen and (min-width: 0em) {
-    body.dark-mode {
-      #gallery {
-        .cs-title {
-          color: var(--bodyTextColorWhite);
-        }
-      }
-    }
-  }
-
-  /*-- -------------------------- -->
 <---       Why Choose Us?       -->
 <--- -------------------------- -*/
 
@@ -2128,6 +1526,17 @@ posts.sort(
 
   /*custom for massage services*/
   #massage-services {
+    isolation: isolate;
+
+    &:before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.65);
+      z-index: -1;
+      pointer-events: none;
+    }
+
     .cs-title {
       color: var(--bodyTextColorWhite);
     }
@@ -2141,12 +1550,12 @@ posts.sort(
       background-size: cover;
       background-repeat: no-repeat;
       background-attachment: fixed; /* Enable parallax on desktop */
-      transform: translate3d(0, 0, 0); /* Hardware acceleration */
-      will-change: background-position; /* Optimize performance */
     }
   }
-  @keyframes blink {
-    0%,100% {opacity: 1;}
-    50%{opacity: 0;}
+  @media (prefers-reduced-motion: reduce) {
+    #hero,
+    #massage-services {
+      background-attachment: scroll;
+    }
   }
 </style>

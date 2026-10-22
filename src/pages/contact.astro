@@ -32,111 +32,29 @@ const optimizedImage = await getOptimizedImage(landingImage);
             and feel rejuvenated.
           </p>
           <div class="flex flex-col justify-center items-center sm:flex-row">
-            <div class="h-[254px] flex flex-col justify-between items-center text-center sm:w-3/4" style="background: white;
-              border-radius: 1rem;
-              box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-              max-width: 300px;
-              padding: 2rem;
-              margin: 1rem;">
-              <h1 class="font-bold text-xl mb-4">📞 Mobile Massage</h1>
-              <h2 >Call now to book a mobile massage session in your area.</h2>
+            <div class="booking-card flex flex-col justify-between items-center text-center sm:w-3/4">
+              <h3 class="font-bold text-xl mb-4">📞 Mobile Massage</h3>
+              <p>Call now to book a mobile massage session in your area.</p>
               <a
                 href="tel:587-938-0458"
-                class="cs-button-solid rounded-full text-center text-white leading-snug pt-4 pb-4 text-[.6rem] md:text-[1rem]"
-                style="margin: 1rem  0 0 0;width: 100%;"
+                class="cs-button-solid rounded-full text-center leading-snug pt-4 pb-4 text-base"
               >
                 Call Now
               </a>
-              <button
-                onclick="document.getElementById('popup').classList.add('hidden')"
-                class="text-sm text-white-500 hover:text-white mt-2 min-w-[400px]"
-              ></button>
             </div>
-          
-          
-            <div class="h-[254px] flex flex-col justify-center items-center text-center sm:w-3/4" style="background: white;
-              border-radius: 1rem;
-              box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-              max-width: 300px;
-              padding: 2rem;
-              margin: 1rem;">
-              <h1 class="font-bold text-xl mb-4">🏥 In-Clinic Massage</h1>
-              <h2 >Visit our clinic and enjoy a peaceful massage. Book your session online today.</h2>
+            <div class="booking-card flex flex-col justify-center items-center text-center sm:w-3/4">
+              <h3 class="font-bold text-xl mb-4">🏥 In-Clinic Massage</h3>
+              <p>Visit our clinic and enjoy a peaceful massage. Book your session online today.</p>
               <a
-                href="tel:587-938-0458"
-                class="cs-button-solid rounded-full text-center text-white leading-snug pt-4 pb-4 text-[.6rem] md:text-[1rem]"
-                style="margin: 1rem  0 0 0;width: 100%;"
+                href="https://www.massagebook.com/therapists/StoneMassage?src=external"
+                class="cs-button-solid rounded-full text-center leading-snug pt-4 pb-4 text-base"
               >
                 Book Online
               </a>
-              <button
-                onclick="document.getElementById('popup').classList.add('hidden')"
-                class="text-sm text-white-500 hover:text-white mt-2 min-w-[400px]"
-              ></button>
             </div>
           </div>
         </div>
         
-      <!-- <form id="cs-form" name="Contact Form" method="post">
-        <div class="cs-content">
-          <span class="cs-topper">Contact</span>
-          <h2 class="cs-title">Get in Touch</h2>
-          <p class="cs-text">
-            Need to relax and recharge? Contact us today to book your massage
-            and feel rejuvenated.
-          </p>
-        </div>
-        <label>
-          Name
-          <input
-            required
-            type="text"
-            id="name"
-            name="name"
-            placeholder="Name"
-          />
-        </label>
-        <label>
-          Email
-          <input
-            required
-            type="text"
-            id="email"
-            name="email"
-            placeholder="Email"
-          />
-        </label>
-        <label>
-          Phone
-          <input
-            required
-            type="text"
-            id="phone"
-            name="phone"
-            placeholder="Phone"
-          />
-        </label>
-        <label>
-          How Did You Find Us
-          <input
-            type="text"
-            id="find"
-            name="find-us"
-            placeholder="How did you find us?"
-          />
-        </label>
-        <label class="cs-label-message">
-          Message
-          <textarea
-            required
-            name="Message"
-            id="message"
-            placeholder="Write message..."></textarea>
-        </label>
-        <button class="cs-button-solid rounded-button" type="submit"
-          >Submit Message</button
-        >
-      </form> -->
       <div class="cs-right-section">
         <!--Email-->
         <span class="cs-header">Email</span>
@@ -230,53 +148,24 @@ const optimizedImage = await getOptimizedImage(landingImage);
           margin-bottom: clamp(2.5rem, 6.3vw, 3rem);
         }
 
-        #cs-form {
-          margin-bottom: (40/16rem);
-          label {
-            font-size: (16/16rem);
-            font-weight: 700;
-            line-height: 1.5em;
-            /* 12px - 20px */
-            margin-bottom: clamp(0.75rem, 1.3em, 1.25rem);
+
+        .booking-card {
+          min-height: (254/16rem);
+          max-width: (300/16rem);
+          margin: 1rem;
+          padding: 2rem;
+          color: var(--bodyTextColor);
+          background: var(--surface);
+          border-radius: 1rem;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+          h3 {
             color: var(--headerColor);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: flex-start;
-          }
-
-          .cs-label-message {
-            /* 32px - 48px */
-            margin-bottom: clamp(2rem, 6.3vw, 3rem);
-          }
-
-          input,
-          textarea {
-            font-size: (16/16rem);
-            width: 100%;
-            height: (64/16rem);
-            margin-top: (4/16rem);
-            /* prevents border & padding from affecting height */
-            box-sizing: border-box;
-            padding-left: (20/16rem);
-            border: 1px solid #b4b2c7;
-            border-radius: (8/16rem);
-            transition: border 0.3s;
-
-            &:hover {
-              border: 1px solid var(--primary);
-            }
-          }
-
-          textarea {
-            font-family: inherit;
-            min-height: (120/16rem);
-            padding-top: (20/16rem);
           }
 
           .cs-button-solid {
             width: 100%;
-            border: none;
+            margin-top: 1rem;
           }
         }
 
@@ -386,26 +275,6 @@ const optimizedImage = await getOptimizedImage(landingImage);
       }
     }
 
-    /* Tablet - 700px */
-    @media only screen and (min-width: 43.75em) {
-      #cs-contact {
-        #cs-form {
-          display: flex;
-          justify-content: space-between;
-          align-items: flex-start;
-          flex-wrap: wrap;
-
-          label {
-            width: 48%;
-          }
-
-          .cs-label-message {
-            width: 100%;
-          }
-        }
-      }
-    }
-
     /* Small Desktop - 1024px */
     @media only screen and (min-width: 64em) {
       #cs-contact {
@@ -417,12 +286,6 @@ const optimizedImage = await getOptimizedImage(landingImage);
           gap: (80/16rem);
         }
 
-        #cs-form {
-          max-width: (630/16rem);
-          label {
-            width: 100%;
-          }
-        }
 
         .cs-right-section {
           width: 40%;
@@ -449,17 +312,6 @@ const optimizedImage = await getOptimizedImage(landingImage);
     /* Small Desktop - 1300px */
     @media only screen and (min-width: 81.25em) {
       #cs-contact {
-        #cs-form {
-          column-gap: (0/16rem);
-          label {
-            width: 48%;
-            max-width: (305/16rem);
-          }
-
-          .cs-label-message {
-            max-width: 100%;
-          }
-        }
 
         .cs-right-section {
           height: (578/16rem);
@@ -478,20 +330,6 @@ const optimizedImage = await getOptimizedImage(landingImage);
 
           .cs-topper {
             color: var(--primaryLight);
-          }
-
-          #cs-form {
-            label,
-            input,
-            textarea {
-              color: var(--bodyTextColorWhite);
-              background-color: transparent;
-
-              &::placeholder {
-                /* lighten up the color of the text by 40%*/
-                filter: brightness(1.4);
-              }
-            }
           }
 
           .cs-bg-picture {

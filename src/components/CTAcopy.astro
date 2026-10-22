@@ -1,9 +1,4 @@
 ---
-// Import the component and all the images you want to use with it
-import CSPicture from '@components/TemplateComponents/CSPicture.astro';
-import mobileImage from '@assets/images/CTA/construction-m.jpg';
-import desktopImage from '@assets/images/CTA/cabinets2.jpg';
-import fallbackImage from '@assets/images/CTA/cabinets2.jpg';
 import ctaBg from '@assets/images/CTA/living-room.jpg';
 
 import { Picture } from 'astro:assets';
@@ -18,9 +13,9 @@ import { Picture } from 'astro:assets';
     <p>Your Wellness Starts Here – Experience the Benefits of Massage!</p>
      <a
           href="tel:587-938-0458"
-          class="h-auto cs-button-solid w-[300px] rounded-full mt-8 text-center text-white leading-snug p-4 text-[.6rem] md:text-[1rem] lg:w-[220px] xl:w-[230px]"
+          class="h-auto cs-button-solid w-[300px] rounded-full mt-8 text-center leading-snug p-4 text-[.6rem] md:text-[1rem] lg:w-[220px] xl:w-[230px]"
           >
-          <span class="text-[1rem]">Call for Mobile Massage</span> <i class="fas fa-phone text-[#28a745] ml-1"></i>
+          <span class="text-[1rem]">Call for Mobile Massage</span> <i class="fas fa-phone ml-1" aria-hidden="true"></i>
          </a>  
   </div>
 
@@ -28,31 +23,9 @@ import { Picture } from 'astro:assets';
     src={ctaBg}
     alt="stone arrangement with rolled towel"
     formats={['avif', 'webp']}
+    loading="lazy"
+    decoding="async"
   />
-  <!-- <CSPicture
-    mobileImgUrl={mobileImage}
-    mobileMediaWidth="600px"
-    desktopImgUrl={desktopImage}
-    desktopMediaWidth="601px"
-    fallbackImgUrl={fallbackImage}
-    alt=""
-  /> -->
-  <!-- <picture>
-    <source
-      media="(max-width: 600px)"
-      srcset="/assets/images/cabinets2-m.jpg"
-    />
-    <source media="(min-width: 601px)" srcset="/assets/images/cabinets2.jpg" />
-    <img
-      aria-hidden="true"
-      decoding="async"
-      src="/assets/images/cabinets2.jpg"
-      alt="kitchen cabinets"
-      loading="lazy"
-      width="2500"
-      height="1667"
-    />
-  </picture> -->
 </section>
 
 <style lang="less">
@@ -61,21 +34,24 @@ import { Picture } from 'astro:assets';
     #cta {
       padding: (50/16rem) 0;
       position: relative;
+      isolation: isolate;
 
       &:before {
-        //content: '';
+        content: '';
         width: 100%;
         height: 100%;
-        //background: #000;
-        //opacity: 0.7;
+        background: rgb(18 17 15 / 70%);
+        pointer-events: none;
         display: block;
         position: absolute;
         top: 0;
         left: 0;
-        z-index: -1;
+        z-index: 1;
       }
 
       .container {
+        position: relative;
+        z-index: 2;
         text-align: center;
       }
 
@@ -85,11 +61,11 @@ import { Picture } from 'astro:assets';
         line-height: 58/48;
         text-align: center;
         margin-bottom: (36/16rem);
-        color: #fff;
+        color: var(--bodyTextColorWhite);
         position: relative;
       }
       .cs-button-solid {
-        color: var(--bodyTextColorWhite);
+        color: var(--on-action);
         border-radius: calc(32 / 16 * 1rem);
         &:before {
           border-radius: calc(32 / 16 * 1rem);
@@ -102,7 +78,7 @@ import { Picture } from 'astro:assets';
         max-width: (598/16rem);
         margin: auto;
         margin-bottom: (36/16rem);
-        color: #fff;
+        color: var(--bodyTextColorWhite);
         opacity: 1;
       }
     }
@@ -121,7 +97,9 @@ import { Picture } from 'astro:assets';
       margin-top: (100/16rem);
       position: relative;
       &:before {
-        display: none;
+        width: 90.0625%;
+        left: 50%;
+        transform: translateX(-50%);
       }
       &:after {
         content: '';
@@ -163,7 +141,7 @@ import { Picture } from 'astro:assets';
     position: absolute;
     top: 0;
     left: 0;
-    z-index: -2;
+    z-index: 0;
 
     img {
       width: 100%;
@@ -181,18 +159,6 @@ import { Picture } from 'astro:assets';
       left: 50%;
       transform: translateX(-50%);
 
-      &:before {
-        //content: '';
-        width: 100%;
-        height: 100%;
-        background: #000;
-        opacity: 0.7;
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 1;
-      }
     }
   }
 </style>

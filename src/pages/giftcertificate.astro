@@ -1,17 +1,13 @@
 ---
-import BaseLayout from 'src/layouts/BaseLayout.astro';
 import client from '@data/client.json';
-import Landing from '@components/Landing.astro';
 
 import imgHero from '@assets/images/gc-hero.jpg';
-import ctaBg from '@assets/images/CTA-Background-Image.jpg';
 
 import { Picture } from 'astro:assets';
 import Review from "../components/Review.astro";
 
-// Optimize our landing image and pass it as props to the BaseLayout (for preloading) and Landing (for rendering)
 import { getOptimizedImage } from '@js/utils';
-import landingImage from '@assets/images/stone-massage-background1.png'; // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
+import landingImage from '@assets/images/stone-massage-background1.png';
 import SecondaryLayout from 'src/layouts/SecondaryLayout.astro';
 const optimizedImage = await getOptimizedImage(landingImage);
 ---
@@ -28,17 +24,16 @@ const optimizedImage = await getOptimizedImage(landingImage);
     <div class="cs-container">
       <div class="cs-flex-group">
         <span class="cs-topper">Hot Stone Massage - Edmonton</span>
-        <h1 class="cs-title shadow-text-lg">Give the Gift of Relaxation — Massage Gift Certificates in  Edmonton</h1>
+        <h1 class="cs-title shadow-text-lg">Give the Gift of Relaxation: Massage Gift Certificates in Edmonton</h1>
         <p class="cs-text mt-28 shadow-text-lg">
-          Surprise your loved ones with the ultimate wellness gift. Choose a 1-hour or 2-hour massage certificate and let them experience expert care and deep relaxation.
+          Give someone time to relax. Call Stone Massage to discuss the current gift certificate options.
         </p>
-        <!-- <a href="/about" class="cs-button-solid">Call Now (780-123-4567)</a> -->
         <a
-          href="#"
-          class="cs-button-solid w-[300px]  rounded-full text-center text-white leading-snug p-4 text-[.6rem] md:text-[1rem] lg:w-[230px] lg:mt-8"
-          >
-          <span class="text-[1rem]">Buy a Gift Certificate</span> <i class="fas fa-calendar text-[#28a745]"></i>
-          </a>
+          href={`tel:${client.phoneForTel.trim()}`}
+          class="cs-button-solid rounded-full text-center lg:mt-8"
+        >
+          Call about gift certificates
+        </a>
       </div>
     </div>
 
@@ -196,19 +191,20 @@ const optimizedImage = await getOptimizedImage(landingImage);
         <div class="cs-content">
             <span class="cs-topper">Pick the Perfect Massage Gift</span>
             <h2 class="cs-title">Gift Certificate Options</h2>
+            <p class="cs-text">Existing certificate artwork is shown for reference. Please confirm current pricing, terms, and purchase options by phone.</p>
         </div>
         <div class="cs-gallery">
             <!--Picture 1-->
             <picture class="cs-image">
                 <source media="(max-width: 600px)" srcset="/assets/images/100gc.png">
                 <source media="(min-width: 601px)" srcset="/assets/images/100gc.png">
-                <img loading="lazy" decoding="async" src="/assets/images/100gc.png" alt="gallery" width="272" height="320">
+                <img loading="lazy" decoding="async" src="/assets/images/100gc.png" alt="Existing Stone Massage gift certificate artwork. Confirm current pricing and terms by phone." width="272" height="320">
             </picture>
             <!--Picture 2-->
             <picture class="cs-image">
                 <source media="(max-width: 600px)" srcset="/assets/images/200gc.png">
                 <source media="(min-width: 601px)" srcset="/assets/images/200gc.png">
-                <img loading="lazy" decoding="async" src="/assets/images/200gc.png" alt="gallery" width="272" height="320">
+                <img loading="lazy" decoding="async" src="/assets/images/200gc.png" alt="Existing Stone Massage gift certificate artwork. Confirm current pricing and terms by phone." width="272" height="320">
             </picture>
         </div>
     </div>
@@ -243,27 +239,27 @@ const optimizedImage = await getOptimizedImage(landingImage);
                 <li class="cs-item">
                     <span class="cs-number">01</span>
                     <div class="cs-flex">
-                        <h3 class="cs-h3">Select Your Certificate</h3>
+                        <h3 class="cs-h3">Call Stone Massage</h3>
                         <p class="cs-item-text">
-                            Choose from our 1-hour or 2-hour massage gift options. 
+                            Call {client.phoneFormatted} to ask about gift certificates.
                         </p>
                     </div>
                 </li>
                 <li class="cs-item">
                     <span class="cs-number">02</span>
                     <div class="cs-flex">
-                        <h3 class="cs-h3">Purchase Securely</h3>
+                        <h3 class="cs-h3">Discuss Your Gift</h3>
                         <p class="cs-item-text">
-                            Safe and Secure Payment Through PayPal. 
+                            Ask about the current options and discuss a gift that suits the recipient.
                         </p>
                     </div>
                 </li>
                 <li class="cs-item">
                     <span class="cs-number">03</span>
                     <div class="cs-flex">
-                        <h3 class="cs-h3">Gift & Relax</h3>
+                        <h3 class="cs-h3">Confirm Purchase Details</h3>
                         <p class="cs-item-text">
-                            Gifted with care. Received with joy. 
+                            Confirm pricing, terms, and how to purchase during your call.
                         </p>
                     </div>
                 </li>
@@ -285,11 +281,11 @@ const optimizedImage = await getOptimizedImage(landingImage);
     <div class="cs-container">
         <div class="cs-content">
             <span class="cs-topper">Wellness, Wrapped & Ready</span>
-            <h2 class="cs-title">Give the gift of wellness today — instant purchase & easy gifting</h2>
+            <h2 class="cs-title">Give the gift of time to relax</h2>
             <p class="cs-text">
-                Because Wellness Is the Best Gift
+                Call {client.phoneFormatted} to discuss gift certificates and how to purchase.
             </p>
-            <a href="#" class="cs-button-solid">Buy a Gift Certificate</a>
+            <a href={`tel:${client.phoneForTel.trim()}`} class="cs-button-solid">Call about gift certificates</a>
         </div>
     </div>
     <!-- Background Image-->
@@ -302,7 +298,7 @@ const optimizedImage = await getOptimizedImage(landingImage);
                                 
 
   <style lang="less">
-    /* PAGE-SPECIFIC STYLES FOR THE CONTACT PAGE */
+    /* Gift certificate page styles */
 
 /*-- -------------------------- -->
 <---           Hero             -->
@@ -322,6 +318,16 @@ const optimizedImage = await getOptimizedImage(landingImage);
       /* Add background attachment for mobile */
       background: url('/assets/images/gc-hero.jpg') center/cover no-repeat;
       background-attachment: scroll; /* Default for mobile */
+      isolation: isolate;
+
+      &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        background: rgba(0, 0, 0, 0.72);
+        pointer-events: none;
+      }
 
       .cs-picture {
         width: 100%;
@@ -427,14 +433,22 @@ const optimizedImage = await getOptimizedImage(landingImage);
       }
 
       .cs-button-solid {
-        line-height: clamp(2.875em, 5.5vw, 3.5em);
-        height: initial;
+        width: min(100%, 22rem);
+        line-height: 1.5;
         margin-bottom: calc(16 / 16 * 1rem);
-        padding: 0 1rem;
-        color: var(--bodyTextColorWhite);
+        padding: 0.875rem 1.5rem;
+        color: var(--on-action);
+        background-color: var(--action-bg);
         border-radius: calc(32 / 16 * 1rem);
+
         &:before {
-          border-radius: calc(32 / 16 * 1rem);
+          background-color: var(--action-hover);
+          border-radius: inherit;
+        }
+
+        &:hover,
+        &:focus-visible {
+          color: var(--on-action);
         }
       }
 
@@ -526,9 +540,8 @@ const optimizedImage = await getOptimizedImage(landingImage);
       }
 
       .cs-button-solid {
-        // margin-right: (20/16rem);
         margin-bottom: 0;
-        padding: 0 1.875rem;
+        padding: 0.875rem 1.875rem;
       }
     }
   }
@@ -541,22 +554,17 @@ const optimizedImage = await getOptimizedImage(landingImage);
       background-size: cover;
       background-repeat: no-repeat;
       background-attachment: fixed; /* Enable parallax on desktop */
-      /* Add transform for smoother parallax */
-      transform: translate3d(0, 0, 0); /* Enable hardware acceleration */
-      will-change: background-position; /* Optimize performance */
     }
   }
 
-  /* Dark Mode */
-  @media only screen and (min-width: 0em) {
-    body.dark-mode {
-      #hero {
-        .cs-background {
-          &:before {
-            opacity: 0.8;
-          }
-        }
-      }
+  @media (prefers-reduced-motion: reduce) {
+    #hero {
+      background-attachment: scroll;
+    }
+
+    #hero .cs-button-solid::before,
+    #cta-51 .cs-button-solid::before {
+      transition: none;
     }
   }
                
@@ -764,7 +772,7 @@ const optimizedImage = await getOptimizedImage(landingImage);
     body.dark-mode {
         #RPsbs-1587, #RPsbsr-1587 {
             .cs-topper {
-                color: var(--primary);
+                color: var(--accent-text);
             }
 
             .cs-title,
@@ -846,7 +854,12 @@ const optimizedImage = await getOptimizedImage(landingImage);
         }
 
         .cs-topper {
-            color: var(--primary);
+            color: var(--accent-text);
+        }
+
+        .cs-text {
+            max-width: 46rem;
+            margin-top: 1rem;
         }
 
         .cs-title {
@@ -1064,7 +1077,7 @@ const optimizedImage = await getOptimizedImage(landingImage);
         }
 
         .cs-topper {
-            color: var(--secondary);
+            color: var(--accent-text);
         }
 
         .cs-title {
@@ -1101,8 +1114,7 @@ const optimizedImage = await getOptimizedImage(landingImage);
             font-size: clamp(3.0625rem, 6vw, 4.5rem);
             font-weight: 900;
             line-height: (19/16em);
-            color: var(--primary);
-            opacity: 0.2;
+            color: var(--accent-text);
             display: block;
         }
 
@@ -1164,7 +1176,7 @@ const optimizedImage = await getOptimizedImage(landingImage);
 @media only screen and (min-width: 0rem) {
     body.dark-mode {
         #steps-1893 {
-            background-color: rgba(0, 0, 0, 0.2);
+            background-color: var(--surface);
 
             .cs-picture {
                 border-color: var(--accent);
@@ -1180,8 +1192,7 @@ const optimizedImage = await getOptimizedImage(landingImage);
             }
 
             .cs-number {
-                color: var(--primaryLight);
-                opacity: 0.6;
+                color: var(--accent-text);
             }
 
             .cs-title, .cs-h3, .cs-item-text {
@@ -1230,6 +1241,10 @@ const optimizedImage = await getOptimizedImage(landingImage);
             align-items: center;
         }
 
+        .cs-topper {
+            color: var(--secondary);
+        }
+
         .cs-title {
             color: var(--bodyTextColorWhite);
         }
@@ -1251,10 +1266,12 @@ const optimizedImage = await getOptimizedImage(landingImage);
             font-weight: 700;
             text-align: center;
             margin: 0;
-            color: #fff;
+            color: var(--on-action);
             min-width: (150/16rem);
-            padding: 0 (24/16rem);
-            background-color: var(--primary);
+            max-width: 100%;
+            line-height: 1.5;
+            padding: 0.875rem (24/16rem);
+            background-color: var(--action-bg);
             border-radius: 3rem;
             display: inline-block;
             position: relative;
@@ -1266,19 +1283,24 @@ const optimizedImage = await getOptimizedImage(landingImage);
                 content: "";
                 position: absolute;
                 height: 100%;
-                width: 0%;
-                background: #000;
+                width: 100%;
+                background: var(--action-hover);
                 opacity: 1;
                 top: 0;
                 left: 0;
                 z-index: -1;
-                border-radius: 3rem;
-                transition: width 0.3s;
+                border-radius: inherit;
+                transform: scaleX(0);
+                transform-origin: left;
+                transition: transform 0.2s ease-out;
             }
 
-            &:hover {
+            &:hover,
+            &:focus-visible {
+                color: var(--on-action);
+
                 &:before {
-                    width: 100%;
+                    transform: scaleX(1);
                 }
             }
         }
@@ -1322,4 +1344,4 @@ const optimizedImage = await getOptimizedImage(landingImage);
                                                              
 
   </style>
-</BaseLayout>
+</SecondaryLayout>

@@ -22,10 +22,7 @@ const props = Astro.props as Props;
   <div
     id="announcement-bar"
     class="fixed top-0 left-0 z-50 flex h-10 w-full items-center overflow-hidden px-3 py-2 gap-2
-         bg-gradient-to-r from-[#b80d64] via-[#f3117e] to-[#b80d64]
-         text-white/95 backdrop-blur-sm
-         border-b border-white/10
-         dark:from-[#7a0a45] dark:via-[#a40e5e] dark:to-[#7a0a45] dark:text-white"
+         text-white backdrop-blur-sm border-b border-white/10"
   >
     <!-- Track -->
     <div
@@ -40,7 +37,7 @@ const props = Astro.props as Props;
       >
         <!-- FREE pill -->
         <span
-          class="flex items-center rounded-full bg-white text-[#f3117e] font-semibold
+          class="flex items-center rounded-full bg-white text-[#b80d64] font-semibold
                px-2 py-0.5 text-xs md:text-sm shadow-sm ring-1 ring-white/40"
         >
           FREE
@@ -63,7 +60,7 @@ const props = Astro.props as Props;
                   </span>
                 )}
                 <span
-                  class="flex whitespace-nowrap items-center rounded-full bg-white text-[#f3117e] font-semibold
+                  class="flex whitespace-nowrap items-center rounded-full bg-white text-[#b80d64] font-semibold
                    px-2 py-0.5 text-xs md:text-sm shadow-sm ring-1 ring-white/40"
                 >
                   {item}
@@ -80,7 +77,7 @@ const props = Astro.props as Props;
         aria-hidden="true"
       >
         <span
-          class="flex items-center rounded-full bg-white text-[#f3117e] font-semibold
+          class="flex items-center rounded-full bg-white text-[#b80d64] font-semibold
                px-2 py-0.5 text-xs md:text-sm shadow-sm ring-1 ring-white/40"
         >
           FREE
@@ -103,7 +100,7 @@ const props = Astro.props as Props;
                   </span>
                 )}
                 <span
-                  class="flex whitespace-nowrap items-center rounded-full bg-white text-[#f3117e] font-semibold
+                  class="flex whitespace-nowrap items-center rounded-full bg-white text-[#b80d64] font-semibold
                    px-2 py-0.5 text-xs md:text-sm shadow-sm ring-1 ring-white/40"
                 >
                   {item}
@@ -121,12 +118,12 @@ const props = Astro.props as Props;
     <!-- Logo -->
     <a
       href="/"
-      class="cs-logo aspect-square max-w-[4.5rem] md:max-w-[5rem] bg-white h-auto rounded-full dark:grayscale-0 dark:brightness"
+      class="cs-logo aspect-square max-w-[4.5rem] md:max-w-[5rem] bg-white h-auto rounded-full"
       aria-label="back to home"
     >
       <Image
         src={MainLogo}
-        alt="Main logo massage"
+        alt="Stone Massage"
         class="px-2 drop-shadow-lg max-w-[100px] size-full object-contain scale-125"
       />
     </a>
@@ -152,7 +149,7 @@ const props = Astro.props as Props;
       <div class="cs-ul-wrapper">
         <ul
           id="cs-expanded-ul"
-          class="cs-ul lg:text-(--bodyTextColorWhite) lg:dark:text-(--bodyTextColorWhite)"
+          class="cs-ul"
         >
           {
             navData.map((entry) => (
@@ -160,7 +157,6 @@ const props = Astro.props as Props;
                 class:list={[
                   'cs-li',
                   { 'cs-dropdown': entry.children?.length > 0 },
-                  'lg:text-(--bodyTextColorWhite) lg:dark:text-(--bodyTextColorWhite)',
                 ]}
               >
                 {entry.children?.length > 0 ? (
@@ -170,7 +166,6 @@ const props = Astro.props as Props;
                     class:list={[
                       'cs-li-link cs-dropdown-button',
                       { 'cs-active': Astro.url.pathname.includes(entry.url) },
-                      'lg:text-(--bodyTextColorWhite) lg:dark:text-(--bodyTextColorWhite)',
                     ]}
                   >
                     {entry.key}
@@ -182,7 +177,6 @@ const props = Astro.props as Props;
                     class:list={[
                       'cs-li-link',
                       { 'cs-active': Astro.url.pathname === entry.url },
-                      'lg:text-(--bodyTextColorWhite) lg:dark:text-(--bodyTextColorWhite)',
                     ]}
                     aria-current={
                       Astro.url.pathname === entry.url ? 'page' : undefined
@@ -199,7 +193,7 @@ const props = Astro.props as Props;
                         <li class="cs-drop-li">
                           <a
                             href={child.url}
-                            class="cs-li-link cs-drop-link lg:text-(--bodyTextColorWhite) lg:dark:text-(--bodyTextColorWhite)"
+                            class="cs-li-link cs-drop-link"
                             aria-current={
                               Astro.url.pathname === child.url
                                 ? 'page'
@@ -219,7 +213,8 @@ const props = Astro.props as Props;
           <!-- Book Online Button -->
           <li>
             <button
-              onclick="document.getElementById('popup').classList.remove('hidden')"
+              onclick="document.getElementById('booking-dialog').showModal()"
+              aria-controls="booking-dialog"
               class="cs-button-solid flex justify-center items-center leading-none"
             >
               Book Online
@@ -235,37 +230,37 @@ const props = Astro.props as Props;
     </div>
   </div>
 </header>
-<!-- Popup Overlay -->
-<div
-  id="popup"
-  class="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-[9999] hidden"
+<!-- Booking chooser -->
+<dialog
+  id="booking-dialog"
+  aria-labelledby="booking-dialog-title"
+  class="p-6 rounded-xl shadow-xl w-11/12 max-w-md bg-(--surface-raised) text-(--headerColor)"
 >
-  <div
-    class="p-6 rounded-xl shadow-xl w-11/12 max-w-md"
-    style="background: rgba(255, 255, 255, 0.3);"
-  >
-    <div class="flex flex-col gap-4">
-      <a
-        href="https://www.massagebook.com/therapists/StoneMassage?src=external"
-        class="cs-button-solid rounded-full text-center text-white leading-snug p-4 text-[.6rem] md:text-[1rem]"
-      >
-        Book In-Clinic Appointment (Online)
-      </a>
-      <a
-        href="tel:587-938-0458"
-        class="cs-button-solid rounded-full text-center text-white leading-snug p-4 text-[.6rem] md:text-[1rem]"
-      >
-        Call to Book In-Home Massage
-      </a>
+  <h2 id="booking-dialog-title" class="text-xl font-semibold mb-6 text-(--headerColor)">
+    Choose your appointment
+  </h2>
+  <div class="flex flex-col gap-4">
+    <a
+      href="https://www.massagebook.com/therapists/StoneMassage?src=external"
+      class="cs-button-solid rounded-full text-center leading-snug p-4 text-base"
+    >
+      Book In-Clinic Appointment (Online)
+    </a>
+    <a
+      href="tel:587-938-0458"
+      class="cs-button-solid rounded-full text-center leading-snug p-4 text-base"
+    >
+      Call to Book In-Home Massage
+    </a>
+    <form method="dialog" class="text-center">
       <button
-        onclick="document.getElementById('popup').classList.add('hidden')"
-        class="text-sm text-white-500 hover:text-white mt-2"
+        class="text-sm text-(--bodyTextColor) hover:text-(--link-color) underline underline-offset-4 mt-2"
       >
         Close
       </button>
-    </div>
+    </form>
   </div>
-</div>
+</dialog>
 
 <style lang="less">
   /*-- -------------------------- -->
@@ -360,7 +355,7 @@ const props = Astro.props as Props;
       }
 
       .cs-button-solid {
-        color: var(--bodyTextColorWhite);
+        color: var(--on-action);
         border-radius: calc(32 / 16 * 1rem);
         &:before {
           border-radius: calc(32 / 16 * 1rem);
@@ -433,7 +428,7 @@ const props = Astro.props as Props;
       .cs-line {
         width: 100%;
         height: 2px;
-        background-color: #1a1a1a;
+        background-color: var(--nav-text);
         border-radius: 2px;
         position: absolute;
         left: 50%;
@@ -475,7 +470,7 @@ const props = Astro.props as Props;
 
       .cs-ul-wrapper {
         height: 100vh;
-        background-color: #fff;
+        background-color: var(--nav-surface);
         box-shadow: inset rgba(0, 0, 0, 0.2) 0px 8px 24px;
         opacity: 0;
         visibility: hidden;
@@ -551,7 +546,7 @@ const props = Astro.props as Props;
       .cs-li-link {
         /* 16px - 24px */
         font-size: clamp(1rem, 2.5vw, 1.5rem);
-        color: inherit;
+        color: var(--nav-text);
         line-height: 1.2em;
         text-decoration: none;
         margin: 0;
@@ -584,21 +579,16 @@ const props = Astro.props as Props;
   @media only screen and (max-width: 63.9375rem) {
     body.dark-mode {
       #cs-navigation {
-        .cs-logo {
-          /* makes it white */
-          filter: grayscale(1) brightness(1000%);
-        }
-
         .cs-line {
-          background-color: #fff;
+          background-color: var(--nav-text);
         }
 
         .cs-ul-wrapper {
-          background-color: var(--medium);
+          background-color: var(--nav-surface);
         }
 
         .cs-li-link {
-          color: var(--bodyTextColorWhite);
+          color: var(--nav-text);
         }
       }
     }
@@ -612,8 +602,7 @@ const props = Astro.props as Props;
   @media only screen and (max-width: 63.9375rem) {
     #cs-navigation {
       .cs-dropdown {
-        color: var(--bodyTextColorWhite);
-        color: var(--headerColor);
+        color: var(--nav-text);
 
         position: relative;
 
@@ -657,7 +646,7 @@ const props = Astro.props as Props;
         margin: 0;
         box-sizing: border-box;
         padding: 0 (24/16rem) 0 (24/16rem);
-        background-color: var(--primary);
+        background-color: var(--nav-surface);
         opacity: 0;
         display: flex;
         visibility: hidden;
@@ -686,7 +675,7 @@ const props = Astro.props as Props;
         &.cs-drop-link {
           /* 14px - 16px */
           font-size: clamp(0.875rem, 2vw, 1.25rem);
-          color: #fff;
+          color: var(--nav-text);
         }
       }
 
@@ -742,7 +731,7 @@ const props = Astro.props as Props;
         min-width: (200/16rem);
         margin: 0;
         padding: 0;
-        background-color: #fff;
+        background-color: var(--nav-surface);
         box-shadow: rgba(149, 157, 165, 0.2) 0px 10px 16px;
         opacity: 0;
         border-bottom: 5px solid var(--primary);
@@ -826,15 +815,14 @@ const props = Astro.props as Props;
           /* prevents padding from affecting height and width */
           box-sizing: border-box;
           padding: (12/16rem);
-          //color: var(--bodyTextColor);
-          color: black;
+          color: var(--nav-text);
           display: block;
           transition:
             color 0.3s,
             background-color 0.3s;
 
           &:hover {
-            background-color: #f7f7f7;
+            background-color: var(--nav-hover);
           }
 
           &:focus-within {
@@ -854,7 +842,7 @@ const props = Astro.props as Props;
         appearance: none;
       }
       .cs-button-solid {
-        color: var(--bodyTextColorWhite);
+        color: var(--on-action);
         border-radius: calc(32 / 16 * 1rem);
         &:before {
           border-radius: calc(32 / 16 * 1rem);
@@ -868,21 +856,17 @@ const props = Astro.props as Props;
     body.dark-mode {
       #cs-navigation {
         .cs-drop-ul {
-          background-color: var(--dark);
+          background-color: var(--nav-surface);
         }
 
         .cs-li-link {
           &.cs-drop-link {
             &:hover {
-              background-color: var(--medium);
+              background-color: var(--nav-surface);
             }
           }
         }
 
-        .cs-drop-icon {
-          /* turns it white */
-          filter: grayscale(1) brightness(1000%);
-        }
       }
     }
   }
@@ -975,34 +959,35 @@ const props = Astro.props as Props;
         line-height: 1.5em;
         text-decoration: none;
         margin: 0;
-        //color: var(--bodyTextColor);
-        color: black;
+        color: var(--nav-text);
         display: block;
         position: relative;
         &:hover {
           &:before {
-            width: 100%;
+            transform: scaleX(1);
           }
         }
 
         &.cs-active {
           &:before {
-            width: 100%;
+            transform: scaleX(1);
           }
         }
 
         &:before {
           /* active state underline */
           content: '';
-          width: 0%;
+          width: 100%;
           height: 2px;
-          background: var(--primaryLight);
+          background: var(--nav-text);
           opacity: 1;
           display: block;
           position: absolute;
           bottom: (0/16rem);
           left: 0;
-          transition: width 0.3s;
+          transform: scaleX(0);
+          transform-origin: left;
+          transition: transform 0.3s;
         }
       }
     }
@@ -1012,23 +997,65 @@ const props = Astro.props as Props;
   @media only screen and (min-width: 64rem) {
     body.dark-mode {
       #cs-navigation {
-        .cs-logo {
-          /* makes it turn white */
-          filter: grayscale(1) brightness(1000%);
-        }
-
         .cs-li-link {
-          color: var(--bodyTextColorWhite);
+          color: var(--nav-text);
         }
 
         .cs-li-link {
           &:before {
-            background-color: var(--primaryLight);
+            background-color: var(--nav-text);
           }
         }
       }
     }
   }
+  #cs-navigation {
+    --nav-text: #000000;
+    --nav-surface: #ffffff;
+    --nav-hover: #fff0f7;
+    --nav-focus: #000000;
+    --announcement-edge: #b80d64;
+    --announcement-middle: var(--action-bg);
+
+    #announcement-bar {
+      background: linear-gradient(to right, var(--announcement-edge), var(--announcement-middle), var(--announcement-edge));
+    }
+
+    :is(a, button):focus-visible {
+      outline: 2px solid var(--nav-focus);
+      outline-offset: 4px;
+    }
+  }
+
+  #booking-dialog {
+    position: fixed;
+    inset: 0;
+    margin: auto;
+    max-height: calc(100dvh - 2rem);
+    overflow-y: auto;
+    border: none;
+
+    &::backdrop {
+      background: rgb(0 0 0 / 60%);
+      backdrop-filter: blur(4px);
+    }
+  }
+
+  #booking-dialog :is(a, button):focus-visible {
+    outline: 2px solid var(--focus-color);
+    outline-offset: 4px;
+  }
+
+  body.dark-mode #cs-navigation {
+    --nav-text: #f5f1ed;
+    --nav-surface: #34281e;
+    --nav-hover: #463428;
+    --nav-focus: #f984ef;
+    --announcement-edge: #7a0a45;
+    --announcement-middle: #a40e5e;
+    background: linear-gradient(90deg, #34281e, #211c18 52%, #34281e);
+  }
+
   @keyframes scroll {
     0% {
       transform: translateX(100%);
@@ -1064,6 +1091,12 @@ const props = Astro.props as Props;
 
   /* Respect reduced motion: no animation */
   @media (prefers-reduced-motion: reduce) {
+    #cs-navigation :is(.cs-line, .cs-li, .cs-li-link, .cs-ul-wrapper, .cs-drop-ul, .cs-drop-li),
+    #cs-navigation .cs-li-link:before,
+    #cs-navigation:before {
+      transition: none;
+    }
+
     #announcement-bar #marquee-track {
       animation: none !important;
       transform: none !important;
