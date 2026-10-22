@@ -124,6 +124,11 @@ const props = Astro.props as Props;
       <Image
         src={MainLogo}
         alt="Stone Massage"
+        width={100}
+        height={100}
+        widths={[100, 200, 300]}
+        sizes="100px"
+        loading="eager"
         class="px-2 drop-shadow-lg max-w-[100px] size-full object-contain scale-125"
       />
     </a>

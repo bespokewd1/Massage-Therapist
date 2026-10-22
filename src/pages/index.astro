@@ -8,7 +8,6 @@ import { Picture } from 'astro-lqip/components';
 import '@styles/blog.less';
 import ServiceGrid, { type IService } from '@components/ServicesGrid.astro';
 import { Icon } from 'astro-icon/components';
-import { getOptimizedImage } from '@js/utils';
 import aboutImage1 from '@assets/images/Services-2.DeepTissueMassage.jpg';
 import aboutImage2 from '@assets/images/Services-5.HotStoneMassage.jpg';
 import promoImag1 from '@assets/images/promo-1.webp';
@@ -19,7 +18,6 @@ import mobile2 from '@assets/images/home/cupping-theraphy.webp';
 import mobile3 from '@assets/images/home/foot-massage.webp';
 import serviceBgImg from '@assets/images/Blog2-HeaderPhoto.jpg';
 import checkMark from '@assets/images/check-mark.png';
-import landingImage from '@assets/images/landing.jpg';
 import HotStoneIcon from '@components/Icons/massages/HotStoneIcon.astro';
 import DeepTissueIcon from '@components/Icons/massages/DeepTissueIcon.astro';
 import SwedishIcon from '@components/Icons/massages/SwedishIcon.astro';
@@ -28,8 +26,6 @@ import ThaiOilIcon from '@components/Icons/massages/ThaiOilIcon.astro';
 import PrenatalIcon from '@components/Icons/massages/PrenatalIcon.astro';
 import KidsIcon from '@components/Icons/massages/KidsIcon.astro';
 import Review from '../components/Review.astro';
-
-const optimizedImage = await getOptimizedImage(landingImage);
 
 const massageServiceData: Array<IService> = [
   {
@@ -82,10 +78,8 @@ posts.sort(
 );
 ---
 <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"> -->
-<BaseLayout
-  preloadedImage={optimizedImage}
->
-  <Fragment slot="head"> 
+<BaseLayout>
+  <Fragment slot="head">
     <link
       rel="preload"
       as="image"
@@ -222,6 +216,10 @@ posts.sort(
               src={mobile1}
               alt={"hot stonre therapy"}
               format="avif"
+              width={320}
+              height={320}
+              widths={[96, 160, 256, 320, 480]}
+              sizes="(min-width: 1350px) 108px, (min-width: 768px) 10vw, 20vw"
               class="w-1/3"
             />
             <!-- <img src="assets/images/stone-massage.webp" class="w-1/3"> -->
@@ -233,6 +231,10 @@ posts.sort(
               src={mobile2}
               alt={"hot stonre therapy"}
               format="avif"
+              width={320}
+              height={320}
+              widths={[96, 160, 256, 320, 480]}
+              sizes="(min-width: 1350px) 108px, (min-width: 768px) 10vw, 20vw"
               class="w-1/3"
             />
             <!-- <img src="assets/images/cupping-theraphy.webp" class="w-1/3"> -->
@@ -243,6 +245,10 @@ posts.sort(
               src={mobile3}
               alt={"hot stonre therapy"}
               format="avif"
+              width={320}
+              height={320}
+              widths={[96, 160, 256, 320, 480]}
+              sizes="(min-width: 1350px) 108px, (min-width: 768px) 10vw, 20vw"
               class="w-1/3"
             />
             <!-- <img src="assets/images/foot-massage.webp" class=" w-1/3"> -->
@@ -253,7 +259,10 @@ posts.sort(
           personalized care in the comfort and privacy of your own space.
         </p>
         <div class="w-full flex flex-row justify-center items-center mt-8 ">
-            <h1 class="text-3xl">📍</h1>
+            <h1
+              class="text-3xl"
+              style="font-family: system-ui, 'Apple Color Emoji', 'Segoe UI Emoji', sans-serif;"
+            >📍</h1>
             <h1 class="text-xl md:text-center">Serving Edmonton & Nearby Areas</h1>
         </div>
         <a

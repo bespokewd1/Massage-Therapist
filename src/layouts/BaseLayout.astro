@@ -23,6 +23,10 @@ const { description, title, preloadedImage } = Astro.props;
 <!-- A fully fleshed-out <head>, dynamically changing based on client.json and the page front matter -->
 <html lang="en">
   <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <!-- View Transitions support -->
     <ClientRouter />
 
@@ -46,10 +50,6 @@ const { description, title, preloadedImage } = Astro.props;
 
     <slot name="head" />
 
-    <!-- Standard meta tags -->
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <SeoHead title={title} description={description} />
 
     <!-- Preloads remain independent of social card images. -->
