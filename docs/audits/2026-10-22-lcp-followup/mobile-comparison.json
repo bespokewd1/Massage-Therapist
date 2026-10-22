@@ -1,0 +1,337 @@
+{
+  "mode": "mobile",
+  "runs": 5,
+  "thirdPartyPolicy": "Identical analytics/template-social blocking in all variants, controlled local comparison, not deployed PageSpeed results.",
+  "results": [
+    {
+      "variant": "baseline",
+      "run": 1,
+      "score": 82,
+      "first-contentful-paint": 1954.676311526027,
+      "largest-contentful-paint": 4582.01446728904,
+      "total-blocking-time": 0,
+      "cumulative-layout-shift": 0.01330251137832417,
+      "speed-index": 1954.676311526027
+    },
+    {
+      "variant": "upgraded",
+      "run": 1,
+      "score": 90,
+      "first-contentful-paint": 1954.3105500000001,
+      "largest-contentful-paint": 3380.7474,
+      "total-blocking-time": 0,
+      "cumulative-layout-shift": 0,
+      "speed-index": 1954.3105500000001
+    },
+    {
+      "variant": "final",
+      "run": 1,
+      "score": 99,
+      "first-contentful-paint": 1363.759,
+      "largest-contentful-paint": 1963.759,
+      "total-blocking-time": 0,
+      "cumulative-layout-shift": 0.00998837833618938,
+      "speed-index": 1363.759
+    },
+    {
+      "variant": "css20-no-preload",
+      "run": 1,
+      "score": 99,
+      "first-contentful-paint": 1517.6144999999997,
+      "largest-contentful-paint": 1838.0472734268187,
+      "total-blocking-time": 0,
+      "cumulative-layout-shift": 0.009687426104481471,
+      "speed-index": 1517.6144999999997
+    },
+    {
+      "variant": "css20-no-preload",
+      "run": 2,
+      "score": 97,
+      "first-contentful-paint": 1950.8582999999999,
+      "largest-contentful-paint": 2251.7165999999997,
+      "total-blocking-time": 10,
+      "cumulative-layout-shift": 0.01330251137832417,
+      "speed-index": 1950.8582999999999
+    },
+    {
+      "variant": "final",
+      "run": 2,
+      "score": 97,
+      "first-contentful-paint": 1804.0963000000002,
+      "largest-contentful-paint": 2258.1926000000003,
+      "total-blocking-time": 0,
+      "cumulative-layout-shift": 0.009063246489419528,
+      "speed-index": 1804.0963000000002
+    },
+    {
+      "variant": "upgraded",
+      "run": 2,
+      "score": 89,
+      "first-contentful-paint": 1951.0819500000002,
+      "largest-contentful-paint": 3526.08195,
+      "total-blocking-time": 0,
+      "cumulative-layout-shift": 0.01330251137832417,
+      "speed-index": 1951.0819500000002
+    },
+    {
+      "variant": "baseline",
+      "run": 2,
+      "score": 90,
+      "first-contentful-paint": 1951.1929499999997,
+      "largest-contentful-paint": 3376.5905999999995,
+      "total-blocking-time": 0,
+      "cumulative-layout-shift": 0.012377379531554326,
+      "speed-index": 1951.1929499999997
+    },
+    {
+      "variant": "baseline",
+      "run": 3,
+      "score": 90,
+      "first-contentful-paint": 1951.1866499999999,
+      "largest-contentful-paint": 3451.18665,
+      "total-blocking-time": 0,
+      "cumulative-layout-shift": 0.01330251137832417,
+      "speed-index": 1951.1866499999999
+    },
+    {
+      "variant": "upgraded",
+      "run": 3,
+      "score": 90,
+      "first-contentful-paint": 1951.2586500000002,
+      "largest-contentful-paint": 3451.2586499999998,
+      "total-blocking-time": 0,
+      "cumulative-layout-shift": 0.01330251137832417,
+      "speed-index": 1951.2586500000002
+    },
+    {
+      "variant": "final",
+      "run": 3,
+      "score": 97,
+      "first-contentful-paint": 1804.1747,
+      "largest-contentful-paint": 2258.3494,
+      "total-blocking-time": 0,
+      "cumulative-layout-shift": 0.009154725620604818,
+      "speed-index": 1804.1747
+    },
+    {
+      "variant": "css20-no-preload",
+      "run": 3,
+      "score": 97,
+      "first-contentful-paint": 1950.7723,
+      "largest-contentful-paint": 2251.5446,
+      "total-blocking-time": 0,
+      "cumulative-layout-shift": 0.01330614131593878,
+      "speed-index": 1950.7723
+    },
+    {
+      "variant": "css20-no-preload",
+      "run": 4,
+      "score": 97,
+      "first-contentful-paint": 1951.0280000000002,
+      "largest-contentful-paint": 2252.0560000000005,
+      "total-blocking-time": 0,
+      "cumulative-layout-shift": 0.010714659815187547,
+      "speed-index": 1951.0280000000002
+    },
+    {
+      "variant": "final",
+      "run": 4,
+      "score": 97,
+      "first-contentful-paint": 1800.7956,
+      "largest-contentful-paint": 2251.5912,
+      "total-blocking-time": 0,
+      "cumulative-layout-shift": 0.009063246489419528,
+      "speed-index": 1800.7956
+    },
+    {
+      "variant": "upgraded",
+      "run": 4,
+      "score": 96,
+      "first-contentful-paint": 1965.01305,
+      "largest-contentful-paint": 2420.0174,
+      "total-blocking-time": 0,
+      "cumulative-layout-shift": 0.01330251137832417,
+      "speed-index": 1965.01305
+    },
+    {
+      "variant": "baseline",
+      "run": 4,
+      "score": 90,
+      "first-contentful-paint": 1951.3015499999997,
+      "largest-contentful-paint": 3376.5184749999994,
+      "total-blocking-time": 0,
+      "cumulative-layout-shift": 0.01330251137832417,
+      "speed-index": 1951.3015499999997
+    },
+    {
+      "variant": "baseline",
+      "run": 5,
+      "score": 90,
+      "first-contentful-paint": 1951.326,
+      "largest-contentful-paint": 3376.768,
+      "total-blocking-time": 0,
+      "cumulative-layout-shift": 0.01330251137832417,
+      "speed-index": 1951.326
+    },
+    {
+      "variant": "upgraded",
+      "run": 5,
+      "score": 90,
+      "first-contentful-paint": 1951.1142,
+      "largest-contentful-paint": 3376.4856,
+      "total-blocking-time": 0,
+      "cumulative-layout-shift": 0.01330251137832417,
+      "speed-index": 1951.1142
+    },
+    {
+      "variant": "final",
+      "run": 5,
+      "score": 97,
+      "first-contentful-paint": 1801.0259999999998,
+      "largest-contentful-paint": 2252.052,
+      "total-blocking-time": 0,
+      "cumulative-layout-shift": 0.00998837833618938,
+      "speed-index": 1801.0259999999998
+    },
+    {
+      "variant": "css20-no-preload",
+      "run": 5,
+      "score": 97,
+      "first-contentful-paint": 1950.8905999999997,
+      "largest-contentful-paint": 2251.7812,
+      "total-blocking-time": 0,
+      "cumulative-layout-shift": 0.01330251137832417,
+      "speed-index": 1950.8905999999997
+    }
+  ],
+  "summary": {
+    "baseline": {
+      "score": {
+        "median": 90,
+        "min": 82,
+        "max": 90
+      },
+      "first-contentful-paint": {
+        "median": 1951.3015499999997,
+        "min": 1951.1866499999999,
+        "max": 1954.676311526027
+      },
+      "largest-contentful-paint": {
+        "median": 3376.768,
+        "min": 3376.5184749999994,
+        "max": 4582.01446728904
+      },
+      "total-blocking-time": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "cumulative-layout-shift": {
+        "median": 0.01330251137832417,
+        "min": 0.012377379531554326,
+        "max": 0.01330251137832417
+      },
+      "speed-index": {
+        "median": 1951.3015499999997,
+        "min": 1951.1866499999999,
+        "max": 1954.676311526027
+      }
+    },
+    "upgraded": {
+      "score": {
+        "median": 90,
+        "min": 89,
+        "max": 96
+      },
+      "first-contentful-paint": {
+        "median": 1951.2586500000002,
+        "min": 1951.0819500000002,
+        "max": 1965.01305
+      },
+      "largest-contentful-paint": {
+        "median": 3380.7474,
+        "min": 2420.0174,
+        "max": 3526.08195
+      },
+      "total-blocking-time": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "cumulative-layout-shift": {
+        "median": 0.01330251137832417,
+        "min": 0,
+        "max": 0.01330251137832417
+      },
+      "speed-index": {
+        "median": 1951.2586500000002,
+        "min": 1951.0819500000002,
+        "max": 1965.01305
+      }
+    },
+    "final": {
+      "score": {
+        "median": 97,
+        "min": 97,
+        "max": 99
+      },
+      "first-contentful-paint": {
+        "median": 1801.0259999999998,
+        "min": 1363.759,
+        "max": 1804.1747
+      },
+      "largest-contentful-paint": {
+        "median": 2252.052,
+        "min": 1963.759,
+        "max": 2258.3494
+      },
+      "total-blocking-time": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "cumulative-layout-shift": {
+        "median": 0.009154725620604818,
+        "min": 0.009063246489419528,
+        "max": 0.00998837833618938
+      },
+      "speed-index": {
+        "median": 1801.0259999999998,
+        "min": 1363.759,
+        "max": 1804.1747
+      }
+    },
+    "css20-no-preload": {
+      "score": {
+        "median": 97,
+        "min": 97,
+        "max": 99
+      },
+      "first-contentful-paint": {
+        "median": 1950.8582999999999,
+        "min": 1517.6144999999997,
+        "max": 1951.0280000000002
+      },
+      "largest-contentful-paint": {
+        "median": 2251.7165999999997,
+        "min": 1838.0472734268187,
+        "max": 2252.0560000000005
+      },
+      "total-blocking-time": {
+        "median": 0,
+        "min": 0,
+        "max": 10
+      },
+      "cumulative-layout-shift": {
+        "median": 0.01330251137832417,
+        "min": 0.009687426104481471,
+        "max": 0.01330614131593878
+      },
+      "speed-index": {
+        "median": 1950.8582999999999,
+        "min": 1517.6144999999997,
+        "max": 1951.0280000000002
+      }
+    }
+  }
+}

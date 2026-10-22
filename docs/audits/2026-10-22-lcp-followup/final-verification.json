@@ -1,0 +1,133 @@
+{
+  "mode": "mobile",
+  "runs": 3,
+  "thirdPartyPolicy": "Production third-party requests enabled, no GTM source changes.",
+  "results": [
+    {
+      "variant": "baseline",
+      "run": 1,
+      "score": 84,
+      "first-contentful-paint": 1976.6645999999996,
+      "largest-contentful-paint": 4275.9214,
+      "total-blocking-time": 1,
+      "cumulative-layout-shift": 0.01336930223043291,
+      "speed-index": 1976.6645999999996
+    },
+    {
+      "variant": "persisted",
+      "run": 1,
+      "score": 98,
+      "first-contentful-paint": 1815.6256000000003,
+      "largest-contentful-paint": 2206.2343250000004,
+      "total-blocking-time": 0.5,
+      "cumulative-layout-shift": 0.009999268149033196,
+      "speed-index": 1815.6256000000003
+    },
+    {
+      "variant": "persisted",
+      "run": 2,
+      "score": 98,
+      "first-contentful-paint": 1801.990105358241,
+      "largest-contentful-paint": 2178.912611943131,
+      "total-blocking-time": 0,
+      "cumulative-layout-shift": 0.009063246489419528,
+      "speed-index": 1801.990105358241
+    },
+    {
+      "variant": "baseline",
+      "run": 2,
+      "score": 92,
+      "first-contentful-paint": 1951.6270999999997,
+      "largest-contentful-paint": 3227.7138749999995,
+      "total-blocking-time": 7.5,
+      "cumulative-layout-shift": 0.01330251137832417,
+      "speed-index": 1951.6270999999997
+    },
+    {
+      "variant": "baseline",
+      "run": 3,
+      "score": 90,
+      "first-contentful-paint": 1951.362,
+      "largest-contentful-paint": 3452.275199999999,
+      "total-blocking-time": 0,
+      "cumulative-layout-shift": 0.01330251137832417,
+      "speed-index": 1951.362
+    },
+    {
+      "variant": "persisted",
+      "run": 3,
+      "score": 98,
+      "first-contentful-paint": 1801.5208,
+      "largest-contentful-paint": 2177.9534750000003,
+      "total-blocking-time": 0,
+      "cumulative-layout-shift": 0.009992008273803985,
+      "speed-index": 1801.5208
+    }
+  ],
+  "summary": {
+    "baseline": {
+      "score": {
+        "median": 90,
+        "min": 84,
+        "max": 92
+      },
+      "first-contentful-paint": {
+        "median": 1951.6270999999997,
+        "min": 1951.362,
+        "max": 1976.6645999999996
+      },
+      "largest-contentful-paint": {
+        "median": 3452.275199999999,
+        "min": 3227.7138749999995,
+        "max": 4275.9214
+      },
+      "total-blocking-time": {
+        "median": 1,
+        "min": 0,
+        "max": 7.5
+      },
+      "cumulative-layout-shift": {
+        "median": 0.01330251137832417,
+        "min": 0.01330251137832417,
+        "max": 0.01336930223043291
+      },
+      "speed-index": {
+        "median": 1951.6270999999997,
+        "min": 1951.362,
+        "max": 1976.6645999999996
+      }
+    },
+    "persisted": {
+      "score": {
+        "median": 98,
+        "min": 98,
+        "max": 98
+      },
+      "first-contentful-paint": {
+        "median": 1801.990105358241,
+        "min": 1801.5208,
+        "max": 1815.6256000000003
+      },
+      "largest-contentful-paint": {
+        "median": 2178.912611943131,
+        "min": 2177.9534750000003,
+        "max": 2206.2343250000004
+      },
+      "total-blocking-time": {
+        "median": 0,
+        "min": 0,
+        "max": 0.5
+      },
+      "cumulative-layout-shift": {
+        "median": 0.009992008273803985,
+        "min": 0.009063246489419528,
+        "max": 0.009999268149033196
+      },
+      "speed-index": {
+        "median": 1801.990105358241,
+        "min": 1801.5208,
+        "max": 1815.6256000000003
+      }
+    }
+  }
+}

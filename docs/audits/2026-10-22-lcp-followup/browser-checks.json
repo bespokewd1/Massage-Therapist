@@ -1,0 +1,20 @@
+{
+  "routes": 34,
+  "routeViewportThemeCases": 154,
+  "screenshots": 258,
+  "functionalChecksPassed": 180,
+  "functionalChecksTotal": 180,
+  "matchingActualFontSamples": 456,
+  "pixelIdenticalScreenshots": 156,
+  "acceptedIconHeadLinkDifferences": 146,
+  "originalImageAndFontBinaryChanges": 0,
+  "generatedImageEncodingPairsWithDifferences": 15,
+  "galleryTransientRasterizationConfirmed": true,
+  "cmsLoadingChecks": {
+    "baseline": 6,
+    "final": 6,
+    "authenticationEditingPublishingTested": false
+  },
+  "fontPersistenceFix": "font-persistence-check.json",
+  "note": "Full browser snapshots predate the font stylesheet persistence marker; focused navigation checks validate that subsequent fix. Codec variance and baseline-shared early-frame caveats remain documented."
+}

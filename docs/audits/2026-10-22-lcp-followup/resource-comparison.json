@@ -1,0 +1,180 @@
+{
+  "baseline": {
+    "htmlBytes": 234627,
+    "htmlBrotliBytes": 75524,
+    "externalCss": [
+      {
+        "url": "/_astro/about.DDr1GAvJ.css",
+        "bytes": 44073,
+        "brotliBytes": 7938
+      },
+      {
+        "url": "/_astro/_page_.BP1sYmg2.css",
+        "bytes": 7934,
+        "brotliBytes": 1406
+      },
+      {
+        "url": "/_astro/about.VYmiDQYx.css",
+        "bytes": 12278,
+        "brotliBytes": 1644
+      },
+      {
+        "url": "/_astro/index.TTgdR1V1.css",
+        "bytes": 19231,
+        "brotliBytes": 2483
+      },
+      {
+        "url": "/_astro/about.lm8zyS_2.css",
+        "bytes": 17936,
+        "brotliBytes": 2587
+      }
+    ]
+  },
+  "upgraded": {
+    "htmlBytes": 235161,
+    "htmlBrotliBytes": 75507,
+    "externalCss": [
+      {
+        "url": "/_astro/about.DDr1GAvJ.css",
+        "bytes": 44073,
+        "brotliBytes": 7938
+      },
+      {
+        "url": "/_astro/_page_.BP1sYmg2.css",
+        "bytes": 7934,
+        "brotliBytes": 1406
+      },
+      {
+        "url": "/_astro/about.CBdVWJeA.css",
+        "bytes": 12278,
+        "brotliBytes": 1645
+      },
+      {
+        "url": "/_astro/index.TTgdR1V1.css",
+        "bytes": 19231,
+        "brotliBytes": 2483
+      },
+      {
+        "url": "/_astro/about.Dkj1PXUo.css",
+        "bytes": 17936,
+        "brotliBytes": 2587
+      }
+    ]
+  },
+  "fonts": {
+    "htmlBytes": 236302,
+    "htmlBrotliBytes": 75803,
+    "externalCss": [
+      {
+        "url": "/_astro/about.dqdWX9IN.css",
+        "bytes": 43185,
+        "brotliBytes": 7858
+      },
+      {
+        "url": "/_astro/_page_.BP1sYmg2.css",
+        "bytes": 7934,
+        "brotliBytes": 1406
+      },
+      {
+        "url": "/_astro/about.CBdVWJeA.css",
+        "bytes": 12278,
+        "brotliBytes": 1645
+      },
+      {
+        "url": "/_astro/index.CywMbbze.css",
+        "bytes": 19245,
+        "brotliBytes": 2487
+      },
+      {
+        "url": "/_astro/about.vd9eqr1D.css",
+        "bytes": 17960,
+        "brotliBytes": 2589
+      }
+    ]
+  },
+  "preload": {
+    "htmlBytes": 236406,
+    "htmlBrotliBytes": 75830,
+    "externalCss": [
+      {
+        "url": "/_astro/about.dqdWX9IN.css",
+        "bytes": 43185,
+        "brotliBytes": 7858
+      },
+      {
+        "url": "/_astro/_page_.BP1sYmg2.css",
+        "bytes": 7934,
+        "brotliBytes": 1406
+      },
+      {
+        "url": "/_astro/about.CBdVWJeA.css",
+        "bytes": 12278,
+        "brotliBytes": 1645
+      },
+      {
+        "url": "/_astro/index.CywMbbze.css",
+        "bytes": 19245,
+        "brotliBytes": 2487
+      },
+      {
+        "url": "/_astro/about.vd9eqr1D.css",
+        "bytes": 17960,
+        "brotliBytes": 2589
+      }
+    ]
+  },
+  "css": {
+    "htmlBytes": 256485,
+    "htmlBrotliBytes": 78627,
+    "externalCss": [
+      {
+        "url": "/_astro/about.dqdWX9IN.css",
+        "bytes": 43185,
+        "brotliBytes": 7858
+      },
+      {
+        "url": "/_astro/index.CywMbbze.css",
+        "bytes": 19245,
+        "brotliBytes": 2487
+      },
+      {
+        "url": "/_astro/about.vd9eqr1D.css",
+        "bytes": 17960,
+        "brotliBytes": 2589
+      }
+    ]
+  },
+  "css20": {
+    "htmlBytes": 293574,
+    "htmlBrotliBytes": 82608,
+    "externalCss": [
+      {
+        "url": "/_astro/about.dqdWX9IN.css",
+        "bytes": 43185,
+        "brotliBytes": 7858
+      }
+    ]
+  },
+  "final": {
+    "htmlBytes": 293667,
+    "htmlBrotliBytes": 82635,
+    "externalCss": [
+      {
+        "url": "/_astro/about.dqdWX9IN.css",
+        "bytes": 43185,
+        "brotliBytes": 7858
+      }
+    ]
+  },
+  "persisted": {
+    "htmlBytes": 293807,
+    "htmlBrotliBytes": 82685,
+    "externalCss": [
+      {
+        "url": "/_astro/about.dqdWX9IN.css",
+        "bytes": 43185,
+        "brotliBytes": 7858
+      }
+    ]
+  }
+}

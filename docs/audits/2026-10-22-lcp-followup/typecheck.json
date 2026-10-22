@@ -1,0 +1,12 @@
+{
+  "command": "npx astro check",
+  "exitCode": 1,
+  "newErrors": 0,
+  "existingErrors": 3,
+  "existingHints": 6,
+  "issues": [
+    "src/components/Header.astro:208:36 - error ts(2339): Property 'key' does not exist on type 'never'.\r",
+    "src/components/Header.astro:203:60 - error ts(2339): Property 'url' does not exist on type 'never'.\r",
+    "src/components/Header.astro:200:41 - error ts(2339): Property 'url' does not exist on type 'never'.\r"
+  ]
+}

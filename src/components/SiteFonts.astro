@@ -1,0 +1,20 @@
+---
+import { Font } from 'astro:assets';
+import PersistedFontStyles from './PersistedFontStyles.astro';
+
+interface Props {
+  preloadHeading?: boolean;
+}
+
+const { preloadHeading = false } = Astro.props;
+---
+
+<PersistedFontStyles id="site-font-open-sans">
+  <Font
+    cssVariable="--font-open-sans"
+    preload={preloadHeading ? [{ weight: 500, style: 'normal' }] : false}
+  />
+</PersistedFontStyles>
+<PersistedFontStyles id="site-font-poppins">
+  <Font cssVariable="--font-poppins" />
+</PersistedFontStyles>

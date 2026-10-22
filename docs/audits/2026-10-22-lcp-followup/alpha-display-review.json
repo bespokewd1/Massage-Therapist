@@ -1,0 +1,2993 @@
+{
+  "contactSheet": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-assets/alpha-before-after-contact-sheet.png",
+  "generatedAt": "2026-10-22T12:56:22.092Z",
+  "readOnlyProject": true,
+  "method": "Same Sharp decoder and Lanczos3 resize for both immutable AVIFs; manual sRGB alpha composite after resize; nearest integer CSS raster dimensions. No browser rasterization or claimed perceptual pass threshold. Asset-only, no CSS title overlays or corner masks. Contact sheet uses largest actual desktop CSS dimensions, metrics include all six modes. DPR recorded but CSS-space comparison avoids weighting phones more heavily merely for device-pixel density.",
+  "aggregate": {
+    "totalMeasuredCSSPixels": 2187928,
+    "areaWeightedMeanRGB": 0.7407380004116708,
+    "areaWeightedLuminanceWeightedMeanAbsoluteChannels": 0.6968318126097471,
+    "areaWeightedAlphaContributionMeanRGB": 0.016728336019851565,
+    "largestPerImageP99MeanRGB": 5.333333333333333,
+    "largestPerImageP99AlphaContributionMeanRGB": 1,
+    "largestPartialEdgeP99AlphaContributionMeanRGB": 3.6379084967320274
+  },
+  "records": [
+    {
+      "mode": "desktop-light",
+      "name": "business",
+      "baselineQAPath": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/qa/baseline/desktop-light--mobile-massage.json",
+      "finalQAPath": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/qa/final/desktop-light--mobile-massage.json",
+      "backgroundCSS": "rgb(255, 255, 255)",
+      "sourceFiles": {
+        "baseline": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/baseline/_astro/business.BKBGOq7m_br7RO.avif",
+        "final": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/final/_astro/business.BKBGOq7m_Z1ARRV3.avif"
+      },
+      "savedCSSDimensions": {
+        "width": 357,
+        "height": 357
+      },
+      "measuredCSSRaster": {
+        "width": 357,
+        "height": 357
+      },
+      "savedDPR": 1,
+      "pixels": 127449,
+      "meanRGB": {
+        "count": 127449,
+        "mean": 0.5370535039595616,
+        "p99": 4.333333333333333,
+        "pixelsMeanDifferenceOver": {
+          "2": 9798,
+          "4": 1704,
+          "8": 20,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.07687780994750841,
+          "4": 0.013370053903914507,
+          "8": 0.0001569255153041609,
+          "16": 0
+        }
+      },
+      "luminanceWeightedAbsoluteChannels": {
+        "count": 127449,
+        "mean": 0.4984374259907626,
+        "p99": 4.353,
+        "pixelsMeanDifferenceOver": {
+          "2": 9519,
+          "4": 1734,
+          "8": 19,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.07468869900901537,
+          "4": 0.013605442176870748,
+          "8": 0.00014907923953895284,
+          "16": 0
+        }
+      },
+      "alphaOnlyContribution": {
+        "count": 127449,
+        "mean": 0.018475830675727934,
+        "p99": 0.8091503267973827,
+        "pixelsMeanDifferenceOver": {
+          "2": 131,
+          "4": 10,
+          "8": 0,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.0010278621252422537,
+          "4": 0.00007846275765208045,
+          "8": 0,
+          "16": 0
+        }
+      },
+      "partiallyTransparentEdgeMeanRGB": {
+        "count": 4332,
+        "mean": 1.328316103295737,
+        "p99": 5.270588235294118,
+        "pixelsMeanDifferenceOver": {
+          "2": 955,
+          "4": 162,
+          "8": 1,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.22045244690674054,
+          "4": 0.037396121883656507,
+          "8": 0.00023084025854108956,
+          "16": 0
+        }
+      },
+      "partiallyTransparentEdgeAlphaContribution": {
+        "count": 4332,
+        "mean": 0.5435655918261426,
+        "p99": 2.9,
+        "pixelsMeanDifferenceOver": {
+          "2": 131,
+          "4": 10,
+          "8": 0,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.030240073868882732,
+          "4": 0.0023084025854108957,
+          "8": 0,
+          "16": 0
+        }
+      },
+      "alphaByteDifference": {
+        "count": 127449,
+        "mean": 0.027979819378731886,
+        "p99": 1,
+        "pixelsMeanDifferenceOver": {
+          "2": 260,
+          "4": 48,
+          "8": 3,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.0020400316989540915,
+          "4": 0.0003766212367299861,
+          "8": 0.00002353882729562413,
+          "16": 0
+        }
+      },
+      "alphaChangedPixels": 2395
+    },
+    {
+      "mode": "desktop-light",
+      "name": "parent",
+      "baselineQAPath": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/qa/baseline/desktop-light--mobile-massage.json",
+      "finalQAPath": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/qa/final/desktop-light--mobile-massage.json",
+      "backgroundCSS": "rgb(255, 255, 255)",
+      "sourceFiles": {
+        "baseline": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/baseline/_astro/parent.BdBEFHuZ_ogVWt.avif",
+        "final": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/final/_astro/parent.BdBEFHuZ_oa0D0.avif"
+      },
+      "savedCSSDimensions": {
+        "width": 357,
+        "height": 357
+      },
+      "measuredCSSRaster": {
+        "width": 357,
+        "height": 357
+      },
+      "savedDPR": 1,
+      "pixels": 127449,
+      "meanRGB": {
+        "count": 127449,
+        "mean": 1.0221928576633788,
+        "p99": 5.333333333333333,
+        "pixelsMeanDifferenceOver": {
+          "2": 22230,
+          "4": 3937,
+          "8": 48,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.17442271026057482,
+          "4": 0.030890787687624068,
+          "8": 0.0003766212367299861,
+          "16": 0
+        }
+      },
+      "luminanceWeightedAbsoluteChannels": {
+        "count": 127449,
+        "mean": 0.9366048965253289,
+        "p99": 5.1404,
+        "pixelsMeanDifferenceOver": {
+          "2": 21493,
+          "4": 3956,
+          "8": 50,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.1686400050216165,
+          "4": 0.031039866927163023,
+          "8": 0.0003923137882604022,
+          "16": 0
+        }
+      },
+      "alphaOnlyContribution": {
+        "count": 127449,
+        "mean": 0.023936464243521353,
+        "p99": 0.9764705882352941,
+        "pixelsMeanDifferenceOver": {
+          "2": 313,
+          "4": 39,
+          "8": 1,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.002455884314510118,
+          "4": 0.0003060047548431137,
+          "8": 0.000007846275765208045,
+          "16": 0
+        }
+      },
+      "partiallyTransparentEdgeMeanRGB": {
+        "count": 5431,
+        "mean": 1.3405985729466414,
+        "p99": 5.788235294117655,
+        "pixelsMeanDifferenceOver": {
+          "2": 1236,
+          "4": 258,
+          "8": 7,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.2275823973485546,
+          "4": 0.047505063524212854,
+          "8": 0.0012888970723623642,
+          "16": 0
+        }
+      },
+      "partiallyTransparentEdgeAlphaContribution": {
+        "count": 5431,
+        "mean": 0.561715785559299,
+        "p99": 3.6379084967320274,
+        "pixelsMeanDifferenceOver": {
+          "2": 313,
+          "4": 39,
+          "8": 1,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.057632111949917145,
+          "4": 0.007180997974590314,
+          "8": 0.00018412815319462345,
+          "16": 0
+        }
+      },
+      "alphaByteDifference": {
+        "count": 127449,
+        "mean": 0.04347621401501777,
+        "p99": 1,
+        "pixelsMeanDifferenceOver": {
+          "2": 624,
+          "4": 160,
+          "8": 16,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.004896076077489819,
+          "4": 0.0012554041224332871,
+          "8": 0.00012554041224332871,
+          "16": 0
+        }
+      },
+      "alphaChangedPixels": 3068
+    },
+    {
+      "mode": "desktop-light",
+      "name": "senior",
+      "baselineQAPath": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/qa/baseline/desktop-light--mobile-massage.json",
+      "finalQAPath": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/qa/final/desktop-light--mobile-massage.json",
+      "backgroundCSS": "rgb(255, 255, 255)",
+      "sourceFiles": {
+        "baseline": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/baseline/_astro/senior.DDdfS1By_Z1fPhJg.avif",
+        "final": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/final/_astro/senior.DDdfS1By_Z1fWe3J.avif"
+      },
+      "savedCSSDimensions": {
+        "width": 357,
+        "height": 357
+      },
+      "measuredCSSRaster": {
+        "width": 357,
+        "height": 357
+      },
+      "savedDPR": 1,
+      "pixels": 127449,
+      "meanRGB": {
+        "count": 127449,
+        "mean": 0.8582841671847585,
+        "p99": 5,
+        "pixelsMeanDifferenceOver": {
+          "2": 16702,
+          "4": 2848,
+          "8": 43,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.13104849783050476,
+          "4": 0.02234619337931251,
+          "8": 0.0003373898579039459,
+          "16": 0
+        }
+      },
+      "luminanceWeightedAbsoluteChannels": {
+        "count": 127449,
+        "mean": 0.8146876303831584,
+        "p99": 4.9908,
+        "pixelsMeanDifferenceOver": {
+          "2": 17391,
+          "4": 3161,
+          "8": 47,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.1364545818327331,
+          "4": 0.024802077693822627,
+          "8": 0.00036877496096477806,
+          "16": 0
+        }
+      },
+      "alphaOnlyContribution": {
+        "count": 127449,
+        "mean": 0.020890268192372493,
+        "p99": 0.8732026143790819,
+        "pixelsMeanDifferenceOver": {
+          "2": 139,
+          "4": 24,
+          "8": 2,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.001090632331363918,
+          "4": 0.00018831061836499304,
+          "8": 0.00001569255153041609,
+          "16": 0
+        }
+      },
+      "partiallyTransparentEdgeMeanRGB": {
+        "count": 5952,
+        "mean": 1.3544117647058862,
+        "p99": 5.270588235294118,
+        "pixelsMeanDifferenceOver": {
+          "2": 1265,
+          "4": 215,
+          "8": 7,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.21253360215053763,
+          "4": 0.03612231182795699,
+          "8": 0.0011760752688172043,
+          "16": 0
+        }
+      },
+      "partiallyTransparentEdgeAlphaContribution": {
+        "count": 5952,
+        "mean": 0.44731918529060516,
+        "p99": 2.943790849673213,
+        "pixelsMeanDifferenceOver": {
+          "2": 139,
+          "4": 24,
+          "8": 2,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.023353494623655914,
+          "4": 0.004032258064516129,
+          "8": 0.0003360215053763441,
+          "16": 0
+        }
+      },
+      "alphaByteDifference": {
+        "count": 127449,
+        "mean": 0.045257318613719996,
+        "p99": 1,
+        "pixelsMeanDifferenceOver": {
+          "2": 545,
+          "4": 152,
+          "8": 9,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.004276220292038384,
+          "4": 0.0011926339163116227,
+          "8": 0.0000706164818868724,
+          "16": 0
+        }
+      },
+      "alphaChangedPixels": 3475
+    },
+    {
+      "mode": "desktop-light",
+      "name": "stress",
+      "baselineQAPath": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/qa/baseline/desktop-light--mobile-massage.json",
+      "finalQAPath": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/qa/final/desktop-light--mobile-massage.json",
+      "backgroundCSS": "rgb(255, 255, 255)",
+      "sourceFiles": {
+        "baseline": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/baseline/_astro/stress.C3uzgIPE_ZyXVQM.avif",
+        "final": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/final/_astro/stress.C3uzgIPE_Zz5Sbg.avif"
+      },
+      "savedCSSDimensions": {
+        "width": 357,
+        "height": 357
+      },
+      "measuredCSSRaster": {
+        "width": 357,
+        "height": 357
+      },
+      "savedDPR": 1,
+      "pixels": 127449,
+      "meanRGB": {
+        "count": 127449,
+        "mean": 0.7883811527943275,
+        "p99": 5.333333333333333,
+        "pixelsMeanDifferenceOver": {
+          "2": 17212,
+          "4": 3750,
+          "8": 62,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.13505009847076085,
+          "4": 0.029423534119530165,
+          "8": 0.00048646909744289876,
+          "16": 0
+        }
+      },
+      "luminanceWeightedAbsoluteChannels": {
+        "count": 127449,
+        "mean": 0.7851431228947259,
+        "p99": 5.506600000000001,
+        "pixelsMeanDifferenceOver": {
+          "2": 18591,
+          "4": 4769,
+          "8": 106,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.14587011275098274,
+          "4": 0.03741888912427716,
+          "8": 0.0008317052311120526,
+          "16": 0
+        }
+      },
+      "alphaOnlyContribution": {
+        "count": 127449,
+        "mean": 0.02625687978638838,
+        "p99": 1,
+        "pixelsMeanDifferenceOver": {
+          "2": 243,
+          "4": 26,
+          "8": 0,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.0019066450109455548,
+          "4": 0.00020400316989540915,
+          "8": 0,
+          "16": 0
+        }
+      },
+      "partiallyTransparentEdgeMeanRGB": {
+        "count": 6349,
+        "mean": 1.4198649985536222,
+        "p99": 5.660130718954245,
+        "pixelsMeanDifferenceOver": {
+          "2": 1577,
+          "4": 306,
+          "8": 5,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.24838557253110727,
+          "4": 0.04819656638840762,
+          "8": 0.000787525594581824,
+          "16": 0
+        }
+      },
+      "partiallyTransparentEdgeAlphaContribution": {
+        "count": 6349,
+        "mean": 0.5270771888321645,
+        "p99": 3.2732026143790853,
+        "pixelsMeanDifferenceOver": {
+          "2": 243,
+          "4": 26,
+          "8": 0,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.03827374389667664,
+          "4": 0.004095133091825485,
+          "8": 0,
+          "16": 0
+        }
+      },
+      "alphaByteDifference": {
+        "count": 127449,
+        "mean": 0.040847711633673074,
+        "p99": 1,
+        "pixelsMeanDifferenceOver": {
+          "2": 449,
+          "4": 93,
+          "8": 3,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.0035229778185784117,
+          "4": 0.0007297036461643481,
+          "8": 0.00002353882729562413,
+          "16": 0
+        }
+      },
+      "alphaChangedPixels": 3329
+    },
+    {
+      "mode": "desktop-dark",
+      "name": "business",
+      "baselineQAPath": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/qa/baseline/desktop-dark--mobile-massage.json",
+      "finalQAPath": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/qa/final/desktop-dark--mobile-massage.json",
+      "backgroundCSS": "rgb(33, 28, 24)",
+      "sourceFiles": {
+        "baseline": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/baseline/_astro/business.BKBGOq7m_br7RO.avif",
+        "final": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/final/_astro/business.BKBGOq7m_Z1ARRV3.avif"
+      },
+      "savedCSSDimensions": {
+        "width": 357,
+        "height": 357
+      },
+      "measuredCSSRaster": {
+        "width": 357,
+        "height": 357
+      },
+      "savedDPR": 1,
+      "pixels": 127449,
+      "meanRGB": {
+        "count": 127449,
+        "mean": 0.5294117647058663,
+        "p99": 4.333333333333333,
+        "pixelsMeanDifferenceOver": {
+          "2": 9696,
+          "4": 1690,
+          "8": 21,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.0760774898194572,
+          "4": 0.013260206043201595,
+          "8": 0.00016477179106936892,
+          "16": 0
+        }
+      },
+      "luminanceWeightedAbsoluteChannels": {
+        "count": 127449,
+        "mean": 0.4905675839886064,
+        "p99": 4.3450933333333355,
+        "pixelsMeanDifferenceOver": {
+          "2": 9412,
+          "4": 1727,
+          "8": 19,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.07384914750213811,
+          "4": 0.013550518246514293,
+          "8": 0.00014907923953895284,
+          "16": 0
+        }
+      },
+      "alphaOnlyContribution": {
+        "count": 127449,
+        "mean": 0.0075597636209423225,
+        "p99": 0.2222222222222222,
+        "pixelsMeanDifferenceOver": {
+          "2": 35,
+          "4": 5,
+          "8": 0,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.00027461965178228156,
+          "4": 0.00003923137882604022,
+          "8": 0,
+          "16": 0
+        }
+      },
+      "partiallyTransparentEdgeMeanRGB": {
+        "count": 4332,
+        "mean": 1.1034933825792779,
+        "p99": 5.230065359477114,
+        "pixelsMeanDifferenceOver": {
+          "2": 853,
+          "4": 148,
+          "8": 2,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.1969067405355494,
+          "4": 0.034164358264081256,
+          "8": 0.0004616805170821791,
+          "16": 0
+        }
+      },
+      "partiallyTransparentEdgeAlphaContribution": {
+        "count": 4332,
+        "mean": 0.2224109680806736,
+        "p99": 1.8705882352941199,
+        "pixelsMeanDifferenceOver": {
+          "2": 35,
+          "4": 5,
+          "8": 0,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.008079409048938134,
+          "4": 0.0011542012927054479,
+          "8": 0,
+          "16": 0
+        }
+      },
+      "alphaByteDifference": {
+        "count": 127449,
+        "mean": 0.027979819378731886,
+        "p99": 1,
+        "pixelsMeanDifferenceOver": {
+          "2": 260,
+          "4": 48,
+          "8": 3,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.0020400316989540915,
+          "4": 0.0003766212367299861,
+          "8": 0.00002353882729562413,
+          "16": 0
+        }
+      },
+      "alphaChangedPixels": 2395
+    },
+    {
+      "mode": "desktop-dark",
+      "name": "parent",
+      "baselineQAPath": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/qa/baseline/desktop-dark--mobile-massage.json",
+      "finalQAPath": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/qa/final/desktop-dark--mobile-massage.json",
+      "backgroundCSS": "rgb(33, 28, 24)",
+      "sourceFiles": {
+        "baseline": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/baseline/_astro/parent.BdBEFHuZ_ogVWt.avif",
+        "final": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/final/_astro/parent.BdBEFHuZ_oa0D0.avif"
+      },
+      "savedCSSDimensions": {
+        "width": 357,
+        "height": 357
+      },
+      "measuredCSSRaster": {
+        "width": 357,
+        "height": 357
+      },
+      "savedDPR": 1,
+      "pixels": 127449,
+      "meanRGB": {
+        "count": 127449,
+        "mean": 1.0158246151209387,
+        "p99": 5.333333333333333,
+        "pixelsMeanDifferenceOver": {
+          "2": 22152,
+          "4": 3914,
+          "8": 47,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.17381070075088859,
+          "4": 0.030710323345024285,
+          "8": 0.00036877496096477806,
+          "16": 0
+        }
+      },
+      "luminanceWeightedAbsoluteChannels": {
+        "count": 127449,
+        "mean": 0.9299193430851953,
+        "p99": 5.1404,
+        "pixelsMeanDifferenceOver": {
+          "2": 21408,
+          "4": 3954,
+          "8": 52,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.16797307158157382,
+          "4": 0.031024174375632606,
+          "8": 0.0004080063397908183,
+          "16": 0
+        }
+      },
+      "alphaOnlyContribution": {
+        "count": 127449,
+        "mean": 0.01573088033111488,
+        "p99": 0.526797385620915,
+        "pixelsMeanDifferenceOver": {
+          "2": 194,
+          "4": 39,
+          "8": 3,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.0015221774984503606,
+          "4": 0.0003060047548431137,
+          "8": 0.00002353882729562413,
+          "16": 0
+        }
+      },
+      "partiallyTransparentEdgeMeanRGB": {
+        "count": 5431,
+        "mean": 1.1911553500059702,
+        "p99": 5.935947712418302,
+        "pixelsMeanDifferenceOver": {
+          "2": 1158,
+          "4": 235,
+          "8": 6,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.21322040139937395,
+          "4": 0.04327011600073651,
+          "8": 0.0011047689191677407,
+          "16": 0
+        }
+      },
+      "partiallyTransparentEdgeAlphaContribution": {
+        "count": 5431,
+        "mean": 0.36915576640034253,
+        "p99": 3.3594771241829946,
+        "pixelsMeanDifferenceOver": {
+          "2": 194,
+          "4": 39,
+          "8": 3,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.03572086171975695,
+          "4": 0.007180997974590314,
+          "8": 0.0005523844595838704,
+          "16": 0
+        }
+      },
+      "alphaByteDifference": {
+        "count": 127449,
+        "mean": 0.04347621401501777,
+        "p99": 1,
+        "pixelsMeanDifferenceOver": {
+          "2": 624,
+          "4": 160,
+          "8": 16,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.004896076077489819,
+          "4": 0.0012554041224332871,
+          "8": 0.00012554041224332871,
+          "16": 0
+        }
+      },
+      "alphaChangedPixels": 3068
+    },
+    {
+      "mode": "desktop-dark",
+      "name": "senior",
+      "baselineQAPath": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/qa/baseline/desktop-dark--mobile-massage.json",
+      "finalQAPath": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/qa/final/desktop-dark--mobile-massage.json",
+      "backgroundCSS": "rgb(33, 28, 24)",
+      "sourceFiles": {
+        "baseline": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/baseline/_astro/senior.DDdfS1By_Z1fPhJg.avif",
+        "final": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/final/_astro/senior.DDdfS1By_Z1fWe3J.avif"
+      },
+      "savedCSSDimensions": {
+        "width": 357,
+        "height": 357
+      },
+      "measuredCSSRaster": {
+        "width": 357,
+        "height": 357
+      },
+      "savedDPR": 1,
+      "pixels": 127449,
+      "meanRGB": {
+        "count": 127449,
+        "mean": 0.855554135020664,
+        "p99": 5,
+        "pixelsMeanDifferenceOver": {
+          "2": 16799,
+          "4": 2883,
+          "8": 44,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.13180958657972994,
+          "4": 0.02262081303109479,
+          "8": 0.00034523613366915394,
+          "16": 0
+        }
+      },
+      "luminanceWeightedAbsoluteChannels": {
+        "count": 127449,
+        "mean": 0.8117915133204223,
+        "p99": 4.9959999999999996,
+        "pixelsMeanDifferenceOver": {
+          "2": 17494,
+          "4": 3198,
+          "8": 45,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.13726274823654952,
+          "4": 0.025092389897135324,
+          "8": 0.00035308240943436196,
+          "16": 0
+        }
+      },
+      "alphaOnlyContribution": {
+        "count": 127449,
+        "mean": 0.020625053814938808,
+        "p99": 0.6627450980392157,
+        "pixelsMeanDifferenceOver": {
+          "2": 283,
+          "4": 36,
+          "8": 0,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.0022204960415538764,
+          "4": 0.0002824659275474896,
+          "8": 0,
+          "16": 0
+        }
+      },
+      "partiallyTransparentEdgeMeanRGB": {
+        "count": 5952,
+        "mean": 1.295954125377771,
+        "p99": 5.498039215686274,
+        "pixelsMeanDifferenceOver": {
+          "2": 1362,
+          "4": 250,
+          "8": 8,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.2288306451612903,
+          "4": 0.04200268817204301,
+          "8": 0.0013440860215053765,
+          "16": 0
+        }
+      },
+      "partiallyTransparentEdgeAlphaContribution": {
+        "count": 5952,
+        "mean": 0.4416402022278455,
+        "p99": 3.4013071895424836,
+        "pixelsMeanDifferenceOver": {
+          "2": 283,
+          "4": 36,
+          "8": 0,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.04754704301075269,
+          "4": 0.006048387096774193,
+          "8": 0,
+          "16": 0
+        }
+      },
+      "alphaByteDifference": {
+        "count": 127449,
+        "mean": 0.045257318613719996,
+        "p99": 1,
+        "pixelsMeanDifferenceOver": {
+          "2": 545,
+          "4": 152,
+          "8": 9,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.004276220292038384,
+          "4": 0.0011926339163116227,
+          "8": 0.0000706164818868724,
+          "16": 0
+        }
+      },
+      "alphaChangedPixels": 3475
+    },
+    {
+      "mode": "desktop-dark",
+      "name": "stress",
+      "baselineQAPath": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/qa/baseline/desktop-dark--mobile-massage.json",
+      "finalQAPath": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/qa/final/desktop-dark--mobile-massage.json",
+      "backgroundCSS": "rgb(33, 28, 24)",
+      "sourceFiles": {
+        "baseline": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/baseline/_astro/stress.C3uzgIPE_ZyXVQM.avif",
+        "final": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/final/_astro/stress.C3uzgIPE_Zz5Sbg.avif"
+      },
+      "savedCSSDimensions": {
+        "width": 357,
+        "height": 357
+      },
+      "measuredCSSRaster": {
+        "width": 357,
+        "height": 357
+      },
+      "savedDPR": 1,
+      "pixels": 127449,
+      "meanRGB": {
+        "count": 127449,
+        "mean": 0.7763295193766337,
+        "p99": 5.333333333333333,
+        "pixelsMeanDifferenceOver": {
+          "2": 16983,
+          "4": 3690,
+          "8": 59,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.1332533013205282,
+          "4": 0.028952757573617684,
+          "8": 0.0004629302701472746,
+          "16": 0
+        }
+      },
+      "luminanceWeightedAbsoluteChannels": {
+        "count": 127449,
+        "mean": 0.7723954223043059,
+        "p99": 5.5026,
+        "pixelsMeanDifferenceOver": {
+          "2": 18341,
+          "4": 4703,
+          "8": 103,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.14390854380968074,
+          "4": 0.03690103492377343,
+          "8": 0.0008081664038164286,
+          "16": 0
+        }
+      },
+      "alphaOnlyContribution": {
+        "count": 127449,
+        "mean": 0.01141929538700005,
+        "p99": 0.3764705882352928,
+        "pixelsMeanDifferenceOver": {
+          "2": 34,
+          "4": 0,
+          "8": 0,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.0002667733760170735,
+          "4": 0,
+          "8": 0,
+          "16": 0
+        }
+      },
+      "partiallyTransparentEdgeMeanRGB": {
+        "count": 6349,
+        "mean": 1.1779420772351743,
+        "p99": 5.316339869281042,
+        "pixelsMeanDifferenceOver": {
+          "2": 1348,
+          "4": 246,
+          "8": 2,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.21231690029925973,
+          "4": 0.03874625925342574,
+          "8": 0.00031501023783272954,
+          "16": 0
+        }
+      },
+      "partiallyTransparentEdgeAlphaContribution": {
+        "count": 6349,
+        "mean": 0.22922944995712227,
+        "p99": 1.7019607843137194,
+        "pixelsMeanDifferenceOver": {
+          "2": 34,
+          "4": 0,
+          "8": 0,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.005355174043156403,
+          "4": 0,
+          "8": 0,
+          "16": 0
+        }
+      },
+      "alphaByteDifference": {
+        "count": 127449,
+        "mean": 0.040847711633673074,
+        "p99": 1,
+        "pixelsMeanDifferenceOver": {
+          "2": 449,
+          "4": 93,
+          "8": 3,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.0035229778185784117,
+          "4": 0.0007297036461643481,
+          "8": 0.00002353882729562413,
+          "16": 0
+        }
+      },
+      "alphaChangedPixels": 3329
+    },
+    {
+      "mode": "tablet-light",
+      "name": "business",
+      "baselineQAPath": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/qa/baseline/tablet-light--mobile-massage.json",
+      "finalQAPath": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/qa/final/tablet-light--mobile-massage.json",
+      "backgroundCSS": "rgb(255, 255, 255)",
+      "sourceFiles": {
+        "baseline": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/baseline/_astro/business.BKBGOq7m_br7RO.avif",
+        "final": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/final/_astro/business.BKBGOq7m_Z1ARRV3.avif"
+      },
+      "savedCSSDimensions": {
+        "width": 280.797,
+        "height": 280.797
+      },
+      "measuredCSSRaster": {
+        "width": 281,
+        "height": 281
+      },
+      "savedDPR": 2,
+      "pixels": 78961,
+      "meanRGB": {
+        "count": 78961,
+        "mean": 0.48901038512187234,
+        "p99": 3.9686274509803923,
+        "pixelsMeanDifferenceOver": {
+          "2": 4968,
+          "4": 540,
+          "8": 1,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.06291713630779752,
+          "4": 0.006838819163891035,
+          "8": 0.000012664479933131545,
+          "16": 0
+        }
+      },
+      "luminanceWeightedAbsoluteChannels": {
+        "count": 78961,
+        "mean": 0.4511293278513546,
+        "p99": 3.7525356862745096,
+        "pixelsMeanDifferenceOver": {
+          "2": 4884,
+          "4": 555,
+          "8": 1,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.06185331999341447,
+          "4": 0.007028786362888008,
+          "8": 0.000012664479933131545,
+          "16": 0
+        }
+      },
+      "alphaOnlyContribution": {
+        "count": 78961,
+        "mean": 0.01607668814413469,
+        "p99": 0.7313725490196052,
+        "pixelsMeanDifferenceOver": {
+          "2": 52,
+          "4": 1,
+          "8": 0,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.0006585529565228404,
+          "4": 0.000012664479933131545,
+          "8": 0,
+          "16": 0
+        }
+      },
+      "partiallyTransparentEdgeMeanRGB": {
+        "count": 3026,
+        "mean": 1.1751759262859156,
+        "p99": 4.543790849673191,
+        "pixelsMeanDifferenceOver": {
+          "2": 554,
+          "4": 61,
+          "8": 0,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.1830799735624587,
+          "4": 0.02015862524785195,
+          "8": 0,
+          "16": 0
+        }
+      },
+      "partiallyTransparentEdgeAlphaContribution": {
+        "count": 3026,
+        "mean": 0.41950805437839367,
+        "p99": 2.3019607843137257,
+        "pixelsMeanDifferenceOver": {
+          "2": 52,
+          "4": 1,
+          "8": 0,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.017184401850627893,
+          "4": 0.00033046926635822867,
+          "8": 0,
+          "16": 0
+        }
+      },
+      "alphaByteDifference": {
+        "count": 78961,
+        "mean": 0.024885703068603486,
+        "p99": 1,
+        "pixelsMeanDifferenceOver": {
+          "2": 120,
+          "4": 12,
+          "8": 0,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.0015197375919757856,
+          "4": 0.00015197375919757855,
+          "8": 0,
+          "16": 0
+        }
+      },
+      "alphaChangedPixels": 1419
+    },
+    {
+      "mode": "tablet-light",
+      "name": "parent",
+      "baselineQAPath": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/qa/baseline/tablet-light--mobile-massage.json",
+      "finalQAPath": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/qa/final/tablet-light--mobile-massage.json",
+      "backgroundCSS": "rgb(255, 255, 255)",
+      "sourceFiles": {
+        "baseline": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/baseline/_astro/parent.BdBEFHuZ_ogVWt.avif",
+        "final": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/final/_astro/parent.BdBEFHuZ_oa0D0.avif"
+      },
+      "savedCSSDimensions": {
+        "width": 280.797,
+        "height": 280.797
+      },
+      "measuredCSSRaster": {
+        "width": 281,
+        "height": 281
+      },
+      "savedDPR": 2,
+      "pixels": 78961,
+      "meanRGB": {
+        "count": 78961,
+        "mean": 0.9072486102802698,
+        "p99": 4.333333333333333,
+        "pixelsMeanDifferenceOver": {
+          "2": 11144,
+          "4": 1164,
+          "8": 2,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.14113296437481795,
+          "4": 0.014741454642165119,
+          "8": 0.00002532895986626309,
+          "16": 0
+        }
+      },
+      "luminanceWeightedAbsoluteChannels": {
+        "count": 78961,
+        "mean": 0.8232009817206736,
+        "p99": 4.286,
+        "pixelsMeanDifferenceOver": {
+          "2": 10682,
+          "4": 1164,
+          "8": 3,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.13528197464571118,
+          "4": 0.014741454642165119,
+          "8": 0.000037993439799394636,
+          "16": 0
+        }
+      },
+      "alphaOnlyContribution": {
+        "count": 78961,
+        "mean": 0.020496210878655843,
+        "p99": 0.8241830065359448,
+        "pixelsMeanDifferenceOver": {
+          "2": 118,
+          "4": 12,
+          "8": 0,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.0014944086321095225,
+          "4": 0.00015197375919757855,
+          "8": 0,
+          "16": 0
+        }
+      },
+      "partiallyTransparentEdgeMeanRGB": {
+        "count": 3733,
+        "mean": 1.1444568755263536,
+        "p99": 4.648366013071889,
+        "pixelsMeanDifferenceOver": {
+          "2": 661,
+          "4": 79,
+          "8": 0,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.17706938119474952,
+          "4": 0.021162603803911065,
+          "8": 0,
+          "16": 0
+        }
+      },
+      "partiallyTransparentEdgeAlphaContribution": {
+        "count": 3733,
+        "mean": 0.43353905898460865,
+        "p99": 3.0823529411764596,
+        "pixelsMeanDifferenceOver": {
+          "2": 118,
+          "4": 12,
+          "8": 0,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.03160996517546209,
+          "4": 0.0032145727297080095,
+          "8": 0,
+          "16": 0
+        }
+      },
+      "alphaByteDifference": {
+        "count": 78961,
+        "mean": 0.03846202555692051,
+        "p99": 1,
+        "pixelsMeanDifferenceOver": {
+          "2": 272,
+          "4": 55,
+          "8": 0,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.0034447385418117805,
+          "4": 0.000696546396322235,
+          "8": 0,
+          "16": 0
+        }
+      },
+      "alphaChangedPixels": 1884
+    },
+    {
+      "mode": "tablet-light",
+      "name": "senior",
+      "baselineQAPath": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/qa/baseline/tablet-light--mobile-massage.json",
+      "finalQAPath": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/qa/final/tablet-light--mobile-massage.json",
+      "backgroundCSS": "rgb(255, 255, 255)",
+      "sourceFiles": {
+        "baseline": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/baseline/_astro/senior.DDdfS1By_Z1fPhJg.avif",
+        "final": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/final/_astro/senior.DDdfS1By_Z1fWe3J.avif"
+      },
+      "savedCSSDimensions": {
+        "width": 280.797,
+        "height": 280.797
+      },
+      "measuredCSSRaster": {
+        "width": 281,
+        "height": 281
+      },
+      "savedDPR": 2,
+      "pixels": 78961,
+      "meanRGB": {
+        "count": 78961,
+        "mean": 0.7747884969770407,
+        "p99": 4.333333333333333,
+        "pixelsMeanDifferenceOver": {
+          "2": 8384,
+          "4": 842,
+          "8": 6,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.10617899975937488,
+          "4": 0.010663492103696761,
+          "8": 0.00007598687959878927,
+          "16": 0
+        }
+      },
+      "luminanceWeightedAbsoluteChannels": {
+        "count": 78961,
+        "mean": 0.7298483663242951,
+        "p99": 4.1456,
+        "pixelsMeanDifferenceOver": {
+          "2": 8764,
+          "4": 944,
+          "8": 2,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.11099150213396487,
+          "4": 0.01195526905687618,
+          "8": 0.00002532895986626309,
+          "16": 0
+        }
+      },
+      "alphaOnlyContribution": {
+        "count": 78961,
+        "mean": 0.018292434098971477,
+        "p99": 0.7947712418300625,
+        "pixelsMeanDifferenceOver": {
+          "2": 58,
+          "4": 9,
+          "8": 0,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.0007345398361216297,
+          "4": 0.00011398031939818392,
+          "8": 0,
+          "16": 0
+        }
+      },
+      "partiallyTransparentEdgeMeanRGB": {
+        "count": 4225,
+        "mean": 1.1911024480798278,
+        "p99": 4.343790849673202,
+        "pixelsMeanDifferenceOver": {
+          "2": 696,
+          "4": 71,
+          "8": 4,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.16473372781065088,
+          "4": 0.01680473372781065,
+          "8": 0.0009467455621301775,
+          "16": 0
+        }
+      },
+      "partiallyTransparentEdgeAlphaContribution": {
+        "count": 4225,
+        "mean": 0.3418671926364229,
+        "p99": 2.478431372549011,
+        "pixelsMeanDifferenceOver": {
+          "2": 58,
+          "4": 9,
+          "8": 0,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.013727810650887575,
+          "4": 0.0021301775147928993,
+          "8": 0,
+          "16": 0
+        }
+      },
+      "alphaByteDifference": {
+        "count": 78961,
+        "mean": 0.039943769709096896,
+        "p99": 1,
+        "pixelsMeanDifferenceOver": {
+          "2": 247,
+          "4": 44,
+          "8": 0,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.003128126543483492,
+          "4": 0.000557237117057788,
+          "8": 0,
+          "16": 0
+        }
+      },
+      "alphaChangedPixels": 2142
+    },
+    {
+      "mode": "tablet-light",
+      "name": "stress",
+      "baselineQAPath": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/qa/baseline/tablet-light--mobile-massage.json",
+      "finalQAPath": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/qa/final/tablet-light--mobile-massage.json",
+      "backgroundCSS": "rgb(255, 255, 255)",
+      "sourceFiles": {
+        "baseline": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/baseline/_astro/stress.C3uzgIPE_ZyXVQM.avif",
+        "final": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/final/_astro/stress.C3uzgIPE_Zz5Sbg.avif"
+      },
+      "savedCSSDimensions": {
+        "width": 280.797,
+        "height": 280.797
+      },
+      "measuredCSSRaster": {
+        "width": 281,
+        "height": 281
+      },
+      "savedDPR": 2,
+      "pixels": 78961,
+      "meanRGB": {
+        "count": 78961,
+        "mean": 0.6633946120335921,
+        "p99": 4.333333333333333,
+        "pixelsMeanDifferenceOver": {
+          "2": 7961,
+          "4": 901,
+          "8": 1,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.10082192474766023,
+          "4": 0.011410696419751523,
+          "8": 0.000012664479933131545,
+          "16": 0
+        }
+      },
+      "luminanceWeightedAbsoluteChannels": {
+        "count": 78961,
+        "mean": 0.6524151689777118,
+        "p99": 4.4304,
+        "pixelsMeanDifferenceOver": {
+          "2": 8784,
+          "4": 1315,
+          "8": 3,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.1112447917326275,
+          "4": 0.016653791112067984,
+          "8": 0.000037993439799394636,
+          "16": 0
+        }
+      },
+      "alphaOnlyContribution": {
+        "count": 78961,
+        "mean": 0.02250873745647415,
+        "p99": 0.8333333333333334,
+        "pixelsMeanDifferenceOver": {
+          "2": 92,
+          "4": 5,
+          "8": 0,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.0011651321538481022,
+          "4": 0.00006332239966565773,
+          "8": 0,
+          "16": 0
+        }
+      },
+      "partiallyTransparentEdgeMeanRGB": {
+        "count": 4521,
+        "mean": 1.2083540427894253,
+        "p99": 4.793464052287582,
+        "pixelsMeanDifferenceOver": {
+          "2": 882,
+          "4": 99,
+          "8": 0,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.19508958195089582,
+          "4": 0.021897810218978103,
+          "8": 0,
+          "16": 0
+        }
+      },
+      "partiallyTransparentEdgeAlphaContribution": {
+        "count": 4521,
+        "mean": 0.39312373773515935,
+        "p99": 2.462745098039207,
+        "pixelsMeanDifferenceOver": {
+          "2": 92,
+          "4": 5,
+          "8": 0,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.0203494802034948,
+          "4": 0.0011059500110595002,
+          "8": 0,
+          "16": 0
+        }
+      },
+      "alphaByteDifference": {
+        "count": 78961,
+        "mean": 0.03581514925089601,
+        "p99": 1,
+        "pixelsMeanDifferenceOver": {
+          "2": 187,
+          "4": 19,
+          "8": 0,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.002368257747495599,
+          "4": 0.00024062511872949938,
+          "8": 0,
+          "16": 0
+        }
+      },
+      "alphaChangedPixels": 2020
+    },
+    {
+      "mode": "tablet-dark",
+      "name": "business",
+      "baselineQAPath": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/qa/baseline/tablet-dark--mobile-massage.json",
+      "finalQAPath": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/qa/final/tablet-dark--mobile-massage.json",
+      "backgroundCSS": "rgb(33, 28, 24)",
+      "sourceFiles": {
+        "baseline": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/baseline/_astro/business.BKBGOq7m_br7RO.avif",
+        "final": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/final/_astro/business.BKBGOq7m_Z1ARRV3.avif"
+      },
+      "savedCSSDimensions": {
+        "width": 280.797,
+        "height": 280.797
+      },
+      "measuredCSSRaster": {
+        "width": 281,
+        "height": 281
+      },
+      "savedDPR": 2,
+      "pixels": 78961,
+      "meanRGB": {
+        "count": 78961,
+        "mean": 0.4826123560791543,
+        "p99": 3.9372549019607845,
+        "pixelsMeanDifferenceOver": {
+          "2": 4925,
+          "4": 532,
+          "8": 1,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.06237256367067286,
+          "4": 0.006737503324425982,
+          "8": 0.000012664479933131545,
+          "16": 0
+        }
+      },
+      "luminanceWeightedAbsoluteChannels": {
+        "count": 78961,
+        "mean": 0.4447115687243005,
+        "p99": 3.7525356862745096,
+        "pixelsMeanDifferenceOver": {
+          "2": 4821,
+          "4": 549,
+          "8": 1,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.061055457757627184,
+          "4": 0.0069527994832892185,
+          "8": 0.000012664479933131545,
+          "16": 0
+        }
+      },
+      "alphaOnlyContribution": {
+        "count": 78961,
+        "mean": 0.0068017859068839216,
+        "p99": 0.2222222222222222,
+        "pixelsMeanDifferenceOver": {
+          "2": 10,
+          "4": 1,
+          "8": 0,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.00012664479933131547,
+          "4": 0.000012664479933131545,
+          "8": 0,
+          "16": 0
+        }
+      },
+      "partiallyTransparentEdgeMeanRGB": {
+        "count": 3026,
+        "mean": 1.008224580865622,
+        "p99": 4.418300653594774,
+        "pixelsMeanDifferenceOver": {
+          "2": 511,
+          "4": 53,
+          "8": 0,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.16886979510905487,
+          "4": 0.01751487111698612,
+          "8": 0,
+          "16": 0
+        }
+      },
+      "partiallyTransparentEdgeAlphaContribution": {
+        "count": 3026,
+        "mean": 0.17748705122057545,
+        "p99": 1.484967320261438,
+        "pixelsMeanDifferenceOver": {
+          "2": 10,
+          "4": 1,
+          "8": 0,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.003304692663582287,
+          "4": 0.00033046926635822867,
+          "8": 0,
+          "16": 0
+        }
+      },
+      "alphaByteDifference": {
+        "count": 78961,
+        "mean": 0.024885703068603486,
+        "p99": 1,
+        "pixelsMeanDifferenceOver": {
+          "2": 120,
+          "4": 12,
+          "8": 0,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.0015197375919757856,
+          "4": 0.00015197375919757855,
+          "8": 0,
+          "16": 0
+        }
+      },
+      "alphaChangedPixels": 1419
+    },
+    {
+      "mode": "tablet-dark",
+      "name": "parent",
+      "baselineQAPath": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/qa/baseline/tablet-dark--mobile-massage.json",
+      "finalQAPath": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/qa/final/tablet-dark--mobile-massage.json",
+      "backgroundCSS": "rgb(33, 28, 24)",
+      "sourceFiles": {
+        "baseline": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/baseline/_astro/parent.BdBEFHuZ_ogVWt.avif",
+        "final": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/final/_astro/parent.BdBEFHuZ_oa0D0.avif"
+      },
+      "savedCSSDimensions": {
+        "width": 280.797,
+        "height": 280.797
+      },
+      "measuredCSSRaster": {
+        "width": 281,
+        "height": 281
+      },
+      "savedDPR": 2,
+      "pixels": 78961,
+      "meanRGB": {
+        "count": 78961,
+        "mean": 0.9010456638931487,
+        "p99": 4.333333333333333,
+        "pixelsMeanDifferenceOver": {
+          "2": 11096,
+          "4": 1144,
+          "8": 3,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.14052506933802764,
+          "4": 0.014488165043502489,
+          "8": 0.000037993439799394636,
+          "16": 0
+        }
+      },
+      "luminanceWeightedAbsoluteChannels": {
+        "count": 78961,
+        "mean": 0.8170167157328267,
+        "p99": 4.2848,
+        "pixelsMeanDifferenceOver": {
+          "2": 10624,
+          "4": 1150,
+          "8": 3,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.13454743480958956,
+          "4": 0.014564151923101279,
+          "8": 0.000037993439799394636,
+          "16": 0
+        }
+      },
+      "alphaOnlyContribution": {
+        "count": 78961,
+        "mean": 0.014491327024766824,
+        "p99": 0.5411764705882487,
+        "pixelsMeanDifferenceOver": {
+          "2": 86,
+          "4": 6,
+          "8": 0,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.001089145274249313,
+          "4": 0.00007598687959878927,
+          "8": 0,
+          "16": 0
+        }
+      },
+      "partiallyTransparentEdgeMeanRGB": {
+        "count": 3733,
+        "mean": 1.0132511831413595,
+        "p99": 4.5790849673202585,
+        "pixelsMeanDifferenceOver": {
+          "2": 613,
+          "4": 59,
+          "8": 1,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.1642110902759175,
+          "4": 0.015804982587731047,
+          "8": 0.0002678810608090008,
+          "16": 0
+        }
+      },
+      "partiallyTransparentEdgeAlphaContribution": {
+        "count": 3733,
+        "mean": 0.30652281628786854,
+        "p99": 2.751633986928104,
+        "pixelsMeanDifferenceOver": {
+          "2": 86,
+          "4": 6,
+          "8": 0,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.02303777122957407,
+          "4": 0.0016072863648540047,
+          "8": 0,
+          "16": 0
+        }
+      },
+      "alphaByteDifference": {
+        "count": 78961,
+        "mean": 0.03846202555692051,
+        "p99": 1,
+        "pixelsMeanDifferenceOver": {
+          "2": 272,
+          "4": 55,
+          "8": 0,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.0034447385418117805,
+          "4": 0.000696546396322235,
+          "8": 0,
+          "16": 0
+        }
+      },
+      "alphaChangedPixels": 1884
+    },
+    {
+      "mode": "tablet-dark",
+      "name": "senior",
+      "baselineQAPath": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/qa/baseline/tablet-dark--mobile-massage.json",
+      "finalQAPath": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/qa/final/tablet-dark--mobile-massage.json",
+      "backgroundCSS": "rgb(33, 28, 24)",
+      "sourceFiles": {
+        "baseline": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/baseline/_astro/senior.DDdfS1By_Z1fPhJg.avif",
+        "final": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/final/_astro/senior.DDdfS1By_Z1fWe3J.avif"
+      },
+      "savedCSSDimensions": {
+        "width": 280.797,
+        "height": 280.797
+      },
+      "measuredCSSRaster": {
+        "width": 281,
+        "height": 281
+      },
+      "savedDPR": 2,
+      "pixels": 78961,
+      "meanRGB": {
+        "count": 78961,
+        "mean": 0.7714259699481005,
+        "p99": 4.333333333333333,
+        "pixelsMeanDifferenceOver": {
+          "2": 8420,
+          "4": 858,
+          "8": 3,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.10663492103696762,
+          "4": 0.010866123782626866,
+          "8": 0.000037993439799394636,
+          "16": 0
+        }
+      },
+      "luminanceWeightedAbsoluteChannels": {
+        "count": 78961,
+        "mean": 0.7262455042114313,
+        "p99": 4.1456,
+        "pixelsMeanDifferenceOver": {
+          "2": 8803,
+          "4": 952,
+          "8": 1,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.111485416851357,
+          "4": 0.012056584896341233,
+          "8": 0.000012664479933131545,
+          "16": 0
+        }
+      },
+      "alphaOnlyContribution": {
+        "count": 78961,
+        "mean": 0.018263661724953473,
+        "p99": 0.6431372549019585,
+        "pixelsMeanDifferenceOver": {
+          "2": 101,
+          "4": 6,
+          "8": 0,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.0012791124732462861,
+          "4": 0.00007598687959878927,
+          "8": 0,
+          "16": 0
+        }
+      },
+      "partiallyTransparentEdgeMeanRGB": {
+        "count": 4225,
+        "mean": 1.1282602003326112,
+        "p99": 4.501960784313724,
+        "pixelsMeanDifferenceOver": {
+          "2": 732,
+          "4": 87,
+          "8": 1,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.17325443786982248,
+          "4": 0.02059171597633136,
+          "8": 0.00023668639053254438,
+          "16": 0
+        }
+      },
+      "partiallyTransparentEdgeAlphaContribution": {
+        "count": 4225,
+        "mean": 0.34132946590865115,
+        "p99": 2.5673202614379083,
+        "pixelsMeanDifferenceOver": {
+          "2": 101,
+          "4": 6,
+          "8": 0,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.02390532544378698,
+          "4": 0.0014201183431952662,
+          "8": 0,
+          "16": 0
+        }
+      },
+      "alphaByteDifference": {
+        "count": 78961,
+        "mean": 0.039943769709096896,
+        "p99": 1,
+        "pixelsMeanDifferenceOver": {
+          "2": 247,
+          "4": 44,
+          "8": 0,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.003128126543483492,
+          "4": 0.000557237117057788,
+          "8": 0,
+          "16": 0
+        }
+      },
+      "alphaChangedPixels": 2142
+    },
+    {
+      "mode": "tablet-dark",
+      "name": "stress",
+      "baselineQAPath": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/qa/baseline/tablet-dark--mobile-massage.json",
+      "finalQAPath": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/qa/final/tablet-dark--mobile-massage.json",
+      "backgroundCSS": "rgb(33, 28, 24)",
+      "sourceFiles": {
+        "baseline": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/baseline/_astro/stress.C3uzgIPE_ZyXVQM.avif",
+        "final": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/final/_astro/stress.C3uzgIPE_Zz5Sbg.avif"
+      },
+      "savedCSSDimensions": {
+        "width": 280.797,
+        "height": 280.797
+      },
+      "measuredCSSRaster": {
+        "width": 281,
+        "height": 281
+      },
+      "savedDPR": 2,
+      "pixels": 78961,
+      "meanRGB": {
+        "count": 78961,
+        "mean": 0.653700606562368,
+        "p99": 4.333333333333333,
+        "pixelsMeanDifferenceOver": {
+          "2": 7813,
+          "4": 876,
+          "8": 2,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.09894758171755677,
+          "4": 0.011094084421423234,
+          "8": 0.00002532895986626309,
+          "16": 0
+        }
+      },
+      "luminanceWeightedAbsoluteChannels": {
+        "count": 78961,
+        "mean": 0.6423652742443748,
+        "p99": 4.3662,
+        "pixelsMeanDifferenceOver": {
+          "2": 8665,
+          "4": 1286,
+          "8": 2,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.10973771862058485,
+          "4": 0.01628652119400717,
+          "8": 0.00002532895986626309,
+          "16": 0
+        }
+      },
+      "alphaOnlyContribution": {
+        "count": 78961,
+        "mean": 0.010310260720254564,
+        "p99": 0.3725490196078418,
+        "pixelsMeanDifferenceOver": {
+          "2": 6,
+          "4": 0,
+          "8": 0,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.00007598687959878927,
+          "4": 0,
+          "8": 0,
+          "16": 0
+        }
+      },
+      "partiallyTransparentEdgeMeanRGB": {
+        "count": 4521,
+        "mean": 1.0390445170179041,
+        "p99": 4.573856209150326,
+        "pixelsMeanDifferenceOver": {
+          "2": 734,
+          "4": 74,
+          "8": 1,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.16235346162353462,
+          "4": 0.0163680601636806,
+          "8": 0.00022119000221190003,
+          "16": 0
+        }
+      },
+      "partiallyTransparentEdgeAlphaContribution": {
+        "count": 4521,
+        "mean": 0.18007266019288223,
+        "p99": 1.2882352941176454,
+        "pixelsMeanDifferenceOver": {
+          "2": 6,
+          "4": 0,
+          "8": 0,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.0013271400132714001,
+          "4": 0,
+          "8": 0,
+          "16": 0
+        }
+      },
+      "alphaByteDifference": {
+        "count": 78961,
+        "mean": 0.03581514925089601,
+        "p99": 1,
+        "pixelsMeanDifferenceOver": {
+          "2": 187,
+          "4": 19,
+          "8": 0,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.002368257747495599,
+          "4": 0.00024062511872949938,
+          "8": 0,
+          "16": 0
+        }
+      },
+      "alphaChangedPixels": 2020
+    },
+    {
+      "mode": "mobile-light",
+      "name": "business",
+      "baselineQAPath": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/qa/baseline/mobile-light--mobile-massage.json",
+      "finalQAPath": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/qa/final/mobile-light--mobile-massage.json",
+      "backgroundCSS": "rgb(255, 255, 255)",
+      "sourceFiles": {
+        "baseline": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/baseline/_astro/business.BKBGOq7m_br7RO.avif",
+        "final": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/final/_astro/business.BKBGOq7m_Z1ARRV3.avif"
+      },
+      "savedCSSDimensions": {
+        "width": 259.156,
+        "height": 259.156
+      },
+      "measuredCSSRaster": {
+        "width": 259,
+        "height": 259
+      },
+      "savedDPR": 3,
+      "pixels": 67081,
+      "meanRGB": {
+        "count": 67081,
+        "mean": 0.4727202787616165,
+        "p99": 3.6666666666666665,
+        "pixelsMeanDifferenceOver": {
+          "2": 3829,
+          "4": 333,
+          "8": 0,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.05708024626943546,
+          "4": 0.004964147821290678,
+          "8": 0,
+          "16": 0
+        }
+      },
+      "luminanceWeightedAbsoluteChannels": {
+        "count": 67081,
+        "mean": 0.4349539047291676,
+        "p99": 3.5025999999999997,
+        "pixelsMeanDifferenceOver": {
+          "2": 3742,
+          "4": 366,
+          "8": 0,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.055783306748557714,
+          "4": 0.00545609039817534,
+          "8": 0,
+          "16": 0
+        }
+      },
+      "alphaOnlyContribution": {
+        "count": 67081,
+        "mean": 0.015068593787648991,
+        "p99": 0.7215686274509778,
+        "pixelsMeanDifferenceOver": {
+          "2": 30,
+          "4": 2,
+          "8": 0,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.00044722052444060164,
+          "4": 0.000029814701629373442,
+          "8": 0,
+          "16": 0
+        }
+      },
+      "partiallyTransparentEdgeMeanRGB": {
+        "count": 2683,
+        "mean": 1.0897809738878808,
+        "p99": 4.128104575163396,
+        "pixelsMeanDifferenceOver": {
+          "2": 430,
+          "4": 34,
+          "8": 0,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.16026835631755498,
+          "4": 0.0126723816623183,
+          "8": 0,
+          "16": 0
+        }
+      },
+      "partiallyTransparentEdgeAlphaContribution": {
+        "count": 2683,
+        "mean": 0.376748542627388,
+        "p99": 2.0313725490196104,
+        "pixelsMeanDifferenceOver": {
+          "2": 30,
+          "4": 2,
+          "8": 0,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.011181513231457324,
+          "4": 0.0007454342154304882,
+          "8": 0,
+          "16": 0
+        }
+      },
+      "alphaByteDifference": {
+        "count": 67081,
+        "mean": 0.0234641701823169,
+        "p99": 1,
+        "pixelsMeanDifferenceOver": {
+          "2": 73,
+          "4": 7,
+          "8": 0,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.0010882366094721308,
+          "4": 0.00010435145570280705,
+          "8": 0,
+          "16": 0
+        }
+      },
+      "alphaChangedPixels": 1188
+    },
+    {
+      "mode": "mobile-light",
+      "name": "parent",
+      "baselineQAPath": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/qa/baseline/mobile-light--mobile-massage.json",
+      "finalQAPath": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/qa/final/mobile-light--mobile-massage.json",
+      "backgroundCSS": "rgb(255, 255, 255)",
+      "sourceFiles": {
+        "baseline": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/baseline/_astro/parent.BdBEFHuZ_ogVWt.avif",
+        "final": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/final/_astro/parent.BdBEFHuZ_oa0D0.avif"
+      },
+      "savedCSSDimensions": {
+        "width": 259.156,
+        "height": 259.156
+      },
+      "measuredCSSRaster": {
+        "width": 259,
+        "height": 259
+      },
+      "savedDPR": 3,
+      "pixels": 67081,
+      "meanRGB": {
+        "count": 67081,
+        "mean": 0.8645433532556014,
+        "p99": 4.299346405228761,
+        "pixelsMeanDifferenceOver": {
+          "2": 8533,
+          "4": 688,
+          "8": 1,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.12720442450172179,
+          "4": 0.010256257360504464,
+          "8": 0.000014907350814686721,
+          "16": 0
+        }
+      },
+      "luminanceWeightedAbsoluteChannels": {
+        "count": 67081,
+        "mean": 0.7829740655356235,
+        "p99": 4.004,
+        "pixelsMeanDifferenceOver": {
+          "2": 8203,
+          "4": 680,
+          "8": 1,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.12228499873287518,
+          "4": 0.01013699855398697,
+          "8": 0.000014907350814686721,
+          "16": 0
+        }
+      },
+      "alphaOnlyContribution": {
+        "count": 67081,
+        "mean": 0.01850480635400009,
+        "p99": 0.7575163398692784,
+        "pixelsMeanDifferenceOver": {
+          "2": 84,
+          "4": 4,
+          "8": 0,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.0012522174684336846,
+          "4": 0.000059629403258746885,
+          "8": 0,
+          "16": 0
+        }
+      },
+      "partiallyTransparentEdgeMeanRGB": {
+        "count": 3263,
+        "mean": 1.0725608375948223,
+        "p99": 4.316339869281052,
+        "pixelsMeanDifferenceOver": {
+          "2": 524,
+          "4": 56,
+          "8": 1,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.16058841556849526,
+          "4": 0.017162120747778117,
+          "8": 0.00030646644192460924,
+          "16": 0
+        }
+      },
+      "partiallyTransparentEdgeAlphaContribution": {
+        "count": 3263,
+        "mean": 0.38042320411666564,
+        "p99": 2.5568627450980395,
+        "pixelsMeanDifferenceOver": {
+          "2": 84,
+          "4": 4,
+          "8": 0,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.025743181121667177,
+          "4": 0.001225865767698437,
+          "8": 0,
+          "16": 0
+        }
+      },
+      "alphaByteDifference": {
+        "count": 67081,
+        "mean": 0.035032274414513793,
+        "p99": 1,
+        "pixelsMeanDifferenceOver": {
+          "2": 189,
+          "4": 28,
+          "8": 1,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.0028174893039757906,
+          "4": 0.0004174058228112282,
+          "8": 0.000014907350814686721,
+          "16": 0
+        }
+      },
+      "alphaChangedPixels": 1547
+    },
+    {
+      "mode": "mobile-light",
+      "name": "senior",
+      "baselineQAPath": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/qa/baseline/mobile-light--mobile-massage.json",
+      "finalQAPath": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/qa/final/mobile-light--mobile-massage.json",
+      "backgroundCSS": "rgb(255, 255, 255)",
+      "sourceFiles": {
+        "baseline": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/baseline/_astro/senior.DDdfS1By_Z1fPhJg.avif",
+        "final": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/final/_astro/senior.DDdfS1By_Z1fWe3J.avif"
+      },
+      "savedCSSDimensions": {
+        "width": 259.156,
+        "height": 259.156
+      },
+      "measuredCSSRaster": {
+        "width": 259,
+        "height": 259
+      },
+      "savedDPR": 3,
+      "pixels": 67081,
+      "meanRGB": {
+        "count": 67081,
+        "mean": 0.7438584101768334,
+        "p99": 4,
+        "pixelsMeanDifferenceOver": {
+          "2": 6506,
+          "4": 525,
+          "8": 0,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.09698722440035182,
+          "4": 0.007826359177710528,
+          "8": 0,
+          "16": 0
+        }
+      },
+      "luminanceWeightedAbsoluteChannels": {
+        "count": 67081,
+        "mean": 0.697792401284834,
+        "p99": 3.9278,
+        "pixelsMeanDifferenceOver": {
+          "2": 6763,
+          "4": 582,
+          "8": 0,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.1008184135597263,
+          "4": 0.008676078174147672,
+          "8": 0,
+          "16": 0
+        }
+      },
+      "alphaOnlyContribution": {
+        "count": 67081,
+        "mean": 0.018007436721949543,
+        "p99": 0.8111111111111082,
+        "pixelsMeanDifferenceOver": {
+          "2": 31,
+          "4": 5,
+          "8": 0,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.0004621278752552884,
+          "4": 0.00007453675407343361,
+          "8": 0,
+          "16": 0
+        }
+      },
+      "partiallyTransparentEdgeMeanRGB": {
+        "count": 3759,
+        "mean": 1.151485150236386,
+        "p99": 4.299346405228751,
+        "pixelsMeanDifferenceOver": {
+          "2": 600,
+          "4": 51,
+          "8": 0,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.1596169193934557,
+          "4": 0.013567438148443736,
+          "8": 0,
+          "16": 0
+        }
+      },
+      "partiallyTransparentEdgeAlphaContribution": {
+        "count": 3759,
+        "mean": 0.3213505886525931,
+        "p99": 2,
+        "pixelsMeanDifferenceOver": {
+          "2": 31,
+          "4": 5,
+          "8": 0,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.008246874168661877,
+          "4": 0.0013301409949454642,
+          "8": 0,
+          "16": 0
+        }
+      },
+      "alphaByteDifference": {
+        "count": 67081,
+        "mean": 0.039176517940996705,
+        "p99": 1,
+        "pixelsMeanDifferenceOver": {
+          "2": 164,
+          "4": 25,
+          "8": 0,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.0024448055336086225,
+          "4": 0.00037268377036716807,
+          "8": 0,
+          "16": 0
+        }
+      },
+      "alphaChangedPixels": 1875
+    },
+    {
+      "mode": "mobile-light",
+      "name": "stress",
+      "baselineQAPath": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/qa/baseline/mobile-light--mobile-massage.json",
+      "finalQAPath": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/qa/final/mobile-light--mobile-massage.json",
+      "backgroundCSS": "rgb(255, 255, 255)",
+      "sourceFiles": {
+        "baseline": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/baseline/_astro/stress.C3uzgIPE_ZyXVQM.avif",
+        "final": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/final/_astro/stress.C3uzgIPE_Zz5Sbg.avif"
+      },
+      "savedCSSDimensions": {
+        "width": 259.156,
+        "height": 259.156
+      },
+      "measuredCSSRaster": {
+        "width": 259,
+        "height": 259
+      },
+      "savedDPR": 3,
+      "pixels": 67081,
+      "meanRGB": {
+        "count": 67081,
+        "mean": 0.6263433155097935,
+        "p99": 4,
+        "pixelsMeanDifferenceOver": {
+          "2": 5959,
+          "4": 526,
+          "8": 0,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.08883290350471817,
+          "4": 0.007841266528525216,
+          "8": 0,
+          "16": 0
+        }
+      },
+      "luminanceWeightedAbsoluteChannels": {
+        "count": 67081,
+        "mean": 0.6119359626743396,
+        "p99": 4.0774,
+        "pixelsMeanDifferenceOver": {
+          "2": 6647,
+          "4": 747,
+          "8": 0,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.09908916086522264,
+          "4": 0.011135791058570982,
+          "8": 0,
+          "16": 0
+        }
+      },
+      "alphaOnlyContribution": {
+        "count": 67081,
+        "mean": 0.0212909609911654,
+        "p99": 0.7496732026143764,
+        "pixelsMeanDifferenceOver": {
+          "2": 64,
+          "4": 1,
+          "8": 0,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.0009540704521399502,
+          "4": 0.000014907350814686721,
+          "8": 0,
+          "16": 0
+        }
+      },
+      "partiallyTransparentEdgeMeanRGB": {
+        "count": 4002,
+        "mean": 1.1573553092734696,
+        "p99": 4.316339869281052,
+        "pixelsMeanDifferenceOver": {
+          "2": 693,
+          "4": 69,
+          "8": 0,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.17316341829085458,
+          "4": 0.017241379310344827,
+          "8": 0,
+          "16": 0
+        }
+      },
+      "partiallyTransparentEdgeAlphaContribution": {
+        "count": 4002,
+        "mean": 0.3568763004118856,
+        "p99": 2.262745098039216,
+        "pixelsMeanDifferenceOver": {
+          "2": 64,
+          "4": 1,
+          "8": 0,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.015992003998001,
+          "4": 0.0002498750624687656,
+          "8": 0,
+          "16": 0
+        }
+      },
+      "alphaByteDifference": {
+        "count": 67081,
+        "mean": 0.03431672157540883,
+        "p99": 1,
+        "pixelsMeanDifferenceOver": {
+          "2": 120,
+          "4": 12,
+          "8": 0,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.0017888820977624066,
+          "4": 0.00017888820977624066,
+          "8": 0,
+          "16": 0
+        }
+      },
+      "alphaChangedPixels": 1706
+    },
+    {
+      "mode": "mobile-dark",
+      "name": "business",
+      "baselineQAPath": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/qa/baseline/mobile-dark--mobile-massage.json",
+      "finalQAPath": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/qa/final/mobile-dark--mobile-massage.json",
+      "backgroundCSS": "rgb(33, 28, 24)",
+      "sourceFiles": {
+        "baseline": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/baseline/_astro/business.BKBGOq7m_br7RO.avif",
+        "final": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/final/_astro/business.BKBGOq7m_Z1ARRV3.avif"
+      },
+      "savedCSSDimensions": {
+        "width": 259.156,
+        "height": 259.156
+      },
+      "measuredCSSRaster": {
+        "width": 259,
+        "height": 259
+      },
+      "savedDPR": 3,
+      "pixels": 67081,
+      "meanRGB": {
+        "count": 67081,
+        "mean": 0.4670849493924665,
+        "p99": 3.6666666666666665,
+        "pixelsMeanDifferenceOver": {
+          "2": 3798,
+          "4": 331,
+          "8": 0,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.05661811839418017,
+          "4": 0.004934333119661305,
+          "8": 0,
+          "16": 0
+        }
+      },
+      "luminanceWeightedAbsoluteChannels": {
+        "count": 67081,
+        "mean": 0.42949165148017027,
+        "p99": 3.499335686274511,
+        "pixelsMeanDifferenceOver": {
+          "2": 3717,
+          "4": 363,
+          "8": 0,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.05541062297819055,
+          "4": 0.00541136834573128,
+          "8": 0,
+          "16": 0
+        }
+      },
+      "alphaOnlyContribution": {
+        "count": 67081,
+        "mean": 0.006497899866057917,
+        "p99": 0.2215686274509796,
+        "pixelsMeanDifferenceOver": {
+          "2": 5,
+          "4": 0,
+          "8": 0,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.00007453675407343361,
+          "4": 0,
+          "8": 0,
+          "16": 0
+        }
+      },
+      "partiallyTransparentEdgeMeanRGB": {
+        "count": 2683,
+        "mean": 0.9488851373572194,
+        "p99": 4.122875816993461,
+        "pixelsMeanDifferenceOver": {
+          "2": 399,
+          "4": 32,
+          "8": 0,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.1487141259783824,
+          "4": 0.011926947446887812,
+          "8": 0,
+          "16": 0
+        }
+      },
+      "partiallyTransparentEdgeAlphaContribution": {
+        "count": 2683,
+        "mean": 0.16246202792211373,
+        "p99": 1.3823529411764734,
+        "pixelsMeanDifferenceOver": {
+          "2": 5,
+          "4": 0,
+          "8": 0,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.0018635855385762206,
+          "4": 0,
+          "8": 0,
+          "16": 0
+        }
+      },
+      "alphaByteDifference": {
+        "count": 67081,
+        "mean": 0.0234641701823169,
+        "p99": 1,
+        "pixelsMeanDifferenceOver": {
+          "2": 73,
+          "4": 7,
+          "8": 0,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.0010882366094721308,
+          "4": 0.00010435145570280705,
+          "8": 0,
+          "16": 0
+        }
+      },
+      "alphaChangedPixels": 1188
+    },
+    {
+      "mode": "mobile-dark",
+      "name": "parent",
+      "baselineQAPath": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/qa/baseline/mobile-dark--mobile-massage.json",
+      "finalQAPath": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/qa/final/mobile-dark--mobile-massage.json",
+      "backgroundCSS": "rgb(33, 28, 24)",
+      "sourceFiles": {
+        "baseline": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/baseline/_astro/parent.BdBEFHuZ_ogVWt.avif",
+        "final": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/final/_astro/parent.BdBEFHuZ_oa0D0.avif"
+      },
+      "savedCSSDimensions": {
+        "width": 259.156,
+        "height": 259.156
+      },
+      "measuredCSSRaster": {
+        "width": 259,
+        "height": 259
+      },
+      "savedDPR": 3,
+      "pixels": 67081,
+      "meanRGB": {
+        "count": 67081,
+        "mean": 0.859395776815723,
+        "p99": 4.3163398692810375,
+        "pixelsMeanDifferenceOver": {
+          "2": 8486,
+          "4": 684,
+          "8": 0,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.12650377901343152,
+          "4": 0.010196627957245718,
+          "8": 0,
+          "16": 0
+        }
+      },
+      "luminanceWeightedAbsoluteChannels": {
+        "count": 67081,
+        "mean": 0.7776727224651614,
+        "p99": 4.005199999999999,
+        "pixelsMeanDifferenceOver": {
+          "2": 8157,
+          "4": 687,
+          "8": 2,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.12159926059539959,
+          "4": 0.010241350009689778,
+          "8": 0.000029814701629373442,
+          "16": 0
+        }
+      },
+      "alphaOnlyContribution": {
+        "count": 67081,
+        "mean": 0.013326830610500811,
+        "p99": 0.4875816993464035,
+        "pixelsMeanDifferenceOver": {
+          "2": 57,
+          "4": 7,
+          "8": 0,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.0008497189964371431,
+          "4": 0.00010435145570280705,
+          "8": 0,
+          "16": 0
+        }
+      },
+      "partiallyTransparentEdgeMeanRGB": {
+        "count": 3263,
+        "mean": 0.9667365730642083,
+        "p99": 4.51111111111112,
+        "pixelsMeanDifferenceOver": {
+          "2": 477,
+          "4": 52,
+          "8": 0,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.1461844927980386,
+          "4": 0.01593625498007968,
+          "8": 0,
+          "16": 0
+        }
+      },
+      "partiallyTransparentEdgeAlphaContribution": {
+        "count": 3263,
+        "mean": 0.2739739884103601,
+        "p99": 2.447058823529403,
+        "pixelsMeanDifferenceOver": {
+          "2": 57,
+          "4": 7,
+          "8": 0,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.017468587189702726,
+          "4": 0.0021452650934722646,
+          "8": 0,
+          "16": 0
+        }
+      },
+      "alphaByteDifference": {
+        "count": 67081,
+        "mean": 0.035032274414513793,
+        "p99": 1,
+        "pixelsMeanDifferenceOver": {
+          "2": 189,
+          "4": 28,
+          "8": 1,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.0028174893039757906,
+          "4": 0.0004174058228112282,
+          "8": 0.000014907350814686721,
+          "16": 0
+        }
+      },
+      "alphaChangedPixels": 1547
+    },
+    {
+      "mode": "mobile-dark",
+      "name": "senior",
+      "baselineQAPath": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/qa/baseline/mobile-dark--mobile-massage.json",
+      "finalQAPath": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/qa/final/mobile-dark--mobile-massage.json",
+      "backgroundCSS": "rgb(33, 28, 24)",
+      "sourceFiles": {
+        "baseline": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/baseline/_astro/senior.DDdfS1By_Z1fPhJg.avif",
+        "final": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/final/_astro/senior.DDdfS1By_Z1fWe3J.avif"
+      },
+      "savedCSSDimensions": {
+        "width": 259.156,
+        "height": 259.156
+      },
+      "measuredCSSRaster": {
+        "width": 259,
+        "height": 259
+      },
+      "savedDPR": 3,
+      "pixels": 67081,
+      "meanRGB": {
+        "count": 67081,
+        "mean": 0.7397571933570125,
+        "p99": 4,
+        "pixelsMeanDifferenceOver": {
+          "2": 6508,
+          "4": 528,
+          "8": 0,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.09701703910198119,
+          "4": 0.00787108123015459,
+          "8": 0,
+          "16": 0
+        }
+      },
+      "luminanceWeightedAbsoluteChannels": {
+        "count": 67081,
+        "mean": 0.6935468755332649,
+        "p99": 3.9278,
+        "pixelsMeanDifferenceOver": {
+          "2": 6804,
+          "4": 577,
+          "8": 0,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.10142961494312845,
+          "4": 0.008601541420074238,
+          "8": 0,
+          "16": 0
+        }
+      },
+      "alphaOnlyContribution": {
+        "count": 67081,
+        "mean": 0.017816564171322283,
+        "p99": 0.6516339869281023,
+        "pixelsMeanDifferenceOver": {
+          "2": 67,
+          "4": 5,
+          "8": 0,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.0009987925045840103,
+          "4": 0.00007453675407343361,
+          "8": 0,
+          "16": 0
+        }
+      },
+      "partiallyTransparentEdgeMeanRGB": {
+        "count": 3759,
+        "mean": 1.078297141327054,
+        "p99": 4.202614379084963,
+        "pixelsMeanDifferenceOver": {
+          "2": 602,
+          "4": 54,
+          "8": 0,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.1601489757914339,
+          "4": 0.014365522745411013,
+          "8": 0,
+          "16": 0
+        }
+      },
+      "partiallyTransparentEdgeAlphaContribution": {
+        "count": 3759,
+        "mean": 0.3179443844576935,
+        "p99": 2.37450980392156,
+        "pixelsMeanDifferenceOver": {
+          "2": 67,
+          "4": 5,
+          "8": 0,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.01782388933226922,
+          "4": 0.0013301409949454642,
+          "8": 0,
+          "16": 0
+        }
+      },
+      "alphaByteDifference": {
+        "count": 67081,
+        "mean": 0.039176517940996705,
+        "p99": 1,
+        "pixelsMeanDifferenceOver": {
+          "2": 164,
+          "4": 25,
+          "8": 0,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.0024448055336086225,
+          "4": 0.00037268377036716807,
+          "8": 0,
+          "16": 0
+        }
+      },
+      "alphaChangedPixels": 1875
+    },
+    {
+      "mode": "mobile-dark",
+      "name": "stress",
+      "baselineQAPath": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/qa/baseline/mobile-dark--mobile-massage.json",
+      "finalQAPath": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/qa/final/mobile-dark--mobile-massage.json",
+      "backgroundCSS": "rgb(33, 28, 24)",
+      "sourceFiles": {
+        "baseline": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/baseline/_astro/stress.C3uzgIPE_ZyXVQM.avif",
+        "final": "C:/Users/tingDev/AppData/Local/Temp/opencode/stone-lcp-followup/final/_astro/stress.C3uzgIPE_Zz5Sbg.avif"
+      },
+      "savedCSSDimensions": {
+        "width": 259.156,
+        "height": 259.156
+      },
+      "measuredCSSRaster": {
+        "width": 259,
+        "height": 259
+      },
+      "savedDPR": 3,
+      "pixels": 67081,
+      "meanRGB": {
+        "count": 67081,
+        "mean": 0.6164307261740812,
+        "p99": 4,
+        "pixelsMeanDifferenceOver": {
+          "2": 5879,
+          "4": 503,
+          "8": 0,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.08764031543954325,
+          "4": 0.007498397459787421,
+          "8": 0,
+          "16": 0
+        }
+      },
+      "luminanceWeightedAbsoluteChannels": {
+        "count": 67081,
+        "mean": 0.6017021380356451,
+        "p99": 4.0774,
+        "pixelsMeanDifferenceOver": {
+          "2": 6563,
+          "4": 730,
+          "8": 0,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.09783694339678896,
+          "4": 0.010882366094721306,
+          "8": 0,
+          "16": 0
+        }
+      },
+      "alphaOnlyContribution": {
+        "count": 67081,
+        "mean": 0.01003756749838963,
+        "p99": 0.3705882352941268,
+        "pixelsMeanDifferenceOver": {
+          "2": 3,
+          "4": 0,
+          "8": 0,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.000044722052444060165,
+          "4": 0,
+          "8": 0,
+          "16": 0
+        }
+      },
+      "partiallyTransparentEdgeMeanRGB": {
+        "count": 4002,
+        "mean": 0.9912017847285578,
+        "p99": 4.095424836601301,
+        "pixelsMeanDifferenceOver": {
+          "2": 613,
+          "4": 46,
+          "8": 0,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.15317341329335332,
+          "4": 0.011494252873563218,
+          "8": 0,
+          "16": 0
+        }
+      },
+      "partiallyTransparentEdgeAlphaContribution": {
+        "count": 4002,
+        "mean": 0.1682483921437968,
+        "p99": 1.2117647058823542,
+        "pixelsMeanDifferenceOver": {
+          "2": 3,
+          "4": 0,
+          "8": 0,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.0007496251874062968,
+          "4": 0,
+          "8": 0,
+          "16": 0
+        }
+      },
+      "alphaByteDifference": {
+        "count": 67081,
+        "mean": 0.03431672157540883,
+        "p99": 1,
+        "pixelsMeanDifferenceOver": {
+          "2": 120,
+          "4": 12,
+          "8": 0,
+          "16": 0
+        },
+        "fractionMeanDifferenceOver": {
+          "2": 0.0017888820977624066,
+          "4": 0.00017888820977624066,
+          "8": 0,
+          "16": 0
+        }
+      },
+      "alphaChangedPixels": 1706
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "status": "original-font-lifecycle-regression-fixed-with-strict-identity-caveat",
+  "pairedPostSwapStates": 32,
+  "verifiedRealClientRouterSwaps": 64,
+  "steadyContentStyleGeometryAndCDPFontDifferences": 0,
+  "newFontLoadingTransientCases": 0,
+  "newFontLoadingTransientSamples": 0,
+  "persistedStyleNodeSheetAndRuleIdentityFailures": 0,
+  "styleIdentitySamples": 160,
+  "persistedStyleNodeChecks": 320,
+  "fontFaceSetObjectIdentityFailures": 0,
+  "duplicateTypefaceSamples": 0,
+  "duplicateOrWrongFontPreloads": 0,
+  "homeReentryStylesheetOrderChanges": 0,
+  "strictInitialFontFaceObjectMembership": {
+    "baselineFailedSamples": 160,
+    "persistedFailedSamples": 160,
+    "baselineInitialReferencesValid": true,
+    "persistedInitialReferencesValid": true
+  },
+  "baselineSharedGalleryHeightTimingCases": 2,
+  "nativePreviewMatchesImmutableCopy": true,
+  "newPageErrors": 0,
+  "captureErrors": 0,
+  "screenshots": 0,
+  "sourceEdits": 0,
+  "browserRuns": 1,
+  "caveat": "Literal retention of initial individual FontFace objects is not met in either build. Both retain the same FontFaceSet object; fixed also retains both style nodes, CSSStyleSheets and CSSRules. The raw strict assertion failures are preserved, not counted as new regressions."
+}

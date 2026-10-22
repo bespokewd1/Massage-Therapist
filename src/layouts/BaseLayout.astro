@@ -2,6 +2,8 @@
 import { ClientRouter } from 'astro:transitions';
 import SeoHead from '@components/SeoHead.astro';
 import ThemeInit from '@components/ThemeInit.astro';
+import SiteFonts from '@components/SiteFonts.astro';
+import SiteIcons from '@components/SiteIcons.astro';
 import Header from '@components/Header.astro';
 import Footer from '@components/Footer.astro';
 import StickyButton from '@components/StickyButton.astro';
@@ -26,6 +28,7 @@ const { description, title, preloadedImage } = Astro.props;
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <SiteFonts preloadHeading={Astro.url.pathname === '/'} />
 
     <!-- View Transitions support -->
     <ClientRouter />
@@ -56,24 +59,7 @@ const { description, title, preloadedImage } = Astro.props;
     {preloadedImage && <link rel="preload" href={preloadedImage.src} as="image" />}
 
     <!--Favicons-->
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="/assets/favicons/favicon-stone-massage.jpg"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="/assets/favicons/favicon-stone-massage.jpg"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="/assets/favicons/favicon-stone-massage.jpg"
-    />
-    <link rel="manifest" href="/assets/favicons/favicon-stone-massage.jpg" />
+    <SiteIcons />
     <meta name="msapplication-TileColor" content="#da532c" />
     <meta name="theme-color" content="#ffffff" />
 

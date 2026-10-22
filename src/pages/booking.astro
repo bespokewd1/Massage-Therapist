@@ -2,6 +2,8 @@
 import { ClientRouter } from 'astro:transitions';
 import SeoHead from '@components/SeoHead.astro';
 import ThemeInit from '@components/ThemeInit.astro';
+import SiteFonts from '@components/SiteFonts.astro';
+import SiteIcons from '@components/SiteIcons.astro';
 import Header from '@components/Header.astro';
 import '@styles/root.less';
 import '@styles/dark.less';
@@ -19,27 +21,11 @@ import '@styles/global.css';
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <SiteFonts />
     <SeoHead />
 
     <!--Favicons-->
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="/assets/favicons/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="/assets/favicons/favicon-32x32.png?v1"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="/assets/favicons/favicon-16x16.png"
-    />
-    <link rel="manifest" href="/assets/favicons/site.webmanifest" />
+    <SiteIcons />
     <meta name="msapplication-TileColor" content="#da532c" />
     <meta name="theme-color" content="#ffffff" />
 

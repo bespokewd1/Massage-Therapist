@@ -1,0 +1,25 @@
+---
+import { createHash } from 'node:crypto';
+
+interface Props {
+  id: 'site-font-open-sans' | 'site-font-poppins';
+}
+
+const { id } = Astro.props;
+const markup = await Astro.slots.render('default');
+const styles = [...markup.matchAll(/<style\b[^>]*>([\s\S]*?)<\/style>/g)];
+
+// Font does not forward HTML attributes to its style element in Astro 5.
+// Keep its native CSS generation, but retain the registered faces during swaps.
+if (styles.length !== 1) {
+  throw new Error('Expected exactly one native Font stylesheet.');
+}
+// Invalidate persistence when font CSS changes, not when a preload is toggled.
+const key = `${id}-${createHash('sha256').update(styles[0][1]).digest('hex').slice(0, 16)}`;
+const persistedMarkup = markup.replace(
+  /<style(?=[\s>])/,
+  `<style data-astro-transition-persist="${key}"`
+);
+---
+
+<Fragment set:html={persistedMarkup} />

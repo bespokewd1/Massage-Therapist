@@ -10,7 +10,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "check:seo": "node scripts/check-seo.mjs",
-    "test:seo": "node --test scripts/seo.test.mjs"
+    "test:seo": "node --test scripts/seo.test.mjs",
+    "test": "npm run build && node --test scripts/seo.test.mjs scripts/theme.test.mjs scripts/performance.test.mjs"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
@@ -20,7 +21,7 @@
     "@tailwindcss/vite": "^4.0.11",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
-    "astro": "^5.4.2",
+    "astro": "5.18.2",
     "astro-icon": "^1.1.1",
     "astro-lqip": "^1.7.2",
     "autoprefixer": "^10.4.20",

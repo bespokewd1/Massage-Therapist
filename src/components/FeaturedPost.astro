@@ -3,11 +3,17 @@ import { getCollection } from "astro:content";
 import { Image } from "astro:assets";
 import { formatDate } from "@js/utils";
 import "@styles/blog.less";
+import featuredPostOrder from '@data/featured-post-order.json';
 
 const posts = await getCollection("blog");
-const featuredPosts = posts.filter((post) =>
-  post.data.tags.includes("featured")
-);
+// Preserve the existing sidebar order across Content Layer/glob updates.
+const order = new Map(featuredPostOrder.map((id, index) => [id, index]));
+const featuredPosts = posts
+  .filter((post) => post.data.tags.includes('featured'))
+  .sort((a, b) =>
+    (order.get(a.id) ?? Number.MAX_SAFE_INTEGER) -
+      (order.get(b.id) ?? Number.MAX_SAFE_INTEGER) || a.id.localeCompare(b.id)
+  );
 ---
 
 <!-- ============================================ --><!--                Featured Posts                --><!-- ============================================ -->
